@@ -11,7 +11,7 @@ public static class PlayerControls
       if(!_isPenguinBound)
       {
          _gameControls.Player.Attack.performed += ctx => _penguin.Attack(ctx.ReadValueAsButton());
-         _gameControls.Player.Crouch.performed += ctx => _penguin.Crouch(ctx.ReadValueAsButton());
+         _gameControls.Player.Sliding.performed += ctx => _penguin.Sliding(ctx.ReadValueAsButton());
          _gameControls.Player.Interact.performed += ctx => _penguin.Interact(ctx.ReadValueAsButton());
          _gameControls.Player.Jump.performed += ctx => _penguin.Jump(ctx.ReadValueAsButton());
          _gameControls.Player.Sprint.performed += ctx => _penguin.Sprint(ctx.ReadValueAsButton());

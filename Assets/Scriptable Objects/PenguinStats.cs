@@ -8,12 +8,14 @@ namespace Scriptable_Objects
     {
         [SerializeField] private float hp = 0;
         [SerializeField] private float speed = 0;
+        [SerializeField] private float speedLimit = 0;
         [SerializeField] private float damage = 0;
         [SerializeField] private float jumpPower = 0;
         [SerializeField] private float slideSpeed = 0;
         [SerializeField] private float attackCooldown = 0;
         [SerializeField] private float jumpCooldown = 0; 
         [SerializeField] private float slideCooldown = 0;
+        [SerializeField] private float sprintSpeed = 0;
 
         public float Hp => hp;
         public float Speed => speed;
@@ -23,5 +25,7 @@ namespace Scriptable_Objects
         public float AttackCooldown => attackCooldown;
         public float JumpCooldown => jumpCooldown;
         public float SlideCooldown => slideCooldown;
+        public float SpeedLimit => speedLimit;
+        public float SprintSpeed => sprintSpeed;
     }
 }

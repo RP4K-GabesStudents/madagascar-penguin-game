@@ -11,10 +11,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector3 _curMoveDir;
     private Vector2 _curLookDir;
+    private IKController _ikController;
     [Header("Jumping")] 
-    [SerializeField] private float footDist;
-    [SerializeField] private float footRadius;
-    [SerializeField] private Transform foot;
+    
     
     [Header("Animation")]
     [SerializeField] private Transform headProxy;
@@ -33,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _ikController = GetComponent<IKController>();
     }
 
     private void FixedUpdate()
@@ -43,30 +43,11 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         HandleLooking();
-        /*
-        float dot = Vector3.Dot(head.forward, lookPivot.forward);
-        if (dot > rotationThreshold)
-        {
-            head.Rotate(Vector3.right, _curLookDir.y * Time.deltaTime * 100);
-            body.Rotate(Vector3.up, _curLookDir.x * Time.deltaTime * 100);
-        }
-        else
-        {
-            lookPivot.Rotate(Vector3.right, _curLookDir.y * Time.deltaTime * 100);
-            lookPivot.Rotate(Vector3.up, _curLookDir.x * Time.deltaTime * 100);
-            if (lookPivot.eulerAngles.y > pitchLimit)
-            {
-                lookPivot.eulerAngles = new Vector3(lookPivot.eulerAngles.x, pitchLimit, lookPivot.eulerAngles.z);
-            }
-            else if (lookPivot.eulerAngles.y < -pitchLimit)
-            {
-                lookPivot.eulerAngles = new Vector3(lookPivot.eulerAngles.x, -pitchLimit, lookPivot.eulerAngles.z);
-            }
-        }
-        theRealHead.rotation = lookPivot.rotation;
-        */
     }
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+    }
     private void HandleLooking()
     {
         float dt = Time.deltaTime; //Cache this for easy optimization
@@ -97,10 +78,14 @@ public class PlayerController : MonoBehaviour
        headBone.rotation = headProxy.rotation;
         
     }
+    private void Update()
+    {
+        if (penguinStats.Speed >= penguinStats.SpeedLimit) penguinStats.Speed = penguinStats.SpeedLimit;
+    }
 
     public void Jump(bool readValueAsButton)
     {
-        
+        if (_ikController.IsGrounded) _rigidbody.AddForce(transform.up * penguinStats.JumpPower, ForceMode.Impulse);
     }
 
     public void Attack(bool readValueAsButton)

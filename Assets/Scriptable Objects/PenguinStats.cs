@@ -18,7 +18,12 @@ namespace Scriptable_Objects
         [SerializeField] private float sprintSpeed = 0;
 
         public float Hp => hp;
-        public float Speed => speed;
+        public float Speed
+        {
+            get => speed;
+            set => speed = value;
+        }
+
         public float Damage => damage;
         public float JumpPower => jumpPower;
         public float SlideSpeed => slideSpeed;

@@ -16,6 +16,10 @@ namespace Scriptable_Objects
         [SerializeField] private float jumpCooldown = 0; 
         [SerializeField] private float slideCooldown = 0;
         [SerializeField] private float sprintSpeed = 0;
+        [SerializeField] private float attackRadius;
+        [SerializeField] private float maxAttackDist;
+        [SerializeField] private float knockbackPower;
+
 
         public float Hp => hp;
         public float Speed
@@ -32,5 +36,9 @@ namespace Scriptable_Objects
         public float SlideCooldown => slideCooldown;
         public float SpeedLimit => speedLimit;
         public float SprintSpeed => sprintSpeed;
+
+        public float AttackRadius => attackRadius;
+        public float MaxAttackDist => maxAttackDist;
+        public float KnockbackPower => knockbackPower;
     }
 }

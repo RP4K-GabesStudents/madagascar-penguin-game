@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7c83d1fb4c44e48b23d10efba6ae02, type: 3}
+  m_Name: Barrel
+  m_EditorClassIdentifier: 
+  lootData:
+  - minSpawnAmount: 0
+    maxSpawnAmount: 10
+    spawnPrefab: {fileID: 6193662554855791363, guid: ed67a83eddfeb914284d46d1518bdf82, type: 3}
+    chanceToSpawn: 0.349

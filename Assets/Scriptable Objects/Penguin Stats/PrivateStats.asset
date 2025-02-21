@@ -16,9 +16,12 @@ MonoBehaviour:
   speed: 10
   speedLimit: 15
   damage: 8
-  jumpPower: 3
+  jumpPower: 10
   slideSpeed: 20
   attackCooldown: 0.5
   jumpCooldown: 0.5
   slideCooldown: 3
   sprintSpeed: 12
+  attackRadius: 0.3
+  maxAttackDist: 3
+  knockbackPower: 1

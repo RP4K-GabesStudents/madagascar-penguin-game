@@ -1,6 +1,10 @@
+using System.Collections;
 using Interfaces;
 using Managers;
+using Objects;
 using Scriptable_Objects;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Utilities;
@@ -11,10 +15,14 @@ namespace penguin
     public class PlayerController : BasePenguinFile, IDamageable
     {
         [SerializeField]PenguinStats penguinStats;
+        private ProjectileStats _projectileStats;
         private Rigidbody _rigidbody;
         private Vector3 _curMoveDir;
         private Vector2 _curLookDir;
-        private float _curHealth; 
+        private float _curHealth;
+        [SerializeField] GameObject projectilePrefab;
+        [SerializeField] private Transform laserSpawn;
+        [SerializeField] private Transform laserSpawn2;
         [SerializeField]private Transform attackLocation;
         
         [Header("Jumping")] 
@@ -103,6 +111,7 @@ namespace penguin
 
         public void ExecuteAttack()
         {
+            if (penguinStats.CanShootLaser) StartCoroutine(LaserShoot());
             bool success = Physics.SphereCast(attackLocation.position, penguinStats.AttackRadius, attackLocation.forward, out RaycastHit hitInfo, penguinStats.MaxAttackDist, StaticUtilities.AttackableLayers);
             Debug.DrawRay(attackLocation.position, attackLocation.forward * penguinStats.MaxAttackDist, Color.magenta, 3f);
             if (!success) return;
@@ -112,6 +121,16 @@ namespace penguin
             {
                 damageable.TakeDamage(penguinStats.Damage, attackLocation.forward * penguinStats.KnockbackPower);
             }
+        }
+
+        IEnumerator LaserShoot()
+        {
+            if (!penguinStats.CanShootLaser) yield break;
+
+            Instantiate(projectilePrefab, laserSpawn.position, transform.rotation);
+            Instantiate(projectilePrefab, laserSpawn2.position, transform.rotation);
+            yield return new WaitForSeconds(_projectileStats.LaserAbilityTime);
+            penguinStats.CanShootLaser = false;
         }
 
         public void Sprint(bool readValueAsButton)

@@ -19,15 +19,11 @@ namespace Scriptable_Objects
         [SerializeField] private float attackRadius;
         [SerializeField] private float maxAttackDist;
         [SerializeField] private float knockbackPower;
+        [SerializeField] private bool canShootLaser;
 
 
         public float Hp => hp;
-        public float Speed
-        {
-            get => speed;
-            set => speed = value;
-        }
-
+        public float Speed {get => speed; set => speed = value; }
         public float Damage => damage;
         public float JumpPower => jumpPower;
         public float SlideSpeed => slideSpeed;
@@ -40,5 +36,6 @@ namespace Scriptable_Objects
         public float AttackRadius => attackRadius;
         public float MaxAttackDist => maxAttackDist;
         public float KnockbackPower => knockbackPower;
+        public bool CanShootLaser { get => canShootLaser; set => canShootLaser = value; }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using Interfaces;
 using Scriptable_Objects;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,32 +10,29 @@ namespace Objects
     public class Laser : MonoBehaviour
     {
         [SerializeField]private ProjectileStats laserStats;
-        private Transform _transform;
-        private Rigidbody _rigidbody;
-        [SerializeField] private float curLifeTime;
-
-        private void Awake()
+        [SerializeField]private new Rigidbody rigidbody;
+        private GameObject _oner;
+        public void Init(GameObject oner)
         {
-            _rigidbody = GetComponent<Rigidbody>();
+            _oner = oner; 
+            Destroy(gameObject, 3);
+            rigidbody.AddForce(transform.forward * laserStats.Speed, ForceMode.Impulse);
         }
 
-        private void Update()
+        private void OnTriggerEnter(Collider other)
         {
-            curLifeTime -= Time.deltaTime;
-        }
-
-        private void Die()
-        {
-            if (curLifeTime !<= 0) return;
+            Rigidbody hitInfoRigidbody = other.attachedRigidbody;
+            if (hitInfoRigidbody != null)
+            {
+                Debug.Log("aaaa" + hitInfoRigidbody.gameObject.name + ", " + _oner.name);
+                if (hitInfoRigidbody.gameObject == _oner) return;
+                
+                if (hitInfoRigidbody.TryGetComponent(out IDamageable damageable))
+                {
+                    damageable.TakeDamage(laserStats.Damage, Vector3.zero);
+                }
+            }
             Destroy(gameObject);
-        }
-
-        private void ForwardProjectile()
-        {
-            _rigidbody.AddForce(transform.forward * laserStats.Speed, ForceMode.Impulse);
-            
-            Debug.Log(_rigidbody.linearVelocity.magnitude);
-            if (_rigidbody.linearVelocity.magnitude > laserStats.MaxSpeed) _rigidbody.linearVelocity = Vector3.ClampMagnitude(_rigidbody.linearVelocity, laserStats.MaxSpeed);
         }
     }
 }

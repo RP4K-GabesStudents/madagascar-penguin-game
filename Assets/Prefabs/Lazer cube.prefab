@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8647968457223316703}
   - component: {fileID: 2672956006226631726}
   - component: {fileID: 399880340592580543}
+  - component: {fileID: 8467498541837702238}
   m_Layer: 0
   m_Name: Lazer cube
   m_TagString: Untagged
@@ -108,3 +109,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8467498541837702238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9150956127607753733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1738183632964374e9a1073a1136912e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penguinStats: {fileID: 11400000, guid: 7832a7955506a3b4996d0f1f9c99eb23, type: 2}

@@ -88,12 +88,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292680379212082269}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0127, y: 0.3617, z: 0.1092}
+  m_LocalRotation: {x: -0.000003375113, y: 9.12499e-12, z: -1.5096567e-13, w: 1}
+  m_LocalPosition: {x: -0.012664638, y: 0.020180725, z: 0.10495774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4626681551128138674}
+  m_Father: {fileID: 4558234484960433860}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &309149004088689557
 GameObject:
@@ -815,12 +815,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3897925972286220879}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.016799923, y: 0.3617, z: 0.10919989}
+  m_LocalRotation: {x: -0.000003375113, y: 9.12499e-12, z: -1.5096567e-13, w: 1}
+  m_LocalPosition: {x: 0.01683537, y: 0.020180754, z: 0.10495773}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4626681551128138674}
+  m_Father: {fileID: 4558234484960433860}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4037762453395583205
 GameObject:
@@ -1009,8 +1009,6 @@ Transform:
   - {fileID: 4637344098947519716}
   - {fileID: 6113447471756242031}
   - {fileID: 4509135234415271963}
-  - {fileID: 2992385712287415840}
-  - {fileID: 146384945996191562}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &3760650080399139453
@@ -1087,8 +1085,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871b1147bf0847318e46dcde1c9790ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialWeapon: {fileID: 0}
   penguinStats: {fileID: 11400000, guid: 7832a7955506a3b4996d0f1f9c99eb23, type: 2}
-  projectilePrefab: {fileID: 7383919930125108305, guid: 7dcdc60e43c760240929b476ee07bd6f, type: 3}
   laserSpawn: {fileID: 2992385712287415840}
   laserSpawn2: {fileID: 146384945996191562}
   attackLocation: {fileID: 4509135234415271963}
@@ -1153,6 +1151,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3306977108195650534}
+  - {fileID: 2992385712287415840}
+  - {fileID: 146384945996191562}
   m_Father: {fileID: 737321218293414344}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5079929067530735244

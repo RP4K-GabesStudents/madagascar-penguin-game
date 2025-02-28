@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PrivateStats
   m_EditorClassIdentifier: 
   hp: 150
-  speed: 10
-  speedLimit: 15
+  speed: 15
+  speedLimit: 30
   damage: 8
   jumpPower: 10
   slideSpeed: 20
@@ -25,4 +25,4 @@ MonoBehaviour:
   attackRadius: 0.3
   maxAttackDist: 3
   knockbackPower: 1
-  canShootLaser: 0
+  canShootLaser: 1

@@ -1,28 +1,24 @@
 using System.Collections;
+using Abilities;
 using Interfaces;
 using Managers;
-using Objects;
 using Scriptable_Objects;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Utilities;
 
 namespace penguin
 {
     
     public class PlayerController : BasePenguinFile, IDamageable
     {
+        [SerializeField] private BaseWeaponGun initialWeapon;
         [SerializeField]PenguinStats penguinStats;
         private ProjectileStats _projectileStats;
         private Rigidbody _rigidbody;
         private Vector3 _curMoveDir;
         private Vector2 _curLookDir;
         private float _curHealth;
-        [SerializeField] GameObject projectilePrefab;
-        [SerializeField] private Transform laserSpawn;
-        [SerializeField] private Transform laserSpawn2;
+        [SerializeField] public Transform laserSpawn;
+        [SerializeField] public Transform laserSpawn2;
         [SerializeField]private Transform attackLocation;
         
         [Header("Jumping")] 
@@ -38,7 +34,8 @@ namespace penguin
 
     
         [Header("Looking")] 
-        [SerializeField] private Transform headXRotator;
+        [SerializeField]
+        public Transform headXRotator;
         [SerializeField] private Transform bodyYRotator;
         [SerializeField, Min(0)] private float rotationSpeed;
         [SerializeField, Range(0,90)] private float pitchLimit;
@@ -47,6 +44,7 @@ namespace penguin
         {
             base.Awake();
             _rigidbody = GetComponent<Rigidbody>();
+            initialWeapon.SetOwner(this);
         }
 
         private void FixedUpdate()
@@ -107,11 +105,13 @@ namespace penguin
         public void Attack(bool readValueAsButton)
         {
             _animator.SetBool(StaticUtilities.AttackAnimID, readValueAsButton);
+            if (readValueAsButton)  initialWeapon.Begin();
+            else initialWeapon.End();
         }
 
         public void ExecuteAttack()
         {
-            if (penguinStats.CanShootLaser) StartCoroutine(LaserShoot());
+            StartCoroutine(LaserShoot());
             bool success = Physics.SphereCast(attackLocation.position, penguinStats.AttackRadius, attackLocation.forward, out RaycastHit hitInfo, penguinStats.MaxAttackDist, StaticUtilities.AttackableLayers);
             Debug.DrawRay(attackLocation.position, attackLocation.forward * penguinStats.MaxAttackDist, Color.magenta, 3f);
             if (!success) return;
@@ -126,9 +126,8 @@ namespace penguin
         IEnumerator LaserShoot()
         {
             if (!penguinStats.CanShootLaser) yield break;
-
-            Instantiate(projectilePrefab, laserSpawn.position, transform.rotation);
-            Instantiate(projectilePrefab, laserSpawn2.position, transform.rotation);
+            
+            
             yield return new WaitForSeconds(_projectileStats.LaserAbilityTime);
             penguinStats.CanShootLaser = false;
         }

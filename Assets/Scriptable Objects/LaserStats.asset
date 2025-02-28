@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b434e0650f79abd4a9ca2f7f50586701, type: 3}
   m_Name: LaserStats
   m_EditorClassIdentifier: 
-  damage: 1
-  speed: 1
+  damage: 100
+  speed: 3
   lifetime: 30
   laserAbilityTime: 30
-  maxSpeed: 3
+  maxSpeed: 5

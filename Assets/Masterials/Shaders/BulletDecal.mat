@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: 2d5942e5cffb7be43ab294054bf522f9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1dce62a0bdbd1fe4c925a297fce109f6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -45,12 +45,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _DecalAngleFadeSupported: 1
     - _DecalMeshBiasType: 0
     - _DecalMeshDepthBias: 0
     - _DecalMeshViewBias: 0
     - _DrawOrder: 0
     m_Colors:
-    - _MyColour: {r: 15.999998, g: 2.4304438, b: 0, a: 0}
+    - _MyColour: {r: 7.377211, g: 1.1206187, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1471431578464141600

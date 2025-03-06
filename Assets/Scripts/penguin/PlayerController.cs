@@ -128,7 +128,7 @@ namespace penguin
             if (!penguinStats.CanShootLaser) yield break;
             
             
-            yield return new WaitForSeconds(_projectileStats.LaserAbilityTime);
+            yield return new WaitForSeconds(_projectileStats.AbilityTime);
             penguinStats.CanShootLaser = false;
         }
 

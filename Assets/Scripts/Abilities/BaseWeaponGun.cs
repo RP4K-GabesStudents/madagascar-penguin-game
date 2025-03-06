@@ -41,7 +41,6 @@ namespace Abilities
             _animator = _oner.GetComponentInChildren<Animator>();
             _curLifeTime = abilityStats.LifeTime;
             
-            
             //blue
         }
 

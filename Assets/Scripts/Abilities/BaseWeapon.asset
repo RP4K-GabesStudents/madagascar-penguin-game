@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b434e0650f79abd4a9ca2f7f50586701, type: 3}
-  m_Name: LaserStats
+  m_Script: {fileID: 11500000, guid: e80b43e9e2adf9b41b6a1d4e723cf989, type: 3}
+  m_Name: BaseWeapon
   m_EditorClassIdentifier: 
-  damage: 100
-  speed: 3
-  lifetime: 30
-  abilityTime: 0
-  maxSpeed: 5
-  amountFired: 1
+  icon: {fileID: 0}
+  fullyAutomatic: 0
+  useSpeed: 2
+  lifeTime: 30

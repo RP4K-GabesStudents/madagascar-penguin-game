@@ -106,13 +106,22 @@ namespace penguin
         public void Attack(bool readValueAsButton)
         {
             _animator.SetBool(StaticUtilities.AttackAnimID, readValueAsButton);
+            if (initialWeapon.IsAnimationBound) return;
             if (readValueAsButton)  initialWeapon.Begin();
             else initialWeapon.End();
         }
 
         public void ExecuteAttack()
         {
-            StartCoroutine(LaserShoot());
+            //This animation should actually probably be controlled by the weapon at this point.
+            if(!initialWeapon.IsFullyAutomatic)  
+                _animator.SetBool(StaticUtilities.AttackAnimID, false);
+            
+            
+            if (!initialWeapon.IsAnimationBound) return;
+            initialWeapon.UseInstant();
+            
+            
             bool success = Physics.SphereCast(attackLocation.position, penguinStats.AttackRadius, attackLocation.forward, out RaycastHit hitInfo, penguinStats.MaxAttackDist, StaticUtilities.AttackableLayers);
             Debug.DrawRay(attackLocation.position, attackLocation.forward * penguinStats.MaxAttackDist, Color.magenta, 3f);
             if (!success) return;
@@ -124,13 +133,6 @@ namespace penguin
             }
         }
 
-        IEnumerator LaserShoot()
-        {
-            if (!penguinStats.CanShootLaser) yield break;
-            
-            yield return new WaitForSeconds(projectileStats.AbilityTime);
-            penguinStats.CanShootLaser = false;
-        }
 
         public void Sprint(bool readValueAsButton)
         {

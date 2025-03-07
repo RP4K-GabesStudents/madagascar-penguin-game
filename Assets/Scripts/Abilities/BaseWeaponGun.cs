@@ -12,6 +12,8 @@ namespace Abilities
         private Coroutine _reFire;
         private float _curLifeTime;
         [SerializeField] protected AbilityStats abilityStats;
+        public bool IsAnimationBound => abilityStats.IisAnimationBound;
+        public bool IsFullyAutomatic => abilityStats.FullyAutomatic;
 
         public void Begin()
         {
@@ -25,6 +27,12 @@ namespace Abilities
                 Execute();
             }
         }
+
+        public void UseInstant()
+        {
+            if(CanBeUsed()) Execute();
+        }
+
         public void End()
         {
             //at the end of our left click

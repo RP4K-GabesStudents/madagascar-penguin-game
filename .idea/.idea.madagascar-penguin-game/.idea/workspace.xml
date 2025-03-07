@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbdf07ff-7e02-4436-91c3-f19a84f260b6" name="Changes" comment="" />
+    <list default="true" id="dbdf07ff-7e02-4436-91c3-f19a84f260b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Penguin Prefabs/Private.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Penguin Prefabs/Private.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/AbilityStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/AbilityStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/BaseWeaponGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/BaseWeaponGun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/penguin/BasePenguinFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/penguin/BasePenguinFile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/penguin/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/penguin/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +46,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.34f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.40f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\gabek\Documents\madagascar-penguin-game -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\gabek\Documents\madagascar-penguin-game" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -45,7 +54,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.34f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.40f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\gabek\Documents\madagascar-penguin-game -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\gabek\Documents\madagascar-penguin-game" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -90,6 +99,8 @@
       <workItem from="1738890902759" duration="2013000" />
       <workItem from="1739234284533" duration="1702000" />
       <workItem from="1739462922207" duration="8202000" />
+      <workItem from="1741306065281" duration="6000" />
+      <workItem from="1741306083782" duration="778000" />
     </task>
     <servers />
   </component>

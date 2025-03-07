@@ -15,7 +15,7 @@ namespace penguin
 
         protected virtual void Awake()
         {
-            _ikController = GetComponent<IKController>();
+            _ikController = GetComponentInChildren<IKController>();
             _animator = GetComponent<Animator>();
         }
 

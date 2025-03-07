@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 33f834086ee38314bb3f77fcf5c17845, type: 2}
+  m_Material: {fileID: 2100000, guid: 31b1560639e6cb54d9449116f53d6ff8, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 0.9
-  m_StartAngleFade: 180
-  m_EndAngleFade: 180
+  m_StartAngleFade: 178.18182
+  m_EndAngleFade: 178.18182
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 1
@@ -4896,7 +4896,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59f2d48c3aaaebe48b76a800ed1c3971, type: 2}
+  - {fileID: 2100000, guid: 09ca97378b9b74f4ab5d33c8b6e17e0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9787,7 +9787,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59f2d48c3aaaebe48b76a800ed1c3971, type: 2}
+  - {fileID: 2100000, guid: 09ca97378b9b74f4ab5d33c8b6e17e0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

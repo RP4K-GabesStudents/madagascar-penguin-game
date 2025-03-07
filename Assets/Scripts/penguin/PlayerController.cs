@@ -4,6 +4,7 @@ using Interfaces;
 using Managers;
 using Scriptable_Objects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace penguin
 {
@@ -12,7 +13,7 @@ namespace penguin
     {
         [SerializeField] private BaseWeaponGun initialWeapon;
         [SerializeField]PenguinStats penguinStats;
-        private ProjectileStats _projectileStats;
+        [SerializeField] private ProjectileStats projectileStats;
         private Rigidbody _rigidbody;
         private Vector3 _curMoveDir;
         private Vector2 _curLookDir;
@@ -127,8 +128,7 @@ namespace penguin
         {
             if (!penguinStats.CanShootLaser) yield break;
             
-            
-            yield return new WaitForSeconds(_projectileStats.AbilityTime);
+            yield return new WaitForSeconds(projectileStats.AbilityTime);
             penguinStats.CanShootLaser = false;
         }
 

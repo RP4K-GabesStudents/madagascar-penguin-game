@@ -541,8 +541,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3442508525791747114}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.00575729, z: 0, w: 0.99998343}
-  m_LocalPosition: {x: 0.17733335, y: 0.3708, z: -0.40000004}
+  m_LocalRotation: {x: 0, y: -0.005757295, z: 0, w: 0.99998343}
+  m_LocalPosition: {x: 0.17733352, y: 0.3708, z: -0.40000027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1085,8 +1085,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871b1147bf0847318e46dcde1c9790ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialWeapon: {fileID: 0}
+  initialWeapon: {fileID: 6610911385964071678}
   penguinStats: {fileID: 11400000, guid: 7832a7955506a3b4996d0f1f9c99eb23, type: 2}
+  projectileStats: {fileID: 11400000, guid: c74be141ca88ae944bd05fbbee94c506, type: 2}
   laserSpawn: {fileID: 2992385712287415840}
   laserSpawn2: {fileID: 146384945996191562}
   attackLocation: {fileID: 4509135234415271963}
@@ -1130,6 +1131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4558234484960433860}
+  - component: {fileID: 6610911385964071678}
   m_Layer: 3
   m_Name: mixamorig:Head
   m_TagString: Untagged
@@ -1155,6 +1157,20 @@ Transform:
   - {fileID: 146384945996191562}
   m_Father: {fileID: 737321218293414344}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6610911385964071678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268938692238071021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1dd3927d534ce68d1b6170752bdb41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityStats: {fileID: 11400000, guid: 47de17e672fe00040af4db32960f88f0, type: 2}
+  laser: {fileID: 3565419479365447142, guid: 7dcdc60e43c760240929b476ee07bd6f, type: 3}
 --- !u!1 &5079929067530735244
 GameObject:
   m_ObjectHideFlags: 0

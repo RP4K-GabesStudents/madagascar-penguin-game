@@ -1,12 +1,13 @@
 using System;
 using Managers;
+using Unity.Netcode;
 using UnityEngine;
 using Utilities;
 
 namespace penguin
 {
     [SelectionBase]
-    public abstract class BasePenguinFile : MonoBehaviour
+    public abstract class BasePenguinFile : NetworkBehaviour
     {
         public abstract float GetHorizontalSpeed();
         protected IKController _ikController;

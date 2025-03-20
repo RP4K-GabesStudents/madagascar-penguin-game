@@ -20,6 +20,7 @@ namespace Scriptable_Objects
         [SerializeField] private float maxAttackDist;
         [SerializeField] private float knockbackPower;
         [SerializeField] private bool canShootLaser;
+        
 
 
         public float Hp => hp;

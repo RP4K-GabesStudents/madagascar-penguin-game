@@ -3,6 +3,7 @@ using Abilities;
 using Interfaces;
 using Managers;
 using Scriptable_Objects;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -95,6 +96,8 @@ namespace penguin
         }
         private void Update()
         {
+            if (!IsOwner) return;
+            
             if (penguinStats.Speed >= penguinStats.SpeedLimit) penguinStats.Speed = penguinStats.SpeedLimit;
         }
         public void Jump(bool readValueAsButton)
@@ -146,6 +149,12 @@ namespace penguin
         {
             _animator.SetTrigger(StaticUtilities.InteractAnimID);
         }
+
+        private void CheckForInteractable()
+        {
+            //Physics.SphereCast(transform.position, );
+        }
+
         public void SetMoveDirection(Vector3 moveDirection)
         {
             _curMoveDir = moveDirection;

@@ -2,14 +2,15 @@ using System;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Network
 {
     public class UIManager : MonoBehaviour
     {
-        [SerializeField] Button _hostButton;
-        [SerializeField] Button _joinButton;
+        [SerializeField] Button hostButton;
+        [SerializeField] Button joinButton;
         
         [SerializeField] public TMP_InputField nameInputField;
     }

@@ -15,10 +15,12 @@ namespace penguin
         [SerializeField] private BaseWeaponGun initialWeapon;
         [SerializeField]PenguinStats penguinStats;
         [SerializeField] private ProjectileStats projectileStats;
+        [SerializeField] private MorePenguinStats morePenguinStats;
         private Rigidbody _rigidbody;
         private Vector3 _curMoveDir;
         private Vector2 _curLookDir;
         private float _curHealth;
+        private IInteractable _interactable;
         [SerializeField] public Transform laserSpawn;
         [SerializeField] public Transform laserSpawn2;
         [SerializeField]private Transform attackLocation;
@@ -97,8 +99,8 @@ namespace penguin
         private void Update()
         {
             if (!IsOwner) return;
-            
             if (penguinStats.Speed >= penguinStats.SpeedLimit) penguinStats.Speed = penguinStats.SpeedLimit;
+            CheckForInteractable();
         }
         public void Jump(bool readValueAsButton)
         {
@@ -148,11 +150,33 @@ namespace penguin
         public void Interact(bool readValueAsButton)
         {
             _animator.SetTrigger(StaticUtilities.InteractAnimID);
+            _interactable?.OnInteract();
+            Debug.Log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
         }
 
         private void CheckForInteractable()
         {
-            //Physics.SphereCast(transform.position, );
+            
+            bool interactHit = Physics.SphereCast(transform.position, morePenguinStats.InteractRadius, headXRotator.forward, out RaycastHit hitInfo, morePenguinStats.InteractDistance, morePenguinStats.InteractLayer);
+            if (interactHit)
+            {
+                Rigidbody rb = hitInfo.rigidbody;
+                if (rb && rb.TryGetComponent(out IInteractable interactable))
+                {
+                    HandleInteract(interactable);
+                    return;
+                }
+            }
+            HandleInteract(null);
+        }
+
+        private void HandleInteract(IInteractable interactable)
+        {
+            if (_interactable == interactable) return;
+            
+            _interactable?.OnHoverEnd();
+            interactable?.OnHover();
+            _interactable = interactable;
         }
 
         public void SetMoveDirection(Vector3 moveDirection)

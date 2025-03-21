@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5084ad620120447b1a7df53a76c32a, type: 3}
   m_Name: PenguinSettings
   m_EditorClassIdentifier: 
+  interactRadius: 0.1
+  interactDistance: 4
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 1

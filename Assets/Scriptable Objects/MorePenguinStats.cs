@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Scriptable_Objects
@@ -7,5 +8,10 @@ namespace Scriptable_Objects
     {
         [SerializeField] private float interactRadius;
         [SerializeField] private float interactDistance;
+        [SerializeField] private LayerMask interactLayer;
+        
+        public float InteractRadius => interactRadius;
+        public float InteractDistance => interactDistance;
+        public LayerMask InteractLayer => interactLayer;
     }
 }

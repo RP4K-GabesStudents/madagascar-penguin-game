@@ -2,21 +2,23 @@ using UnityEngine;
 
 public static class PlayerControls
 {
-   private static GameControls _gameControls = new GameControls();
+   private static readonly GameControls gameControls = new GameControls();
    private static Player _penguin;
    private static bool _isPenguinBound;
+   
+   public static GameControls GameControls => gameControls;
 
    public static void BindPlayer(Player penguin)
    {
       if(!_isPenguinBound)
       {
-         _gameControls.Player.Attack.performed += ctx => _penguin.Attack(ctx.ReadValueAsButton());
-         _gameControls.Player.Sliding.performed += ctx => _penguin.Sliding(ctx.ReadValueAsButton());
-         _gameControls.Player.Interact.performed += ctx => _penguin.Interact(ctx.ReadValueAsButton());
-         _gameControls.Player.Jump.performed += ctx => _penguin.Jump(ctx.ReadValueAsButton());
-         _gameControls.Player.Sprint.performed += ctx => _penguin.Sprint(ctx.ReadValueAsButton());
-         _gameControls.Player.Move.performed += ctx => _penguin.SetMoveDirection(ctx.ReadValue<Vector2>());
-         _gameControls.Player.Look.performed += ctx => _penguin.Look(ctx.ReadValue<Vector2>());
+         GameControls.Player.Attack.performed += ctx => _penguin.Attack(ctx.ReadValueAsButton());
+         GameControls.Player.Sliding.performed += ctx => _penguin.Sliding(ctx.ReadValueAsButton());
+         GameControls.Player.Interact.performed += ctx => _penguin.Interact(ctx.ReadValueAsButton());
+         GameControls.Player.Jump.performed += ctx => _penguin.Jump(ctx.ReadValueAsButton());
+         GameControls.Player.Sprint.performed += ctx => _penguin.Sprint(ctx.ReadValueAsButton());
+         GameControls.Player.Move.performed += ctx => _penguin.SetMoveDirection(ctx.ReadValue<Vector2>());
+         GameControls.Player.Look.performed += ctx => _penguin.Look(ctx.ReadValue<Vector2>());
       }
 
       _isPenguinBound = true;
@@ -30,7 +32,7 @@ public static class PlayerControls
 
    public static void EnableGame()
    {
-      _gameControls.Player.Enable();
+      GameControls.Player.Enable();
       Cursor.lockState = CursorLockMode.Confined;
       Cursor.visible = false;
       

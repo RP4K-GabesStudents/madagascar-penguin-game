@@ -3,6 +3,7 @@ using Abilities;
 using Interfaces;
 using Managers;
 using Scriptable_Objects;
+using Scriptable_Objects.Penguin_Stats;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;

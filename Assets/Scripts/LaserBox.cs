@@ -1,5 +1,6 @@
 using System;
 using Scriptable_Objects;
+using Scriptable_Objects.Penguin_Stats;
 using UnityEngine;
 using UnityEngine.Serialization;
 

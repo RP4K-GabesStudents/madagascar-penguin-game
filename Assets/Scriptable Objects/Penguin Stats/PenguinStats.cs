@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Scriptable_Objects
+namespace Scriptable_Objects.Penguin_Stats
 {
     [CreateAssetMenu(fileName = "PenguinStats", menuName = "Scriptable Objects/PenguinStats")]
     public class PenguinStats : ScriptableObject

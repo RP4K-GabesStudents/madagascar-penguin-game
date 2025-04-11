@@ -16,10 +16,10 @@ namespace Inventory
             return item;
         }
         
-        public void SetItem(ItemStats item)
+        public void SetItem(ItemStats itemm)
         {
-            this.item = item;
-            image.sprite = item.Icon;
+            this.item = itemm;
+            image.sprite = itemm.Icon;
         }
         
         public void RemoveItem()

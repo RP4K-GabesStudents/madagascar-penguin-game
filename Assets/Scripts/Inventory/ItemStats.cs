@@ -1,9 +1,10 @@
+using Scriptable_Objects;
 using UnityEngine;
 
 namespace Inventory
 {
     [CreateAssetMenu(fileName = "ItemStats", menuName = "Scriptable Objects/ItemStats")]
-    public class ItemStats : ScriptableObject
+    public class ItemStats : HoverInfoStats
     {
         //[SerializeField] make enum rarity homework
         [SerializeField] private Sprite icon;

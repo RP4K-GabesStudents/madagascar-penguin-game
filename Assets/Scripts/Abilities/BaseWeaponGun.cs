@@ -1,4 +1,5 @@
 using System.Collections;
+using Interfaces;
 using penguin;
 using UnityEngine;
 
@@ -75,5 +76,6 @@ namespace Abilities
             }
             return _curLifeTime / abilityStats.LifeTime;
         }
+        
     }
 }

@@ -175,8 +175,8 @@ namespace penguin
         {
             if (_interactable == interactable) return;
             
-            _interactable?.OnHoverEnd();
-            interactable?.OnHover();
+            _interactable?.OnHoverEndDriver();
+            interactable?.OnHoverDriver();
             _interactable = interactable;
         }
 

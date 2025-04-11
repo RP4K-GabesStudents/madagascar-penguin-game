@@ -5,7 +5,6 @@ namespace penguin.Weapons
 {
     public class Weapon : BaseWeaponGun
     {
-        
         public override void Execute()
         {
             

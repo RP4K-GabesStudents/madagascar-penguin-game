@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbdf07ff-7e02-4436-91c3-f19a84f260b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Penguin Prefabs/Private.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Penguin Prefabs/Private.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/ItemSlot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/ItemSlot.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/AbilityStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/AbilityStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abilities/BaseWeaponGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abilities/BaseWeaponGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/penguin/BasePenguinFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/penguin/BasePenguinFile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/penguin/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/penguin/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/ITEM SLOT.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ITEM SLOT.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,9 @@
       <option name="WORKING_DIRECTORY" value="C:\Users\gabek\Documents\madagascar-penguin-game" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
@@ -59,6 +62,9 @@
       <option name="WORKING_DIRECTORY" value="C:\Users\gabek\Documents\madagascar-penguin-game" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -72,6 +78,7 @@
       <option name="selectedOptions">
         <list />
       </option>
+      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -85,6 +92,7 @@
       <option name="selectedOptions">
         <list />
       </option>
+      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -101,6 +109,8 @@
       <workItem from="1739462922207" duration="8202000" />
       <workItem from="1741306065281" duration="6000" />
       <workItem from="1741306083782" duration="778000" />
+      <workItem from="1744912321016" duration="149000" />
+      <workItem from="1744920023709" duration="1198000" />
     </task>
     <servers />
   </component>
@@ -116,5 +126,23 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

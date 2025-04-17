@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cd938c6a8cd4ea4abd122ae62d04537, type: 3}
-  m_Name: AxeItemStats
+  m_Name: BronzeSpearItemStats
   m_EditorClassIdentifier: 
-  hoverInfoName: '{input} Pick Up The Great Night Axe Of Calador, Description: This
-    axe was created by the holy knight calador during the dead of night on a stormy
-    day.'
-  icon: {fileID: 21300000, guid: d01b4e32f9f5eeb449cc97f4c124a75c, type: 3}
+  hoverInfoName: '{input}'
+  icon: {fileID: 21300000, guid: e79ea62d32378824b93d886ae217aff8, type: 3}
   cost: 0
   itemLimit: 0
-  itemPrefab: {fileID: 1376943551456142258, guid: 65c828d46595e164cbbe986a4d46365e, type: 3}
+  itemPrefab: {fileID: 2072887675658300981, guid: a7773d391f0b9a04c98d63b2f5baa1b7, type: 3}

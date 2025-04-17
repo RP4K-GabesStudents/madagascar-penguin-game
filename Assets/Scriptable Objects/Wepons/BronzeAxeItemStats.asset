@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd938c6a8cd4ea4abd122ae62d04537, type: 3}
+  m_Name: BronzeAxeItemStats
+  m_EditorClassIdentifier: 
+  hoverInfoName: '{input} Pick Up The Bronze Night Axe Of Calador, Description: This
+    axe was created by the holy knight calador during the dead of night on a stormy
+    day.'
+  icon: {fileID: 21300000, guid: ef2301b5f78cf96488be43c101d4b9e0, type: 3}
+  cost: 0
+  itemLimit: 0
+  itemPrefab: {fileID: 1696078913831865888, guid: ca00d72cb50626247836994f1a1c218e, type: 3}

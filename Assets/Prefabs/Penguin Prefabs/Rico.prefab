@@ -956,8 +956,8 @@ GameObject:
   - component: {fileID: 4826431364935610379}
   - component: {fileID: 6882765092851807842}
   - component: {fileID: 4207086333073876949}
-  - component: {fileID: 3084935034024449996}
   - component: {fileID: -5779029309563958466}
+  - component: {fileID: 3084935034024449996}
   - component: {fileID: 1607202073252323997}
   - component: {fileID: 6024029541572446011}
   - component: {fileID: -8401715746559295906}
@@ -1047,33 +1047,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e27669a516c0f44999247e52a320c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3084935034024449996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6695135885744906461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 871b1147bf0847318e46dcde1c9790ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialWeapon: {fileID: 0}
-  penguinStats: {fileID: 11400000, guid: 10838432c5017174db70f3d6afa50091, type: 2}
-  projectileStats: {fileID: 0}
-  laserSpawn: {fileID: 0}
-  laserSpawn2: {fileID: 0}
-  attackLocation: {fileID: 0}
-  headProxy: {fileID: 0}
-  headBone: {fileID: 0}
-  rotationAnimationSpeed: 0
-  animationReturnSpeed: 0
-  rotationAnimationThreshold: 0
-  headXRotator: {fileID: 0}
-  bodyYRotator: {fileID: 0}
-  rotationSpeed: 0
-  pitchLimit: 0
 --- !u!114 &-5779029309563958466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1099,6 +1072,35 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &3084935034024449996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6695135885744906461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871b1147bf0847318e46dcde1c9790ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  initialWeapon: {fileID: 0}
+  penguinStats: {fileID: 11400000, guid: 10838432c5017174db70f3d6afa50091, type: 2}
+  projectileStats: {fileID: 0}
+  morePenguinStats: {fileID: 0}
+  laserSpawn: {fileID: 0}
+  laserSpawn2: {fileID: 0}
+  attackLocation: {fileID: 0}
+  headProxy: {fileID: 0}
+  headBone: {fileID: 0}
+  rotationAnimationSpeed: 0
+  animationReturnSpeed: 0
+  rotationAnimationThreshold: 0
+  headXRotator: {fileID: 0}
+  bodyYRotator: {fileID: 0}
+  rotationSpeed: 0
+  pitchLimit: 0
 --- !u!114 &1607202073252323997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,6 +1115,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   NetworkTransformExpanded: 0
+  AutoOwnerAuthorityTickOffset: 1
+  PositionInterpolationType: 0
+  RotationInterpolationType: 0
+  ScaleInterpolationType: 0
+  PositionLerpSmoothing: 1
+  PositionMaxInterpolationTime: 0.1
+  RotationLerpSmoothing: 1
+  RotationMaxInterpolationTime: 0.1
+  ScaleLerpSmoothing: 1
+  ScaleMaxInterpolationTime: 0.1
   AuthorityMode: 0
   TickSyncChildren: 0
   UseUnreliableDeltas: 0

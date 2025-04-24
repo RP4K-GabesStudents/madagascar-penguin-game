@@ -9,15 +9,12 @@ namespace Network
 {
     public class ClientPlayerMove : NetworkBehaviour
     {
-        [SerializeField] private PlayerInput playerInput;
-        [SerializeField] private PlayerController playerController;
-        [SerializeField] private Player player;
-     
+        [SerializeField] private MonoBehaviour[] ownershipRequiredComponents;
+        
         private void Awake()
         {
-            playerInput.enabled = false;
-            playerController.enabled = false;
-            player.enabled = false;
+            foreach(MonoBehaviour mb in ownershipRequiredComponents)
+                mb.enabled = false;
         }
 
         public override void OnNetworkSpawn()
@@ -25,9 +22,8 @@ namespace Network
             base.OnNetworkSpawn();
             if (IsOwner)
             {
-                playerController.enabled = true;
-                playerInput.enabled = true;
-                player.enabled = true;
+                foreach(MonoBehaviour mb in ownershipRequiredComponents)
+                    mb.enabled = true;
             }
         }
     }

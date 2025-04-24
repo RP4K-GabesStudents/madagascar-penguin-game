@@ -555,7 +555,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3442508525791747114}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
   m_Name: 
@@ -1305,9 +1305,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  playerInput: {fileID: 4415416989196722085}
-  playerController: {fileID: 6426254094199630524}
-  player: {fileID: 6867379200517847713}
+  ownershipRequiredComponents:
+  - {fileID: 4415416989196722085}
+  - {fileID: 6426254094199630524}
+  - {fileID: 6867379200517847713}
+  - {fileID: 2791427860312006504}
 --- !u!114 &4415416989196722085
 MonoBehaviour:
   m_ObjectHideFlags: 0

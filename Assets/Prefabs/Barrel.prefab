@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 6193662554855791363}
   - component: {fileID: 6879626274371511479}
   - component: {fileID: 8656565463898720552}
-  m_Layer: 0
+  - component: {fileID: 6075997782672216990}
+  m_Layer: 10
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,3 +198,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable: {fileID: 11400000, guid: b5d327c4ee6b25142b989c3624f2dfca, type: 2}
+--- !u!208 &6075997782672216990
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8526547220495747857}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.11

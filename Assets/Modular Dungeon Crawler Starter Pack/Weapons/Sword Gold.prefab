@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1436908791190693265}
+  - component: {fileID: 5909586936510528074}
   - component: {fileID: 1164337936940688547}
   - component: {fileID: 3318412059549177692}
   - component: {fileID: 8018842745396997835}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sword Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +36,31 @@ Transform:
   - {fileID: 8317377488794479969}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5909586936510528074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234453661874173842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1698926451
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &1164337936940688547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   abilityStats: {fileID: 11400000, guid: 08cd7e3087a00ca48861481edab482f7, type: 2}
 --- !u!114 &3318412059549177692
 MonoBehaviour:
@@ -96,9 +123,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1436908791190693265}
     m_Modifications:
+    - target: {fileID: 1198020945419507846, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225571782661807411, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261139034365424911, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4083115748105137250, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
       propertyPath: m_Name
       value: m_sword_a_hilt
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083115748105137250, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917177640573630393, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065555875422073106, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771476957195176133, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7936494138625967313, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
       propertyPath: m_LocalPosition.x

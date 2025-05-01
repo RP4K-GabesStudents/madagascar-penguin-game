@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3261943901048608801}
+  - component: {fileID: 45727257025050381}
   - component: {fileID: 4736320716880079485}
   - component: {fileID: 4915276921851150319}
   - component: {fileID: 7270249090517280228}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dagger Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,6 +41,31 @@ Transform:
   - {fileID: 7346417239773412248}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &45727257025050381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8815454970423898037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1040991483
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &4736320716880079485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   abilityStats: {fileID: 11400000, guid: 2160f6961e8e87145b6d42d89a50e37c, type: 2}
 --- !u!114 &4915276921851150319
 MonoBehaviour:
@@ -104,6 +131,10 @@ PrefabInstance:
     - target: {fileID: 5405907838407411009, guid: f2dc097e72a93b04bb0659f31e44c5b8, type: 3}
       propertyPath: m_Name
       value: m_staff_a_head
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405907838407411009, guid: f2dc097e72a93b04bb0659f31e44c5b8, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8626579030863708925, guid: f2dc097e72a93b04bb0659f31e44c5b8, type: 3}
       propertyPath: m_LocalScale.x
@@ -178,6 +209,10 @@ PrefabInstance:
     - target: {fileID: 3209080234424625758, guid: 74e65d50994ff634e92a6214ba24185e, type: 3}
       propertyPath: m_Name
       value: m_dagger_a_head
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209080234424625758, guid: 74e65d50994ff634e92a6214ba24185e, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8807669837651478618, guid: 74e65d50994ff634e92a6214ba24185e, type: 3}
       propertyPath: m_LocalScale.x
@@ -289,6 +324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_dagger_a_hilt
       objectReference: {fileID: 0}
+    - target: {fileID: 7785306179399339449, guid: cd3f99e3d81a4f043b7c3163178e4580, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -310,6 +349,10 @@ PrefabInstance:
     - target: {fileID: 3713900795435639518, guid: 657e832fc3b13664bbe1db7e133b7c3c, type: 3}
       propertyPath: m_Name
       value: m_dagger_a_guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713900795435639518, guid: 657e832fc3b13664bbe1db7e133b7c3c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7391930508678005227, guid: 657e832fc3b13664bbe1db7e133b7c3c, type: 3}
       propertyPath: m_LocalScale.x
@@ -385,6 +428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_staff_c_pommel
       objectReference: {fileID: 0}
+    - target: {fileID: 220143239737131495, guid: 00a266b99801d494aaa113a61b0ea6f3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7644680959133336239, guid: 00a266b99801d494aaa113a61b0ea6f3, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.90771
@@ -450,6 +497,10 @@ PrefabInstance:
     - target: {fileID: 5076567286354113251, guid: c0cdda2b10701174fbe666023c31f395, type: 3}
       propertyPath: m_Name
       value: m_dagger_a_hilt_wraps
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076567286354113251, guid: c0cdda2b10701174fbe666023c31f395, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8837975190695867327, guid: c0cdda2b10701174fbe666023c31f395, type: 3}
       propertyPath: m_LocalPosition.x

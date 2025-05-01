@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2948516948094563034}
   - component: {fileID: 4957417091116949468}
   - component: {fileID: 3756280296309692265}
+  - component: {fileID: 3290318766851009981}
   - component: {fileID: 358303763575753507}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sword Cobalt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,6 +85,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemStats: {fileID: 11400000, guid: a2674cd768250f84a9a58b95041d1418, type: 2}
+--- !u!114 &3290318766851009981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247142655523718202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3663750434
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &358303763575753507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   abilityStats: {fileID: 11400000, guid: 5ee8dfbc33d84994c919ff4095e36def, type: 2}
 --- !u!1001 &620095027898644169
 PrefabInstance:
@@ -108,6 +135,10 @@ PrefabInstance:
     - target: {fileID: 234860743533137685, guid: 81046487bc8140c459b7c8e5758aedad, type: 3}
       propertyPath: m_Name
       value: m_sword_a_guard_prongs
+      objectReference: {fileID: 0}
+    - target: {fileID: 234860743533137685, guid: 81046487bc8140c459b7c8e5758aedad, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5873036902363079180, guid: 81046487bc8140c459b7c8e5758aedad, type: 3}
       propertyPath: m_LocalScale.x
@@ -183,6 +214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_staff_a_head (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3961890233359581602, guid: 032d71214168cc1449d2773781db552c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6792382638351879986, guid: 032d71214168cc1449d2773781db552c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.23102
@@ -257,6 +292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_spear_a_guard_bars
       objectReference: {fileID: 0}
+    - target: {fileID: 5006957403237721266, guid: 1d03a6414d61eb04a922e2a0f1b2e961, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5765464568100397039, guid: 1d03a6414d61eb04a922e2a0f1b2e961, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.3654346
@@ -330,6 +369,10 @@ PrefabInstance:
     - target: {fileID: 6966787696497520580, guid: e2bea9e8a24ea5242aa28b34b5cb4099, type: 3}
       propertyPath: m_Name
       value: m_sword_a_pommel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966787696497520580, guid: e2bea9e8a24ea5242aa28b34b5cb4099, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8568329424752393276, guid: e2bea9e8a24ea5242aa28b34b5cb4099, type: 3}
       propertyPath: m_LocalPosition.x
@@ -437,6 +480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_sword_a_guard
       objectReference: {fileID: 0}
+    - target: {fileID: 6285747551883077943, guid: 768fb4b7de3021844bfeb7fb818a36cf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -499,6 +546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_sword_a_hilt
       objectReference: {fileID: 0}
+    - target: {fileID: 2933812051065045214, guid: 0e88f40971230c24c9994794b139030e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -520,6 +571,10 @@ PrefabInstance:
     - target: {fileID: 5830977887395972436, guid: 7c3f760165f3c4b47b00c6f7cf2494da, type: 3}
       propertyPath: m_Name
       value: m_sword_a_guard_plug
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830977887395972436, guid: 7c3f760165f3c4b47b00c6f7cf2494da, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6739238133518832659, guid: 7c3f760165f3c4b47b00c6f7cf2494da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -582,6 +637,10 @@ PrefabInstance:
     - target: {fileID: 234860743533137685, guid: 81046487bc8140c459b7c8e5758aedad, type: 3}
       propertyPath: m_Name
       value: m_sword_a_guard_prongs
+      objectReference: {fileID: 0}
+    - target: {fileID: 234860743533137685, guid: 81046487bc8140c459b7c8e5758aedad, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5873036902363079180, guid: 81046487bc8140c459b7c8e5758aedad, type: 3}
       propertyPath: m_LocalScale.x
@@ -709,6 +768,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_sword_a_head
       objectReference: {fileID: 0}
+    - target: {fileID: 7610939965085808491, guid: 7512d9f240a7495498b8f1320a7875ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -730,6 +793,10 @@ PrefabInstance:
     - target: {fileID: 3961890233359581602, guid: 032d71214168cc1449d2773781db552c, type: 3}
       propertyPath: m_Name
       value: m_staff_a_head
+      objectReference: {fileID: 0}
+    - target: {fileID: 3961890233359581602, guid: 032d71214168cc1449d2773781db552c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6792382638351879986, guid: 032d71214168cc1449d2773781db552c, type: 3}
       propertyPath: m_LocalScale.x

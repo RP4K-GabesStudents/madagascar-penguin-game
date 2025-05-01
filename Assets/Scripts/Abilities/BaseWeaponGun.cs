@@ -1,11 +1,12 @@
 using System.Collections;
 using Interfaces;
 using penguin;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace Abilities
 {
-    public abstract class BaseWeaponGun : MonoBehaviour
+    public abstract class BaseWeaponGun : NetworkBehaviour
     {
         protected PlayerController _oner;
         protected Animator _animator;

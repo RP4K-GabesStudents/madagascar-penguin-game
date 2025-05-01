@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 959900376921668651}
   - component: {fileID: 8691399717189009814}
   - component: {fileID: 2072887675658300981}
+  - component: {fileID: 3141260838712319078}
   - component: {fileID: 3899261762957403470}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spear Bronze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,6 +86,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemStats: {fileID: 11400000, guid: 42fc3c3e6cac44a4fb3d27da0e9cc530, type: 2}
+--- !u!114 &3141260838712319078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2723844548071434072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3744514586
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &3899261762957403470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   abilityStats: {fileID: 11400000, guid: 1fb114205b4e70d4482ef1d2f45bb117, type: 2}
 --- !u!1001 &1795211685487952266
 PrefabInstance:
@@ -150,6 +177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_staff_b_wraps_2
       objectReference: {fileID: 0}
+    - target: {fileID: 7972321540280886673, guid: ccb37c73bb5e971449dd73b1f1be0ceb, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -171,6 +202,10 @@ PrefabInstance:
     - target: {fileID: 3276315621483599557, guid: 0c5095fab68d54a4690259263aa16c9b, type: 3}
       propertyPath: m_Name
       value: m_spear_a_guard_bars
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276315621483599557, guid: 0c5095fab68d54a4690259263aa16c9b, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5561076462873120444, guid: 0c5095fab68d54a4690259263aa16c9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -233,6 +268,10 @@ PrefabInstance:
     - target: {fileID: 2980687565430230316, guid: f6b92123942722b4392b9402adddd662, type: 3}
       propertyPath: m_Name
       value: m_axe_a_head (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980687565430230316, guid: f6b92123942722b4392b9402adddd662, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7415732130706695945, guid: f6b92123942722b4392b9402adddd662, type: 3}
       propertyPath: m_LocalPosition.x
@@ -336,6 +375,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_staff_b_wraps_2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7972321540280886673, guid: ccb37c73bb5e971449dd73b1f1be0ceb, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -410,6 +453,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_sword_a_pommel
       objectReference: {fileID: 0}
+    - target: {fileID: 8691198704478450319, guid: d590217c0b951544cb9a76dce4546a6e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -472,6 +519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_staff_b_wraps_2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7972321540280886673, guid: ccb37c73bb5e971449dd73b1f1be0ceb, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -493,6 +544,10 @@ PrefabInstance:
     - target: {fileID: 538240968260375426, guid: c320a40a7d18ef24a911e40a5b65e7bc, type: 3}
       propertyPath: m_Name
       value: m_staff_a_hilt
+      objectReference: {fileID: 0}
+    - target: {fileID: 538240968260375426, guid: c320a40a7d18ef24a911e40a5b65e7bc, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3247198328332052485, guid: c320a40a7d18ef24a911e40a5b65e7bc, type: 3}
       propertyPath: m_LocalScale.x
@@ -616,6 +671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_sword_a_pommel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8691198704478450319, guid: d590217c0b951544cb9a76dce4546a6e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -637,6 +696,10 @@ PrefabInstance:
     - target: {fileID: 2980687565430230316, guid: f6b92123942722b4392b9402adddd662, type: 3}
       propertyPath: m_Name
       value: m_axe_a_head
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980687565430230316, guid: f6b92123942722b4392b9402adddd662, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7415732130706695945, guid: f6b92123942722b4392b9402adddd662, type: 3}
       propertyPath: m_LocalPosition.x
@@ -699,6 +762,10 @@ PrefabInstance:
     - target: {fileID: 3276315621483599557, guid: 0c5095fab68d54a4690259263aa16c9b, type: 3}
       propertyPath: m_Name
       value: m_spear_a_guard_bars (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276315621483599557, guid: 0c5095fab68d54a4690259263aa16c9b, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5561076462873120444, guid: 0c5095fab68d54a4690259263aa16c9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -801,6 +868,10 @@ PrefabInstance:
     - target: {fileID: 7972321540280886673, guid: ccb37c73bb5e971449dd73b1f1be0ceb, type: 3}
       propertyPath: m_Name
       value: m_staff_b_wraps_2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972321540280886673, guid: ccb37c73bb5e971449dd73b1f1be0ceb, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

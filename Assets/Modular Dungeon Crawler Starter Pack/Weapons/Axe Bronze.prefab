@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5965885046203902214}
   - component: {fileID: 7873614102368489327}
+  - component: {fileID: 5179368479276666479}
   - component: {fileID: 1628931720161503678}
   - component: {fileID: 1696078913831865888}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Axe Bronze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,6 +67,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5179368479276666479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928946474527391934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3686030708
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &1628931720161503678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   abilityStats: {fileID: 11400000, guid: 8e57926fed03dba4191837e5dcfaa628, type: 2}
 --- !u!114 &1696078913831865888
 MonoBehaviour:
@@ -144,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_axe_a_hilt
       objectReference: {fileID: 0}
+    - target: {fileID: 5802170607590715601, guid: e8091be726d84e34bbb053ee703f2bfd, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -165,6 +196,10 @@ PrefabInstance:
     - target: {fileID: 2980687565430230316, guid: f6b92123942722b4392b9402adddd662, type: 3}
       propertyPath: m_Name
       value: m_axe_a_head
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980687565430230316, guid: f6b92123942722b4392b9402adddd662, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7415732130706695945, guid: f6b92123942722b4392b9402adddd662, type: 3}
       propertyPath: m_LocalPosition.x
@@ -268,6 +303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_axe_a_guard_bolt
       objectReference: {fileID: 0}
+    - target: {fileID: 9076263251660592794, guid: a1ad908be2c8ec64e8f11ce84ccac995, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -289,6 +328,10 @@ PrefabInstance:
     - target: {fileID: 320650816868161311, guid: 0fa67746dab62fa4e95124d2ae337e73, type: 3}
       propertyPath: m_Name
       value: m_axe_a_guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 320650816868161311, guid: 0fa67746dab62fa4e95124d2ae337e73, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3170460263303465355, guid: 0fa67746dab62fa4e95124d2ae337e73, type: 3}
       propertyPath: m_LocalPosition.x
@@ -351,6 +394,10 @@ PrefabInstance:
     - target: {fileID: 463243502409056716, guid: 2433d05a2b75bf146b0cf8cd4121f8dd, type: 3}
       propertyPath: m_Name
       value: m_axe_a_guard_block
+      objectReference: {fileID: 0}
+    - target: {fileID: 463243502409056716, guid: 2433d05a2b75bf146b0cf8cd4121f8dd, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1462410099388515396, guid: 2433d05a2b75bf146b0cf8cd4121f8dd, type: 3}
       propertyPath: m_LocalPosition.x

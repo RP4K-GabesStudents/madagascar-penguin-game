@@ -2,30 +2,41 @@ using System;
 using Interfaces;
 using Scriptable_Objects;
 using Unity.Mathematics;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Objects
 {
-    public class Laser : MonoBehaviour
+    public class Laser : NetworkBehaviour
     {
         [SerializeField]private ProjectileStats laserStats;
         [SerializeField]private new Rigidbody rigidbody;
         private GameObject _oner;
         [SerializeField] private GameObject laserSpark;
-        public void Init(GameObject oner)
+        private NetworkObject _networkObject;
+        private int _targetLayers;
+
+        private void Awake()
         {
-            _oner = oner; 
+            _networkObject = GetComponent<NetworkObject>();
+        }
+
+        public void Init(int targetLayers, ulong onerId)
+        {
+            _targetLayers = targetLayers;
+            _networkObject.SpawnWithOwnership(onerId);
             Destroy(gameObject, 3);
             rigidbody.AddForce(transform.forward * laserStats.Speed, ForceMode.Impulse);
+            
         }
         private void OnTriggerEnter(Collider other)
         {
             Rigidbody hitInfoRigidbody = other.attachedRigidbody;
             if (hitInfoRigidbody != null)
             {
-                Debug.Log("aaaa" + hitInfoRigidbody.gameObject.name + ", " + _oner.name);
-                if (hitInfoRigidbody.gameObject == _oner) return;
+                
+                if ((1 << hitInfoRigidbody.gameObject.layer & _targetLayers) == 0) return;
                 
                 if (hitInfoRigidbody.TryGetComponent(out IDamageable damageable))
                 {
@@ -33,8 +44,11 @@ namespace Objects
                 }
             }
             bool hit = Physics.Raycast(transform.position + transform.forward * -0.25f, transform.forward, out RaycastHit hitInfo, 0.5f);
-            GameObject t = Instantiate(laserSpark, hitInfo.point, Quaternion.LookRotation(hitInfo.normal), other.transform);
-            Destroy(t, 5);
+            if (hit)
+            {
+                GameObject t = Instantiate(laserSpark, hitInfo.point, Quaternion.LookRotation(hitInfo.normal), hitInfo.transform);
+                Destroy(t, 5);
+            }
             Destroy(gameObject);
         }
     }

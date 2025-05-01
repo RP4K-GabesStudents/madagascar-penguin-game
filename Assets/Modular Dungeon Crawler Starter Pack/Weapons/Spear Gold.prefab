@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6159281728721702201}
   - component: {fileID: 6457358767466101596}
   - component: {fileID: 1106465253040169026}
+  - component: {fileID: 1577629616133836206}
   - component: {fileID: 4306713623679435206}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spear Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +83,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemStats: {fileID: 11400000, guid: f1a1091367c50874184e76cad676ba2f, type: 2}
+--- !u!114 &1577629616133836206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61662243074130738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1695575527
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &4306713623679435206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   abilityStats: {fileID: 11400000, guid: 38429bbe992d9a042821e9f216894fe6, type: 2}
 --- !u!1001 &1307295592330942123
 PrefabInstance:
@@ -159,6 +186,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_staff_b_head_orb
       objectReference: {fileID: 0}
+    - target: {fileID: 4535944438286298329, guid: 35be2f0bb767100498aee2bb89bfe1f8, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -180,6 +211,10 @@ PrefabInstance:
     - target: {fileID: 4934897659585062313, guid: b1fa46b4b7af30a449ef89e0cdcb834f, type: 3}
       propertyPath: m_Name
       value: m_spear_a_head
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934897659585062313, guid: b1fa46b4b7af30a449ef89e0cdcb834f, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8949338596401775107, guid: b1fa46b4b7af30a449ef89e0cdcb834f, type: 3}
       propertyPath: m_LocalScale.x
@@ -307,6 +342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_axe_a_guard
       objectReference: {fileID: 0}
+    - target: {fileID: 4996180758706718132, guid: 0031fd79dd1ef6b46b9f40e2daf875de, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -328,6 +367,10 @@ PrefabInstance:
     - target: {fileID: 7340856433407693319, guid: 585314ae27916134e86fc78267724d02, type: 3}
       propertyPath: m_Name
       value: m_sword_a_pommel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340856433407693319, guid: 585314ae27916134e86fc78267724d02, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8818368107143159524, guid: 585314ae27916134e86fc78267724d02, type: 3}
       propertyPath: m_LocalScale.x
@@ -443,6 +486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_spear_a_hilt
       objectReference: {fileID: 0}
+    - target: {fileID: 7379112560233095859, guid: 16f4d482fc1dd0847a029ec6b218d454, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8109749758750436149, guid: 16f4d482fc1dd0847a029ec6b218d454, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -521,6 +568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_sword_a_guard
       objectReference: {fileID: 0}
+    - target: {fileID: 6074729928557249928, guid: 344f43922db1a03458c5e81a884477e2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -595,6 +646,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_axe_a_head
       objectReference: {fileID: 0}
+    - target: {fileID: 8852154628477333103, guid: 373be69603eb67944b90141c0c9b4cad, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -616,6 +671,10 @@ PrefabInstance:
     - target: {fileID: 3209080234424625758, guid: 74e65d50994ff634e92a6214ba24185e, type: 3}
       propertyPath: m_Name
       value: m_dagger_a_head
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209080234424625758, guid: 74e65d50994ff634e92a6214ba24185e, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8807669837651478618, guid: 74e65d50994ff634e92a6214ba24185e, type: 3}
       propertyPath: m_LocalScale.z

@@ -74,7 +74,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 8123587720533757873, guid: 6244800bd9f3f8747933a154ec197384, type: 3}
+  m_Motion: {fileID: 7400000, guid: 353a2fc8d258dfb4089d5044971c6d72, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -154,7 +154,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 2667949614841947897, guid: 6244800bd9f3f8747933a154ec197384, type: 3}
+  m_Motion: {fileID: 0}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -202,16 +202,13 @@ AnimatorStateMachine:
     m_Position: {x: 590, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7529293732690872129}
-    m_Position: {x: 20, y: 200, z: 0}
+    m_Position: {x: 30, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5619448366487988044}
     m_Position: {x: 20, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1818124855404527850}
     m_Position: {x: 590, y: 190, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1684435674541604434}
-    m_Position: {x: 890, y: 110, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -270,7 +267,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7180914814543497415, guid: 6244800bd9f3f8747933a154ec197384, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: 844bac4f326f59f469918aaf0b91e85d, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -299,7 +296,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7180914814543497415, guid: 4e3441db77c17ce4cb2279da8ab5125c, type: 3}
+  m_Motion: {fileID: 7400000, guid: 9278cdde7eb9417448064614d32c970b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -463,33 +460,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -5225591888644748974, guid: 6244800bd9f3f8747933a154ec197384, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &1684435674541604434
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Iv Pole Walking
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -7180914814543497415, guid: 1307de22fecd5ed479e920442566fb74, type: 3}
+  m_Motion: {fileID: 7400000, guid: e93a78dada975e44d986b572f06a52e1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

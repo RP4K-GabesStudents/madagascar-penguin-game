@@ -24,7 +24,7 @@ namespace penguin
         private IInteractable _interactable;
         [SerializeField] public Transform laserSpawn;
         [SerializeField] public Transform laserSpawn2;
-        [SerializeField]private Transform attackLocation;
+        [SerializeField] private Transform attackLocation;
         
         [Header("Jumping")] 
     

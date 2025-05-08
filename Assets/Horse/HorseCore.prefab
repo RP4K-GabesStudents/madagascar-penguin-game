@@ -698,6 +698,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7364545188573167205}
+  - component: {fileID: 2260318700851143159}
+  - component: {fileID: 382314025364597115}
   m_Layer: 0
   m_Name: HorseCore
   m_TagString: Untagged
@@ -721,6 +723,42 @@ Transform:
   - {fileID: 677331326803807775}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2260318700851143159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364253775232414355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969b9339d8f7a574e84eed7506b86df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectorStats: {fileID: 11400000, guid: 7435e8441873bd349991de2a639d1d9a, type: 2}
+  head: {fileID: 3969441579765942901}
+--- !u!95 &382314025364597115
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364253775232414355}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 844bac4f326f59f469918aaf0b91e85d, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1cbb788f601b01c4b913c4df0fd03ad6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2545199453426415320
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +922,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 677331326803807775}
-  - component: {fileID: 6644840918409871444}
   m_Layer: 0
   m_Name: FixingTheHorse@Sword And Shield Attack
   m_TagString: Untagged
@@ -924,28 +961,6 @@ Transform:
   - {fileID: 8798596198543444507}
   m_Father: {fileID: 7364545188573167205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6644840918409871444
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2667847107941116118}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1cbb788f601b01c4b913c4df0fd03ad6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2694612115008730263
 GameObject:
   m_ObjectHideFlags: 0

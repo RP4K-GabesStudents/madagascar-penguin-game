@@ -27,7 +27,7 @@ namespace Objects
             _targetLayers = targetLayers;
             _networkObject.SpawnWithOwnership(onerId);
             Destroy(gameObject, 3);
-            rigidbody.AddForce(transform.forward * laserStats.Speed, ForceMode.Impulse);
+            rigidbody.AddForce(_networkObject.transform.forward * laserStats.Speed, ForceMode.Impulse);
             
         }
         private void OnTriggerEnter(Collider other)
@@ -43,9 +43,10 @@ namespace Objects
                     damageable.TakeDamage(laserStats.Damage, Vector3.zero);
                 }
             }
-            bool hit = Physics.Raycast(transform.position + transform.forward * -0.25f, transform.forward, out RaycastHit hitInfo, 0.5f);
+            bool hit = Physics.Raycast(_networkObject.transform.position + _networkObject.transform.forward * -0.25f, _networkObject.transform.forward, out RaycastHit hitInfo, 0.5f);
             if (hit)
             {
+                Debug.Log("hit");
                 GameObject t = Instantiate(laserSpark, hitInfo.point, Quaternion.LookRotation(hitInfo.normal), hitInfo.transform);
                 Destroy(t, 5);
             }

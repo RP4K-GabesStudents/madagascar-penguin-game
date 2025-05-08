@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae88476ccec80645832c952d8a6c78a, type: 3}
   m_Name: DetectorStats
   m_EditorClassIdentifier: 
-  detectRange: 10
-  detectAngle: 0.8
+  detectRange: 7.5
+  detectAngle: 0.4
   detectLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  blockingLayerMask:
     serializedVersion: 2
     m_Bits: 0
   detectionTime: 0

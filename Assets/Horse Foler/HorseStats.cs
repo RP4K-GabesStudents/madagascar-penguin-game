@@ -12,7 +12,7 @@ namespace Horse_Foler
         [SerializeField] private float speed;
         [SerializeField] private float attackRange;
         [SerializeField] private float attackRadius;
-        [SerializeField] private Vector3 attackForce;
+        [SerializeField] private Vector2 attackForce;
         
         public float AttackRange => attackRange;
         public float AttackSpeed => attackSpeed;
@@ -21,6 +21,6 @@ namespace Horse_Foler
         public float Health => health;
         public float AttackArea => attackRadius;
 
-        public Vector3 AttackForce => attackForce;
+        public Vector2 AttackForce => attackForce;
     }
 }

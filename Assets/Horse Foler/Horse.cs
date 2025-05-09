@@ -11,10 +11,11 @@ namespace Horse_Foler
     public class Horse : NetworkBehaviour, IDamageable
     {
         [SerializeField] private Transform target;
-        [SerializeField]private Animator animator;
-        private HorseStats _horseStats;
+        private Animator _animator;
+        [SerializeField] private HorseStats horseStats;
         private NavMeshAgent _navMesh;
         [SerializeField] private Transform attackLocation;
+        [SerializeField] private ParticleSystem gabesParticles;
         
 
         private readonly Collider[] _hits = new Collider[10];
@@ -22,6 +23,7 @@ namespace Horse_Foler
         private void Awake()
         {
             _navMesh = GetComponent<NavMeshAgent>();
+            _animator = GetComponent<Animator>();
         }
 
         private void Update()
@@ -30,12 +32,12 @@ namespace Horse_Foler
         }
         private void Attack()
         {
-            animator.SetBool(StaticUtilities.AttackAnimID, true);
-            var size = Physics.OverlapSphereNonAlloc(attackLocation.position, _horseStats.AttackRange, _hits, StaticUtilities.PlayerLayer);
+            _animator.SetBool(StaticUtilities.AttackAnimID, true);
+            var size = Physics.OverlapSphereNonAlloc(attackLocation.position, horseStats.AttackRange, _hits, StaticUtilities.PlayerLayer);
             for (int i = 0; i < size; i++)
             {
                 _hits[i].TryGetComponent(out IDamageable damageable);
-                damageable.TakeDamage(_horseStats.Damage, _horseStats.AttackForce);
+                damageable.TakeDamage(horseStats.Damage, horseStats.AttackForce);
             }
         }
         private void Move()
@@ -52,6 +54,27 @@ namespace Horse_Foler
         {
             
         }
+
+        private void ExecuteAttack()
+        {
+            
+            var size = Physics.OverlapSphereNonAlloc(attackLocation.position, horseStats.AttackRange, _hits, StaticUtilities.PlayerLayer);
+            for (int i = 0; i < size; i++)
+            {
+                _hits[i].TryGetComponent(out IDamageable damageable);
+                Vector3 direction = (_hits[i].transform.position - transform.position);
+                Vector3 normal = new Vector3(direction.x, 0, direction.z).normalized;
+                damageable.TakeDamage(horseStats.Damage, horseStats.AttackForce.x * normal + Vector3.up * horseStats.AttackForce.y);
+                Debug.DrawLine(attackLocation.position, _hits[i].transform.position, Color.red, 3f);
+            }
+            gabesParticles.Play();
+        }
+
+        private void OnDrawGizmosSelected()
+        {   
+            Gizmos.DrawWireSphere(attackLocation.position, horseStats.AttackRange);
+        }
+
 
         public float Health { get; set; }
         public float DamageRes { get; }

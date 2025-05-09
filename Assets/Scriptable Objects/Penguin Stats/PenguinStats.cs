@@ -23,7 +23,7 @@ namespace Scriptable_Objects.Penguin_Stats
 
 
         public float Hp => hp;
-        public float Speed {get => speed; set => speed = value; }
+        public float Speed { get => speed; set => speed = value; }
         public float Damage => damage;
         public float JumpPower => jumpPower;
         public float SlideSpeed => slideSpeed;
@@ -32,7 +32,6 @@ namespace Scriptable_Objects.Penguin_Stats
         public float SlideCooldown => slideCooldown;
         public float SpeedLimit => speedLimit;
         public float SprintSpeed => sprintSpeed;
-
         public float AttackRadius => attackRadius;
         public float MaxAttackDist => maxAttackDist;
         public float KnockbackPower => knockbackPower;

@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem.iOS;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Inventory
 {

@@ -1,12 +1,10 @@
-using System.Collections;
+using System;
 using Abilities;
 using Interfaces;
 using Managers;
 using Scriptable_Objects;
 using Scriptable_Objects.Penguin_Stats;
-using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace penguin
 {
@@ -14,7 +12,8 @@ namespace penguin
     public class PlayerController : BasePenguinFile, IDamageable
     {
         [SerializeField] private BaseWeaponGun initialWeapon;
-        [SerializeField]PenguinStats penguinStats;
+        [SerializeField] PenguinStats penguinStats;
+        public PenguinStats PenguinoStats => penguinStats;
         [SerializeField] private ProjectileStats projectileStats;
         [SerializeField] private MorePenguinStats morePenguinStats;
         private Rigidbody _rigidbody;
@@ -25,7 +24,7 @@ namespace penguin
         [SerializeField] public Transform laserSpawn;
         [SerializeField] public Transform laserSpawn2;
         [SerializeField] private Transform attackLocation;
-        
+        public event Action onHealthUpdated;
         [Header("Jumping")] 
     
     
@@ -200,12 +199,27 @@ namespace penguin
 
         public void OnHurt(float amount, Vector3 force)
         {
-            Debug.Log("you hit " + amount);
+            Debug.Log("you got hit for: " + amount);
             _rigidbody.AddForce(force, ForceMode.Impulse);
+            Health = penguinStats.Hp - amount;
         }
         
 
-        public float Health { get => _curHealth; set => _curHealth = Mathf.Min(_curHealth + value, penguinStats.Hp); }
+        public float Health
+        {
+            get => _curHealth;
+            set
+            {
+               float t = Mathf.Min(_curHealth + value, penguinStats.Hp);
+               if (!Mathf.Approximately(t, _curHealth))
+               {
+                   _curHealth = t;
+                   onHealthUpdated?.Invoke();
+               }
+            }
+            
+        }
+
         public float DamageRes { get => 0; }
     }
 }

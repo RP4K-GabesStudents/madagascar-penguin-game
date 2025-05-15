@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-91650823168702918
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: KowalskiMenu
+  m_Shader: {fileID: -6465566751694194690, guid: 7ee057093c3971943b831aef56ad221f, type: 3}
+  m_Parent: {fileID: 2100000, guid: b9a65e7db8bde7b4d95fe61ece6bac98, type: 2}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _SECONDARYUSESHEAR
+  - _USECIRCLECARVE
+  - _USESECONDARY
+  m_InvalidKeywords:
+  - _USESHEAR
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Noise:
+        m_Texture: {fileID: 2800000, guid: 8226c27c1f1aaae4aa831ad1999c981b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryNoise:
+        m_Texture: {fileID: 2800000, guid: 1105674519a4cca4aa444d045dafc7a2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _CircleY: 0
+    - _Intensity: 1
+    - _Pow: 10
+    - _SecondaryTiling: 2
+    - _SmoothMax: 0.29
+    - _SmoothMin: 0.48
+    - _Tiling: 4
+    - _USECIRCLECARVE: 1
+    m_Colors:
+    - _Color: {r: 1.1059649, g: 2.426721, b: 2.967906, a: 0}
+    - _SecondaryColor: {r: 0, g: 9.889093, b: 20.266201, a: 0}
+    - _SecondaryShearSpeed: {r: 0, g: -0.1, b: 0, a: 0}
+    - _SecondaryShearStrength: {r: 0.8, g: 0.3, b: 0, a: 0}
+    - _SecondarySpeed: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

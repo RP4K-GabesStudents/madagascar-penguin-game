@@ -1,10 +1,8 @@
-using System;
 using Interfaces;
 using Managers;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 namespace Horse_Foler
 {
@@ -17,18 +15,24 @@ namespace Horse_Foler
         [SerializeField] private Transform attackLocation;
         [SerializeField] private ParticleSystem gabesParticles;
         
-
+        
+        private float _distanceToTarget;
+        private float _nearestDistance = float.MaxValue;
+        private GameObject _nearestTarget;
+        
         private readonly Collider[] _hits = new Collider[10];
 
         private void Awake()
         {
             _navMesh = GetComponent<NavMeshAgent>();
             _animator = GetComponent<Animator>();
+            _animator.enabled = true;
         }
 
         private void Update()
         {
-            _navMesh.SetDestination(target.position);
+            Move();
+            if(horseStats.Health <= 0) Die();
         }
         private void Attack()
         {
@@ -42,12 +46,29 @@ namespace Horse_Foler
         }
         private void Move()
         {
-            
+            SetNewTarget();
+            _navMesh.SetDestination(_nearestTarget.transform.position);
+        }
+
+        private void SetNewTarget()
+        {
+            bool success = Physics.SphereCast(attackLocation.position, horseStats.DetectionRadius, attackLocation.forward, out RaycastHit hitInfo, StaticUtilities.AttackableLayers);
+            if (!success) return;
+            foreach (var t in horseStats.Targets)
+            {
+                _distanceToTarget = Vector3.Distance(transform.position, t.transform.position);
+                if (_distanceToTarget  < _nearestDistance)
+                {
+                    _nearestTarget = t;
+                    _nearestDistance = _distanceToTarget;
+                }
+            }
         }
 
         public void Die()
         {
-            
+            _animator.enabled = false;
+            Destroy(gameObject, 10f);
         }
 
         public void OnHurt(float amount, Vector3 force)
@@ -73,6 +94,7 @@ namespace Horse_Foler
         private void OnDrawGizmosSelected()
         {   
             Gizmos.DrawWireSphere(attackLocation.position, horseStats.AttackRange);
+            Gizmos.DrawSphere(attackLocation.position, horseStats.DetectionRadius);
         }
 
 

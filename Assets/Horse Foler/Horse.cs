@@ -1,3 +1,4 @@
+using Detection;
 using Interfaces;
 using Managers;
 using Unity.Netcode;
@@ -19,6 +20,7 @@ namespace Horse_Foler
         private float _distanceToTarget;
         private float _nearestDistance = float.MaxValue;
         private GameObject _nearestTarget;
+        private Detector _detector;
         
         private readonly Collider[] _hits = new Collider[10];
 
@@ -46,23 +48,8 @@ namespace Horse_Foler
         }
         private void Move()
         {
-            SetNewTarget();
+            
             _navMesh.SetDestination(_nearestTarget.transform.position);
-        }
-
-        private void SetNewTarget()
-        {
-            bool success = Physics.SphereCast(attackLocation.position, horseStats.DetectionRadius, attackLocation.forward, out RaycastHit hitInfo, StaticUtilities.AttackableLayers);
-            if (!success) return;
-            foreach (var t in horseStats.Targets)
-            {
-                _distanceToTarget = Vector3.Distance(transform.position, t.transform.position);
-                if (_distanceToTarget  < _nearestDistance)
-                {
-                    _nearestTarget = t;
-                    _nearestDistance = _distanceToTarget;
-                }
-            }
         }
 
         public void Die()

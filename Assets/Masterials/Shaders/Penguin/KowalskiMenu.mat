@@ -25,7 +25,6 @@ Material:
   m_Parent: {fileID: 2100000, guid: b9a65e7db8bde7b4d95fe61ece6bac98, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _SECONDARYUSESHEAR
   - _USECIRCLECARVE
   - _USESECONDARY
   m_InvalidKeywords:
@@ -54,6 +53,7 @@ Material:
     - _CircleY: 0
     - _Intensity: 1
     - _Pow: 10
+    - _SECONDARYUSESHEAR: 0
     - _SecondaryTiling: 2
     - _SmoothMax: 0.29
     - _SmoothMin: 0.48
@@ -64,6 +64,6 @@ Material:
     - _SecondaryColor: {r: 0, g: 9.889093, b: 20.266201, a: 0}
     - _SecondaryShearSpeed: {r: 0, g: -0.1, b: 0, a: 0}
     - _SecondaryShearStrength: {r: 0.8, g: 0.3, b: 0, a: 0}
-    - _SecondarySpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _SecondarySpeed: {r: 0, g: -0.2, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

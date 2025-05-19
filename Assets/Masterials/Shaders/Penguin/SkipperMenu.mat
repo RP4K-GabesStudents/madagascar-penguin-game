@@ -41,13 +41,26 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Noise:
+        m_Texture: {fileID: 2800000, guid: 2a1083985d022c64e948b49b211c4289, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SecondaryNoise:
         m_Texture: {fileID: 2800000, guid: 4ef9ec0d9f88c874188b1eb21e833639, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _CircleY: 0
     - _Intensity: 1
+    - _Pow: 1.56
+    - _SECONDARYUSESHEAR: 1
+    - _SecondaryPow: 21.25
+    - _SecondaryTiling: 3.53
+    - _SmoothMax: 0.02
+    - _SmoothMin: 0.58
+    - _USECIRCLECARVE: 1
+    - _USESECONDARY: 1
     m_Colors:
     - _Color: {r: 1.0177057, g: 0.6251008, b: 2.5984585, a: 0}
     - _SecondaryColor: {r: 8.592247, g: 0, b: 20.266201, a: 0}

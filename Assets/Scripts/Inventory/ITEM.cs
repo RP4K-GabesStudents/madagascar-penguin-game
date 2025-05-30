@@ -1,7 +1,7 @@
-using System;
+
 using Interfaces;
 using Managers;
-using NUnit.Framework.Internal.Execution;
+
 using Scriptable_Objects;
 using UnityEngine;
 
@@ -10,6 +10,7 @@ namespace Inventory
     public class Item : MonoBehaviour, IInteractable
     {
         [SerializeField] private ItemStats itemStats;
+        public ItemStats ItemStats => itemStats;
         private MeshRenderer[] _meshRenderers;
 
         private void Awake()

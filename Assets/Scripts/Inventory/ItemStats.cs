@@ -1,3 +1,4 @@
+using System;
 using Scriptable_Objects;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Inventory
         //[SerializeField] make enum rarity homework
         [SerializeField] private Sprite icon;
         [SerializeField] private int cost;
-        [SerializeField] private int itemLimit;
+        [SerializeField, Min(1)] private int itemLimit;
         [SerializeField] private Item itemPrefab;
         
         
@@ -17,5 +18,10 @@ namespace Inventory
         public int Cost => cost;
         public int ItemLimit => itemLimit;
         public Item ItemPrefab => itemPrefab;
+
+        private void OnValidate()
+        {
+            itemLimit = Mathf.Max(1, itemLimit);
+        }
     }
 }

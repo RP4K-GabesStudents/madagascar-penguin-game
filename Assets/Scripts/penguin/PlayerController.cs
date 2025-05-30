@@ -1,16 +1,21 @@
 using System;
 using Abilities;
 using Interfaces;
+using Inventory;
 using Managers;
 using Scriptable_Objects;
 using Scriptable_Objects.Penguin_Stats;
+using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace penguin
 {
     
     public class PlayerController : BasePenguinFile, IDamageable
     {
+        private AnInventory _hotBar;
+        [SerializeField] private GameObject hudPrefab;
         [SerializeField] private BaseWeaponGun initialWeapon;
         [SerializeField] PenguinStats penguinStats;
         public PenguinStats PenguinoStats => penguinStats;
@@ -49,6 +54,14 @@ namespace penguin
             base.Awake();
             _rigidbody = GetComponent<Rigidbody>();
             initialWeapon.SetOwner(this);
+            if (true)
+            {
+                GameObject spanw = Instantiate(hudPrefab, transform);
+                spanw.GetComponent<UIController>().BindToPenguin(this);
+                _hotBar = spanw.GetComponentInChildren<AnInventory>();
+                Debug.Log(spanw.name);
+            }
+            
         }
 
         private void FixedUpdate()
@@ -149,17 +162,46 @@ namespace penguin
         }
         public void Interact(bool readValueAsButton)
         {
-            _animator.SetTrigger(StaticUtilities.InteractAnimID);
-            _interactable?.OnInteract();
-            Debug.Log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+            if (_interactable != null)
+            {
+                
+                if (_interactable is Item i)
+                {
+                    if (_hotBar.HeyIPickedSomethingUp(i.ItemStats))
+                    {
+                        _animator.SetTrigger(StaticUtilities.InteractAnimID);
+                        Debug.LogWarning("success");
+                        _interactable.OnInteract();
+                    }
+                    else
+                    {
+                        Debug.LogWarning("do a barrel roll");
+                    }
+                }
+                else
+                {
+                    _interactable.OnInteract();
+                    _animator.SetTrigger(StaticUtilities.InteractAnimID);
+                }
+            } 
         }
 
         private void CheckForInteractable()
         {
             
-            bool interactHit = Physics.SphereCast(transform.position, morePenguinStats.InteractRadius, headXRotator.forward, out RaycastHit hitInfo, morePenguinStats.InteractDistance, morePenguinStats.InteractLayer);
+            bool interactHit = Physics.SphereCast(headXRotator.position, morePenguinStats.InteractRadius, headXRotator.forward, out RaycastHit hitInfo, morePenguinStats.InteractDistance, morePenguinStats.InteractLayer);
             if (interactHit)
             {
+                bool hitWall = Physics.Raycast(headXRotator.position, headXRotator.forward, out _, morePenguinStats.InteractRadius, StaticUtilities.GroundLayers);
+                if (hitWall)
+                {
+                    HandleInteract(null);
+                    return;
+                }
+
+               
+                
+                Debug.DrawLine(headXRotator.position, hitInfo.point, Color.green, 0.1f);
                 Rigidbody rb = hitInfo.rigidbody;
                 if (rb && rb.TryGetComponent(out IInteractable interactable))
                 {

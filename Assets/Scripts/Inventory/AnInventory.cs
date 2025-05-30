@@ -1,8 +1,7 @@
-using System;
+
 using UnityEngine;
-using UnityEngine.InputSystem.iOS;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
+using Utilities;
+
 
 namespace Inventory
 {
@@ -19,14 +18,50 @@ namespace Inventory
             Penguin
         }
         [SerializeField] private ItemRarityColour itemRarityColour = ItemRarityColour.Common;
-        [SerializeField] private Itemslot itemslot;
-        
+        [SerializeField] private Itemslot[] itemSlots;
+        private Itemslot selectedItem;
+        public Itemslot SelectedItem => selectedItem;
 
-        private void Awake()
+        private void Start()
         {
-            
+            foreach (var jeff in itemSlots)
+            {
+                jeff.RemoveItem();
+            }
+
+            selectedItem = itemSlots[0];
+            selectedItem.MarkSelected();
         }
-        
-        
+
+        [ContextMenu("find")]
+        private void FindItemSlots()
+        {
+            itemSlots = GetComponentsInChildren<Itemslot>();
+        }
+
+        //puts an item in the item slot
+        public bool HeyIPickedSomethingUp(ItemStats item)
+        {
+            Itemslot apple = null;
+            foreach (var jeff in itemSlots)
+            {
+                if (jeff.CanAcceptItem(item))
+                {
+                    jeff.SetItem(item);
+                    apple = jeff;
+                    break;
+                }
+            }
+
+            if (apple == null) return false;
+            if (Settings.GamePlaySettings.autoEquip)
+            {
+                selectedItem.MarkUnselected();
+                apple.MarkSelected();
+                selectedItem = apple;
+            }
+            return true;
+        }
+
     }
 }

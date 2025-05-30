@@ -1,6 +1,7 @@
-using System;
+
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Utilities.Hover;
 
@@ -13,6 +14,19 @@ namespace Inventory
         [SerializeField] private Image frame;
         [SerializeField] private Image rarity;
         [SerializeField] private TextMeshProUGUI slotHotKey;
+
+        public int InvCount
+        {
+            get => _invCount;
+            set
+            {
+                _invCount = !item ? 0 : Mathf.Clamp(value, 0, item.ItemLimit);
+                itemCount.text = _invCount.ToString();
+                itemCount.enabled = _invCount <= 1;
+            }
+        }
+        private int _invCount;
+        [SerializeField]private TextMeshPro itemCount;
 
         private UIHoverScale _hover;
 
@@ -29,13 +43,22 @@ namespace Inventory
         
         public void SetItem(ItemStats newItem)
         {
-            item = newItem;
-            image.sprite = newItem.Icon;
+            if (newItem == item)
+            {
+                InvCount += 1;
+            }
+            else
+            {
+                item = newItem;
+                image.sprite = newItem.Icon;
+            }
+            image.enabled = true;
         }
         
         public void RemoveItem()
         {
             image.sprite = null;
+            image.enabled = false;
             MarkUnselected(); // temporary.
         }
         
@@ -54,6 +77,11 @@ namespace Inventory
         {
             _hover.Shrink();
             frame.color = Color.gray;
+        }
+
+        public bool CanAcceptItem(ItemStats items)
+        {
+            return !item || (items == item && InvCount < item.ItemLimit);
         }
     }
 }

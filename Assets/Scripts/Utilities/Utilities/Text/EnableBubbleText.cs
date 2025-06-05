@@ -11,11 +11,11 @@ public class EnableBubbleText : MonoBehaviour
     [SerializeField] private int maxTextSize = 180;
     [SerializeField] private AnimationCurve textScaleCurve;
 
-    private TextMeshProUGUI tmp;
+    private TextMeshPro _tmp;
 
     private void OnEnable()
     {
-        tmp = GetComponent<TextMeshProUGUI>();
+        _tmp ??= GetComponent<TextMeshPro>();
         StartCoroutine(BubbleTimer());
     }
 
@@ -26,10 +26,10 @@ public class EnableBubbleText : MonoBehaviour
         {
             float p = t / duration;
             t += Time.deltaTime;
-            tmp.fontSize = Mathf.Lerp(minTextSize, maxTextSize, textScaleCurve.Evaluate(p));
+            _tmp.fontSize = Mathf.Lerp(minTextSize, maxTextSize, textScaleCurve.Evaluate(p));
             yield return null;
         }
-        tmp.fontSize = Mathf.Lerp(minTextSize, maxTextSize, textScaleCurve.Evaluate(1));
+        _tmp.fontSize = Mathf.Lerp(minTextSize, maxTextSize, textScaleCurve.Evaluate(1));
     }
 
 

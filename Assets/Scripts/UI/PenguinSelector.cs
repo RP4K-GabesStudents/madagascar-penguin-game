@@ -30,13 +30,16 @@ namespace UI
         {
             base.Start();
             
-            _main = Camera.main.GetComponent<CinemachineBrain>();
+            _main ??= Camera.main.GetComponent<CinemachineBrain>();
+            
+            if(_currentPenguinSelector != this) Deselect();
         }
 
         public override void Select()
         {
             _currentPenguinSelector?.Deselect();
             _currentPenguinSelector = this;
+            _main ??= Camera.main.GetComponent<CinemachineBrain>();
             StartCoroutine(FadeIn());
         }
 

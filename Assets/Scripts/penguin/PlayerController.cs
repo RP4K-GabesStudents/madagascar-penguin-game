@@ -14,8 +14,7 @@ namespace penguin
     
     public class PlayerController : BasePenguinFile, IDamageable
     {
-        private AnInventory _hotBar;
-        [SerializeField] private GameObject hudPrefab;
+        private Player _controlled;
         [SerializeField] private BaseWeaponGun initialWeapon;
         [SerializeField] PenguinStats penguinStats;
         public PenguinStats PenguinoStats => penguinStats;
@@ -54,14 +53,11 @@ namespace penguin
             base.Awake();
             _rigidbody = GetComponent<Rigidbody>();
             initialWeapon.SetOwner(this);
-            if (true)
-            {
-                GameObject spanw = Instantiate(hudPrefab, transform);
-                spanw.GetComponent<UIController>().BindToPenguin(this);
-                _hotBar = spanw.GetComponentInChildren<AnInventory>();
-                Debug.Log(spanw.name);
-            }
-            
+        }
+
+        public void BindController(Player player)
+        {
+            _controlled = player;
         }
 
         private void FixedUpdate()
@@ -167,7 +163,7 @@ namespace penguin
                 
                 if (_interactable is Item i)
                 {
-                    if (_hotBar.HeyIPickedSomethingUp(i.ItemStats))
+                    if (_controlled.HeyIPickedSomethingUp(i.ItemStats))
                     {
                         _animator.SetTrigger(StaticUtilities.InteractAnimID);
                         Debug.LogWarning("success");
@@ -198,8 +194,6 @@ namespace penguin
                     HandleInteract(null);
                     return;
                 }
-
-               
                 
                 Debug.DrawLine(headXRotator.position, hitInfo.point, Color.green, 0.1f);
                 Rigidbody rb = hitInfo.rigidbody;

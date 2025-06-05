@@ -9768,7 +9768,6 @@ GameObject:
   - component: {fileID: 7696006798763760648}
   - component: {fileID: 1727836325230491310}
   - component: {fileID: 4323651764598036363}
-  - component: {fileID: 751522804184871335}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -9785,7 +9784,7 @@ Transform:
   m_GameObject: {fileID: 6573324651704271400}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 4.75, z: 0}
   m_LocalScale: {x: 1.49, y: 3.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9844,28 +9843,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &751522804184871335
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6573324651704271400}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &863043136699552817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10030,15 +10007,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: df908e71c0255ca4aa868585fee07633, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.1740837
+      value: -6.299
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df908e71c0255ca4aa868585fee07633, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32999992
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df908e71c0255ca4aa868585fee07633, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.65913
+      value: 6.7457423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df908e71c0255ca4aa868585fee07633, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10078,7 +10055,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8c0b6b6fee2f9ae4d8f76df98a73d142, type: 2}
     - target: {fileID: 919132149155446097, guid: df908e71c0255ca4aa868585fee07633, type: 3}
       propertyPath: m_Name
-      value: Chest (1)
+      value: LootChest
       objectReference: {fileID: 0}
     - target: {fileID: 1311702326449385159, guid: df908e71c0255ca4aa868585fee07633, type: 3}
       propertyPath: m_IsActive

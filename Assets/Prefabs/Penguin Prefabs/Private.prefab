@@ -1081,6 +1081,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e27669a516c0f44999247e52a320c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  hudPrefab: {fileID: 74495017710045421, guid: a5920a2ed6d5eab44a7a872af650ee05, type: 3}
 --- !u!114 &908165822959485335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,7 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2813415296
+  GlobalObjectIdHash: 3471250242
   InScenePlacedSourceGlobalObjectIdHash: 2813415296
   DeferredDespawnTick: 0
   Ownership: 1
@@ -1119,7 +1121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  hudPrefab: {fileID: 8065426925778232955, guid: a5920a2ed6d5eab44a7a872af650ee05, type: 3}
   initialWeapon: {fileID: 6610911385964071678}
   penguinStats: {fileID: 11400000, guid: 7832a7955506a3b4996d0f1f9c99eb23, type: 2}
   projectileStats: {fileID: 11400000, guid: c74be141ca88ae944bd05fbbee94c506, type: 2}

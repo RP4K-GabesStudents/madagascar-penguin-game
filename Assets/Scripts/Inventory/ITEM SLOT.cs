@@ -59,6 +59,7 @@ namespace Inventory
         {
             image.sprite = null;
             image.enabled = false;
+            InvCount = 0;
             MarkUnselected(); // temporary.
         }
         

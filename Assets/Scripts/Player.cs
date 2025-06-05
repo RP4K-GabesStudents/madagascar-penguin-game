@@ -1,18 +1,26 @@
 using Interfaces;
+using Inventory;
 using penguin;
+using UI;
+using Unity.Netcode;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     private PlayerController _playerControls;
+    private HotBar _hotBar;
+    [SerializeField] private UIController hudPrefab;
 
-    private void Awake()
-    {
-        _playerControls = GetComponent<PlayerController>();
-    }
 
     private void Start()
     {
+        _playerControls = GetComponent<PlayerController>();
+        if (true != true) return;
+        
+        UIController spanw = Instantiate(hudPrefab, transform);
+        spanw.BindToPenguin(_playerControls);
+        _hotBar = spanw.GetComponentInChildren<HotBar>();
+        Debug.Log(spanw.name);
         PlayerControls.BindPlayer(this);
         PlayerControls.EnableGame();
     }
@@ -23,4 +31,10 @@ public class Player : MonoBehaviour
     public void Interact(bool readValueAsButton) => _playerControls.Interact(readValueAsButton);
     public void SetMoveDirection(Vector2 moveDirection) => _playerControls.SetMoveDirection(new Vector3(moveDirection.x, 0f, moveDirection.y));
     public void Look(Vector2 lookDirection) => _playerControls.Look(lookDirection);
+    public void SetSelected(int key) => _hotBar.UpdateScrollIndex(key);
+    public void ScrollSelected(float scroll) => _hotBar.UpdateScrollSlot((int)scroll);
+    public bool HeyIPickedSomethingUp(ItemStats iItemStats)
+    { 
+        return _hotBar.HeyIPickedSomethingUp(iItemStats);
+    }
 }

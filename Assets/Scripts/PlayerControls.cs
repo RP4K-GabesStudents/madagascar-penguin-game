@@ -19,6 +19,13 @@ public static class PlayerControls
          GameControls.Player.Sprint.performed += ctx => _penguin.Sprint(ctx.ReadValueAsButton());
          GameControls.Player.Move.performed += ctx => _penguin.SetMoveDirection(ctx.ReadValue<Vector2>());
          GameControls.Player.Look.performed += ctx => _penguin.Look(ctx.ReadValue<Vector2>());
+         
+         GameControls.Player.HotBarSlot1.performed += _ => _penguin.SetSelected(0);
+         GameControls.Player.HotBarSlot2.performed += _ => _penguin.SetSelected(1);
+         GameControls.Player.HotBarSlot3.performed += _ => _penguin.SetSelected(2);
+         GameControls.Player.HotBarSlot4.performed += _ => _penguin.SetSelected(3);
+         GameControls.Player.HotBarSlot5.performed += _ => _penguin.SetSelected(4);
+         GameControls.Player.HotBarScroll.performed += ctx => _penguin.ScrollSelected(ctx.ReadValue<float>());
       }
 
       _isPenguinBound = true;

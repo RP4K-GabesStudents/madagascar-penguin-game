@@ -1,4 +1,6 @@
 
+using System;
+using System.Net.Security;
 using UnityEngine;
 using Utilities;
 
@@ -18,21 +20,7 @@ namespace Inventory
             Penguin
         }
         [SerializeField] private ItemRarityColour itemRarityColour = ItemRarityColour.Common;
-        [SerializeField] private Itemslot[] itemSlots;
-        private Itemslot selectedItem;
-        public Itemslot SelectedItem => selectedItem;
-
-        private void Start()
-        {
-            foreach (var jeff in itemSlots)
-            {
-                jeff.RemoveItem();
-            }
-
-            selectedItem = itemSlots[0];
-            selectedItem.MarkSelected();
-        }
-
+        [SerializeField] protected Itemslot[] itemSlots;
         [ContextMenu("find")]
         private void FindItemSlots()
         {
@@ -42,26 +30,26 @@ namespace Inventory
         //puts an item in the item slot
         public bool HeyIPickedSomethingUp(ItemStats item)
         {
-            Itemslot apple = null;
-            foreach (var jeff in itemSlots)
+            int apple = -1;
+            for (var i = 0; i < itemSlots.Length; i++)
             {
+                var jeff = itemSlots[i];
                 if (jeff.CanAcceptItem(item))
                 {
                     jeff.SetItem(item);
-                    apple = jeff;
+                    apple = i;
                     break;
                 }
             }
 
-            if (apple == null) return false;
-            if (Settings.GamePlaySettings.autoEquip)
-            {
-                selectedItem.MarkUnselected();
-                apple.MarkSelected();
-                selectedItem = apple;
-            }
+            if (apple == -1) return false;
+            OnSlotUpdated(apple);
             return true;
         }
-
+        
+        protected virtual void OnSlotUpdated(int index)
+        {
+            
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace Utilities.Hover
         private bool _isLocked;
         private void Awake()
         {
-            _rectTransform = transform as RectTransform;
+            _rectTransform ??= transform as RectTransform;
             if(_rectTransform == null) throw new UnityException("Missing component of RectTransform");
             _originalScale = useLiteralScale?_rectTransform.localScale:_rectTransform.sizeDelta;
         }
@@ -51,6 +51,7 @@ namespace Utilities.Hover
 
         public void Shrink(bool byPass = false)
         {
+            
             if (_isLocked && !byPass) return;
              
             if (_hoverCoroutine != null)

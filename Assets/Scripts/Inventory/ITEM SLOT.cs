@@ -22,18 +22,17 @@ namespace Inventory
             {
                 _invCount = !item ? 0 : Mathf.Clamp(value, 0, item.ItemLimit);
                 itemCount.text = _invCount.ToString();
-                itemCount.enabled = _invCount <= 1;
+                itemCount.enabled = _invCount > 1;
             }
         }
         private int _invCount;
-        [SerializeField]private TextMeshPro itemCount;
+        [SerializeField]private TextMeshProUGUI itemCount;
 
         private UIHoverScale _hover;
 
         private void Awake()
         {
             _hover = GetComponent<UIHoverScale>();
-            MarkSelected();
         }
 
         public ItemStats GetItem()
@@ -60,6 +59,7 @@ namespace Inventory
             image.sprite = null;
             image.enabled = false;
             InvCount = 0;
+            item = null;
             MarkUnselected(); // temporary.
         }
         
@@ -82,6 +82,7 @@ namespace Inventory
 
         public bool CanAcceptItem(ItemStats items)
         {
+            //Debug.Log(!item +"||("+ (items == item) +"&&" +(InvCount < item.ItemLimit) + ")");
             return !item || (items == item && InvCount < item.ItemLimit);
         }
     }

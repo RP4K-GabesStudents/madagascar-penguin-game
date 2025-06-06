@@ -811,10 +811,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1727278892881041694}
     m_Modifications:
-    - target: {fileID: 2220618762599798661, guid: 11cfe81bb2a91a14fa83bbc36edd3c9a, type: 3}
-      propertyPath: m_fontSize
-      value: 25.65
-      objectReference: {fileID: 0}
     - target: {fileID: 2558863840690236534, guid: 11cfe81bb2a91a14fa83bbc36edd3c9a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -895,21 +891,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3136485762880205353, guid: 11cfe81bb2a91a14fa83bbc36edd3c9a, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4297430574330519881, guid: 11cfe81bb2a91a14fa83bbc36edd3c9a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5236058533540218618, guid: 11cfe81bb2a91a14fa83bbc36edd3c9a, type: 3}
       propertyPath: m_Name
       value: ItemSlot
-      objectReference: {fileID: 0}
-    - target: {fileID: 5986469451754302723, guid: 11cfe81bb2a91a14fa83bbc36edd3c9a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

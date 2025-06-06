@@ -667,7 +667,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7747957105692804209, guid: f6d9ed0cda2437e4b9217208ff8aac30, type: 3}
-      insertIndex: -1
+      insertIndex: 1
       addedObject: {fileID: 618946}
   m_SourcePrefab: {fileID: 100100000, guid: f6d9ed0cda2437e4b9217208ff8aac30, type: 3}
 --- !u!1001 &470799139
@@ -1857,7 +1857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8928946474527391934, guid: ca00d72cb50626247836994f1a1c218e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2644,14 +2644,6 @@ PrefabInstance:
     - target: {fileID: 908165822959485335, guid: ba80545fabd9b1a44be3ea226d7b0d2f, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3471250242
-      objectReference: {fileID: 0}
-    - target: {fileID: 2966745405919226489, guid: ba80545fabd9b1a44be3ea226d7b0d2f, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1962762437
-      objectReference: {fileID: 0}
-    - target: {fileID: 2966745405919226489, guid: ba80545fabd9b1a44be3ea226d7b0d2f, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 2813415296
       objectReference: {fileID: 0}
     - target: {fileID: 4143693464081881456, guid: ba80545fabd9b1a44be3ea226d7b0d2f, type: 3}
       propertyPath: m_Name
@@ -3512,7 +3504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7411099522968000106, guid: 65c828d46595e164cbbe986a4d46365e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3870,7 +3862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5641288936142010062, guid: a7fd403e3e5063b448f70c0c689c38c5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8868919013782986097, guid: a7fd403e3e5063b448f70c0c689c38c5, type: 3}
       propertyPath: m_LocalPosition.x

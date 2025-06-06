@@ -17,6 +17,7 @@ public class Player : NetworkBehaviour
         _playerControls = GetComponent<PlayerController>();
         if (true != true) return;
         
+        _playerControls.BindController(this);
         UIController spanw = Instantiate(hudPrefab, transform);
         spanw.BindToPenguin(_playerControls);
         _hotBar = spanw.GetComponentInChildren<HotBar>();

@@ -1,12 +1,11 @@
 using System;
-using UnityEngine;
 
 namespace Utilities
 {
     public static class Settings
     {
         public static event Action OnSettingsChanged;
-        public static GamePlaySettings GamePlaySettings { get; private set; }
+        public static GamePlaySettings GamePlaySettings { get; private set; } = new GamePlaySettings();
 
         public static void Save()
         {
@@ -20,9 +19,12 @@ namespace Utilities
     }
 
     [Serializable]
-    public class GamePlaySettings
+    public struct GamePlaySettings
     {
-        
-        public bool autoEquip = true;
+        public bool autoEquip;
+        public GamePlaySettings(string profile)
+        {
+            autoEquip = true;
+        }
     }
 }

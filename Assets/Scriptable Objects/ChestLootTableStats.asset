@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7c83d1fb4c44e48b23d10efba6ae02, type: 3}
+  m_Name: ChestLootTableStats
+  m_EditorClassIdentifier: 
+  lootData:
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 7873614102368489327, guid: ca00d72cb50626247836994f1a1c218e, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 3257040851466105109, guid: 65c828d46595e164cbbe986a4d46365e, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 6068313531264560855, guid: a7fd403e3e5063b448f70c0c689c38c5, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 8894762768363780725, guid: 230f50d1cfa169f4596a6df596b743fb, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 891354663697634764, guid: e7e8d6936d6ac2d41a605c0cca871e73, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 6066280917356043264, guid: a5f0ce3de33760a4f856c0d595a52611, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 7270249090517280228, guid: 12d92f81d1a46fb4e8730513af3630f0, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 8691399717189009814, guid: a7773d391f0b9a04c98d63b2f5baa1b7, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 3440807402845400155, guid: c2714bc1097c81d4d82369b5cc1f9f54, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 6457358767466101596, guid: ab4db080626413346b446045dfbe28da, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 3257040851466105109, guid: 65c828d46595e164cbbe986a4d46365e, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 8216556247238232607, guid: 4f5bce3e3054d5a4b9ef16bc35d7a2d0, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 3862594168681019214, guid: 5698fb23d0430664e8db06627cfe2506, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 4957417091116949468, guid: b8c7ac7308931da419baad768d2f0efa, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 0
+    maxSpawnAmount: 1
+    spawnPrefab: {fileID: 8018842745396997835, guid: 811c7bb61375a2240b6c29af1037d3a0, type: 3}
+    chanceToSpawn: 0.05
+  - minSpawnAmount: 1
+    maxSpawnAmount: 4
+    spawnPrefab: {fileID: 8604251716984194844, guid: a70d7620c4e4ce64a93ea0473a5ca8b3, type: 3}
+    chanceToSpawn: 0.25
+  - minSpawnAmount: 1
+    maxSpawnAmount: 4
+    spawnPrefab: {fileID: 6942019327815221725, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
+    chanceToSpawn: 0.25
+  - minSpawnAmount: 1
+    maxSpawnAmount: 4
+    spawnPrefab: {fileID: 8682902792900192204, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
+    chanceToSpawn: 0.25

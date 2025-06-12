@@ -472,33 +472,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3085303433336049230, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3413784701073948691, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5020149957310227411, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
       propertyPath: m_Name
       value: Potion B
-      objectReference: {fileID: 0}
-    - target: {fileID: 5020149957310227411, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072275816166515906, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.0518
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072275816166515906, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.0518
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072275816166515906, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.0518
       objectReference: {fileID: 0}
     - target: {fileID: 5072275816166515906, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
       propertyPath: m_LocalPosition.x
@@ -539,6 +515,10 @@ PrefabInstance:
     - target: {fileID: 5072275816166515906, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005168672736422441, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4119653014
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -682,13 +662,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion A
       objectReference: {fileID: 0}
-    - target: {fileID: 648252587299700914, guid: a70d7620c4e4ce64a93ea0473a5ca8b3, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2271075976731335938, guid: a70d7620c4e4ce64a93ea0473a5ca8b3, type: 3}
-      propertyPath: m_Layer
-      value: 10
+    - target: {fileID: 943382976260955952, guid: a70d7620c4e4ce64a93ea0473a5ca8b3, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1377713937
       objectReference: {fileID: 0}
     - target: {fileID: 6697259279729262641, guid: a70d7620c4e4ce64a93ea0473a5ca8b3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2489,17 +2465,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2798941178228659313, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.3356
+    - target: {fileID: 2907100280082980828, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 470074810
       objectReference: {fileID: 0}
     - target: {fileID: 3729976822582420295, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
       propertyPath: m_Name
       value: Potion C
-      objectReference: {fileID: 0}
-    - target: {fileID: 3729976822582420295, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4025390479793152638, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2540,14 +2512,6 @@ PrefabInstance:
     - target: {fileID: 4025390479793152638, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059254194976108002, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4760654639173904335, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2826,6 +2790,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 824339702358265582, guid: cd8829eb7a3bd1b4fb913010c373a067, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 18354854
+      objectReference: {fileID: 0}
     - target: {fileID: 3909018266714167527, guid: cd8829eb7a3bd1b4fb913010c373a067, type: 3}
       propertyPath: m_Name
       value: LootChest
@@ -2870,6 +2838,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8462472677959970641, guid: cd8829eb7a3bd1b4fb913010c373a067, type: 3}
+      propertyPath: m_Animator
+      value: 
+      objectReference: {fileID: 980101304}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

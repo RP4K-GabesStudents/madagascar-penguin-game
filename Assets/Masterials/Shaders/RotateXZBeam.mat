@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_BillBoardXZ
+  m_Name: RotateXZBeam
   m_Shader: {fileID: -6465566751694194690, guid: 67609561343d2ea4e958e61f824d96be, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -46,13 +46,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaPow: 2
+    - _A: -5.95
+    - _AlphaPow: 0.5
     - _Amplitude: 1
-    - _Blend: -1.5
+    - _B: 15
+    - _Blend: 101.55
     - _DepthPow: 1
-    - _Fill: 2.12
+    - _Fill: 2.5
+    - _Move_to: -0.5
     - _Mul: 35.44
-    - _Offset: 1.67
+    - _Offset: -2.53
     - _QueueControl: 0
     - _QueueOffset: 0
     - _SecondPow: 1.99

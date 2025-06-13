@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using Managers;
 using Unity.Netcode;
 using UnityEngine;
@@ -8,25 +7,52 @@ using Random = UnityEngine.Random;
 namespace Scriptable_Objects
 {
     [CreateAssetMenu(fileName = "LootTable", menuName = "Scriptable Objects/LootTable")]
-    public class LootTable : ScriptableObject
+    public class LootTable : ScriptableObject, INetworkSerializable
     {
         [SerializeField] private LootData[] lootData;
+        private int _summativeSpawnWeight = -1;
 
-        public void Spawn(Vector3 position, float launchForce, float delay)
+
+        public NetworkPrefab RetrieveRandomNetworkPrefab(out int amount)
         {
-            // WaitForSeconds wait = new WaitForSeconds(delay);
-            // for (int i = 0; i < lootData.Length; i++)
-            // {
-            //     Rigidbody gameObject = lootData[i].TrySpawnObject(out int amount).GetComponent<Rigidbody>();
-            //     if (amount == 0) continue;
-            //     for (int j = 0; j < amount; j++)
-            //     {
-            //         Rigidbody rb = Instantiate(gameObject, position, Quaternion.identity);
-            //         rb.AddForce(Vector3.up * launchForce, ForceMode.Impulse);
-            //         yield return wait;
-            //     }
-            // }
-            LootManager.Instance.SpawnLoot_ServerRpc(position, launchForce, delay, lootData);
+            if(_summativeSpawnWeight == -1) ComputeSpawnWeight();
+            float rng = Random.Range(0, _summativeSpawnWeight + 1);
+            
+            Debug.Log("Getting random loot with RNG: " + rng);
+            
+            foreach (LootData ld in lootData)
+            {
+                rng -= ld.SpawnWeight;
+                if (rng <= 0)
+                {
+                    
+                    return ld.GetSpawnInfo(out amount);
+                }
+            }
+            amount = 0;
+            return null;
+        }
+
+        private void ComputeSpawnWeight()
+        {
+            _summativeSpawnWeight = 0;
+            foreach (var d in lootData)
+            {
+                _summativeSpawnWeight += d.SpawnWeight;
+            }
+        }
+
+        public void Spawn(Vector3 position, Quaternion rotation, float launchForce = 0, float torque = 0, float delay = 0, int rolls = 1)
+        {
+            LootManager.Instance.SpawnLoot_ServerRpc(this, position, rotation, launchForce, torque, delay,rolls);
+        }
+        public void Spawn(Vector3 position, float launchForce = 0, float torque = 0, float delay = 0, int rolls = 1)
+        {
+            LootManager.Instance.SpawnLoot_ServerRpc(this, position, Quaternion.identity, launchForce, torque, delay,rolls);
+        }
+        public void Spawn(Vector3 position, Quaternion rotation, int rolls = 1)
+        {
+            LootManager.Instance.SpawnLoot_ServerRpc(this, position, rotation,rolls);
         }
 
 
@@ -36,42 +62,31 @@ namespace Scriptable_Objects
             [SerializeField, Min(0)] private int minSpawnAmount;
             [SerializeField, Min(1)] private int maxSpawnAmount;
             [SerializeField] private NetworkPrefab spawnPrefab; // Prefab reference (editor-only)
-            [SerializeField, Range(0, 1)] private float chanceToSpawn;
+            [SerializeField] private int spawnWeight;
+            
+            public int SpawnWeight => spawnWeight;
 
             // Runtime-only: Stores the prefab's hash ID
-            private uint prefabHash;
+            private uint _prefabHash;
 
             public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
             {
                 serializer.SerializeValue(ref minSpawnAmount);
                 serializer.SerializeValue(ref maxSpawnAmount);
-                serializer.SerializeValue(ref chanceToSpawn);
+                serializer.SerializeValue(ref spawnWeight);
 
                 if (serializer.IsWriter)
                 {
                     // When sending: Convert prefab to its network hash
-                    prefabHash = spawnPrefab.SourcePrefabGlobalObjectIdHash;
-                    serializer.SerializeValue(ref prefabHash);
+                    _prefabHash = spawnPrefab.SourcePrefabGlobalObjectIdHash;
+                    serializer.SerializeValue(ref _prefabHash);
                 }
                 else
                 {
                     // When receiving: Look up prefab from hash
-                    serializer.SerializeValue(ref prefabHash);
-                    spawnPrefab = GetNetworkPrefabFromHash(prefabHash);
+                    serializer.SerializeValue(ref _prefabHash);
+                    spawnPrefab = GetNetworkPrefabFromHash(_prefabHash);
                 }
-            }
-
-            public NetworkPrefab TrySpawnObject(out int amount)
-            {
-                float rng = Random.Range(0f, 1f);
-                if (chanceToSpawn >= rng)
-                {
-                    amount = Random.Range(minSpawnAmount, maxSpawnAmount + 1);
-                    return spawnPrefab;
-                }
-
-                amount = 0;
-                return null;
             }
 
             private NetworkPrefab GetNetworkPrefabFromHash(uint hash)
@@ -82,9 +97,20 @@ namespace Scriptable_Objects
                     if (prefab.SourcePrefabGlobalObjectIdHash == hash)
                         return prefab;
                 }
-
-                throw new System.Exception($"Prefab with hash {hash} not found!");
+                throw new Exception($"Prefab with hash {hash} not found!");
             }
+
+            public NetworkPrefab GetSpawnInfo(out int amount)
+            {
+                amount = Random.Range(minSpawnAmount, maxSpawnAmount);
+                Debug.Log("Retrieved spawn info for: " + spawnPrefab.Prefab.name + ", " + amount);
+                return spawnPrefab;
+            }
+        }
+
+        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+        {
+            serializer.SerializeValue(ref lootData);
         }
     }
 }

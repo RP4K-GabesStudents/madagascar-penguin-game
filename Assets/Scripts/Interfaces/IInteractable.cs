@@ -8,14 +8,12 @@ namespace Interfaces
     {
         public void OnHoverDriver()
         {
-            if(!CanHover()) return;
             ToolTipManager.Instance.ShowToolTip(GetHoverInfoStats());
             OnHover();
         }
 
         public void OnHoverEndDriver()
         {
-            if(!CanHover()) return;
             ToolTipManager.Instance.HideToolTip();
             OnHoverEnd();
         }

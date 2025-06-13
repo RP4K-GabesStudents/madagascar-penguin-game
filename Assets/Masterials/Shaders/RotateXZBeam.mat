@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4ef9ec0d9f88c874188b1eb21e833639, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4b1a68d839b042a47ae3ec37692c3746, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Overlay:
@@ -46,8 +46,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _A: -5.95
-    - _AlphaPow: 0.5
+    - _A: -6
+    - _AlphaPow: 2
     - _Amplitude: 1
     - _B: 15
     - _Blend: 101.55
@@ -64,7 +64,7 @@ Material:
     - _Main: {r: 6.0628657, g: 3.7139022, b: 0, a: 0}
     - _Speed: {r: 0, g: 1, b: 0, a: 0}
     - _SpeedAlt: {r: 0.2, g: 0, b: 0, a: 0}
-    - _SpeedMain: {r: 0, g: 0.1, b: 0, a: 0}
+    - _SpeedMain: {r: 0, g: 0.2, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2868227505329655364

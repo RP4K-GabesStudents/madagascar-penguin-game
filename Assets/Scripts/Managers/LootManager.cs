@@ -1,8 +1,8 @@
-using System;
 using System.Collections;
 using Scriptable_Objects;
 using Unity.Netcode;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Managers
 {
@@ -22,21 +22,25 @@ namespace Managers
         }
         
         [ServerRpc(RequireOwnership = false)]
-        public void SpawnLoot_ServerRpc(Vector3 position, float launchForce, float delay, LootTable.LootData[] lootData)
+        public void SpawnLoot_ServerRpc(LootTable lootData, Vector3 position, Quaternion rotation, float launchForce = 0, float torque = 0, float delay = 0, int rolls = 1)
         {
-            StartCoroutine(Spawn(position, launchForce, delay, lootData));
+            StartCoroutine(Spawn(lootData,position,rotation, launchForce, torque,delay,1));
         }
-        public IEnumerator Spawn(Vector3 position, float launchForce, float delay, LootTable.LootData[] lootData)
+        private IEnumerator Spawn(LootTable lootData, Vector3 position, Quaternion rotation, float launchForce = 0, float torque = 0, float delay = 0, int rolls = 1)
         {
             WaitForSeconds wait = new WaitForSeconds(delay);
-            for (int i = 0; i < lootData.Length; i++)
+            for (int i = 0; i < rolls; i++)
             {
-                NetworkPrefab gameObject = lootData[i].TrySpawnObject(out int amount);
+                GameObject prefab = lootData.RetrieveRandomNetworkPrefab(out int amount)?.Prefab;
                 if (amount == 0) continue;
                 for (int j = 0; j < amount; j++)
                 {
-                    Rigidbody rb = Instantiate(gameObject.Prefab, position, Quaternion.identity).GetComponent<Rigidbody>();
+                    
+                    GameObject inst = Instantiate(prefab, position, rotation);
+                    Rigidbody rb = inst.GetComponent<Rigidbody>();
+                    inst.GetComponent<NetworkObject>().Spawn();
                     rb.AddForce(Vector3.up * launchForce, ForceMode.Impulse);
+                    rb.AddTorque(Random.insideUnitSphere * torque, ForceMode.Impulse);
                     yield return wait;
                 }
             }

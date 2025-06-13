@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using Unity.Netcode.Editor;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Detection
 {

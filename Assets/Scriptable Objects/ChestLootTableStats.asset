@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ChestLootTableStats
   m_EditorClassIdentifier: 
   lootData:
-  - minSpawnAmount: 0
+  - minSpawnAmount: 1
     maxSpawnAmount: 1
     spawnPrefab:
       Override: 0
@@ -21,7 +21,7 @@ MonoBehaviour:
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
-    chanceToSpawn: 0.05
+    spawnWeight: 5
   - minSpawnAmount: 1
     maxSpawnAmount: 1
     spawnPrefab:
@@ -30,8 +30,8 @@ MonoBehaviour:
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
-    chanceToSpawn: 1
-  - minSpawnAmount: 0
+    spawnWeight: 5
+  - minSpawnAmount: 1
     maxSpawnAmount: 1
     spawnPrefab:
       Override: 0
@@ -39,8 +39,8 @@ MonoBehaviour:
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
-    chanceToSpawn: 0.05
-  - minSpawnAmount: 0
+    spawnWeight: 5
+  - minSpawnAmount: 1
     maxSpawnAmount: 1
     spawnPrefab:
       Override: 0
@@ -48,8 +48,8 @@ MonoBehaviour:
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
-    chanceToSpawn: 0.05
-  - minSpawnAmount: 0
+    spawnWeight: 5
+  - minSpawnAmount: 1
     maxSpawnAmount: 1
     spawnPrefab:
       Override: 0
@@ -57,8 +57,8 @@ MonoBehaviour:
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
-    chanceToSpawn: 0.05
-  - minSpawnAmount: 0
+    spawnWeight: 5
+  - minSpawnAmount: 1
     maxSpawnAmount: 1
     spawnPrefab:
       Override: 0
@@ -66,4 +66,4 @@ MonoBehaviour:
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
-    chanceToSpawn: 0.05
+    spawnWeight: 5

@@ -5,9 +5,7 @@ using Inventory;
 using Managers;
 using Scriptable_Objects;
 using Scriptable_Objects.Penguin_Stats;
-using UI;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace penguin
 {
@@ -158,28 +156,27 @@ namespace penguin
         }
         public void Interact(bool readValueAsButton)
         {
-            if (_interactable != null)
+            if (_interactable == null) return;
+            if (_interactable is Item i)
             {
-                
-                if (_interactable is Item i)
+                if (_controlled.HeyIPickedSomethingUp(i.ItemStats))
                 {
-                    if (_controlled.HeyIPickedSomethingUp(i.ItemStats))
-                    {
-                        _animator.SetTrigger(StaticUtilities.InteractAnimID);
-                        Debug.LogWarning("success");
-                        _interactable.OnInteract();
-                    }
-                    else
-                    {
-                        Debug.LogWarning("do a barrel roll");
-                    }
+                    _animator.SetTrigger(StaticUtilities.InteractAnimID);
+                    Debug.LogWarning("success");
+                    _interactable.OnInteract();
+                    if(!_interactable.CanHover()) HandleHovering(null);
                 }
                 else
                 {
-                    _interactable.OnInteract();
-                    _animator.SetTrigger(StaticUtilities.InteractAnimID);
+                    Debug.LogWarning("do a barrel roll");
                 }
-            } 
+            }
+            else
+            {
+                _animator.SetTrigger(StaticUtilities.InteractAnimID);
+                _interactable.OnInteract();
+                if(!_interactable.CanHover()) HandleHovering(null);
+            }
         }
 
         private void CheckForInteractable()
@@ -191,7 +188,7 @@ namespace penguin
                 bool hitWall = Physics.Raycast(headXRotator.position, headXRotator.forward, out _, morePenguinStats.InteractRadius, StaticUtilities.GroundLayers);
                 if (hitWall)
                 {
-                    HandleInteract(null);
+                    HandleHovering(null);
                     return;
                 }
                 
@@ -199,19 +196,19 @@ namespace penguin
                 Rigidbody rb = hitInfo.rigidbody;
                 if (rb && rb.TryGetComponent(out IInteractable interactable))
                 {
-                    HandleInteract(interactable);
+                    HandleHovering(interactable);
                     return;
                 }
             }
-            HandleInteract(null);
+            HandleHovering(null);
         }
 
-        private void HandleInteract(IInteractable interactable)
+        private void HandleHovering(IInteractable interactable)
         {
             if (_interactable == interactable) return;
             
             _interactable?.OnHoverEndDriver();
-            interactable?.OnHoverDriver();
+            if(interactable != null && interactable.CanHover()) interactable.OnHoverDriver();
             _interactable = interactable;
         }
 

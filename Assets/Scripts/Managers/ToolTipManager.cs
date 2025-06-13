@@ -29,7 +29,7 @@ namespace Managers
         {
             _currentHoverInfo = stats;
             //canvas.enabled = true;
-            enabled = true;
+            enabled = stats;
         }
         private void LateUpdate()
         {

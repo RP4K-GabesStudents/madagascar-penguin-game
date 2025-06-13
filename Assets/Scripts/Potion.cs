@@ -72,4 +72,9 @@ public class Potion : MonoBehaviour, IDamageable, IInteractable
     {
         return hoverInfo;
     }
+
+    public bool CanHover()
+    {
+        return true;
+    }
 }

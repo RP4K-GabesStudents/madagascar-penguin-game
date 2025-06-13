@@ -19,10 +19,12 @@ namespace Managers
         public static readonly int PlayerLayer = 1 << LayerMask.NameToLayer("Player");
         public static readonly int DestructableLayer = 1 << LayerMask.NameToLayer("Destructable");
         public static readonly int PhysicsLayer = 1 << LayerMask.NameToLayer("PhysicsObjects");
+        public static readonly int InteractableLayer = 1 << LayerMask.NameToLayer("InteractableLayer");
         
         public static readonly int GroundLayers = DefaultLayer;
         public static readonly int AttackableLayers = EnemyLayer | PlayerLayer | DestructableLayer | DefaultLayer | PhysicsLayer;
         public static readonly int EnemyAttackLayers = EnemyLayer | DestructableLayer | DefaultLayer;
-        
+        public static readonly int InteractableLayers = PhysicsLayer | InteractableLayer;
+
     }
 }

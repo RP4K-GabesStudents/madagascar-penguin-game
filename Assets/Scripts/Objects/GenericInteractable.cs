@@ -25,6 +25,11 @@ namespace Objects
             return hoverInfoStats;
         }
 
+        public bool CanHover()
+        {
+            return true;
+        }
+
         public void OnHover()
         {
             onHoverBegin.Invoke();

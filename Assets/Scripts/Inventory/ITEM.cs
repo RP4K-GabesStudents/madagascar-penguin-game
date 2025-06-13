@@ -28,6 +28,11 @@ namespace Inventory
             return itemStats;
         }
 
+        public bool CanHover()
+        {
+            return true;
+        }
+
         public void OnHover()
         {
             foreach (var meshRenderer in _meshRenderers)

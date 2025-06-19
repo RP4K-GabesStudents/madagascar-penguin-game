@@ -30,7 +30,7 @@ namespace Inventory
         [ServerRpc(RequireOwnership = false)]
         private void Interact_ServerRpc()
         {
-            _networkObject.Despawn(false);
+            _networkObject.Despawn();
         }
 
         public HoverInfoStats GetHoverInfoStats()

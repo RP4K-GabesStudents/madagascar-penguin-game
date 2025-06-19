@@ -21,7 +21,11 @@ namespace Objects
         private void Awake()
         {
             _animator = GetComponent<Animator>();
-            _isOpened.OnValueChanged += (_, _) => OnHoverEnd();
+            _isOpened.OnValueChanged += (_, _) =>
+            {
+                gameObject.layer = LayerMask.NameToLayer("Default");
+                OnHoverEnd();
+            };
         }
         
         public void OnHover()

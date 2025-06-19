@@ -482,11 +482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5072275816166515906, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 1.328
       objectReference: {fileID: 0}
     - target: {fileID: 5072275816166515906, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.769798
+      value: -18.445705
       objectReference: {fileID: 0}
     - target: {fileID: 5072275816166515906, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
       propertyPath: m_LocalRotation.w
@@ -745,11 +745,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6697259279729262641, guid: a70d7620c4e4ce64a93ea0473a5ca8b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.884
+      value: 1.392
       objectReference: {fileID: 0}
     - target: {fileID: 6697259279729262641, guid: a70d7620c4e4ce64a93ea0473a5ca8b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.828093
+      value: -18.504
       objectReference: {fileID: 0}
     - target: {fileID: 6697259279729262641, guid: a70d7620c4e4ce64a93ea0473a5ca8b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1097,6 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62eaa361baafad74e88d69c050d8a71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   hoverInfo: {fileID: 0}
   breakForce: -9
 --- !u!54 &590192490
@@ -2617,17 +2618,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion C
       objectReference: {fileID: 0}
+    - target: {fileID: 3729976822582420295, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4025390479793152638, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.024351
+      value: 25.61
       objectReference: {fileID: 0}
     - target: {fileID: 4025390479793152638, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.903
+      value: 1.476
       objectReference: {fileID: 0}
     - target: {fileID: 4025390479793152638, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -26.755297
+      value: -19.431204
       objectReference: {fileID: 0}
     - target: {fileID: 4025390479793152638, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3273,6 +3278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62eaa361baafad74e88d69c050d8a71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   hoverInfo: {fileID: 0}
   breakForce: -9
 --- !u!54 &2110262291

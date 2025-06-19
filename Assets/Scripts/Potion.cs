@@ -1,11 +1,12 @@
 using System;
 using Interfaces;
 using Scriptable_Objects;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 [SelectionBase]
-public class Potion : MonoBehaviour, IDamageable, IInteractable
+public class Potion : NetworkBehaviour, IDamageable, IInteractable
 {
     private float _previousSpeed;
     [SerializeField] private HoverInfoStats hoverInfo;
@@ -43,15 +44,16 @@ public class Potion : MonoBehaviour, IDamageable, IInteractable
         Break(-force);
     }
 
-    public float Health { get; set; }
-    public float DamageRes { get; }
-
     private void Break(Vector3 direction)
     {
         //var c = Instantiate(cloud, transform.position, Quaternion.LookRotation(direction));
         //c.Initialize(_effect);
-        Die();
+        //Die();
     }
+    public float Health { get; set; }
+    public float DamageRes { get; }
+
+    
 
     public void OnHover()
     {

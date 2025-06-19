@@ -3,24 +3,34 @@ using Interfaces;
 using Managers;
 
 using Scriptable_Objects;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace Inventory
 {
-    public class Item : MonoBehaviour, IInteractable
+    public class Item : NetworkBehaviour, IInteractable
     {
         [SerializeField] private ItemStats itemStats;
         public ItemStats ItemStats => itemStats;
         private MeshRenderer[] _meshRenderers;
+        private NetworkObject _networkObject;
 
         private void Awake()
         {
+            _networkObject = GetComponent<NetworkObject>();
             _meshRenderers = GetComponentsInChildren<MeshRenderer>();
         }
 
         public void OnInteract()
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            Interact_ServerRpc();
+        }
+
+        [ServerRpc(RequireOwnership = false)]
+        private void Interact_ServerRpc()
+        {
+            _networkObject.Despawn(false);
         }
 
         public HoverInfoStats GetHoverInfoStats()

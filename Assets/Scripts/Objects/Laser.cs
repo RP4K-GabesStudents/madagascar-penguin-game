@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Interfaces;
 using Scriptable_Objects;
 using Unity.Mathematics;
@@ -26,12 +27,13 @@ namespace Objects
         {
             _targetLayers = targetLayers;
             _networkObject.SpawnWithOwnership(onerId);
-            Destroy(gameObject, 3);
+            StartCoroutine(DestroyLaser());
             rigidbody.AddForce(_networkObject.transform.forward * laserStats.Speed, ForceMode.Impulse);
             
         }
         private void OnTriggerEnter(Collider other)
         {
+            if (!IsServer) return;
             Rigidbody hitInfoRigidbody = other.attachedRigidbody;
             if (hitInfoRigidbody != null)
             {
@@ -43,14 +45,27 @@ namespace Objects
                     damageable.TakeDamage(laserStats.Damage, Vector3.zero);
                 }
             }
-            bool hit = Physics.Raycast(_networkObject.transform.position + _networkObject.transform.forward * -0.25f, _networkObject.transform.forward, out RaycastHit hitInfo, 0.5f);
+            PlayPartice_ClientRpc(transform.position, transform.forward);
+            _networkObject.Despawn();
+        }
+
+        [ClientRpc]
+        private void PlayPartice_ClientRpc(Vector3 position, Vector3 forward)
+        {
+            bool hit = Physics.Raycast(position + forward * -0.25f, forward, out RaycastHit hitInfo, 0.5f);
             if (hit)
-            {
-                Debug.Log("hit");
+            { 
                 GameObject t = Instantiate(laserSpark, hitInfo.point, Quaternion.LookRotation(hitInfo.normal), hitInfo.transform);
                 Destroy(t, 5);
             }
-            Destroy(gameObject);
+            Debug.Log("i eat oranges for bnreakfast");
+        }
+
+        private static readonly WaitForSeconds Wait = new WaitForSeconds(3);
+        private IEnumerator DestroyLaser()
+        {
+            yield return Wait;
+            _networkObject.Despawn();
         }
     }
 }

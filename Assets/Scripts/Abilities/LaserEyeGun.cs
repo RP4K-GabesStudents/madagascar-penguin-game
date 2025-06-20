@@ -10,6 +10,8 @@ namespace Abilities
     public class LaserEyeGun : BaseWeaponGun
     {
         [SerializeField] private Laser laser;
+        [SerializeField] private ParticleSystem leftEye;
+        [SerializeField] private ParticleSystem rightEye;
         public override void Execute()
         {
             Vector3 cameraForward = _oner.headXRotator.forward * 100 + _oner.headXRotator.position;
@@ -19,7 +21,7 @@ namespace Abilities
             ShootProjectile_ServerRpc(_oner.laserSpawn.position, _oner.laserSpawn2.position, leftLaserDir, rightLaserDir);
         }
         
-        [ServerRpc(RequireOwnership = false)]// << Any client can shoot, but we need to validate the server.
+        [ServerRpc(RequireOwnership = true)]// << Any client can shoot, but we need to validate the server.
         void ShootProjectile_ServerRpc(Vector3 a, Vector3 b, Vector3 c, Vector3 d, ServerRpcParams rpcParams = default)
         {
             Laser l1 = Instantiate(laser, a, quaternion.LookRotation(c, Vector3.up));
@@ -27,7 +29,14 @@ namespace Abilities
             
             l1.Init(StaticUtilities.EnemyAttackLayers, rpcParams.Receive.SenderClientId);
             l2.Init(StaticUtilities.EnemyAttackLayers, rpcParams.Receive.SenderClientId);
+            ShootProjectile_ClientRpc();
         }
-
+        
+        [ClientRpc]
+        void ShootProjectile_ClientRpc()
+        {
+            leftEye.Play();
+            rightEye.Play();
+        }
     }
 }

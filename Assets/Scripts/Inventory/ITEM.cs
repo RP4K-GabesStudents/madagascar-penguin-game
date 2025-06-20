@@ -1,7 +1,5 @@
-
 using Interfaces;
 using Managers;
-
 using Scriptable_Objects;
 using Unity.Netcode;
 using UnityEngine;
@@ -28,9 +26,19 @@ namespace Inventory
         }
 
         [ServerRpc(RequireOwnership = false)]
-        private void Interact_ServerRpc()
+        private void Interact_ServerRpc(ServerRpcParams id = default)
         {
-            _networkObject.Despawn();
+            Interact_ClientRpc();
+            _networkObject.ChangeOwnership(id.Receive.SenderClientId);
+            Debug.Log("fix things");
+            //transform.SetParent();
+        }
+
+        [ClientRpc]
+        private void Interact_ClientRpc()
+        {
+            gameObject.SetActive(false);
+            
         }
 
         public HoverInfoStats GetHoverInfoStats()
@@ -55,7 +63,9 @@ namespace Inventory
         {
             foreach (var meshRenderer in _meshRenderers)
             {
+                Debug.Log(meshRenderer.sharedMaterials);
                 meshRenderer.sharedMaterials = new[] { meshRenderer.sharedMaterials[0] };
+                
             }
         }
     }

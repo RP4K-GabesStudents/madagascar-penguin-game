@@ -156,7 +156,7 @@ namespace penguin
         }
         public void Interact(bool readValueAsButton)
         {
-            if (_interactable == null) return;
+            if (_interactable == null || !readValueAsButton) return;
             if (_interactable is Item i)
             {
                 if (_controlled.HeyIPickedSomethingUp(i.ItemStats))
@@ -178,6 +178,8 @@ namespace penguin
                 if(!_interactable.CanHover()) HandleHovering(null);
             }
         }
+        
+        
 
         private void CheckForInteractable()
         {
@@ -206,7 +208,7 @@ namespace penguin
         private void HandleHovering(IInteractable interactable)
         {
             if (_interactable == interactable) return;
-            
+            if ((Behaviour)_interactable != null) _interactable.OnHoverEndDriver();
             _interactable?.OnHoverEndDriver();
             if(interactable != null && interactable.CanHover()) interactable.OnHoverDriver();
             _interactable = interactable;

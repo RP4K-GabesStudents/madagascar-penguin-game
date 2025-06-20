@@ -23,7 +23,10 @@ namespace Objects
             _animator = GetComponent<Animator>();
             _isOpened.OnValueChanged += (_, _) =>
             {
-                gameObject.layer = LayerMask.NameToLayer("Default");
+                foreach (var mr in meshRenderers)
+                {
+                    mr.gameObject.layer = LayerMask.NameToLayer("Default");
+                }
                 OnHoverEnd();
             };
         }

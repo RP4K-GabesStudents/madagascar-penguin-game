@@ -38,4 +38,27 @@ public class Player : NetworkBehaviour
     { 
         return _hotBar.HeyIPickedSomethingUp(iItemStats);
     }
+    [ClientRpc]
+    public void EquipItem_ClientRpc()
+    {
+            
+    }
+        
+    [ClientRpc]
+    public void UnequipItem_ClientRpc()
+    {
+            
+    }
+        
+    [ServerRpc(RequireOwnership = true)]
+    public void EquipItem_ServerRpc()
+    {
+        EquipItem_ClientRpc();
+    }
+        
+    [ServerRpc(RequireOwnership = true)]
+    public void UnequipItem_ServerRpc()
+    {
+        UnequipItem_ClientRpc();
+    }
 }

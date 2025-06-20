@@ -1,4 +1,5 @@
 using System;
+using Inventory;
 using Managers;
 using Unity.Netcode;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace penguin
         public abstract float GetHorizontalSpeed();
         protected IKController _ikController;
         protected Animator _animator;
-
+        private Item _currentlyHeld;
 
         protected virtual void Awake()
         {
@@ -28,5 +29,7 @@ namespace penguin
         {
             _animator.SetFloat(StaticUtilities.ForwardAnimID, GetHorizontalSpeed());
         }
+
+        
     }
 }

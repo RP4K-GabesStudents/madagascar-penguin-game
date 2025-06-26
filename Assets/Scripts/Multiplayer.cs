@@ -1,6 +1,9 @@
 using System;
-using System.Threading;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
+using Unity.Networking.Transport.Relay;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Lobbies;
@@ -8,21 +11,42 @@ using Unity.Services.Lobbies.Models;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
+using Utilities;
 using Random = UnityEngine.Random;
+
+
+[System.Serializable]
+public enum EncryptionType
+{
+    Dtls,
+    Wss
+}
 
 public class Multiplayer : MonoBehaviour
 {
     [SerializeField] private string lobbyName = "lobby";
     [SerializeField] private int maxPlayers = 4;
+    [SerializeField] EncryptionType encryptionType = EncryptionType.Dtls;
+    
 
     public static Multiplayer Instance { get; set; }
     public string PlayerName { get; private set; }
     public string PlayerId { get; private set; }
 
-    private const float HeartBeatInterval = 20f;
-    private const float UpdateTimeInterval = 65f;
+    
     
     private Lobby _currentLobby;
+    private string ConnectionType => encryptionType == EncryptionType.Dtls ? DtlsEncryption : WssEncryption;
+    
+    private const float LobbyHeartBeatInterval = 20f;
+    private const float LobbyPollInterval = 65f;
+    private const string KeyJoinCode = "RelayJoinCode";
+    private const string DtlsEncryption = "Dtls";
+    private const string WssEncryption = "Wss";
+
+    private CountdownTimer _heartBeatTimer = new CountdownTimer(LobbyHeartBeatInterval);
+    private CountdownTimer _pollForUpdatesTimer = new CountdownTimer(LobbyPollInterval);
+    
     
     private async void Start()
     {
@@ -35,6 +59,42 @@ public class Multiplayer : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         await Authenticate();
+
+        _heartBeatTimer.OnTimerStop += () =>
+        {
+            HandleHeartBeatAsync();
+            _heartBeatTimer.Start();
+        };
+        _pollForUpdatesTimer.OnTimerStop += () =>
+        {
+            HandlePollForUpdatesAsync();
+            _pollForUpdatesTimer.Start();
+        };
+    }
+
+    private async Task HandleHeartBeatAsync()
+    {
+        try
+        {
+            await LobbyService.Instance.SendHeartbeatPingAsync(_currentLobby.Id);
+            Debug.Log("Sent heartbeat ping to lobby: " + _currentLobby.Name);
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.LogError("Failed to heartbeat lobby:" + e.Message);
+        }
+    }
+    private async Task HandlePollForUpdatesAsync()
+    {
+        try
+        {
+            Lobby lobby = await LobbyService.Instance.GetLobbyAsync(_currentLobby.Id);
+            Debug.Log("Sent heartbeat ping to lobby: " + _currentLobby.Name);
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.LogError("Failed to heartbeat lobby:" + e.Message);
+        }
     }
 
     private async Task Authenticate()
@@ -80,6 +140,21 @@ public class Multiplayer : MonoBehaviour
             
             _currentLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, maxPlayers, option);
             Debug.Log("Created Lobby: " + _currentLobby.Name + "with code " + _currentLobby.LobbyCode );
+            
+            _heartBeatTimer.Start();
+            _pollForUpdatesTimer.Start();
+
+            await LobbyService.Instance.UpdateLobbyAsync(_currentLobby.Id, new UpdateLobbyOptions()
+            {
+                Data = new Dictionary<string, DataObject>
+                {
+                    {KeyJoinCode, new DataObject(DataObject.VisibilityOptions.Member, relayJoinCode)}
+                }
+            });
+            
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(allocation, ConnectionType));
+
+            NetworkManager.Singleton.StartHost();
         }
         catch (LobbyServiceException e)
         {
@@ -89,7 +164,23 @@ public class Multiplayer : MonoBehaviour
 
     public async Task QuickJoinLobby()
     {
-        
+        try
+        {
+            _currentLobby = await LobbyService.Instance.QuickJoinLobbyAsync();
+            _pollForUpdatesTimer.Start();
+            
+            string relayJoinCode = _currentLobby.Data[KeyJoinCode].Value;
+            JoinAllocation joinAllocation = await JoinRelay(relayJoinCode);
+            
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(joinAllocation, ConnectionType));
+
+            NetworkManager.Singleton.StartClient();
+        }
+        catch (LobbyServiceException e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
     async Task<Allocation> AllocateRelay()

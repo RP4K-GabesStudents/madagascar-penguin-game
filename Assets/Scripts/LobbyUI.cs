@@ -1,39 +1,64 @@
+using System;
 using Eflatun.SceneReference;
-using Unity.Netcode;
+using Managers;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
 public class LobbyUI : MonoBehaviour
 {
-        [SerializeField] private Button createLobbyButton;
-        [SerializeField] private Button joinLobbyButton;
+        [SerializeField] private Button quickJoinButton;
+        [SerializeField] private Button startGameButton;
         [SerializeField] SceneReference gameScene;
+        [SerializeField] private TextMeshProUGUI lobbyText;
+
+        private void OnEnable()
+        {
+                LobbySystemManager.Instance.OnClientConnected += UpdateLobby;
+                LobbySystemManager.Instance.OnClientDisconnected += UpdateLobby;
+                LobbySystemManager.Instance.OnLobbyOpened += UpdateLobby;
+                LobbySystemManager.Instance.OnLobbyClosed += UpdateLobby;
+                LobbySystemManager.Instance.OnGameStarting += DisableInput;
+        }
+
+
+        private void OnDisable()
+        {
+                LobbySystemManager.Instance.OnClientConnected -= UpdateLobby;
+                LobbySystemManager.Instance.OnClientDisconnected -= UpdateLobby;
+                LobbySystemManager.Instance.OnLobbyOpened -= UpdateLobby;
+                LobbySystemManager.Instance.OnLobbyClosed -= UpdateLobby;
+                LobbySystemManager.Instance.OnGameStarting -= DisableInput;
+        }
+
+        private void DisableInput()
+        {
+                startGameButton.interactable = false;
+        }
 
         private void Awake()
         {
-                createLobbyButton.onClick.AddListener(CreateGame); 
-                joinLobbyButton.onClick.AddListener(JoinGame);
+                quickJoinButton.onClick.AddListener(JoinGame); 
+                startGameButton.onClick.AddListener(StartGame);
+                UpdateLobby();
         }
 
-        private async void CreateGame()
+        private async void StartGame()
         {
-                await Multiplayer.Instance.CreateLobby();
+                LobbySystemManager.Instance.StartGame(gameScene.Name, "0");
         }
 
         private async void JoinGame()
         {
-                await Multiplayer.Instance.QuickJoinLobby();
+                await LobbySystemManager.Instance.QuickJoinLobby();
+                UpdateLobby();
         }
 
-        public static class Loader
+        private void UpdateLobby()
         {
-                public static void LoadNetword(SceneReference sceneReference)
-                {
-                        NetworkManager.Singleton.SceneManager.LoadScene(sceneReference.Name, LoadSceneMode.Single);
-                }
+                startGameButton.gameObject.SetActive(LobbySystemManager.Instance.IsHost());
+                startGameButton.interactable = true;
+                lobbyText.text = LobbySystemManager.Instance.IsHost().ToString();
         }
-
 }

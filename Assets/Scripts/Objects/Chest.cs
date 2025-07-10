@@ -2,11 +2,12 @@ using Interfaces;
 using Scriptable_Objects;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.Serialization;
 using ResourceManager = Managers.ResourceManager;
+
 
 namespace Objects
 {
+    [SelectionBase]
     public class Chest : NetworkBehaviour, IInteractable
     {
         private static readonly int Open = Animator.StringToHash("Open");

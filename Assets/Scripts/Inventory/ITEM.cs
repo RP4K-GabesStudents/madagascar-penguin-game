@@ -28,16 +28,21 @@ namespace Inventory
         [ServerRpc(RequireOwnership = false)]
         private void Interact_ServerRpc(ServerRpcParams id = default)
         {
-            Interact_ClientRpc();
+            Hide_ClientRpc();
             _networkObject.ChangeOwnership(id.Receive.SenderClientId);
-            Debug.Log("fix things");
-            //transform.SetParent();
+            
+            //_networkObject.TrySetParent(id.Receive. )
         }
 
         [ClientRpc]
-        private void Interact_ClientRpc()
+        private void Hide_ClientRpc()
         {
             gameObject.SetActive(false);
+        }
+
+        [ClientRpc]
+        private void Show_ClientRpc()
+        {
             
         }
 
@@ -63,7 +68,6 @@ namespace Inventory
         {
             foreach (var meshRenderer in _meshRenderers)
             {
-                Debug.Log(meshRenderer.sharedMaterials);
                 meshRenderer.sharedMaterials = new[] { meshRenderer.sharedMaterials[0] };
                 
             }

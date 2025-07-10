@@ -13,8 +13,9 @@ namespace Managers
     {
         //private float x = 1.1f;
         private const string ConnectionType = "udp";
-    
         public static RelayHandler Instance { get; private set; }
+
+        public static Dictionary<ulong, byte[]> PlayerData = new ();
 
         private void Start()
         {
@@ -36,19 +37,22 @@ namespace Managers
                     print("Clients connected: " + variable);                
                 }
             };
+
+            NetworkManager.Singleton.ConnectionApprovalCallback += (request, response) =>
+            {
+                PlayerData.Add(request.ClientNetworkId, request.Payload);
+            };
         }
 
 
         public async Task<string> CreateRelay(int maxPlayers)
         {
+            PlayerData .Clear();
+            
             try
             {
 
-
-                List<Region> regions = await RelayService.Instance.ListRegionsAsync();
-                string region = regions[0].Id;
-
-                var hostAllocation = await RelayService.Instance.CreateAllocationAsync(maxPlayers, region);
+                var hostAllocation = await RelayService.Instance.CreateAllocationAsync(maxPlayers);
                 string joinCode = await RelayService.Instance.GetJoinCodeAsync(hostAllocation.AllocationId);
                 
                 Debug.Log("Creating Relay: " + joinCode);
@@ -97,6 +101,11 @@ namespace Managers
             {
                 Debug.LogError("Failed while trying to join relay: " + e);
             }
+        }
+
+        public void SetLocalServerInfo(byte[] data)
+        {
+            NetworkManager.Singleton.NetworkConfig.ConnectionData = data;
         }
     }
 }

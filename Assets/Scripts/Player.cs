@@ -38,6 +38,7 @@ public class Player : NetworkBehaviour
     { 
         return _hotBar.HeyIPickedSomethingUp(iItemStats);
     }
+    
     [ClientRpc]
     public void EquipItem_ClientRpc()
     {

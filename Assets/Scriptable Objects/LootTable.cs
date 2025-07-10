@@ -29,6 +29,7 @@ namespace Scriptable_Objects
                     return ld.GetSpawnInfo(out amount);
                 }
             }
+            Debug.LogWarning("We failed to spawn anything...");
             amount = 0;
             return null;
         }

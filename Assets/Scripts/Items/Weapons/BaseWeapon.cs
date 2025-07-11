@@ -1,33 +1,25 @@
 using System.Collections;
-using Interfaces;
+using Abilities;
+using Inventory;
 using penguin;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Abilities
+namespace Items.Weapons
 {
-    public abstract class BaseWeaponGun : NetworkBehaviour
+    public abstract class BaseWeapon : Item
     {
-        protected PlayerController _oner;
         protected Animator _animator;
         private bool _isOnCooldown;
         private Coroutine _reFire;
         private float _curLifeTime;
-        [SerializeField] protected AbilityStats abilityStats;
-        public bool IsAnimationBound => abilityStats.IisAnimationBound;
-        public bool IsFullyAutomatic => abilityStats.FullyAutomatic;
+        [SerializeField] protected WeaponStats abilityStats;
 
         public void Begin()
         {
             //when we begin left-clicking
-            if (abilityStats.FullyAutomatic)
-            {
-                _reFire = StartCoroutine(RefireLoop());
-            }
-            else if(CanBeUsed())
-            {
-                Execute();
-            }
+            if(!CanBeUsed()) return;
+            Execute();
         }
 
         public void UseInstant()
@@ -44,16 +36,7 @@ namespace Abilities
                 _reFire = null;
             }
         }
-
-        public void SetOwner(PlayerController oner)
-        {
-            _oner = oner;
-            _animator = _oner.GetComponentInChildren<Animator>();
-            _curLifeTime = abilityStats.LifeTime;
-            
-            //blue
-        }
-
+        
         public virtual bool CanBeUsed()
         {
             return !_isOnCooldown;

@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
-namespace Abilities
+namespace AbilitySystem.Abilities
 {
-    [CreateAssetMenu(fileName = "AbilityStats", menuName = "Scriptable Objects/AbilityStats")]
+    [CreateAssetMenu(fileName = "AbilityStats", menuName = "AbilitySystem/Ability")]
     public class AbilityStats : ScriptableObject
     {
         [SerializeField] private Sprite icon;
@@ -16,7 +15,6 @@ namespace Abilities
         public Sprite Icon => icon;
         public bool FullyAutomatic => fullyAutomatic;
         public bool IisAnimationBound => isAnimationBound;
-
         public float UseSpeed => useSpeed;
         public float LifeTime => lifeTime;
     }

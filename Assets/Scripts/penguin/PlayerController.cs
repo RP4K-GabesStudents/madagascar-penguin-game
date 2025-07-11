@@ -2,6 +2,8 @@ using System;
 using Abilities;
 using Interfaces;
 using Inventory;
+using Items;
+using Items.Weapons;
 using Managers;
 using Scriptable_Objects;
 using Scriptable_Objects.Penguin_Stats;
@@ -13,7 +15,6 @@ namespace penguin
     public class PlayerController : BasePenguinFile, IDamageable
     {
         private Player _controlled;
-        [SerializeField] private BaseWeaponGun initialWeapon;
         [SerializeField] PenguinStats penguinStats;
         public PenguinStats PenguinoStats => penguinStats;
         [SerializeField] private ProjectileStats projectileStats;
@@ -23,10 +24,14 @@ namespace penguin
         private Vector2 _curLookDir;
         private float _curHealth;
         private IInteractable _interactable;
+        private Item _curItem;
+        
         [SerializeField] public Transform laserSpawn;
         [SerializeField] public Transform laserSpawn2;
         [SerializeField] private Transform attackLocation;
-        public event Action onHealthUpdated;
+        public event Action<float> onHealthUpdated;
+        public event Action onAttack;
+        public event Action onDeath;
         [Header("Jumping")] 
     
     
@@ -50,7 +55,6 @@ namespace penguin
         {
             base.Awake();
             _rigidbody = GetComponent<Rigidbody>();
-            initialWeapon.SetOwner(this);
         }
 
         public void BindController(Player player)
@@ -117,35 +121,17 @@ namespace penguin
         }
         public void Attack(bool readValueAsButton)
         {
-            _animator.SetBool(StaticUtilities.AttackAnimID, readValueAsButton);
-            if (initialWeapon.IsAnimationBound) return;
-            if (readValueAsButton)  initialWeapon.Begin();
-            else initialWeapon.End();
+            if (!readValueAsButton) return;
+            _animator.SetTrigger(StaticUtilities.AttackAnimID);
         }
 
         public void ExecuteAttack()
         {
             //This animation should actually probably be controlled by the weapon at this point.
-            if(!initialWeapon.IsFullyAutomatic)  
-                _animator.SetBool(StaticUtilities.AttackAnimID, false);
-            
-            
-            if (!initialWeapon.IsAnimationBound) return;
-            initialWeapon.UseInstant();
-            
-            
-            bool success = Physics.SphereCast(attackLocation.position, penguinStats.AttackRadius, attackLocation.forward, out RaycastHit hitInfo, penguinStats.MaxAttackDist, StaticUtilities.AttackableLayers);
-            Debug.DrawRay(attackLocation.position, attackLocation.forward * penguinStats.MaxAttackDist, Color.magenta, 3f);
-            if (!success) return;
-            Rigidbody hitInfoRigidbody = hitInfo.rigidbody;
-            Debug.DrawLine(attackLocation.position, hitInfo.point, Color.green, 3f);
-            if (hitInfoRigidbody && hitInfoRigidbody.TryGetComponent(out IDamageable damageable))
-            {
-                damageable.TakeDamage(penguinStats.Damage, attackLocation.forward * penguinStats.KnockbackPower);
-            }
+            _curItem?.UseItem();
+            onAttack?.Invoke();
         }
-
-
+        
         public void Sprint(bool readValueAsButton)
         {
         
@@ -163,7 +149,7 @@ namespace penguin
                 {
                     _animator.SetTrigger(StaticUtilities.InteractAnimID);
                     Debug.LogWarning("success");
-                    _interactable.OnInteract();
+                    _interactable.OnInteract(this);
                     if(!_interactable.CanHover()) HandleHovering(null);
                 }
                 else
@@ -174,7 +160,7 @@ namespace penguin
             else
             {
                 _animator.SetTrigger(StaticUtilities.InteractAnimID);
-                _interactable.OnInteract();
+                _interactable.OnInteract(this);
                 if(!_interactable.CanHover()) HandleHovering(null);
             }
         }
@@ -248,13 +234,15 @@ namespace penguin
                float t = Mathf.Min(_curHealth + value, penguinStats.Hp);
                if (!Mathf.Approximately(t, _curHealth))
                {
+                   float diff = t - _curHealth;
                    _curHealth = t;
-                   onHealthUpdated?.Invoke();
+                   onHealthUpdated?.Invoke(diff);
                }
             }
             
         }
 
         public float DamageRes { get => 0; }
+
     }
 }

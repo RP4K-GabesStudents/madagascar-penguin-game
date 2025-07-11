@@ -1,5 +1,6 @@
 using Interfaces;
 using Managers;
+using penguin;
 using Scriptable_Objects;
 using Unity.Netcode;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Inventory
         public ItemStats ItemStats => itemStats;
         private MeshRenderer[] _meshRenderers;
         private NetworkObject _networkObject;
+        protected PlayerController _oner;
 
         private void Awake()
         {
@@ -19,10 +21,15 @@ namespace Inventory
             _meshRenderers = GetComponentsInChildren<MeshRenderer>();
         }
 
-        public void OnInteract()
+        public void OnInteract(PlayerController oner)
         {
             //gameObject.SetActive(false);
+            SetOwner(oner);
             Interact_ServerRpc();
+        }
+        public void SetOwner(PlayerController oner)
+        {
+            _oner = oner;
         }
 
         [ServerRpc(RequireOwnership = false)]
@@ -71,6 +78,11 @@ namespace Inventory
                 meshRenderer.sharedMaterials = new[] { meshRenderer.sharedMaterials[0] };
                 
             }
+        }
+
+        public virtual void UseItem()
+        {
+            
         }
     }
     

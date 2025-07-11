@@ -1,12 +1,9 @@
-using System;
 using Interfaces;
+using Inventory;
 using Scriptable_Objects;
-using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.Serialization;
-
 [SelectionBase]
-public class Potion : NetworkBehaviour, IDamageable, IInteractable
+public class Potion : Item, IDamageable
 {
     private float _previousSpeed;
     [SerializeField] private HoverInfoStats hoverInfo;

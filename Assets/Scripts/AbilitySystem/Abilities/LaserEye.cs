@@ -1,18 +1,19 @@
-using System;
+
 using Managers;
 using Objects;
 using Unity.Mathematics;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Abilities
+namespace AbilitySystem.Abilities
 {
-    public class LaserEyeGun : BaseWeaponGun
+    public class LaserEye : GenericAbility
     {
         [SerializeField] private Laser laser;
         [SerializeField] private ParticleSystem leftEye;
         [SerializeField] private ParticleSystem rightEye;
-        public override void Execute()
+        [SerializeField] private ParticleSystem eyePrefab;
+        private void Execute()
         {
             Vector3 cameraForward = _oner.headXRotator.forward * 100 + _oner.headXRotator.position;
             Vector3 leftLaserDir = (cameraForward - _oner.laserSpawn.position).normalized;
@@ -37,6 +38,27 @@ namespace Abilities
         {
             leftEye.Play();
             rightEye.Play();
+        }
+
+        protected override void BindToOner()
+        {
+            if (IsServer)
+            {
+                BindToOner_ServerRpc();
+                _oner.onAttack += Execute;
+            }
+        }
+
+        [ServerRpc]
+        private void BindToOner_ServerRpc()
+        {
+            leftEye = Instantiate(eyePrefab, _oner.laserSpawn.position, Quaternion.identity, _oner.laserSpawn);
+            rightEye = Instantiate(eyePrefab, _oner.laserSpawn2.position, Quaternion.identity, _oner.laserSpawn2);
+        }
+
+        protected override void UnbindFromOner()
+        {
+            _oner.onAttack -= Execute;
         }
     }
 }

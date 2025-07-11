@@ -9,16 +9,24 @@ namespace Scriptable_Objects
     public class HoverInfoStats : ScriptableObject
     {
         [SerializeField, TextArea] protected string hoverInfoName;
+        public string Input { get; private set; }
         
-        //public string FormattedString { get; private set; }
-        public string GetFormattedString()
+        public virtual string GetFormattedString()
         {
-            string input = InputControlPath.ToHumanReadableString(
-                PlayerControls.GameControls.Player.Interact.bindings[0].effectivePath,
-                InputControlPath.HumanReadableStringOptions.UseShortNames);
-            input = input.Replace(" [Keyboard]", String.Empty);
-            string str = hoverInfoName.Replace("{input}", "<color=#"+ColorUtility.ToHtmlStringRGB(ColourManager.CurColour)+">[" + input + "]</color>");
+            string str = hoverInfoName.Replace("{input}", "<color=#"+ColorUtility.ToHtmlStringRGB(ColourManager.CurColour)+">[" + Input + "]</color>");
             return str;
+        }
+
+        public void RecompileString()
+        {
+            Input = InputControlPath.ToHumanReadableString(PlayerControls.GameControls.Player.Interact.bindings[0].effectivePath, InputControlPath.HumanReadableStringOptions.UseShortNames);
+            Input = Input.Replace(" [Keyboard]", String.Empty);
+        }
+
+
+        private void OnEnable()
+        {
+            RecompileString();
         }
     }
 }

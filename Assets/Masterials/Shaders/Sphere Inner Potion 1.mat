@@ -20,12 +20,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Triangle Inner Potion
+  m_Name: Sphere Inner Potion 1
   m_Shader: {fileID: -6465566751694194690, guid: 1d221cd82ec7413449dd8960c585399e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _GLOW
+  - _BUBBLES
   - _GRADIENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -53,41 +53,41 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BUBBLES: 0
-    - _BlendMix: 1
-    - _BubbleCull: 0.702
-    - _BubbleFactor: 8
+    - _BUBBLES: 1
+    - _BlendMix: 2.56
+    - _BubbleCull: 0.862
+    - _BubbleFactor: 16
     - _BubbleSpeed: 0
-    - _FillStart: -0.001
-    - _FillStop: 0.18
-    - _FresnalPower: 1
-    - _GLOW: 1
+    - _FillStart: -0.075
+    - _FillStop: 0.075
+    - _FresnalPower: 3.74
+    - _GLOW: 0
     - _GRADIENT: 1
-    - _GradientRamp: 0.72
+    - _GradientRamp: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RampFix: 1
-    - _RampMax: 0.66
-    - _RampMin: 0.22
-    - _RippleFactor: 0.4
-    - _StepMax: -0.15
-    - _StepMin: 0.45
+    - _RampFix: 1.1
+    - _RampMax: 1
+    - _RampMin: 0.5
+    - _RippleFactor: 100
+    - _StepMax: -1.16
+    - _StepMin: 0.2
     - _WobbleX: 0
     - _WobbleZ: 0
-    - _fillPercent: 0.487
+    - _fillPercent: 1
     - _t: 1
     m_Colors:
-    - _BubbleColor: {r: 298.24136, g: 531.32074, b: 316.3446, a: 1}
-    - _BubbleScale: {r: 110.64, g: 4, b: 0, a: 0}
-    - _BubbleSpeed: {r: 0.05, g: -0.2, b: 0, a: 0}
+    - _BubbleColor: {r: 766.9961, g: 0, b: 57.049473, a: 1}
+    - _BubbleScale: {r: 16, g: 8, b: 0, a: 0}
+    - _BubbleSpeed: {r: 1, g: -0.5, b: 0, a: 0}
     - _Colour: {r: 0.7830189, g: 0.7311125, b: 0.121885, a: 0}
     - _ColourRippleOne: {r: 0.1124257, g: 0.09313814, b: 0.8584906, a: 0}
     - _ColourRippleTwo: {r: 0.08877714, g: 0.8962264, b: 0.1522484, a: 0}
-    - _FesnelColour: {r: 3.3207548, g: 0, b: 2.761974, a: 0}
-    - _GradientBottom: {r: 0, g: 0.7496864, b: 0.8784314, a: 0}
-    - _GradientTop: {r: 1, g: 1, b: 1, a: 0}
-    - _Remap: {r: 0.1, g: 1, b: 0, a: 0}
-    - _RemapIn: {r: -0.5, g: 1, b: 0, a: 0}
-    - _RemapOut: {r: 0, g: 2, b: 0, a: 0}
+    - _FesnelColour: {r: 1.0726513, g: 0, b: 12.275917, a: 0}
+    - _GradientBottom: {r: 0.32300544, g: 1, b: 0, a: 0}
+    - _GradientTop: {r: 1.1587474, g: 0, b: 0.16446058, a: 0}
+    - _Remap: {r: -0.075, g: 0.075, b: 0, a: 0}
+    - _RemapIn: {r: -0.03, g: 0.02, b: 0, a: 0}
+    - _RemapOut: {r: 0.16, g: 0.64, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

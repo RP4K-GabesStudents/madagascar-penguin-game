@@ -24,7 +24,10 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 1d221cd82ec7413449dd8960c585399e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _BUBBLES
+  - _GLOW
+  - _GRADIENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -51,19 +54,41 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BUBBLES: 1
+    - _BlendMix: 2.56
+    - _BubbleCull: 0.745
+    - _BubbleFactor: 16
+    - _BubbleSpeed: 0
     - _FillStart: -0.075
-    - _FillStop: 0.15
-    - _FresnalPower: 1
+    - _FillStop: 0.075
+    - _FresnalPower: 3.74
+    - _GLOW: 1
+    - _GRADIENT: 1
+    - _GradientRamp: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RampFix: 1.1
+    - _RampMax: 1
+    - _RampMin: 0.5
     - _RippleFactor: 100
+    - _StepMax: -1.16
+    - _StepMin: 0.2
     - _WobbleX: 0
     - _WobbleZ: 0
-    - _fillPercent: 0.572
+    - _fillPercent: 1
+    - _t: 1
     m_Colors:
+    - _BubbleColor: {r: 115.147285, g: 440.52353, b: 0, a: 0.47058824}
+    - _BubbleScale: {r: 24, g: 12, b: 0, a: 0}
+    - _BubbleSpeed: {r: 1, g: -0.5, b: 0, a: 0}
     - _Colour: {r: 0.7830189, g: 0.7311125, b: 0.121885, a: 0}
     - _ColourRippleOne: {r: 0.1124257, g: 0.09313814, b: 0.8584906, a: 0}
     - _ColourRippleTwo: {r: 0.08877714, g: 0.8962264, b: 0.1522484, a: 0}
-    - _FesnelColour: {r: 0.9150943, g: 0.09927911, b: 0.7784133, a: 0}
+    - _FesnelColour: {r: 0, g: 0.03422607, b: 12.275915, a: 0}
+    - _GradientBottom: {r: 1, g: 0, b: 0.009897232, a: 0}
+    - _GradientTop: {r: 0, g: 0, b: 0, a: 0}
+    - _Remap: {r: -0.075, g: 0.075, b: 0, a: 0}
+    - _RemapIn: {r: -0.03, g: 0.02, b: 0, a: 0}
+    - _RemapOut: {r: 0.16, g: 0.64, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

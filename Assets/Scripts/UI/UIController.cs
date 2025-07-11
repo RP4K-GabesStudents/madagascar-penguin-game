@@ -1,7 +1,5 @@
-using System;
-using penguin;
+using Game.Characters;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace UI
@@ -9,21 +7,17 @@ namespace UI
     public class UIController : MonoBehaviour
     {
         [SerializeField] private Image healthBar;
-        [SerializeField] private PlayerController player;
+        [SerializeField] private GenericCharacter owner;
 
-        private void Start()
-        {
-            BindToPenguin(player);
-        }
 
-        public void BindToPenguin(PlayerController player)
+        public void BindToPenguin(GenericCharacter newOwner)
         {
-               this.player = player;
-               player.onHealthUpdated += ChangeHealthBar;
+               owner = newOwner;
+               newOwner.OnHealthUpdated += ChangeHealthBar;
         }
         private void ChangeHealthBar()
         {
-            healthBar.fillAmount = player.Health / player.PenguinoStats.Hp;
+            healthBar.fillAmount = owner.Health / owner.PenguinoStats.Hp;
         }
     }
 }

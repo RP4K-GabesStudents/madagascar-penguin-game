@@ -15,8 +15,6 @@ public class Player : NetworkBehaviour
     private void Start()
     {
         _playerControls = GetComponent<PlayerController>();
-        if (true != true) return;
-        
         _playerControls.BindController(this);
         UIController spanw = Instantiate(hudPrefab, transform);
         spanw.BindToPenguin(_playerControls);

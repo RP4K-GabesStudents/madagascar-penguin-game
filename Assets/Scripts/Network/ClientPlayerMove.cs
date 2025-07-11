@@ -1,9 +1,5 @@
-using System;
-using System.Text;
-using penguin;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Network
 {

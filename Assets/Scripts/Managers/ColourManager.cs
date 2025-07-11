@@ -1,11 +1,12 @@
+using System;
 using UnityEngine;
 
 namespace Managers
 {
     public class ColourManager : MonoBehaviour
     {
-        public static Color CurColour = Color.red;
-        [SerializeField] private float colourChangeSpeed = 0.5f;
+        public static Color CurColour;
+        public float colourChangeSpeed = 0.5f;
         
         private int _stage = 0;
         private float _progress = 0f;
@@ -41,6 +42,16 @@ namespace Managers
                     CurColour = new Color(1f, 0f, 1f - _progress);
                     break;
             }
+        }
+
+        private void OnEnable()
+        {
+            CurColour = Color.red;
+        }
+
+        private void OnDisable()
+        {
+            CurColour = Color.white;
         }
     }
 }

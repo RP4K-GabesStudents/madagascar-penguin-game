@@ -25,7 +25,6 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _GLOW
   - _GRADIENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -61,7 +60,7 @@ Material:
     - _FillStart: -0.001
     - _FillStop: 0.18
     - _FresnalPower: 1
-    - _GLOW: 1
+    - _GLOW: 0
     - _GRADIENT: 1
     - _GradientRamp: 0.72
     - _QueueControl: 0
@@ -74,7 +73,7 @@ Material:
     - _StepMin: 0.45
     - _WobbleX: 0
     - _WobbleZ: 0
-    - _fillPercent: 0.487
+    - _fillPercent: 1
     - _t: 1
     m_Colors:
     - _BubbleColor: {r: 298.24136, g: 531.32074, b: 316.3446, a: 1}
@@ -83,9 +82,9 @@ Material:
     - _Colour: {r: 0.7830189, g: 0.7311125, b: 0.121885, a: 0}
     - _ColourRippleOne: {r: 0.1124257, g: 0.09313814, b: 0.8584906, a: 0}
     - _ColourRippleTwo: {r: 0.08877714, g: 0.8962264, b: 0.1522484, a: 0}
-    - _FesnelColour: {r: 3.3207548, g: 0, b: 2.761974, a: 0}
-    - _GradientBottom: {r: 0, g: 0.7496864, b: 0.8784314, a: 0}
-    - _GradientTop: {r: 1, g: 1, b: 1, a: 0}
+    - _FesnelColour: {r: 0.7350971, g: 0.74736917, b: 0.75285304, a: 0}
+    - _GradientBottom: {r: 0.20843185, g: 0.033018887, b: 1, a: 0}
+    - _GradientTop: {r: 0.8018868, g: 0.6898796, b: 0.08699717, a: 0}
     - _Remap: {r: 0.1, g: 1, b: 0, a: 0}
     - _RemapIn: {r: -0.5, g: 1, b: 0, a: 0}
     - _RemapOut: {r: 0, g: 2, b: 0, a: 0}

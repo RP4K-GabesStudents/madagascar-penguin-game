@@ -1,4 +1,5 @@
 using Game.Characters;
+using JetBrains.Annotations;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -9,18 +10,20 @@ namespace AbilitySystem.Abilities
     {
         protected GenericCharacter _oner;
         [SerializeField] protected AbilityStats abilityStats;
-        
 
-        protected override void OnOwnershipChanged(ulong previous, ulong current)
+
+        [ServerRpc]
+        public void SetOwner_ServerRpc([NotNull] GenericCharacter oner)
         {
-            base.OnOwnershipChanged(previous, current);
-            if (previous != current)
+            if (_oner != oner)
             {
                 UnbindFromOner();
             }
             _oner = oner;
             BindToOner();
         }
+
+
 
         protected abstract void BindToOner();
         protected abstract void UnbindFromOner();

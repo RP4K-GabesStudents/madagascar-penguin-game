@@ -10,14 +10,14 @@ namespace UI
         [SerializeField] private GenericCharacter owner;
 
 
-        public void BindToPenguin(GenericCharacter newOwner)
+        public void BindToOwner(GenericCharacter newOwner)
         {
                owner = newOwner;
                newOwner.OnHealthUpdated += ChangeHealthBar;
         }
-        private void ChangeHealthBar()
+        private void ChangeHealthBar(float _)
         {
-            healthBar.fillAmount = owner.Health / owner.PenguinoStats.Hp;
+            healthBar.fillAmount = owner.HealthPercent;
         }
     }
 }

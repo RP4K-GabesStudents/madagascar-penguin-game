@@ -1,4 +1,6 @@
+using Game.Objects;
 using Interfaces;
+using penguin;
 using Scriptable_Objects;
 using Unity.Netcode;
 using UnityEngine;
@@ -7,48 +9,36 @@ using ResourceManager = Managers.ResourceManager;
 
 namespace Objects
 {
-    [SelectionBase]
+    [SelectionBase, RequireComponent(typeof(Highlight))]
     public class Chest : NetworkBehaviour, IInteractable
     {
         private static readonly int Open = Animator.StringToHash("Open");
+        private Animator _animator;
+        private Highlight _highlight;
+        private readonly NetworkVariable<bool> _isOpened = new (false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+        
         [SerializeField] private LootTable lootTable;
         [SerializeField] private HoverInfoStats hoverInfoStats;
-        private Animator _animator;
-        [SerializeField] private MeshRenderer[] meshRenderers;
-        private readonly NetworkVariable<bool> _isOpened = new (false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
         [SerializeField] private Rigidbody chestLid;
         [SerializeField] private Transform spawnPoint;
 
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            _highlight =  GetComponent<Highlight>();
             _isOpened.OnValueChanged += (_, _) =>
             {
                 foreach (var mr in meshRenderers)
                 {
                     mr.gameObject.layer = LayerMask.NameToLayer("Default");
                 }
-                OnHoverEnd();
+
+                _highlight.enabled = false;
             };
         }
         
-        public void OnHover()
-        {
-            foreach (var meshRenderer in meshRenderers)
-            {
-                meshRenderer.sharedMaterials = new[] { meshRenderer.sharedMaterials[0], ResourceManager.Instance.HoverMaterial };
-            }
-        }
 
-        public void OnHoverEnd()
-        {
-            foreach (var meshRenderer in meshRenderers)
-            {
-                meshRenderer.sharedMaterials = new[] { meshRenderer.sharedMaterials[0] };
-            }
-        }
-
-        public void OnInteract()
+        public void OnInteract(PlayerController user)
         {
             if (_isOpened.Value) return;
             OpenChest_ServerRpc();
@@ -61,7 +51,7 @@ namespace Objects
             
             Debug.Log("I dropped my loot");
             _animator.SetTrigger(Open);
-            OnHoverEnd();
+            _highlight.enabled = false;
             _isOpened.Value = true;
         }
         
@@ -72,6 +62,16 @@ namespace Objects
             chestLid.AddForce(Quaternion.AngleAxis(Random.Range(-15, 15), Vector3.forward) * Quaternion.AngleAxis(Random.Range(-15, 15), Vector3.right) * Vector3.up * Random.Range(1, 25), ForceMode.Impulse);
             chestLid.AddTorque(Random.insideUnitSphere * Random.Range(1, 15), ForceMode.Impulse);
             lootTable.Spawn(spawnPoint.position, Random.Range(1, 15), Random.Range(1, 15));
+        }
+
+        public void OnHover()
+        {
+            _highlight.enabled = false;
+        }
+
+        public void OnHoverEnd()
+        {
+            _highlight.enabled = false;
         }
         public HoverInfoStats GetHoverInfoStats()
         {

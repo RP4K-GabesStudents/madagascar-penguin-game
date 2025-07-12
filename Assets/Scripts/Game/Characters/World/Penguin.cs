@@ -4,10 +4,6 @@ namespace Game.Characters
 {
     public class Penguin : GenericCharacter, IControllable
     {
-        
-        
-        
-        
         public void SetAttackState(bool state)
         {
             

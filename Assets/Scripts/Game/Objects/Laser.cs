@@ -10,22 +10,16 @@ namespace Objects
     {
         [SerializeField]private ProjectileStats laserStats;
         [SerializeField]private new Rigidbody rigidbody;
+        [SerializeField] private ParticleSystem laserSpark;
+
         private GameObject _oner;
-        [SerializeField] private GameObject laserSpark;
-        private NetworkObject _networkObject;
         private int _targetLayers;
-
-        private void Awake()
-        {
-            _networkObject = GetComponent<NetworkObject>();
-        }
-
         public void Init(int targetLayers, ulong onerId)
         {
             _targetLayers = targetLayers;
-            _networkObject.SpawnWithOwnership(onerId);
+            NetworkObject.SpawnWithOwnership(onerId);
             StartCoroutine(DestroyLaser());
-            rigidbody.AddForce(_networkObject.transform.forward * laserStats.Speed, ForceMode.Impulse);
+            rigidbody.AddForce(transform.forward * laserStats.Speed, ForceMode.Impulse);
             
         }
         private void OnTriggerEnter(Collider other)
@@ -43,7 +37,7 @@ namespace Objects
                 }
             }
             PlayPartice_ClientRpc(transform.position, transform.forward);
-            _networkObject.Despawn();
+            NetworkObject.Despawn();
         }
 
         [ClientRpc]
@@ -52,7 +46,7 @@ namespace Objects
             bool hit = Physics.Raycast(position + forward * -0.25f, forward, out RaycastHit hitInfo, 0.5f);
             if (hit)
             { 
-                GameObject t = Instantiate(laserSpark, hitInfo.point, Quaternion.LookRotation(hitInfo.normal), hitInfo.transform);
+                ParticleSystem t = Instantiate(laserSpark, hitInfo.point, Quaternion.LookRotation(hitInfo.normal), hitInfo.transform);
                 Destroy(t, 5);
             }
             Debug.Log("i eat oranges for bnreakfast");
@@ -62,7 +56,7 @@ namespace Objects
         private IEnumerator DestroyLaser()
         {
             yield return Wait;
-            _networkObject.Despawn();
+            NetworkObject.Despawn();
         }
     }
 }

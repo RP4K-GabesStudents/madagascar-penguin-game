@@ -117,7 +117,7 @@ namespace penguin
         public void ExecuteAttack()
         {
             //This animation should actually probably be controlled by the weapon at this point.
-            _curItem?.UseItem();
+            _curItem?.TryUseItem();
             OnAttack?.Invoke();
         }
         
@@ -202,17 +202,6 @@ namespace penguin
             return (new Vector2(_rigidbody.linearVelocity.x, _rigidbody.linearVelocity.z)).magnitude;
         }
 
-        public void Die()
-        {
-            Debug.Log("you died");
-        }
-
-        public void OnHurt(float amount, Vector3 force)
-        {
-            Debug.Log("you got hit for: " + amount);
-            _rigidbody.AddForce(force, ForceMode.Impulse);
-            Health = penguinStats.Hp - amount;
-        }
         
 
         public float Health
@@ -228,7 +217,6 @@ namespace penguin
                    OnHealthUpdated?.Invoke(diff);
                }
             }
-            
         }
 
         public float DamageRes { get => 0; }

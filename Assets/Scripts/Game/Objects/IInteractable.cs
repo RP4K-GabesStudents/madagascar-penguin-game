@@ -1,6 +1,5 @@
-using System;
+using Game.Characters;
 using Managers;
-using penguin;
 using Scriptable_Objects;
 
 namespace Interfaces
@@ -21,7 +20,7 @@ namespace Interfaces
 
         public void OnHover();
         public void OnHoverEnd();
-        public void OnInteract(PlayerController oner);
+        public void OnInteract(GenericCharacter oner);
         public HoverInfoStats GetHoverInfoStats();
         public bool CanHover();
     }

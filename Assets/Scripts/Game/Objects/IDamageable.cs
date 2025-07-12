@@ -6,7 +6,7 @@ namespace Interfaces
     {
         public void TakeDamage(float damage, Vector3 force)
         {
-            damage -= DamageRes;
+            damage *= 1-DamageRes;
             if (damage <= 0)
             {
                 return;

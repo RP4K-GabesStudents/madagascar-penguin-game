@@ -10,51 +10,67 @@ namespace AbilitySystem.Abilities
     public class LaserEye : GenericAbility
     {
         [SerializeField] private Laser laser;
-        [SerializeField] private ParticleSystem leftEye;
-        [SerializeField] private ParticleSystem rightEye;
         [SerializeField] private ParticleSystem eyePrefab;
+        private ParticleSystem[] _eyes;
+
         private void Execute()
         {
             Vector3 cameraForward = _oner.headXRotator.forward * 100 + _oner.headXRotator.position;
             Vector3 leftLaserDir = (cameraForward - _oner.laserSpawn.position).normalized;
             Vector3 rightLaserDir = (cameraForward - _oner.laserSpawn2.position).normalized;
-            
+
             ShootProjectile_ServerRpc(_oner.laserSpawn.position, _oner.laserSpawn2.position, leftLaserDir, rightLaserDir);
         }
-        
-        [ServerRpc(RequireOwnership = true)]// << Any client can shoot, but we need to validate the server.
-        void ShootProjectile_ServerRpc(Vector3 a, Vector3 b, Vector3 c, Vector3 d, ServerRpcParams rpcParams = default)
+
+        [ServerRpc(RequireOwnership = true)] // << Any client can shoot, but we need to validate the server.
+        void ShootProjectile_ServerRpc(ServerRpcParams rpcParams = default)
         {
-            Laser l1 = Instantiate(laser, a, quaternion.LookRotation(c, Vector3.up));
-            Laser l2 = Instantiate(laser, b, Quaternion.LookRotation(d, Vector3.up)); 
-            
-            l1.Init(StaticUtilities.EnemyAttackLayers, rpcParams.Receive.SenderClientId);
-            l2.Init(StaticUtilities.EnemyAttackLayers, rpcParams.Receive.SenderClientId);
+           
+
+
             ShootProjectile_ClientRpc();
         }
+
+        private void ShootProjectile(Vector3 a, Vector3 b, ulong owner)
+        {
+            Laser l1 = Instantiate(laser, a, quaternion.LookRotation(b, Vector3.up));
+            l1.NetworkObject.SpawnWithOwnership(owner);
+            l1.Init(StaticUtilities.EnemyAttackLayers, owner);
+        }
         
+
+
         [ClientRpc]
         void ShootProjectile_ClientRpc()
         {
-            leftEye.Play();
-            rightEye.Play();
+            foreach (ParticleSystem eye in _eyes)
+            {
+                eye.Play();
+            }
         }
 
         protected override void BindToOner()
         {
-            if (IsServer)
+
+            if (!IsServer) return;
+            _oner.OnAttack += Execute;
+            SpawnEyeEffects_ClientRpc();
+
+
+        }
+
+        [ClientRpc]
+        private void SpawnEyeEffects_ClientRpc()
+        {
+            int n = _oner.Eyes.Length;
+            _eyes = new ParticleSystem[n];
+            for (var i = 0; i < n; i++)
             {
-                BindToOner_ServerRpc();
-                _oner.OnAttack += Execute;
+                var eyeTransforms = _oner.Eyes[i];
+                _eyes[n] = Instantiate(eyePrefab, eyeTransforms);
             }
         }
 
-        [ServerRpc]
-        private void BindToOner_ServerRpc()
-        {
-            leftEye = Instantiate(eyePrefab, _oner.laserSpawn.position, Quaternion.identity, _oner.laserSpawn);
-            rightEye = Instantiate(eyePrefab, _oner.laserSpawn2.position, Quaternion.identity, _oner.laserSpawn2);
-        }
 
         protected override void UnbindFromOner()
         {

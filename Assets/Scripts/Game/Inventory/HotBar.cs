@@ -38,8 +38,7 @@ namespace Inventory
         public void UpdateScrollSlot(int index)
         {
             if (index == 0) return;
-            var indexChange = index / (int)MathF.Abs(index);
-            _curScrollIndex += indexChange;
+            _curScrollIndex += index;
             if (_curScrollIndex >= itemSlots.Length)
             {
                 _curScrollIndex = 0;
@@ -48,7 +47,6 @@ namespace Inventory
             {
                 _curScrollIndex = itemSlots.Length - 1;   
             }
-            Debug.Log(indexChange);
             UpdateScrollIndex(_curScrollIndex);
         }
     }

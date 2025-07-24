@@ -13,20 +13,24 @@ namespace AbilitySystem.Abilities
         [SerializeField] private ParticleSystem eyePrefab;
         private ParticleSystem[] _eyes;
 
-        private void Execute()
+        public override void Execute()
         {
-            Vector3 cameraForward = _oner.headXRotator.forward * 100 + _oner.headXRotator.position;
-            Vector3 leftLaserDir = (cameraForward - _oner.laserSpawn.position).normalized;
-            Vector3 rightLaserDir = (cameraForward - _oner.laserSpawn2.position).normalized;
-
-            ShootProjectile_ServerRpc(_oner.laserSpawn.position, _oner.laserSpawn2.position, leftLaserDir, rightLaserDir);
+            ShootProjectile_ServerRpc();
+            
         }
 
         [ServerRpc(RequireOwnership = true)] // << Any client can shoot, but we need to validate the server.
         void ShootProjectile_ServerRpc(ServerRpcParams rpcParams = default)
         {
-           
 
+            Vector3 origin = _oner.Head.position;
+            Vector3 cameraForward = _oner.Head.forward * 100 + origin;
+
+            foreach (Transform eye in _oner.Eyes)
+            {
+                Vector3 laserDir = (cameraForward - eye.position).normalized;
+                ShootProjectile(origin, laserDir, rpcParams.Receive.SenderClientId);
+            }
 
             ShootProjectile_ClientRpc();
         }

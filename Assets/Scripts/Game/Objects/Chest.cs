@@ -1,3 +1,4 @@
+using Game.Characters;
 using Game.Objects;
 using Interfaces;
 using penguin;
@@ -28,9 +29,9 @@ namespace Objects
             _highlight =  GetComponent<Highlight>();
             _isOpened.OnValueChanged += (_, _) =>
             {
-                foreach (var mr in meshRenderers)
+                foreach (Transform tr in transform)
                 {
-                    mr.gameObject.layer = LayerMask.NameToLayer("Default");
+                    tr.gameObject.layer = LayerMask.NameToLayer("Default");
                 }
 
                 _highlight.enabled = false;
@@ -38,7 +39,7 @@ namespace Objects
         }
         
 
-        public void OnInteract(PlayerController user)
+        public void OnInteract(GenericCharacter user)
         {
             if (_isOpened.Value) return;
             OpenChest_ServerRpc();
@@ -73,6 +74,8 @@ namespace Objects
         {
             _highlight.enabled = false;
         }
+
+
         public HoverInfoStats GetHoverInfoStats()
         {
             return hoverInfoStats;

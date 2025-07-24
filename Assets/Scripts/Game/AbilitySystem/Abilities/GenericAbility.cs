@@ -23,7 +23,7 @@ namespace AbilitySystem.Abilities
             BindToOner();
         }
 
-
+        public abstract void Execute();
 
         protected abstract void BindToOner();
         protected abstract void UnbindFromOner();

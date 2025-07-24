@@ -12,7 +12,12 @@ namespace Scriptable_Objects
         [SerializeField] private float maxSpeed;
         [SerializeField] private int amountFired;
         
-        public float Damage => damage;
+        public float Damage
+        {
+            get => damage;
+            set => damage = value;
+        }
+
         public float Speed => speed;
         public float Lifetime => lifetime;
         public float AbilityTime => abilityTime;

@@ -1,9 +1,9 @@
-
-using Game.Characters.Capabilities;
+using Game.Characters.CapabilitySystem.CapabilityStats;
+using Game.Characters.Movement;
 using Managers;
 using UnityEngine;
 
-namespace Game.Characters.Movement
+namespace Game.Characters.CapabilitySystem.Capabilities
 {
     public class MovementCapability : BaseCapability, IInputSubscriber
     {

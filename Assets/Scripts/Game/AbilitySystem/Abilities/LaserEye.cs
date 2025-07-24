@@ -1,11 +1,11 @@
-
+using AbilitySystem.Abilities;
 using Managers;
 using Objects;
 using Unity.Mathematics;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace AbilitySystem.Abilities
+namespace Game.AbilitySystem.Abilities
 {
     public class LaserEye : GenericAbility
     {

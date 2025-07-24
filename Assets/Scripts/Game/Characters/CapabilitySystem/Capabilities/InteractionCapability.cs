@@ -1,9 +1,8 @@
-using System;
 using Interfaces;
 using Managers;
 using UnityEngine;
 
-namespace Game.Characters.Movement
+namespace Game.Characters.CapabilitySystem.Capabilities
 {
     public class InteractionCapability : BaseCapability
     {

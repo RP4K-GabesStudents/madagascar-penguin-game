@@ -1,13 +1,12 @@
-using System;
 using JetBrains.Annotations;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Characters.Movement
+namespace Game.Characters.CapabilitySystem.Capabilities
 {
     public abstract class BaseCapability : NetworkBehaviour // Must be because of [ServerRPC] and [ClientRPC]
     {
-        public CapabilityStats genericStats;
+        public Characters.CapabilityStats genericStats;
         
         protected GenericCharacter owner;
 
@@ -38,6 +37,6 @@ namespace Game.Characters.Movement
         }
         
         [CanBeNull]
-        public T GetStats<T>() where T : CapabilityStats => genericStats as T;
+        public T GetStats<T>() where T : Characters.CapabilityStats => genericStats as T;
     }
 }

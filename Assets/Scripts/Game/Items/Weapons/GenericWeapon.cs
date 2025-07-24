@@ -4,7 +4,7 @@ using Abilities;
 using Inventory;
 using UnityEngine;
 
-namespace Items.Weapons
+namespace Game.Items.Weapons
 {
     public abstract class GenericWeapon : Item
     {

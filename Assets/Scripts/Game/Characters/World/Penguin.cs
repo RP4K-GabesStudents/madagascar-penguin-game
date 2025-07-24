@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Characters
+namespace Game.Characters.World
 {
     public class Penguin : GenericCharacter
     {

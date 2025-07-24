@@ -1,4 +1,3 @@
-using System;
 using Game.Characters;
 using Interfaces;
 using Inventory;
@@ -7,7 +6,7 @@ using Scriptable_Objects;
 using Scriptable_Objects.Penguin_Stats;
 using UnityEngine;
 
-namespace penguin
+namespace Game.penguin
 {
     
     public class PlayerController : GenericCharacter, IDamageable
@@ -16,6 +15,7 @@ namespace penguin
         [SerializeField] PenguinStats penguinStats;
         public PenguinStats PenguinoStats => penguinStats;
         [SerializeField] private ProjectileStats projectileStats;
+        public ProjectileStats ProjectileStats => projectileStats;
         [SerializeField] private MorePenguinStats morePenguinStats;
         private Rigidbody rigidbody;
         private float _curHealth;

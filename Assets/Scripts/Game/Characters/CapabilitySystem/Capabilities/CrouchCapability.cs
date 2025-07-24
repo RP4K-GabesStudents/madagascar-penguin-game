@@ -1,4 +1,6 @@
-namespace Game.Characters.Movement
+using Game.Characters.Movement;
+
+namespace Game.Characters.CapabilitySystem.Capabilities
 {
     public class CrouchCapability : BaseCapability, IInputSubscriber 
     {

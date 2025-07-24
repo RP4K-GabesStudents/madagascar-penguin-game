@@ -1,3 +1,4 @@
+using Game.Characters.CapabilitySystem.Capabilities;
 using UnityEngine;
 
 namespace Game.Characters.Movement

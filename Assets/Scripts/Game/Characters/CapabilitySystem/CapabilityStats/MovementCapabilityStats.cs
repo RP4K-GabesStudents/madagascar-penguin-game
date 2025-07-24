@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Game.Characters.Capabilities
+namespace Game.Characters.CapabilitySystem.CapabilityStats
 {
-    public class MovementCapabilityStats : CapabilityStats
+    public class MovementCapabilityStats : Characters.CapabilityStats
     {
        // public override Type GetCapabilityType() => typeof(GroundMovementCapabilityStats);
        

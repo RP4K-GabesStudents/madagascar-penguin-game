@@ -1,5 +1,6 @@
 using System.Collections;
 using Game.Characters.Capabilities;
+using Game.Characters.CapabilitySystem.Capabilities;
 using Managers;
 using UnityEngine;
 

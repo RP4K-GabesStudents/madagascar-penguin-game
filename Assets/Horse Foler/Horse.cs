@@ -58,6 +58,11 @@ namespace Horse_Foler
             Destroy(gameObject, 10f);
         }
 
+        public void Die(Vector3 force)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void OnHurt(float amount, Vector3 force)
         {
             

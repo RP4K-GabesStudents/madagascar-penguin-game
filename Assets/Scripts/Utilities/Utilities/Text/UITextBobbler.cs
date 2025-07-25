@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-namespace UI
+namespace Utilities.Utilities.Text
 {
     public class UITextBobbler : MonoBehaviour
     {

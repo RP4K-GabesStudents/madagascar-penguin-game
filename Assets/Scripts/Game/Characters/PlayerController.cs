@@ -22,7 +22,6 @@ namespace Game.Characters
             Debug.Log("Binding controls to: " + inputSubscribers.Length + " controllers.");
 
             _gameControls ??= new GameControls();
-
             
             foreach (IInputSubscriber comp in inputSubscribers)
             {

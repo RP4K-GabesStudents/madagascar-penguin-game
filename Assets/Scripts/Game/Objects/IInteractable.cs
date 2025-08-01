@@ -2,7 +2,7 @@ using Game.Characters;
 using Managers;
 using Scriptable_Objects;
 
-namespace Interfaces
+namespace Game.Objects
 {
     public interface IInteractable
     {

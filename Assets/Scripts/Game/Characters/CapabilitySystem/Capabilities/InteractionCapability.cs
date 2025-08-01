@@ -1,4 +1,5 @@
 using Game.Characters.Capabilities;
+using Game.Objects;
 using Interfaces;
 using Inventory;
 using Managers;

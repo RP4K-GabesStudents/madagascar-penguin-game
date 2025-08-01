@@ -1,4 +1,5 @@
 using System.Collections;
+using Game.Characters;
 using UI.Transition;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace UI
         private PenguinSelector _currentPenguinSelector;
         
         [SerializeField] private PenguinSelectorStats selectorStats;
+        [SerializeField] private GenericCharacter target;
         
         [Header("Objects")] 
         [SerializeField] private AudioSource audioSource;
@@ -54,7 +56,6 @@ namespace UI
         private IEnumerator FadeOut()
         {
             yield return null;
-
         }
 
         private IEnumerator FadeIn()
@@ -97,5 +98,10 @@ namespace UI
 
         }
 
+        public void ChooseCharacter()
+        {
+            Debug.Log("implement on chosen effect");
+        }
+        public GenericCharacter Character => target;
     }
 }

@@ -58,8 +58,10 @@ namespace UI
                 private void UpdateLobby()
                 {
                         startGameButton.gameObject.SetActive(LobbySystemManager.Instance.IsHost());
+                        quickJoinButton.gameObject.SetActive(LobbySystemManager.Instance.CurrentLobby == null);
                         startGameButton.interactable = true;
                         lobbyText.text = LobbySystemManager.Instance.IsHost().ToString();
+                        
                 }
         }
 }

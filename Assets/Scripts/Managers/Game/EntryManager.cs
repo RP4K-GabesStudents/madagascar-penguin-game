@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Eflatun.SceneReference;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,16 +12,26 @@ namespace Managers.Game
     public class EntryManager : NetworkBehaviour
     {
         [SerializeField] private List<Transform> spawnPoints;
+        [SerializeField] private SceneReference selectionScene;
         private void OnEnable()
         {
             NetworkManager.SceneManager.OnLoadEventCompleted += StartGame;
             NetworkManager.SceneManager.OnLoadComplete += OnLocalLoaded;
         }
 
-        private void OnLocalLoaded(ulong clientid, string scenename, LoadSceneMode loadscenemode)
+        private async void OnLocalLoaded(ulong clientid, string scenename, LoadSceneMode loadscenemode)
         {
             Debug.Log("OnLocalLoaded");
-            SpawnPenguin_ServerRpc();
+            try
+            {
+                await SceneManager.LoadSceneAsync(selectionScene.BuildIndex, LoadSceneMode.Additive);
+                Debug.Log("finished loading scene");
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Faild while loading local clinet: " + e.Message);
+            }
+            //SpawnPenguin_ServerRpc();
         }
         
         [ServerRpc(RequireOwnership = false)]

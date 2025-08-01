@@ -65,13 +65,13 @@ namespace Managers
         }
         private async void CheckStartGame(Dictionary<string, ChangedOrRemovedLobbyValue<DataObject>> obj)
         {
-            
-            if (CurrentLobby.Data["RelayCode"].Value != "0")
+            if (obj.TryGetValue("RelayCode", out var data))
             {
-                Debug.Log("HEARD: Game starting request: " + NetworkManager.ServerClientId + " --> " + CurrentLobby.Data["RelayCode"].Value);
-                Debug.LogError("Gabe come back");
+                string code = data.Value.Value;
+                if (code == "0") return;
+                Debug.Log("HEARD: Game starting request: " + NetworkManager.ServerClientId + " --> " + code);
                 //RelayHandler.Instance.SetLocalServerInfo(BitConverter.GetBytes(int.Parse(_playerObject.Data["Penguin"])));
-                await RelayHandler.Instance.JoinRelay(CurrentLobby.Data["RelayCode"].Value);
+                await RelayHandler.Instance.JoinRelay(code);
                 OnGameStarting?.Invoke();
                 CurrentLobby = null;
             }

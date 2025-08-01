@@ -8,6 +8,7 @@ namespace Scriptable_Objects
     [CreateAssetMenu(fileName = "HoverInfoStats", menuName = "Scriptable Objects/HoverInfoStats")]
     public class HoverInfoStats : ScriptableObject
     {
+        [SerializeField] private InputActionReference reference;
         [SerializeField, TextArea] protected string hoverInfoName;
         public string Input { get; private set; }
         
@@ -19,7 +20,8 @@ namespace Scriptable_Objects
 
         public void RecompileString()
         {
-            Input = InputControlPath.ToHumanReadableString(PlayerControls.GameControls.Player.Interact.bindings[0].effectivePath, InputControlPath.HumanReadableStringOptions.UseShortNames);
+            if (reference == null) return;
+            Input = InputControlPath.ToHumanReadableString(reference.action.bindings[0].effectivePath, InputControlPath.HumanReadableStringOptions.UseShortNames);
             Input = Input.Replace(" [Keyboard]", String.Empty);
         }
 

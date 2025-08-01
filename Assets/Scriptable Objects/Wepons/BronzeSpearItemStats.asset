@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd938c6a8cd4ea4abd122ae62d04537, type: 3}
   m_Name: BronzeSpearItemStats
   m_EditorClassIdentifier: 
+  reference: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   hoverInfoName: '{input}'
   icon: {fileID: 21300000, guid: e79ea62d32378824b93d886ae217aff8, type: 3}
   cost: 0
-  itemLimit: 0
+  itemLimit: 1
   itemPrefab: {fileID: 2072887675658300981, guid: a7773d391f0b9a04c98d63b2f5baa1b7, type: 3}

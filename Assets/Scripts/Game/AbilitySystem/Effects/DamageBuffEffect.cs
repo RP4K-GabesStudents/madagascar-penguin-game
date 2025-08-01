@@ -1,5 +1,5 @@
 using System;
-using Game.penguin;
+using Game.Characters;
 using UnityEngine;
 
 namespace Game.AbilitySystem.Effects
@@ -10,25 +10,26 @@ namespace Game.AbilitySystem.Effects
         [SerializeField] private float curDuration;
         private float _originalDamage;
         private float _curDamage;
-        PlayerController _player;
+        GenericCharacter _character;
 
         private void Awake()
         {
-            _player = GetComponent<PlayerController>();
-            _originalDamage = _player.ProjectileStats.Damage;
+            _character = GetComponent<GenericCharacter>();
+            //_originalDamage = _character.ProjectileStats.Damage;
             _curDamage = _originalDamage;
+            Debug.LogWarning("Will need a new way to do this, probably use the data dictionary");
         }
 
         private void Update()
         {
             if(curDuration > 0 && effectStats.IsActive)
             {
-                OnEffectActivated(_player);
+               // OnEffectActivated(_player);
             }
 
             if (effectStats.IsActive == false || curDuration <= 0)
             {
-                OnEffectDeactivated(_player);
+                //OnEffectDeactivated(_player);
             }
         }
         
@@ -38,14 +39,15 @@ namespace Game.AbilitySystem.Effects
             curDuration = effectStats.Duration;
         }
         
-        public void OnEffectActivated(PlayerController player)
+        public void OnEffectActivated(GenericCharacter player)
         {
-            player.ProjectileStats.Damage = _curDamage += effectStats.DamageBuff;
+            //player.ProjectileStats.Damage = _curDamage += effectStats.DamageBuff;
         }
 
-        public void OnEffectDeactivated(PlayerController player)
+        public void OnEffectDeactivated(GenericCharacter player)
         {
-            player.ProjectileStats.Damage = _originalDamage;
+            //player.ProjectileStats.Damage = _originalDamage;
         }
+
     }
 }

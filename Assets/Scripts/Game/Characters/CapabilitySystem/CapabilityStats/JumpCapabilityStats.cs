@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Characters.Capabilities
 {
-    
+    [CreateAssetMenu(fileName = "JumpCapabilityStats", menuName = "Characters/CapabilityStats/JumpCapabilityStats")]
     public class JumpCapabilityStats : CapabilityStats
     {
         [Space]

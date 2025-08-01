@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b33f34064eca4088af8d8dc71e916efe, type: 3}
+  m_Name: PenguinLaserESyeStats
+  m_EditorClassIdentifier: 
+  <DisplayOnUI>k__BackingField: 0
+  projectile: {fileID: 3565419479365447142, guid: 7dcdc60e43c760240929b476ee07bd6f, type: 3}
+  particleSystem: {fileID: 6298923542478152871, guid: 49f6d24b04339a847b328ca6e517038c, type: 3}
+  numProjectiles: 3
+  inaccuracy: 2

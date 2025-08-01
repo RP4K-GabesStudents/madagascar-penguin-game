@@ -16,7 +16,7 @@ namespace Game.Items.Weapons
 
         private void Start()
         {
-            throw new NotImplementedException();
+            
         }
 
         public override bool CanBeUsed()
@@ -28,13 +28,6 @@ namespace Game.Items.Weapons
         {
             
         }
-
-        private IEnumerator ExecutionLoop()
-        {
-            
-        }
-
-
         public abstract void Execute();
         
     }

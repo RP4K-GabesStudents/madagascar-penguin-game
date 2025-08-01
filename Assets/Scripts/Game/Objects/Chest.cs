@@ -1,12 +1,9 @@
 using Game.Characters;
 using Game.Objects;
-using Game.penguin;
 using Interfaces;
-using penguin;
 using Scriptable_Objects;
 using Unity.Netcode;
 using UnityEngine;
-using ResourceManager = Managers.ResourceManager;
 
 
 namespace Objects

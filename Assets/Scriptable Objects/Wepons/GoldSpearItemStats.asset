@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd938c6a8cd4ea4abd122ae62d04537, type: 3}
   m_Name: GoldSpearItemStats
   m_EditorClassIdentifier: 
+  reference: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   hoverInfoName: '{input}'
   icon: {fileID: 21300000, guid: 94b509915f4a3cd4795ced21f05dca5f, type: 3}
   cost: 0
-  itemLimit: 0
+  itemLimit: 1
   itemPrefab: {fileID: 1106465253040169026, guid: ab4db080626413346b446045dfbe28da, type: 3}

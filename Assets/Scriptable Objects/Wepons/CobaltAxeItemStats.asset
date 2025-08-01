@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd938c6a8cd4ea4abd122ae62d04537, type: 3}
   m_Name: CobaltAxeItemStats
   m_EditorClassIdentifier: 
+  reference: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   hoverInfoName: '{input} Pick Up The Great Night Axe Of Calador, Description: This
     axe was created by the holy knight calador during the dead of night on a stormy
     day.'
   icon: {fileID: 21300000, guid: d01b4e32f9f5eeb449cc97f4c124a75c, type: 3}
   cost: 0
-  itemLimit: 0
+  itemLimit: 1
   itemPrefab: {fileID: 1376943551456142258, guid: 65c828d46595e164cbbe986a4d46365e, type: 3}

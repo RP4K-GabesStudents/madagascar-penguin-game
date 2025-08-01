@@ -32,8 +32,9 @@ namespace Game.Characters.CapabilitySystem.Capabilities
         
         public override void OnNetworkSpawn()
         {
-            base.OnNetworkSpawn();
-            enabled = IsOwner;
+            enabled = IsOwner || IsServer;
+            
+            Debug.LogWarning("TEST: do we need to have || IsSever?");
         }
         
         [CanBeNull]

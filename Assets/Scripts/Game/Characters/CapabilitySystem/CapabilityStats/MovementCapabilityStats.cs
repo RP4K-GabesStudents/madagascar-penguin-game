@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Game.Characters.CapabilitySystem.CapabilityStats
 {
+    [CreateAssetMenu(fileName = "MovementCapabilityStats", menuName = "Characters/CapabilityStats/MovementCapabilityStats")]
     public class MovementCapabilityStats : Characters.CapabilityStats
     {
        // public override Type GetCapabilityType() => typeof(GroundMovementCapabilityStats);

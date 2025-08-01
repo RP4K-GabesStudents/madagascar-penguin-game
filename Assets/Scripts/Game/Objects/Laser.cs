@@ -14,10 +14,9 @@ namespace Objects
 
         private GameObject _oner;
         private int _targetLayers;
-        public void Init(int targetLayers, ulong onerId)
+        public void Init(int targetLayers)
         {
             _targetLayers = targetLayers;
-            NetworkObject.SpawnWithOwnership(onerId);
             StartCoroutine(DestroyLaser());
             rigidbody.AddForce(transform.forward * laserStats.Speed, ForceMode.Impulse);
             

@@ -1,6 +1,5 @@
-using Game.penguin;
+using Game.Characters;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Game.AbilitySystem.Effects
 {
@@ -8,11 +7,11 @@ namespace Game.AbilitySystem.Effects
     {
         [SerializeField] private EffectStats effectStats;
         [SerializeField] private float curDuration;
-        PlayerController _player;
+        GenericCharacter _player;
        
         private void Awake()
         {
-            _player = GetComponent<PlayerController>();
+            _player = GetComponent<GenericCharacter>();
         }
         private void Update()
         {
@@ -33,12 +32,12 @@ namespace Game.AbilitySystem.Effects
             curDuration = effectStats.Duration;
         }
 
-        public void OnEffectActivated(PlayerController player)
+        public void OnEffectActivated(GenericCharacter player)
         {
             player.Health += effectStats.HealAmount;
         }
 
-        public void OnEffectDeactivated(PlayerController player)
+        public void OnEffectDeactivated(GenericCharacter player)
         {
             effectStats.IsActive = false;
         }

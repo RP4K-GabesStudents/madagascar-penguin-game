@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Interfaces;
+using Inventory;
+using Managers;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -10,32 +12,24 @@ namespace Game.Characters
     /// A Generic Character is like a husk; it describes how a character might work, but not what who controls it, or how it is controlled.
     /// The Generic Character should not query outside scripts
     /// </summary>
-    [SelectionBase, RequireComponent(typeof(Rigidbody))]
-    public class GenericCharacter : NetworkBehaviour, IDamageable
+    [SelectionBase, RequireComponent(typeof(Rigidbody), typeof(Animator))]
+    public class GenericCharacter : NetworkBehaviour, IDamageable, IInputSubscriber
     {
-
-        #region Transform
-        //---------- Transform Information -----------//
-        //These objects are useful for retrieving important common data from our characters
-        [Header("Transforms")]
-        [SerializeField] private Transform[] eyes;
+        
         [SerializeField] private Transform head;
-        
-        public Transform[] Eyes => eyes;
-        public Transform Head => head;
-        
-        #endregion
-
-        #region Character Info
-        //---------- Character Information -----------//
-        //Here is information that is necessary for all character object creation.
-        
-        [Header("Stats")] 
         [SerializeField] protected CharacterStats stats;
+        
+        //This dictionary contains state information
+        private readonly Dictionary<uint, int> _data = new();
+        
         protected float _currentResistance = 0;
         private float _curHealth;
 
-        public new Rigidbody rigidbody { get; private set; }
+        public Rigidbody rigidbody { get; private set; }
+        public Animator animator { get; private set; }
+        public AnInventory inventory { get; private set; }
+        
+        public Transform Head => head;
 
         public float Health
         {
@@ -49,21 +43,20 @@ namespace Game.Characters
                     _curHealth = t;
                     OnHealthUpdated?.Invoke(diff);
                 }
-                if(_curHealth <= 0) Die(Vector3.zero);
+
+                if (_curHealth <= 0) Die(Vector3.zero);
             }
         }
+
         public float DamageRes => Mathf.Min(0.9f, stats.BaseResistance + _currentResistance);
         public float HealthPercent => Health / stats.Hp;
-
-        #endregion
-
-        //This dictionary contains state information
-        private readonly Dictionary<uint, int> _data = new();
-        public int GetDataDictionaryValue(uint key) => _data[key];
-        //We want this as a function so we can bind information to keys.
-        public void SetDataDictionaryValue(uint key, int value) => _data[key] = value; 
-        public bool TryAddDataKey(uint key, int initialValue) =>  _data.TryAdd(key, initialValue); 
         
+        public int GetDataDictionaryValue(uint key) => _data[key];
+
+        //We want this as a function so we can bind information to keys.
+        public void SetDataDictionaryValue(uint key, int value) => _data[key] = value;
+        public bool TryAddDataKey(uint key, int initialValue) => _data.TryAdd(key, initialValue);
+
         #region Actions
 
         //-------------- Actions -----------//
@@ -72,38 +65,31 @@ namespace Game.Characters
         //For instance; if the AI takes damage (OnHealthUpdated) maybe it gets scared and runs away.
         public event Action<float> OnHealthUpdated;
         public event Action OnDeath;
-        
+        public event Action OnAttack;
+
+
         #endregion
 
         private void Awake()
         {
             InitializeComponents();
-           // InitializeAbilities();
+            Debug.LogWarning("It'd be nice, if when we created, we read a list of stats objects, and generated our ability scripts to go with that.");
+            // InitializeAbilities();
         }
 
         protected virtual void InitializeComponents()
         {
             rigidbody = GetComponent<Rigidbody>();
+            animator = GetComponent<Animator>();
+            inventory = GetComponent<AnInventory>();
         }
-
-        /*
-        protected virtual void InitializeAbilities()
-        {
-            foreach (GenericAbility ability in stats.DefaultAbilities)
-            {
-                GenericAbility spawned = Instantiate(ability, transform);
-                spawned.NetworkObject.SpawnWithOwnership(OwnerClientId);
-            }
-        }
-        */
-        
         
         #region Damagable
         public virtual void OnHurt(float amount, Vector3 force) 
         {
             OnHealthUpdated?.Invoke(amount);
             rigidbody.AddForce(force, ForceMode.Impulse);
-            Debug.Log($"{name} was hit for {amount}",gameObject);
+            Debug.LogWarning($"{name} was hit for {amount}, Play on hit animation",gameObject);
         }
 
         public virtual void Die(Vector3 force)
@@ -112,6 +98,15 @@ namespace Game.Characters
             OnDeath?.Invoke();
         }
         #endregion
-
+        
+        public void BindControls(GameControls controls)
+        {
+            controls.Player.Attack.performed += ctx => animator.SetBool(StaticUtilities.AttackAnimID, ctx.ReadValueAsButton());
+        }
+        
+        public void ExecuteAttack()
+        {
+            OnAttack?.Invoke();
+        }
     }
 }

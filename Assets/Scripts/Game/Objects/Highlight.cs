@@ -17,6 +17,10 @@ namespace Game.Objects
 
         private void OnEnable()
         {
+            
+            Debug.LogWarning("HIGHLIGHT NEEDS TO BE UPDATED AND REPLACED");
+            return;
+            
             foreach (var meshRenderer in meshRenderers)
             {
                 meshRenderer.sharedMaterials = new[] { meshRenderer.sharedMaterials[0], ResourceManager.Instance.HoverMaterial };

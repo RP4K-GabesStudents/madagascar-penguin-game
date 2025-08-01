@@ -1,5 +1,4 @@
 using Inventory;
-using Unity.Netcode;
 using UnityEngine;
 
 namespace Game.Characters
@@ -9,26 +8,42 @@ namespace Game.Characters
     /// When the player spawns in, they are automatically given a PlayerController
     /// From here, we spawn in the components they'll need.
     /// </summary>
-    public class PlayerController : NetworkBehaviour
+    public class PlayerController : MonoBehaviour
     {
-        
         private GenericCharacter _currentCharacter;
         private HotBar _hotBar;
-        private GameControls _gameControls = new();
-        
-        public override void OnNetworkSpawn()
+        private GameControls _gameControls ;
+
+        private void Start()
         {
-            if (!IsOwner) return;
-            
+            _hotBar = GetComponent<HotBar>();
             IInputSubscriber[]  inputSubscribers = GetComponentsInChildren<IInputSubscriber>();
+            
+            Debug.Log("Binding controls to: " + inputSubscribers.Length + " controllers.");
+
+            _gameControls ??= new GameControls();
+
+            
             foreach (IInputSubscriber comp in inputSubscribers)
             {
                 comp.BindControls(_gameControls);
             }
+        }
 
+        public void OnEnable()
+        {
+            _currentCharacter ??= GetComponent<GenericCharacter>();
+            if (!_currentCharacter.IsOwner) return;
+            _gameControls ??= new GameControls();
             EnableGame();
         }
-        
+
+        public void OnDisable()
+        {
+            if (!_currentCharacter.IsOwner) return;
+            EnableUi();
+        }
+
         public void EnableGame()
         {
             _gameControls.Player.Enable();

@@ -60,7 +60,7 @@ namespace Managers.Game
             }
         }
         
-        private void SpawnPenguins(ServerRpcParams serverRpcParams = default)
+        private void SpawnPenguins()
         {
             int location = Random.Range(0, spawnPoints.Count);
             Vector3 spawn = spawnPoints[location].position;

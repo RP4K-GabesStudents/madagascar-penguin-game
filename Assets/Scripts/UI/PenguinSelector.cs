@@ -1,18 +1,18 @@
 using System.Collections;
 using Game.Characters;
+using TMPro;
 using UI.Transition;
 using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI
 {
-    public class PenguinSelector : Selectable
+    public class PenguinSelector : MonoBehaviour
     {
-        private PenguinSelector _currentPenguinSelector;
         
         [SerializeField] private PenguinSelectorStats selectorStats;
         [SerializeField] private GenericCharacter target;
+        [SerializeField] private TextMeshPro textObject;
         
         [Header("Objects")] 
         [SerializeField] private AudioSource audioSource;
@@ -21,6 +21,8 @@ namespace UI
         [SerializeField] private Animator penguinAnimator;
         [SerializeField] private Material targetMaterial;
         
+        [SerializeField] private CinemachineCamera cinemachineCamera;
+        
         private static readonly int IntensityID = Shader.PropertyToID("_Intensity");
 
         private CinemachineBrain _main;
@@ -28,21 +30,20 @@ namespace UI
         
         
         
-        protected override void Start()
+        protected void Start()
         {
-            base.Start();
-            
             _main ??= Camera.main.GetComponent<CinemachineBrain>();
+            textObject.text = target.name;
             
-            if(_currentPenguinSelector != this) Deselect();
         }
 
-        public override void Select()
+        public void Select()
         {
-            _currentPenguinSelector?.Deselect();
-            _currentPenguinSelector = this;
             _main ??= Camera.main.GetComponent<CinemachineBrain>();
             StartCoroutine(FadeIn());
+            
+            cinemachineCamera.enabled = true;
+
         }
 
         public void Deselect()
@@ -50,12 +51,44 @@ namespace UI
             StopAllCoroutines();
             if(_isFadedIn) StartCoroutine(FadeOut());
             _isFadedIn = false;
+            
+            cinemachineCamera.enabled = false;
+
         }
 
 
         private IEnumerator FadeOut()
         {
-            yield return null;
+            EvaluateLights(1,1);
+            float t = 0;
+            textObject.alpha = 1;
+            while (t < selectorStats.MaxLightTime)
+            {
+                t += Time.deltaTime;
+
+                EvaluateLights(Mathf.Clamp01(1 - (t / selectorStats.FrontLightTime)), Mathf.Clamp01(1 - (t / selectorStats.BackLightsTime)));
+                textObject.alpha = 1-(t / selectorStats.MaxLightTime);
+                yield return null;
+            }
+
+            textObject.alpha = 1;
+            textObject.gameObject.SetActive(false);
+            EvaluateLights(0,0);
+        }
+
+        private void EvaluateLights(float percent1, float percent2)
+        {
+            float intensity = selectorStats.FrontLights.Evaluate(percent1);
+            foreach (Light l in frontLights)
+            {
+                l.intensity = intensity;
+            }
+            intensity =  selectorStats.BackLights.Evaluate(percent2);
+            foreach (Light l in backingLights)
+            {
+                l.intensity = intensity;
+            }
+            targetMaterial.SetFloat(IntensityID, selectorStats.MaterialIntensity.Evaluate(percent2));
         }
 
         private IEnumerator FadeIn()
@@ -66,35 +99,17 @@ namespace UI
             audioSource.PlayOneShot(selectorStats.LightActiveSound);
 
            
-            float intensity = selectorStats.FrontLights.Evaluate(0);
-            foreach (Light l in frontLights)
-            {
-                l.intensity = intensity;
-            }
+            EvaluateLights(0,0);
+            textObject.gameObject.SetActive(true);
 
             float t = 0;
-            while (t < selectorStats.BackLightsOnTime)
+            while (t < selectorStats.MaxLightTime)
             {
                 t += Time.deltaTime;
-                float p = t / selectorStats.BackLightsOnTime;
-                
-                intensity = selectorStats.BackLightsOn.Evaluate(p);
-                foreach (Light l in frontLights)
-                {
-                    l.intensity = intensity;
-                }
-                
-                targetMaterial.SetFloat(IntensityID, selectorStats.MaterialIntensity.Evaluate(p));
-                
+                EvaluateLights(t / selectorStats.FrontLightTime,t / selectorStats.BackLightsTime);
                 yield return null;
             }
-            
-            intensity = selectorStats.BackLightsOn.Evaluate(1);
-            foreach (Light l in frontLights)
-            {
-                l.intensity = intensity;
-            }
-            targetMaterial.SetFloat(IntensityID, selectorStats.MaterialIntensity.Evaluate(1));
+            EvaluateLights(1,1);
 
         }
 

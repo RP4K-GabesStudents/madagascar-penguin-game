@@ -35,6 +35,7 @@ namespace Managers
             {
                 penguinSelectors[i].Deselect();
             }
+            penguinSelectors[0].Select();
         }
 
         private void SelectCurPenguin()

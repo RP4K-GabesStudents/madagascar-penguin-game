@@ -75,6 +75,29 @@ namespace UI
             textObject.gameObject.SetActive(false);
             EvaluateLights(0,0);
         }
+        
+        
+        private IEnumerator FadeIn()
+        {
+            EvaluateLights(0,0);
+
+            yield return new WaitForSeconds(_main.DefaultBlend.BlendTime);
+            _isFadedIn = true;
+            
+            audioSource.PlayOneShot(selectorStats.LightActiveSound);
+            
+            textObject.gameObject.SetActive(true);
+
+            float t = 0;
+            while (t < selectorStats.MaxLightTime)
+            {
+                t += Time.deltaTime;
+                EvaluateLights(Mathf.Clamp01((t / selectorStats.FrontLightTime)), Mathf.Clamp01((t / selectorStats.BackLightsTime)));
+                yield return null;
+            }
+            EvaluateLights(1,1);
+
+        }
 
         private void EvaluateLights(float percent1, float percent2)
         {
@@ -91,27 +114,6 @@ namespace UI
             targetMaterial.SetFloat(IntensityID, selectorStats.MaterialIntensity.Evaluate(percent2));
         }
 
-        private IEnumerator FadeIn()
-        {
-            yield return new WaitForSeconds(_main.DefaultBlend.BlendTime);
-            _isFadedIn = true;
-            
-            audioSource.PlayOneShot(selectorStats.LightActiveSound);
-
-           
-            EvaluateLights(0,0);
-            textObject.gameObject.SetActive(true);
-
-            float t = 0;
-            while (t < selectorStats.MaxLightTime)
-            {
-                t += Time.deltaTime;
-                EvaluateLights(t / selectorStats.FrontLightTime,t / selectorStats.BackLightsTime);
-                yield return null;
-            }
-            EvaluateLights(1,1);
-
-        }
 
         public void ChooseCharacter()
         {

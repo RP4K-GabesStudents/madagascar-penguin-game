@@ -267,10 +267,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8798818288844273996, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8814762827821991037}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 146450929407611434, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
 --- !u!4 &12379294 stripped
 Transform:
@@ -302,7 +299,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 99236187}
-  - component: {fileID: 99236188}
   - component: {fileID: 99236189}
   m_Layer: 31
   m_Name: Penguin Selector
@@ -330,19 +326,6 @@ Transform:
   - {fileID: 2077815748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &99236188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99236186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b051f4b06f12244af23abe20444347, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingSelectable: {fileID: 0}
 --- !u!114 &99236189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,10 +686,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8798818288844273996, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8394273099757401659}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 146450929407611434, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
 --- !u!4 &1243776336 stripped
 Transform:
@@ -1012,7 +992,7 @@ MonoBehaviour:
     DefaultMode: 2
   DefaultBlend:
     Style: 1
-    Time: 2
+    Time: 1
     CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -1256,10 +1236,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4970297433364676470, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 146450929407611434, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
 --- !u!4 &2077815748 stripped
 Transform:
@@ -4636,26 +4613,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -48.68015
       objectReference: {fileID: 0}
-    - target: {fileID: 5593602684336184359, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
-      propertyPath: textScaleCurve.m_Curve.Array.data[1].time
-      value: 0.6590841
-      objectReference: {fileID: 0}
-    - target: {fileID: 5593602684336184359, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
-      propertyPath: textScaleCurve.m_Curve.Array.data[1].value
-      value: 0.99069977
-      objectReference: {fileID: 0}
-    - target: {fileID: 5593602684336184359, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
-      propertyPath: textScaleCurve.m_Curve.Array.data[1].inSlope
-      value: 0.071003914
-      objectReference: {fileID: 0}
-    - target: {fileID: 5593602684336184359, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
-      propertyPath: textScaleCurve.m_Curve.Array.data[1].outSlope
-      value: 0.071003914
-      objectReference: {fileID: 0}
-    - target: {fileID: 5593602684336184359, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
-      propertyPath: textScaleCurve.m_Curve.Array.data[1].outWeight
-      value: 0.20613545
-      objectReference: {fileID: 0}
     - target: {fileID: 5924202509592540192, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 8.854868
@@ -4952,10 +4909,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8798818288844273996, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6860247409434322942}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 146450929407611434, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
 --- !u!4 &8296421036632374411 stripped
 Transform:

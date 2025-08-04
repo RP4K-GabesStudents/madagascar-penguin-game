@@ -106,6 +106,7 @@ namespace Game.Characters
         
         public void ExecuteAttack()
         {
+            Debug.Log("Trying to attack");
             OnAttack?.Invoke();
         }
     }

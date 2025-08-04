@@ -31,10 +31,6 @@ namespace Managers
             _controls.UI.Navigate.performed += ctx => Navigate(ctx.ReadValue<Vector2>().x);
             _controls.UI.Submit.performed += _ => SelectCurPenguin();
 
-            for (int i = 1; i < penguinSelectors.Length; i++)
-            {
-                penguinSelectors[i].Deselect();
-            }
             penguinSelectors[0].Select();
         }
 

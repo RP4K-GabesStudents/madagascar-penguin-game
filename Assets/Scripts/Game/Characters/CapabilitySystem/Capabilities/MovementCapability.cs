@@ -32,9 +32,9 @@ namespace Game.Characters.CapabilitySystem.Capabilities
         {
             controls.Player.Move.performed += ctx => SetMoveDirection(ctx.ReadValue<Vector2>());
         }
-        public void SetMoveDirection(Vector3 moveDirection)
+        public void SetMoveDirection(Vector2 moveDirection)
         {
-            _curMoveDir = moveDirection;
+            _curMoveDir = new Vector3(moveDirection.x, 0, moveDirection.y);
         }
         
         private void FixedUpdate()

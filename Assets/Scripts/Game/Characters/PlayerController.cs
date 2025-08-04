@@ -1,3 +1,4 @@
+using System;
 using Inventory;
 using UnityEngine;
 
@@ -27,14 +28,15 @@ namespace Game.Characters
             {
                 comp.BindControls(_gameControls);
             }
+            
+            EnableGame();
         }
 
         public void OnEnable()
         {
             _currentCharacter ??= GetComponent<GenericCharacter>();
             if (!_currentCharacter.IsOwner) return;
-            _gameControls ??= new GameControls();
-            EnableGame();
+            if(_gameControls != null) EnableGame();
         }
 
         public void OnDisable()

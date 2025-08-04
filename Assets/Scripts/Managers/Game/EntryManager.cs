@@ -17,10 +17,20 @@ namespace Managers.Game
         [SerializeField] private GenericCharacter failSafePrefab;
         private Dictionary<ulong, ulong> _prefabIdHashes = new ();
         private bool _isSelectionSpawn;
+
+        [SerializeField] private GameObject[] enableLater;
         private void OnEnable()
         {
             NetworkManager.SceneManager.OnLoadEventCompleted += StartGame;
             NetworkManager.SceneManager.OnLoadComplete += OnLocalLoaded;
+        }
+
+        private void Awake()
+        {
+            foreach (GameObject go in enableLater)
+            {
+                go.SetActive(false);
+            }
         }
 
         private async void OnLocalLoaded(ulong clientid, string scenename, LoadSceneMode loadscenemode)
@@ -43,7 +53,8 @@ namespace Managers.Game
 
         private void RequestSpawnCharacter(GenericCharacter obj)
         {
-            ChoosePenguin_ServerRpc(obj.NetworkObject.PrefabIdHash);
+            //Doing just .NetworkObject doesn't work until it's spawned in.
+            ChoosePenguin_ServerRpc(obj.GetComponent<NetworkObject>().PrefabIdHash);
         }
 
         [ServerRpc(RequireOwnership = false)]
@@ -89,6 +100,10 @@ namespace Managers.Game
         {
             Debug.Log("I know game start as client");
             SceneManager.UnloadSceneAsync(selectionScene.BuildIndex);
+            foreach (GameObject go in enableLater)
+            {
+                go.SetActive(true);
+            }
         }
     }
 }

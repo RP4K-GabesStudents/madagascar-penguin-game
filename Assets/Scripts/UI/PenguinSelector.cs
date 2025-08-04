@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Game.Characters;
 using TMPro;
@@ -26,10 +27,9 @@ namespace UI
         private static readonly int IntensityID = Shader.PropertyToID("_Intensity");
 
         private CinemachineBrain _main;
-        private bool _isFadedIn;
-        
-        
-        
+        private float t;
+
+
         protected void Start()
         {
             _main ??= Camera.main.GetComponent<CinemachineBrain>();
@@ -41,35 +41,40 @@ namespace UI
         {
             _main ??= Camera.main.GetComponent<CinemachineBrain>();
             StartCoroutine(FadeIn());
-            
             cinemachineCamera.enabled = true;
-
         }
 
         public void Deselect()
         {
             StopAllCoroutines();
-            if(_isFadedIn) StartCoroutine(FadeOut());
-            _isFadedIn = false;
-            
+            StartCoroutine(FadeOut());
             cinemachineCamera.enabled = false;
 
+        }
+
+        private void OnEnable()
+        {
+            textObject.alpha = 1;
+            textObject.gameObject.SetActive(false);
+            EvaluateLights(0,0);
         }
 
 
         private IEnumerator FadeOut()
         {
             EvaluateLights(1,1);
-            float t = 0;
+            
             textObject.alpha = 1;
-            while (t < selectorStats.MaxLightTime)
+            while (t >= 0)
             {
-                t += Time.deltaTime;
+                t -= Time.deltaTime * 2;
 
-                EvaluateLights(Mathf.Clamp01(1 - (t / selectorStats.FrontLightTime)), Mathf.Clamp01(1 - (t / selectorStats.BackLightsTime)));
-                textObject.alpha = 1-(t / selectorStats.MaxLightTime);
+                EvaluateLights(Mathf.Clamp01((t / selectorStats.FrontLightTime)), Mathf.Clamp01((t / selectorStats.BackLightsTime)));
+                textObject.alpha = (t / selectorStats.MaxLightTime);
                 yield return null;
             }
+
+            t = 0;
 
             textObject.alpha = 1;
             textObject.gameObject.SetActive(false);
@@ -80,23 +85,22 @@ namespace UI
         private IEnumerator FadeIn()
         {
             EvaluateLights(0,0);
-
             yield return new WaitForSeconds(_main.DefaultBlend.BlendTime);
-            _isFadedIn = true;
+         
             
             audioSource.PlayOneShot(selectorStats.LightActiveSound);
             
             textObject.gameObject.SetActive(true);
 
-            float t = 0;
-            while (t < selectorStats.MaxLightTime)
+            while (t <= selectorStats.MaxLightTime)
             {
                 t += Time.deltaTime;
                 EvaluateLights(Mathf.Clamp01((t / selectorStats.FrontLightTime)), Mathf.Clamp01((t / selectorStats.BackLightsTime)));
                 yield return null;
             }
-            EvaluateLights(1,1);
 
+            t = selectorStats.MaxLightTime;
+            EvaluateLights(1,1);
         }
 
         private void EvaluateLights(float percent1, float percent2)

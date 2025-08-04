@@ -11,6 +11,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
     public class LaserEyesCapability : BaseCapability
     {
         [SerializeField] private Transform[] eyes;
+        [SerializeField] private Transform cam;
         private LaserEyeCapabilityStats _stats;
         private const float TargetDistance = 50;
         
@@ -31,7 +32,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
         protected override void Execute()
         {
             Debug.LogWarning("Optimize with Object Pool");
-            SpawnLaser_ServerRpc(owner.Head.forward * TargetDistance + owner.Head.position);
+            SpawnLaser_ServerRpc(cam.forward * TargetDistance + cam.position);
         }
 
         [ServerRpc]

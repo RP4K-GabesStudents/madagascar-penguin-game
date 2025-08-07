@@ -15,6 +15,7 @@ namespace Managers.Game
         [SerializeField] private List<Transform> spawnPoints;
         [SerializeField] private SceneReference selectionScene;
         [SerializeField] private GenericCharacter failSafePrefab;
+        
         private Dictionary<ulong, ulong> _prefabIdHashes = new ();
         private bool _isSelectionSpawn;
 
@@ -51,6 +52,7 @@ namespace Managers.Game
             //SpawnPenguin_ServerRpc();
         }
 
+        
         private void RequestSpawnCharacter(GenericCharacter obj)
         {
             //Doing just .NetworkObject doesn't work until it's spawned in.

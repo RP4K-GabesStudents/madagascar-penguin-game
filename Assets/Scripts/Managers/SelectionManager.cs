@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Game.Characters;
+using TMPro;
 using UI;
 using UnityEngine;
 using Utilities.Utilities.General;
@@ -11,7 +14,9 @@ namespace Managers
     public class SelectionManager : MonoBehaviour
     {
         public static SelectionManager Instance { get; private set; }
+        [SerializeField] public float selectionTime;
         [SerializeField] private PenguinSelector[] penguinSelectors;
+        [SerializeField] private TextMeshProUGUI timerText;
         private GameControls _controls;
         private int _curIndex = 0;
         public event Action<GenericCharacter> OnCharacterSelected; 
@@ -32,12 +37,28 @@ namespace Managers
             _controls.UI.Submit.performed += _ => SelectCurPenguin();
 
             penguinSelectors[0].Select();
+            StartCoroutine(SelectionTimer());
+        }
+        
+        void Update()
+        {
+            int curTime = (int)(selectionTime -= Time.deltaTime);
+            if (curTime <= 0) return;
+            timerText.SetText(curTime.ToString());
+        }
+
+        private IEnumerator SelectionTimer()
+        {
+            yield return new WaitForSeconds(selectionTime);
+            if (penguinSelectors[_curIndex] == null) yield return null;
+            SelectCurPenguin();
         }
 
         private void SelectCurPenguin()
         {
             penguinSelectors[_curIndex].ChooseCharacter();
             OnCharacterSelected?.Invoke(penguinSelectors[_curIndex].Character);
+            StopCoroutine(SelectionTimer());
         }
 
         private void Navigate(float f)

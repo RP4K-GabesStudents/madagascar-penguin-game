@@ -147,18 +147,16 @@ namespace Managers.Game
             Debug.Log("startGame todo:timer and ui explosion");
             _selectionTime.Value = selectionTime;
             _isTimerOn = true;
-            OnGameLoad_ClienRpc();
+            OnGameLoad_ClientRpc();
             StartCoroutine(HandleSelectionTime());
         }
 
         [ClientRpc]
-        private void OnGameLoad_ClienRpc()
+        private void OnGameLoad_ClientRpc()
         {
             animator.SetTrigger(OnExploded);
         }
         
-        
-
         [ClientRpc]
         private void OnGameStarting_ClientRpc()
         {

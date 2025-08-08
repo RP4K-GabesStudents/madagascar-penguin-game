@@ -51,6 +51,7 @@ namespace Managers.Game
             }
             if (IsServer) 
             {
+                Debug.Log("is closing doors?");
                 foreach (Animator anima in doors)
                 {
                     anima.SetBool(IsOpen, false);
@@ -66,7 +67,7 @@ namespace Managers.Game
                 yield return null;
             }
             ForceChoosePenguin_ClientRpc();
-            StartCoroutine(HandleDoorTimer());
+           
         }
         private IEnumerator HandleDoorTimer()
         {
@@ -120,7 +121,11 @@ namespace Managers.Game
             {
                 SpawnPenguins();
                 OnGameStarting_ClientRpc();
+                StopAllCoroutines();
+                StartCoroutine(HandleDoorTimer());
             }
+            
+            
         }
         
         private void SpawnPenguins()
@@ -144,6 +149,7 @@ namespace Managers.Game
 
         private void StartGame(string scenename, LoadSceneMode loadscenemode, List<ulong> clientscompleted, List<ulong> clientstimedout)
         {
+            if (!IsServer) return;
             Debug.Log("startGame todo:timer and ui explosion");
             _selectionTime.Value = selectionTime;
             _isTimerOn = true;
@@ -166,6 +172,7 @@ namespace Managers.Game
             {
                 go.SetActive(true);
             }
+          
         }
     }
 }

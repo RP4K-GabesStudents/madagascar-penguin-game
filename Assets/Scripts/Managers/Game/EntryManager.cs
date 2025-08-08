@@ -139,12 +139,14 @@ namespace Managers.Game
 
         private void StartGame(string scenename, LoadSceneMode loadscenemode, List<ulong> clientscompleted, List<ulong> clientstimedout)
         {
-            if (!IsServer)
-            {    
+            if (IsClient)
+            {
                 animator.SetTrigger(OnExploded);
                 explosion.enabled = true;
-                return;
             }
+
+            if (!IsServer) return;
+            
             Debug.Log("startGame todo:timer and ui explosion");
             _selectionTime.Value = selectionTime;
             _isTimerOn = true;

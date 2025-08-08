@@ -6,9 +6,8 @@ using Game.Characters;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
+using UnityEngine.UI;
 using NetworkPrefab = Unity.Netcode.NetworkPrefab;
 using Random = UnityEngine.Random;
 
@@ -24,6 +23,7 @@ namespace Managers.Game
         [SerializeField] private Animator animator;
         [SerializeField] private Animator[] doors;
         [SerializeField] private TextMeshProUGUI timerText;
+        [SerializeField] private Image explosion;
         [SerializeField] private float selectionTime = 22f;
         [SerializeField] private float doorOpenDelay = 5f;
         private NetworkVariable<float> _selectionTime = new ();
@@ -45,17 +45,10 @@ namespace Managers.Game
 
         private void Awake()
         {
+            explosion.enabled = false;
             foreach (GameObject go in enableLater)
             {
                 go.SetActive(false);
-            }
-            if (IsServer) 
-            {
-                Debug.Log("is closing doors?");
-                foreach (Animator anima in doors)
-                {
-                    anima.SetBool(IsOpen, false);
-                }
             }
             _selectionTime.OnValueChanged += (oldvalue, newvalue) => { timerText.SetText(newvalue.ToString("N0"));};
         }
@@ -82,7 +75,6 @@ namespace Managers.Game
         private void ForceChoosePenguin_ClientRpc()
         {
             SelectionManager.Instance.SelectCurPenguin();
-            timerText.gameObject.SetActive(false);
         }
 
         private async void OnLocalLoaded(ulong clientid, string scenename, LoadSceneMode loadscenemode)
@@ -124,8 +116,6 @@ namespace Managers.Game
                 StopAllCoroutines();
                 StartCoroutine(HandleDoorTimer());
             }
-            
-            
         }
         
         private void SpawnPenguins()
@@ -149,23 +139,27 @@ namespace Managers.Game
 
         private void StartGame(string scenename, LoadSceneMode loadscenemode, List<ulong> clientscompleted, List<ulong> clientstimedout)
         {
-            if (!IsServer) return;
+            if (!IsServer)
+            {    
+                animator.SetTrigger(OnExploded);
+                explosion.enabled = true;
+                return;
+            }
             Debug.Log("startGame todo:timer and ui explosion");
             _selectionTime.Value = selectionTime;
             _isTimerOn = true;
-            OnGameLoad_ClientRpc();
             StartCoroutine(HandleSelectionTime());
+            foreach (Animator anima in doors)
+            {
+                anima.SetBool(IsOpen, false);
+            }
         }
 
-        [ClientRpc]
-        private void OnGameLoad_ClientRpc()
-        {
-            animator.SetTrigger(OnExploded);
-        }
         
         [ClientRpc]
         private void OnGameStarting_ClientRpc()
         {
+            timerText.gameObject.SetActive(false);
             Debug.Log("I know game start as client");
             SceneManager.UnloadSceneAsync(selectionScene.BuildIndex);
             foreach (GameObject go in enableLater)

@@ -4273,6 +4273,7 @@ MonoBehaviour:
   - {fileID: 2114552608}
   - {fileID: 2114552607}
   timerText: {fileID: 1981238311}
+  explosion: {fileID: 1231850228}
   selectionTime: 22
   doorOpenDelay: 5
   enableLater:
@@ -4409,6 +4410,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1127039115}
     m_Modifications:
+    - target: {fileID: 338420379499090471, guid: 06f4213279290b74cb56a38801c4a9d6, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1735569520
+      objectReference: {fileID: 0}
+    - target: {fileID: 338420379499090471, guid: 06f4213279290b74cb56a38801c4a9d6, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 338420379499090471, guid: 06f4213279290b74cb56a38801c4a9d6, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1466408340
+      objectReference: {fileID: 0}
     - target: {fileID: 1595072616394555969, guid: 06f4213279290b74cb56a38801c4a9d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.000011

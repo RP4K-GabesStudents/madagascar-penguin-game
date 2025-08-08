@@ -159,6 +159,7 @@ namespace Managers.Game
         [ClientRpc]
         private void OnGameStarting_ClientRpc()
         {
+            explosion.enabled = false;
             timerText.gameObject.SetActive(false);
             Debug.Log("I know game start as client");
             SceneManager.UnloadSceneAsync(selectionScene.BuildIndex);

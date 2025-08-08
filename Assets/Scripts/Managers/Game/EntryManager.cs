@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Eflatun.SceneReference;
 using Game.Characters;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using NetworkPrefab = Unity.Netcode.NetworkPrefab;
@@ -15,12 +17,17 @@ namespace Managers.Game
     public class EntryManager : NetworkBehaviour
     {
         private static readonly int OnExploded = Animator.StringToHash("OnExploded");
+        private static readonly int IsOpen = Animator.StringToHash("isOpen");
         [SerializeField] private List<Transform> spawnPoints;
         [SerializeField] private SceneReference selectionScene;
         [SerializeField] private GenericCharacter failSafePrefab;
         [SerializeField] private Animator animator;
+        [SerializeField] private Animator[] doors;
         [SerializeField] private TextMeshProUGUI timerText;
+        [SerializeField] private float selectionTime = 22f;
+        [SerializeField] private float doorOpenDelay = 5f;
         private NetworkVariable<float> _selectionTime = new ();
+        private bool _isTimerOn;
         private Dictionary<ulong, ulong> _playerPrefabs = new ();
         private bool _isSelectionSpawn;
 
@@ -38,19 +45,35 @@ namespace Managers.Game
 
         private void Awake()
         {
-            
             foreach (GameObject go in enableLater)
             {
                 go.SetActive(false);
             }
-        }
-        void Update()
-        {
-            if (!IsServer) return;
-            _selectionTime.Value -= Time.deltaTime;
-            if (_selectionTime.Value < 0)
+            if (IsServer) 
             {
-                ForceChoosePenguin_ClientRpc();
+                foreach (Animator anima in doors)
+                {
+                    anima.SetBool(IsOpen, false);
+                }
+            }
+            _selectionTime.OnValueChanged += (oldvalue, newvalue) => { timerText.SetText(newvalue.ToString("N0"));};
+        }
+        private IEnumerator HandleSelectionTime()
+        {
+            while (_selectionTime.Value > 0)
+            {
+                _selectionTime.Value -= Time.deltaTime;
+                yield return null;
+            }
+            ForceChoosePenguin_ClientRpc();
+            StartCoroutine(HandleDoorTimer());
+        }
+        private IEnumerator HandleDoorTimer()
+        {
+            yield return new WaitForSeconds(doorOpenDelay);
+            foreach (Animator anim in doors)
+            {
+                anim.SetBool(IsOpen, true);
             }
         }
 
@@ -58,7 +81,7 @@ namespace Managers.Game
         private void ForceChoosePenguin_ClientRpc()
         {
             SelectionManager.Instance.SelectCurPenguin();
-            gameObject.SetActive(false);
+            timerText.gameObject.SetActive(false);
         }
 
         private async void OnLocalLoaded(ulong clientid, string scenename, LoadSceneMode loadscenemode)
@@ -122,10 +145,19 @@ namespace Managers.Game
         private void StartGame(string scenename, LoadSceneMode loadscenemode, List<ulong> clientscompleted, List<ulong> clientstimedout)
         {
             Debug.Log("startGame todo:timer and ui explosion");
-            _selectionTime.OnValueChanged += (oldvalue, newvalue) => { timerText.SetText(newvalue.ToString("N0"));};
-            animator.SetTrigger(OnExploded);
-            
+            _selectionTime.Value = selectionTime;
+            _isTimerOn = true;
+            OnGameLoad_ClienRpc();
+            StartCoroutine(HandleSelectionTime());
         }
+
+        [ClientRpc]
+        private void OnGameLoad_ClienRpc()
+        {
+            animator.SetTrigger(OnExploded);
+        }
+        
+        
 
         [ClientRpc]
         private void OnGameStarting_ClientRpc()

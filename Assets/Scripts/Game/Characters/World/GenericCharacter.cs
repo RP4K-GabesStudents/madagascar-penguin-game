@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Game.Characters.Stats;
 using Interfaces;
 using Inventory;
 using Managers;

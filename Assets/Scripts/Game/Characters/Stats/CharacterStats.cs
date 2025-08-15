@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Characters
+namespace Game.Characters.Stats
 {
     [CreateAssetMenu(fileName = "Generic Character", menuName = "Characters/Generic Character", order = 1)]
     public class CharacterStats : ScriptableObject
@@ -15,7 +15,11 @@ namespace Game.Characters
 
 
         public float Hp => hp;
-        public float BaseResistance => baseResistance;
-       // public GenericAbility[] DefaultAbilities => defaultAbilities;
+        public float BaseResistance
+        {
+            get => baseResistance;
+            set => baseResistance = value;
+        }
+        // public GenericAbility[] DefaultAbilities => defaultAbilities;
     }
 }

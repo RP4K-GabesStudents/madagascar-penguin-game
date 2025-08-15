@@ -60,16 +60,16 @@ namespace Game.Characters.Movement
             headXRotator.localRotation = Quaternion.Euler(newXRotation, headXRotator.localEulerAngles.y, headXRotator.localEulerAngles.z);
         
             //Rotate the head in both directions...
-            owner.Head.Rotate(Vector3.up, _curLookDir.x * _stats.RotationAnimationSpeed * dt);
-            owner.Head.Rotate(Vector3.right, _curLookDir.y * _stats.RotationAnimationSpeed * dt);
+            _owner.Head.Rotate(Vector3.up, _curLookDir.x * _stats.RotationAnimationSpeed * dt);
+            _owner.Head.Rotate(Vector3.right, _curLookDir.y * _stats.RotationAnimationSpeed * dt);
 
             //Check if we exceed the threshold, if we do then rotate the head slowly to correct location
-            if (Vector3.Dot(owner.Head.forward, headXRotator.forward) < _stats.RotationAnimationThreshold)
+            if (Vector3.Dot(_owner.Head.forward, headXRotator.forward) < _stats.RotationAnimationThreshold)
             {
-                owner.Head.rotation= Quaternion.Slerp(owner.Head.rotation, headXRotator.rotation, _stats.AnimationReturnSpeed * dt); // Use rotation speed
+                _owner.Head.rotation= Quaternion.Slerp(_owner.Head.rotation, headXRotator.rotation, _stats.AnimationReturnSpeed * dt); // Use rotation speed
             }
        
-            owner.Head.rotation = owner.Head.rotation;
+            _owner.Head.rotation = _owner.Head.rotation;
         }
     }
 }

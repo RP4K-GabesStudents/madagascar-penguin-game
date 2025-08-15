@@ -21,11 +21,11 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             _stats = genericStats as MovementCapabilityStats;
             if (_stats == null) { Debug.LogAssertion($"Wrong stats assigned to object {name},expected {typeof(MovementCapabilityStats)}, but retrieved {genericStats.GetType()}.", gameObject); }
 
-            owner.TryAddDataKey(CapabilityKeys.CurrentVelocityXZ, 0);
-            owner.TryAddDataKey(CapabilityKeys.CurrentVelocityY, 0);
+            _owner.TryAddDataKey(CapabilityKeys.CurrentVelocityXZ, 0);
+            _owner.TryAddDataKey(CapabilityKeys.CurrentVelocityY, 0);
 
-            _rigidbody = owner.rigidbody;
-            _animator = owner.GetComponent<Animator>();
+            _rigidbody = _owner.rigidbody;
+            _animator = _owner.GetComponent<Animator>();
         }
 
         public void BindControls(GameControls controls)
@@ -57,8 +57,8 @@ namespace Game.Characters.CapabilitySystem.Capabilities
                 _rigidbody.linearVelocity = new Vector3(dir.x, currentVelocity.y, dir.y);
             }
             
-            owner.SetDataDictionaryValue(CapabilityKeys.CurrentVelocityXZ, magnitudeXZ.FloatAsInt());
-            owner.SetDataDictionaryValue(CapabilityKeys.CurrentVelocityY,  currentVelocity.y.FloatAsInt());
+            _owner.SetDataDictionaryValue(CapabilityKeys.CurrentVelocityXZ, magnitudeXZ.FloatAsInt());
+            _owner.SetDataDictionaryValue(CapabilityKeys.CurrentVelocityY,  currentVelocity.y.FloatAsInt());
             
             _animator.SetFloat(StaticUtilities.ForwardAnimID, magnitudeXZ);
         }
@@ -66,7 +66,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
         private void HandleGrounding()
         {
             //Implement later
-            owner.SetDataDictionaryValue(CapabilityKeys.IsGrounded, true.BoolAsInt());
+            _owner.SetDataDictionaryValue(CapabilityKeys.IsGrounded, true.BoolAsInt());
         }
         
     }

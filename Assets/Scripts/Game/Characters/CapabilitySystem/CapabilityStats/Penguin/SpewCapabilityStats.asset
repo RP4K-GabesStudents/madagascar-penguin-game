@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f0ca7980f0d084ca22a5c9f7ddb21c, type: 3}
+  m_Name: SpewCapabilityStats
+  m_EditorClassIdentifier: 
+  <DisplayOnUI>k__BackingField: 1
+  potionPrefabs:
+  - {fileID: 8682902792900192204, guid: e91bb3fd2e4487c418a80f7c8408dcf0, type: 3}
+  - {fileID: 6942019327815221725, guid: 3faefed45299a5b459c6ae239b724201, type: 3}
+  - {fileID: 8604251716984194844, guid: a70d7620c4e4ce64a93ea0473a5ca8b3, type: 3}
+  potionForce: 5
+  torqueForce: 5
+  potionCooldownTimer: 60

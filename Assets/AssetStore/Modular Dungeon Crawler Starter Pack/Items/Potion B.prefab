@@ -185,9 +185,10 @@ GameObject:
   - component: {fileID: 964082895499101069}
   - component: {fileID: 8970700904691331400}
   - component: {fileID: 6942019327815221725}
-  - component: {fileID: 6762373229779172384}
   - component: {fileID: 8005168672736422441}
+  - component: {fileID: 6762373229779172384}
   - component: {fileID: 3189216954456630343}
+  - component: {fileID: 7960183468211921438}
   m_Layer: 10
   m_Name: Potion B
   m_TagString: Untagged
@@ -291,19 +292,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6762373229779172384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5020149957310227411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemStats: {fileID: 11400000, guid: bf19914c8ab24db498b62964251abc27, type: 2}
 --- !u!114 &8005168672736422441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4119653014
+  GlobalObjectIdHash: 1700826572
   InScenePlacedSourceGlobalObjectIdHash: 1700826572
   DeferredDespawnTick: 0
   Ownership: 1
@@ -329,6 +317,20 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &6762373229779172384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5020149957310227411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  itemStats: {fileID: 11400000, guid: bf19914c8ab24db498b62964251abc27, type: 2}
 --- !u!114 &3189216954456630343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,5 +343,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62eaa361baafad74e88d69c050d8a71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  itemStats: {fileID: 11400000, guid: bf19914c8ab24db498b62964251abc27, type: 2}
   hoverInfo: {fileID: 11400000, guid: 332a4f335562d8640a6767d6c2955ed3, type: 2}
   breakForce: -9
+--- !u!114 &7960183468211921438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5020149957310227411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054a365acb0e455ca7747a46d19dad31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers: []

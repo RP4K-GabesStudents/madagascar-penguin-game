@@ -1,10 +1,10 @@
 using System.Collections;
 using Game.Characters.Capabilities;
-using Game.Characters.CapabilitySystem.Capabilities;
+using Game.Characters.CapabilitySystem.CapabilityStats;
 using Managers;
 using UnityEngine;
 
-namespace Game.Characters.Movement
+namespace Game.Characters.CapabilitySystem.Capabilities
 {
     public class JumpCapability : BaseCapability, IInputSubscriber 
     {
@@ -25,8 +25,8 @@ namespace Game.Characters.Movement
             if (_stats == null) { Debug.LogAssertion($"Wrong stats assigned to object {name},expected {typeof(JumpCapabilityStats)}, but retrieved {genericStats.GetType()}.", gameObject); }
 
             
-            _rigidbody = owner.rigidbody;
-            _animator = owner.GetComponent<Animator>();
+            _rigidbody = _owner.rigidbody;
+            _animator = _owner.GetComponent<Animator>();
         }
 
 
@@ -47,7 +47,7 @@ namespace Game.Characters.Movement
 
         public override bool CanExecute()
         {
-            return owner.GetDataDictionaryValue(CapabilityKeys.IsGrounded).IntAsBool() && !_jumpOnCooldown && _jumpCount <= _stats.MaxJumps;
+            return _owner.GetDataDictionaryValue(CapabilityKeys.IsGrounded).IntAsBool() && !_jumpOnCooldown && _jumpCount <= _stats.MaxJumps;
         }
 
         protected override void Execute()

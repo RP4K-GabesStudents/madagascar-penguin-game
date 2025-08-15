@@ -1,10 +1,9 @@
-using Objects;
 using UnityEngine;
 
-namespace Game.Characters.Capabilities
+namespace Game.Characters.CapabilitySystem.CapabilityStats
 {
     [CreateAssetMenu(fileName = "InteractionCapabilityStats", menuName = "Characters/CapabilityStats/InteractionCapabilityStats")]
-    public class InteractionCapabilityStats : CapabilityStats
+    public class InteractionCapabilityStats : Characters.CapabilityStats
     {
        // public override Type GetCapabilityType() => typeof(CrouchCapability);
        [SerializeField, Range(0, 1)] private float interactionRadius = 0;

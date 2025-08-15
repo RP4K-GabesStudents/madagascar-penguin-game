@@ -13,12 +13,6 @@ MonoBehaviour:
   m_Name: RicoStats
   m_EditorClassIdentifier: 
   hp: 120
-  speed: 12
-  speedLimit: 17
-  damage: 7
-  jumpPower: 4
+  baseResistance: 0
   slideSpeed: 20
-  attackCooldown: 0.5
-  jumpCooldown: 0.5
   slideCooldown: 3
-  sprintSpeed: 14

@@ -1,10 +1,10 @@
 using Objects;
 using UnityEngine;
 
-namespace Game.Characters.Capabilities
+namespace Game.Characters.CapabilitySystem.CapabilityStats
 {
     [CreateAssetMenu(fileName = "LaserEyeCapabilityStats", menuName = "Characters/CapabilityStats/LaserEyeCapabilityStats")]
-    public class LaserEyeCapabilityStats : CapabilityStats
+    public class LaserEyeCapabilityStats : Characters.CapabilityStats
     {
        // public override Type GetCapabilityType() => typeof(CrouchCapability);
        [SerializeField] private Laser projectile;

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2907100280082980828}
   - component: {fileID: 7368226256608843774}
   - component: {fileID: 7340736925344784602}
+  - component: {fileID: 107358348005458398}
   m_Layer: 10
   m_Name: Potion C
   m_TagString: Untagged
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 470074810
+  GlobalObjectIdHash: 1375149239
   InScenePlacedSourceGlobalObjectIdHash: 1375149239
   DeferredDespawnTick: 0
   Ownership: 1
@@ -156,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   itemStats: {fileID: 11400000, guid: 2317b04e746646e4288253f20a21110b, type: 2}
 --- !u!114 &7340736925344784602
 MonoBehaviour:
@@ -169,8 +171,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62eaa361baafad74e88d69c050d8a71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  itemStats: {fileID: 11400000, guid: 2317b04e746646e4288253f20a21110b, type: 2}
   hoverInfo: {fileID: 11400000, guid: 3978c84b79bf2fc40b0a6e4a907e42a9, type: 2}
   breakForce: -9
+--- !u!114 &107358348005458398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729976822582420295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054a365acb0e455ca7747a46d19dad31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers: []
 --- !u!1 &4059254194976108002
 GameObject:
   m_ObjectHideFlags: 0

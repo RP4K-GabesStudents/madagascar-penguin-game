@@ -1,11 +1,9 @@
-using System;
-using Game.Characters.Movement;
 using UnityEngine;
 
-namespace Game.Characters.Capabilities
+namespace Game.Characters.CapabilitySystem.CapabilityStats
 {
     [CreateAssetMenu(fileName = "JumpCapabilityStats", menuName = "Characters/CapabilityStats/JumpCapabilityStats")]
-    public class JumpCapabilityStats : CapabilityStats
+    public class JumpCapabilityStats : Characters.CapabilityStats
     {
         [Space]
         [SerializeField] private float jumpPower = 5;

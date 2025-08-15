@@ -985,8 +985,8 @@ GameObject:
   - component: {fileID: 908165822959485335}
   - component: {fileID: 6867379200517847713}
   - component: {fileID: 2061576932142751523}
-  - component: {fileID: 6804274338912369392}
   - component: {fileID: 3623182358532629711}
+  - component: {fileID: 6804274338912369392}
   - component: {fileID: 3389462470563581891}
   - component: {fileID: -6734073591952251587}
   - component: {fileID: 4415416989196722085}
@@ -1142,6 +1142,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3623182358532629711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4143693464081881456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!114 &6804274338912369392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,23 +1205,6 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &3623182358532629711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4143693464081881456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  NetworkRigidbodyBaseExpanded: 0
-  UseRigidBodyForMotion: 0
-  AutoUpdateKinematicState: 1
-  AutoSetKinematicOnDespawn: 1
 --- !u!114 &3389462470563581891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1540,6 +1540,7 @@ GameObject:
   - component: {fileID: 5822005296799079880}
   - component: {fileID: 2714031855451018466}
   - component: {fileID: 4815257952366720663}
+  - component: {fileID: 3659577698715269996}
   m_Layer: 3
   m_Name: CapabilitySystem
   m_TagString: Untagged
@@ -1652,6 +1653,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   genericStats: {fileID: 11400000, guid: 6cd37aa33651d7b47b3af212e52fa5be, type: 2}
+--- !u!114 &3659577698715269996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7065937808384566773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e16086cf49b40bea980a911d4e12f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  genericStats: {fileID: 11400000, guid: eaae2e00a014bb24d9da55c4aec1de8b, type: 2}
+  penguinStats: {fileID: 11400000, guid: 7832a7955506a3b4996d0f1f9c99eb23, type: 2}
+  rb: {fileID: 3229542108961960004}
 --- !u!1 &7093692428461234193
 GameObject:
   m_ObjectHideFlags: 0

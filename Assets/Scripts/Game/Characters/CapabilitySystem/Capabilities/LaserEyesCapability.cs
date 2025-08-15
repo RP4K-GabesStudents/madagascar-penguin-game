@@ -1,5 +1,6 @@
 using System;
 using Game.Characters.Capabilities;
+using Game.Characters.CapabilitySystem.CapabilityStats;
 using Managers;
 using Objects;
 using Unity.Netcode;
@@ -78,12 +79,12 @@ namespace Game.Characters.CapabilitySystem.Capabilities
 
         private void OnEnable()
         {
-            owner.OnAttack += TryExecute;
+            _owner.OnAttack += TryExecute;
         }
 
         private void OnDisable()
         {
-            owner.OnAttack -= TryExecute;
+            _owner.OnAttack -= TryExecute;
         }
     }
 }

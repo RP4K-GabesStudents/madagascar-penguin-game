@@ -14,7 +14,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
 
         public override bool CanExecute()
         {
-            return owner.GetDataDictionaryValue(CapabilityKeys.IsCrouching).IntAsBool() && IsTopClear();
+            return _owner.GetDataDictionaryValue(CapabilityKeys.IsCrouching).IntAsBool() && IsTopClear();
         }
 
         protected override void Execute()

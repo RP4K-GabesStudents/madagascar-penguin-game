@@ -8,12 +8,12 @@ namespace Game.Characters.CapabilitySystem.Capabilities
     {
         public Characters.CapabilityStats genericStats;
         
-        protected GenericCharacter owner;
+        protected GenericCharacter _owner;
 
         private void Awake()
         {
-            transform.root.TryGetComponent(out owner);
-            if (owner == null)
+            transform.root.TryGetComponent(out _owner);
+            if (_owner == null)
             {
                 Debug.LogAssertion($"The capability is attached to {transform.root.name} which cannot handle capabilities as it's not a {typeof(GenericCharacter)}", gameObject);
             }

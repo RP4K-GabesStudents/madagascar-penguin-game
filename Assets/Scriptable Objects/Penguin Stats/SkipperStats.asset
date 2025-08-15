@@ -13,12 +13,6 @@ MonoBehaviour:
   m_Name: SkipperStats
   m_EditorClassIdentifier: 
   hp: 100
-  speed: 8
-  speedLimit: 13
-  damage: 10
-  jumpPower: 3
+  baseResistance: 0
   slideSpeed: 20
-  attackCooldown: 0.5
-  jumpCooldown: 0.5
   slideCooldown: 3
-  sprintSpeed: 11

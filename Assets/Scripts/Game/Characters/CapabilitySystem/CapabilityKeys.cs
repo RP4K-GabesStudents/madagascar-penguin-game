@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Characters
+namespace Game.Characters.CapabilitySystem
 {
     /*
      * We can use a shared dictionary to pass around to every file our characters important shared data

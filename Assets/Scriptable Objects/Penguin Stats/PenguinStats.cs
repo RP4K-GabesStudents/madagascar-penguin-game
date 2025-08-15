@@ -1,4 +1,5 @@
 using Game.Characters;
+using Game.Characters.Stats;
 using UnityEngine;
 
 namespace Scriptable_Objects.Penguin_Stats

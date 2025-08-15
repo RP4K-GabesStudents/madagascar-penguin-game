@@ -1,7 +1,9 @@
 using System;
 using Game.Characters.Capabilities;
 using Game.Characters.CapabilitySystem.CapabilityStats;
+using Game.Objects;
 using Managers;
+using Managers.Pooling_System;
 using Objects;
 using Unity.Netcode;
 using UnityEngine;
@@ -57,16 +59,18 @@ namespace Game.Characters.CapabilitySystem.Capabilities
                     float ang = _stats.Inaccuracy;
                     float pitch = Random.Range(-ang, ang);
                     float yaw = Random.Range(-ang, ang);
+                    var x = PoolingManager.SpawnObject(_stats.Projectile.name);
                     
-                    Laser l1 = Instantiate(_stats.Projectile, pos, laserRot * Quaternion.Euler(pitch, yaw, 0));
-                    l1.NetworkObject.SpawnWithOwnership(info.Receive.SenderClientId);
-                    l1.Init(StaticUtilities.EnemyAttackLayers);
+                    x.transform.SetPositionAndRotation(pos, laserRot * Quaternion.Euler(pitch, yaw, 0));
+                    //Laser l1 = Instantiate(_stats.Projectile, pos, laserRot * Quaternion.Euler(pitch, yaw, 0));
+                    ((IPoolable)x).Spawn(info.Receive.SenderClientId);
                 }
             }
 
             PlayParticle_ClientRpc(locations, rotations);
         }
-
+        
+    
         [ClientRpc]
         private void PlayParticle_ClientRpc(Vector3[] location, Quaternion[] rotation)
         {

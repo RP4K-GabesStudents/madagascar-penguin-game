@@ -1,12 +1,14 @@
 using System.Collections;
 using Interfaces;
+using Managers;
+using Managers.Pooling_System;
 using Scriptable_Objects;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Objects
+namespace Game.Objects
 {
-    public class Laser : NetworkBehaviour
+    public class Laser : NetworkBehaviour, IPoolable
     {
         [SerializeField]private ProjectileStats laserStats;
         [SerializeField]private new Rigidbody rigidbody;
@@ -18,8 +20,7 @@ namespace Objects
         {
             _targetLayers = targetLayers;
             StartCoroutine(DestroyLaser());
-            rigidbody.AddForce(transform.forward * laserStats.Speed, ForceMode.Impulse);
-            
+            rigidbody.linearVelocity = transform.forward * laserStats.Speed;
         }
         private void OnTriggerEnter(Collider other)
         {
@@ -36,7 +37,10 @@ namespace Objects
                 }
             }
             PlayPartice_ClientRpc(transform.position, transform.forward);
-            NetworkObject.Despawn();
+            if (NetworkObject.IsSpawned)
+            {
+                NetworkObject.Despawn(false);
+            }
         }
 
         [ClientRpc]
@@ -55,7 +59,30 @@ namespace Objects
         private IEnumerator DestroyLaser()
         {
             yield return Wait;
-            NetworkObject.Despawn();
+            if (NetworkObject.IsSpawned)
+            {
+                NetworkObject.Despawn(false);
+            }
+        }
+
+        public void Spawn(ulong spawnID)
+        {
+            StopAllCoroutines();
+            NetworkObject.SpawnWithOwnership(spawnID);
+            Init(StaticUtilities.EnemyAttackLayers);
+        }
+
+        public void ForceDespawn()
+        {
+            if (NetworkObject.IsSpawned)
+            {
+                NetworkObject.Despawn(false);
+                
+            }
+        }
+        public override void OnNetworkDespawn()
+        {
+            gameObject.SetActive(false);
         }
     }
 }

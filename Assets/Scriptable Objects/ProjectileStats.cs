@@ -11,6 +11,7 @@ namespace Scriptable_Objects
         [SerializeField] private float abilityTime;
         [SerializeField] private float maxSpeed;
         [SerializeField] private int amountFired;
+        [SerializeField] private ParticleSystem laserSpark;
         
         public float Damage
         {
@@ -23,5 +24,6 @@ namespace Scriptable_Objects
         public float AbilityTime => abilityTime;
         public float MaxSpeed => maxSpeed;
         public int AmountFired => amountFired;
+        public ParticleSystem LaserSpark => laserSpark;
     }
 }

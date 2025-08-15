@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5283510329268200364}
   - component: {fileID: 8054275913208544802}
   - component: {fileID: 6482585671038426921}
+  - component: {fileID: -6156614459568282560}
   m_Layer: 0
   m_Name: LaserSparks
   m_TagString: Untagged
@@ -4917,6 +4918,19 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Size: {x: 0.2, y: 0.2, z: 1}
   m_FadeFactor: 1
+--- !u!114 &-6156614459568282560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7858831590558561336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f32a41bebcdfaf4ea7104987f2222bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 12
 --- !u!1001 &5029299953799762179
 PrefabInstance:
   m_ObjectHideFlags: 0

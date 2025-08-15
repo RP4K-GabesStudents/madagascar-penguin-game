@@ -10,9 +10,9 @@ namespace Game.Objects
 {
     public class Laser : NetworkBehaviour, IPoolable
     {
-        [SerializeField]private ProjectileStats laserStats;
-        [SerializeField]private new Rigidbody rigidbody;
-        [SerializeField] private ParticleSystem laserSpark;
+        [SerializeField] private ProjectileStats laserStats;
+        [SerializeField] private new Rigidbody rigidbody;
+        
 
         private GameObject _oner;
         private int _targetLayers;
@@ -48,9 +48,10 @@ namespace Game.Objects
         {
             bool hit = Physics.Raycast(position + forward * -0.25f, forward, out RaycastHit hitInfo, 0.5f);
             if (hit)
-            { 
-                ParticleSystem t = Instantiate(laserSpark, hitInfo.point, Quaternion.LookRotation(hitInfo.normal), hitInfo.transform);
-                Destroy(t, 5);
+            {
+                var te = PoolingManager.SpawnObject(laserStats.LaserSpark.name);
+                te.transform.SetPositionAndRotation(hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+                te.transform.SetParent(hitInfo.transform, true);
             }
             Debug.Log("i eat oranges for bnreakfast");
         }

@@ -771,6 +771,8 @@ GameObject:
   - component: {fileID: 2451816969218899129}
   - component: {fileID: 2810782107941411912}
   - component: {fileID: 5339870144740363924}
+  - component: {fileID: 7798475474129169558}
+  - component: {fileID: 2252928912857544677}
   m_Layer: 3
   m_Name: CapabilitySystem
   m_TagString: Untagged
@@ -883,6 +885,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   genericStats: {fileID: 11400000, guid: 6cd37aa33651d7b47b3af212e52fa5be, type: 2}
+--- !u!114 &7798475474129169558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4677309457915811258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f551ed17da48239133e4c427b162f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 11400000, guid: fd5de0f6f3876134aab0fac5257bf003, type: 2}
+  agility: {fileID: 11400000, guid: 43b0932a21613154cb543fa9147073ed, type: 2}
+  jump: {fileID: 11400000, guid: 33816ed908160db48b6b8daecb0429e3, type: 2}
+--- !u!114 &2252928912857544677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4677309457915811258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a91f62fc4990234d82464a95d1ec4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  genericStats: {fileID: 11400000, guid: b1cf00191b5efc044a94f93ee8dd9357, type: 2}
+  castOrigin: {fileID: 8620510108498897084}
 --- !u!1 &5272913329064238468
 GameObject:
   m_ObjectHideFlags: 0

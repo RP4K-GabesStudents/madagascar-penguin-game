@@ -81,6 +81,8 @@ GameObject:
   - component: {fileID: 6341990914655379205}
   - component: {fileID: 9055990268123615765}
   - component: {fileID: 5665386480077681117}
+  - component: {fileID: 1194720268866085137}
+  - component: {fileID: 6397671678052702802}
   m_Layer: 3
   m_Name: CapabilitySystem
   m_TagString: Untagged
@@ -193,6 +195,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   genericStats: {fileID: 11400000, guid: 6cd37aa33651d7b47b3af212e52fa5be, type: 2}
+--- !u!114 &1194720268866085137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463160880290706975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b976c3e7e24c5aaa1c510ac192259f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: {fileID: 11400000, guid: 37e16571a66d3fd439f15b9c7082d3bc, type: 2}
+--- !u!114 &6397671678052702802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463160880290706975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1665b5a778fe46cbbd5f57c19a173a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  genericStats: {fileID: 11400000, guid: 58adc01429ce50444ba11c760f2249ff, type: 2}
+  potionSpawnPoint: {fileID: 0}
 --- !u!1 &533148246533694553
 GameObject:
   m_ObjectHideFlags: 0

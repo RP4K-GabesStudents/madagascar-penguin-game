@@ -11,7 +11,12 @@ namespace Game.Characters.CapabilitySystem.CapabilityStats
        [SerializeField] private float speed = 0;
        [SerializeField] private float maxSpeed = 0;
        
-       public float Speed => speed;
+       public float Speed
+       {
+           get => speed;
+           set => speed = value;
+       }
+
        public float MaxSpeed => maxSpeed;
     }
 }

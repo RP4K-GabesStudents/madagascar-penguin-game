@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b434e0650f79abd4a9ca2f7f50586701, type: 3}
-  m_Name: LaserStats
+  m_Script: {fileID: 11500000, guid: dfd314135f57d3e48bd670186cff6f56, type: 3}
+  m_Name: ItemScanCapabilitySTats
   m_EditorClassIdentifier: 
-  damage: 100
-  speed: 10
-  lifetime: 30
-  abilityTime: 30
-  maxSpeed: 5
-  amountFired: 1
-  laserSpark: {fileID: 5283510329268200364, guid: 6adab394745e00c4ba75d45f3a6a4fa0, type: 3}
+  <DisplayOnUI>k__BackingField: 1
+  detectRange: 5
+  cooldownTimer: 75
+  maxRange: 10

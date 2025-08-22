@@ -42,7 +42,6 @@ namespace Game.Characters.CapabilitySystem.Capabilities.PenguinAbilityCapability
 
         public void BindControls(GameControls controls)
         {
-           
             controls.Player.Ability.performed += ctx => TryExecute();
         }
         

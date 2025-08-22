@@ -16,7 +16,12 @@ namespace Game.Characters.CapabilitySystem.CapabilityStats
             _jumpCooldownDelay = new WaitForSeconds(jumpCooldown);
         }
 
-        public float JumpPower => jumpPower;
+        public float JumpPower
+        {
+            get => jumpPower;
+            set => jumpPower = value;
+        }
+
         public float JumpCooldown => jumpCooldown;
 
         public int MaxJumps => maxJumps;

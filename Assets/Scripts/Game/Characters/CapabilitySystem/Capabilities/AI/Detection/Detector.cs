@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Detection;
+using Game.Characters.CapabilitySystem.CapabilityStats.AI;
 using UnityEngine;
 
-namespace Detection
+namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
 {
     public class Detector : MonoBehaviour
     {
@@ -31,7 +33,6 @@ namespace Detection
 
         private void Update()
         {
-            
             if (CurTargets != null)
             {
                 HandleChaseTimer();

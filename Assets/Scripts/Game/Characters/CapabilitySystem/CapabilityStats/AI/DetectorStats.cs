@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Detection
+namespace Game.Characters.CapabilitySystem.CapabilityStats.AI
 {
     [CreateAssetMenu(fileName = "DetectorStats", menuName = "Scriptable Objects/DetectorStats")]
     public class DetectorStats : ScriptableObject

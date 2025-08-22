@@ -1,8 +1,6 @@
-using System;
-using Game.Characters.Movement;
 using UnityEngine;
 
-namespace Game.Characters.CapabilitySystem.Capabilities
+namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 {
     public class CrouchCapability : BaseCapability, IInputSubscriber
     {

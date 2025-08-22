@@ -1,4 +1,5 @@
 using Detection;
+using Game.Characters.CapabilitySystem.Capabilities.AI.Detection;
 using Interfaces;
 using Managers;
 using Unity.Netcode;

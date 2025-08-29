@@ -9,9 +9,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI
 {
     public class AIBrain : MonoBehaviour
     {
-        [SerializeField] private MoveTypeStats idleState;
-        [SerializeField] private MoveTypeStats patrollingState;
-        [SerializeField] private MoveTypeStats chasingState;
+        [SerializeField] private AIBrainStats moveTypeStats;
         private readonly IMoveType[] _moveTypes = new IMoveType[4];
         
         private EMovementState _movementState = EMovementState.None;
@@ -28,23 +26,23 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI
 
         private void Awake()
         {
-            if (idleState)
+            if (moveTypeStats.IdleState)
             {
-                _moveTypes[(int)EMovementState.Idle] = Activator.CreateInstance(idleState.CreateTypeObject()) as IMoveType;
-                _moveTypes[(int)EMovementState.Idle].Initialize(this, idleState);
+                _moveTypes[(int)EMovementState.Idle] = Activator.CreateInstance(moveTypeStats.IdleState.CreateTypeObject()) as IMoveType;
+                _moveTypes[(int)EMovementState.Idle].Initialize(this, moveTypeStats.IdleState);
             }
 
-            if (patrollingState)
+            if (moveTypeStats.PatrollingState)
             {
-                _moveTypes[(int)EMovementState.Patrolling] = Activator.CreateInstance(patrollingState.CreateTypeObject()) as IMoveType;
-                _moveTypes[(int)EMovementState.Patrolling].Initialize(this, patrollingState);
+                _moveTypes[(int)EMovementState.Patrolling] = Activator.CreateInstance(moveTypeStats.PatrollingState.CreateTypeObject()) as IMoveType;
+                _moveTypes[(int)EMovementState.Patrolling].Initialize(this, moveTypeStats.PatrollingState);
 
             }
 
-            if (chasingState)
+            if (moveTypeStats.ChasingState)
             {
-                _moveTypes[(int)EMovementState.Chasing] = Activator.CreateInstance(chasingState.CreateTypeObject()) as IMoveType;
-                _moveTypes[(int)EMovementState.Chasing].Initialize(this, chasingState);
+                _moveTypes[(int)EMovementState.Chasing] = Activator.CreateInstance(moveTypeStats.ChasingState.CreateTypeObject()) as IMoveType;
+                _moveTypes[(int)EMovementState.Chasing].Initialize(this, moveTypeStats.ChasingState);
             }
         }
 

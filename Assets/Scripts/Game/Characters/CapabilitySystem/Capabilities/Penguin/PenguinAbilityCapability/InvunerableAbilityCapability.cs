@@ -3,7 +3,7 @@ using Game.Characters.CapabilitySystem.CapabilityStats.PenguinAbilityCapabilityS
 using Scriptable_Objects.Penguin_Stats;
 using UnityEngine;
 
-namespace Game.Characters.CapabilitySystem.Capabilities.PenguinAbilityCapability
+namespace Game.Characters.CapabilitySystem.Capabilities.Penguin.PenguinAbilityCapability
 {
     public class InvunerableAbilityCapability : BaseCapability, IInputSubscriber
     {

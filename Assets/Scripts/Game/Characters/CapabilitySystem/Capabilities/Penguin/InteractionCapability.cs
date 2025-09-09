@@ -1,5 +1,6 @@
 using Game.Characters.Capabilities;
 using Game.Characters.CapabilitySystem.CapabilityStats;
+using Game.Inventory;
 using Game.Objects;
 using Interfaces;
 using Inventory;

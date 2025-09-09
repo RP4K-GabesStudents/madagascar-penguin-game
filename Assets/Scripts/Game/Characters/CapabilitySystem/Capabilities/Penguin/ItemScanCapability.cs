@@ -1,21 +1,20 @@
 using System.Collections;
-using System.Net.Sockets;
-using System.Numerics;
+using Game.Characters.CapabilitySystem.CapabilityStats.Penguin.PenguinAbilityCapabilityStats;
 using Game.Characters.CapabilitySystem.CapabilityStats.PenguinAbilityCapabilityStats;
+using Game.Inventory;
+using Game.Objects;
 using Inventory;
 using Managers;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Vector3 = UnityEngine.Vector3;
 
-namespace Game.Characters.CapabilitySystem.Capabilities
+namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 {
     public class ItemScanCapability : BaseCapability, IInputSubscriber
     {
         private ItemScanCapabilitySTats _stats;
         private bool _isOnCooldown;
-        [SerializeField] private Transform castOrigin;
-        private Item _item;
+        private readonly Collider[] _items = new Collider[10];
+        private Highlight _highlight;
         public override bool CanExecute()
         {
             return !_isOnCooldown;
@@ -23,11 +22,24 @@ namespace Game.Characters.CapabilitySystem.Capabilities
 
         protected override void Execute()
         {
-            var detected = Physics.SphereCast(castOrigin.position, _stats.DetectRange, castOrigin.forward, out RaycastHit hit, _stats.MaxRange, StaticUtilities.InteractableLayer);
-            if (detected)
+            StartCoroutine(Effect());
+            StartCoroutine(CoolDown());
+        }
+
+        private IEnumerator Effect()
+        {
+            int itemAmount = Physics.OverlapSphereNonAlloc(transform.position, _stats.Radius, _items, StaticUtilities.InteractableLayer);
+            for (int i = 0; i < itemAmount; i++)
             {
-               //highlight item
+                Collider cur = _items[i];
+                Rigidbody rb = cur.attachedRigidbody;
+                if (rb && rb.TryGetComponent(out IInteractable interactable) || cur.TryGetComponent(out interactable))
+                {
+                    interactable.OnHover();
+                }
             }
+            yield return new WaitForSeconds(_stats.HighlightTime);
+            _highlight.enabled = false;
         }
 
         private IEnumerator CoolDown()

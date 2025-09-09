@@ -1,4 +1,4 @@
-namespace Utilities.Common.Settings
+namespace Utilities.Utilities.Common.Settings
 {
     public interface ISettingsMenu
     {

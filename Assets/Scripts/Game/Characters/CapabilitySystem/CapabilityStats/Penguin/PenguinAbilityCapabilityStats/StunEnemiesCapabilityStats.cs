@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Characters.CapabilitySystem.CapabilityStats.PenguinAbilityCapabilityStats
+namespace Game.Characters.CapabilitySystem.CapabilityStats.Penguin.PenguinAbilityCapabilityStats
 {
     public class StunEnemiesCapabilityStats : Characters.CapabilityStats
     {

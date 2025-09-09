@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Utilities.Common.Settings
+namespace Utilities.Utilities.Common.Settings
 {
    public class SettingsDriver : MonoBehaviour
    {
@@ -13,16 +12,16 @@ namespace Utilities.Common.Settings
       private static void InitializeValues()
       {
          _settingsLoaded = false;
-         
       }
       
       
-      private void Start()
+      private void Awake()
       {
-         _settingsMenus = GetComponentsInChildren<ISettingsMenu>();
+         _settingsMenus = GetComponentsInChildren<ISettingsMenu>(true);
          if (_settingsLoaded) return;
          _settingsLoaded = true;
          
+         Debug.Log("Initializing Settings");
          foreach (var menu in _settingsMenus)
          {
             menu.Load();
@@ -31,7 +30,7 @@ namespace Utilities.Common.Settings
 
       public void Save()
       {
-         _settingsMenus ??= GetComponentsInChildren<ISettingsMenu>();
+         _settingsMenus ??= GetComponentsInChildren<ISettingsMenu>(true);
          foreach (var menu in _settingsMenus)
          {
             menu.Save();

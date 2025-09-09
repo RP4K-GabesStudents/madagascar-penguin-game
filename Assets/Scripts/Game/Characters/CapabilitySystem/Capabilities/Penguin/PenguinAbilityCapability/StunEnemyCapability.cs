@@ -1,17 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
+using Game.Characters.CapabilitySystem.CapabilityStats.Penguin.PenguinAbilityCapabilityStats;
 using Game.Characters.CapabilitySystem.CapabilityStats.PenguinAbilityCapabilityStats;
 using Horse_Foler;
 using Managers;
 using UnityEngine;
 
-namespace Game.Characters.CapabilitySystem.Capabilities.PenguinAbilityCapability
+namespace Game.Characters.CapabilitySystem.Capabilities.Penguin.PenguinAbilityCapability
 {
     public class StunEnemyCapability : BaseCapability, IInputSubscriber
     {
-        [SerializeField] private Transform castOrigin;
-        private List<Horse> _horses;
         private StunEnemiesCapabilityStats _stats;
+        private Collider[] _colliders;
         private bool _isOnCooldown;
         protected override void OnBound()
         {
@@ -32,21 +31,18 @@ namespace Game.Characters.CapabilitySystem.Capabilities.PenguinAbilityCapability
 
         private IEnumerator Stun()
         {
-            var hits = Physics.SphereCast(castOrigin.position, _stats.StunRadius, castOrigin.forward, out RaycastHit hit, Mathf.Infinity, StaticUtilities.EnemyLayer);
-            if (hits)
+            var hit = Physics.OverlapSphereNonAlloc(transform.position, _stats.StunRadius, _colliders, StaticUtilities.EnemyLayer);
+            for (int i = 0; i < hit; i++)
             {
-                _horses.Add(hit.collider.gameObject.GetComponent<Horse>());
+                Collider cur = _colliders[i];
+                Rigidbody rb = cur.attachedRigidbody;
+                if (rb && rb.TryGetComponent(out Horse horse) || cur.TryGetComponent(out horse))
+                {
+                    rb.linearVelocity = Vector3.zero;
+                    yield return new WaitForSeconds(_stats.StunDuration);
+                }
             }
-            foreach (Horse horse in _horses)
-            {
-                Vector3 stunPoint = horse.transform.position;
-                //figure out how to stun the horses
-            }
-            yield return new WaitForSeconds(_stats.StunDuration);
-            
-            //figure out how to unstun horse
-            
-            _horses.RemoveAll(horse => horse);
+            yield return null;
         }
 
         public void BindControls(GameControls controls)

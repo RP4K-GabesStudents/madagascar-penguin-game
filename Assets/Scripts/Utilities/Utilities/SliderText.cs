@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Utilities
+namespace Utilities.Utilities
 {
     public class SliderText : MonoBehaviour
     {

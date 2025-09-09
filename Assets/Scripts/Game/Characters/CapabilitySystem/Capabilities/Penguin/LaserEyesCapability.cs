@@ -1,15 +1,10 @@
-using System;
-using Game.Characters.Capabilities;
-using Game.Characters.CapabilitySystem.CapabilityStats;
-using Game.Objects;
-using Managers;
+using Game.Characters.CapabilitySystem.CapabilityStats.Penguin;
 using Managers.Pooling_System;
-using Objects;
 using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Game.Characters.CapabilitySystem.Capabilities
+namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 {
     public class LaserEyesCapability : BaseCapability
     {

@@ -1,9 +1,8 @@
-using Game.Characters.CapabilitySystem.CapabilityStats;
-using Game.Characters.Movement;
+using Game.Characters.CapabilitySystem.CapabilityStats.Penguin;
 using Managers;
 using UnityEngine;
 
-namespace Game.Characters.CapabilitySystem.Capabilities
+namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 {
     public class MovementCapability : BaseCapability, IInputSubscriber
     {

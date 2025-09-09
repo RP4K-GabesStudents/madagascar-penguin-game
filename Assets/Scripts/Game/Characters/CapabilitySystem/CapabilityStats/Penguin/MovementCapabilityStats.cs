@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Characters.CapabilitySystem.CapabilityStats
+namespace Game.Characters.CapabilitySystem.CapabilityStats.Penguin
 {
     [CreateAssetMenu(fileName = "MovementCapabilityStats", menuName = "Characters/CapabilityStats/MovementCapabilityStats")]
     public class MovementCapabilityStats : Characters.CapabilityStats

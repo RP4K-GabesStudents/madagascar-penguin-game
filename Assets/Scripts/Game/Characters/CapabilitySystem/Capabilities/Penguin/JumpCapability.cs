@@ -1,6 +1,7 @@
 using System.Collections;
 using Game.Characters.Capabilities;
 using Game.Characters.CapabilitySystem.CapabilityStats;
+using Game.Characters.CapabilitySystem.CapabilityStats.Penguin;
 using Managers;
 using UnityEngine;
 

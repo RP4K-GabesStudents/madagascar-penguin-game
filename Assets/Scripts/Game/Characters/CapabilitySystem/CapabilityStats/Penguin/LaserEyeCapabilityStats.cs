@@ -1,8 +1,7 @@
 using Game.Objects;
-using Objects;
 using UnityEngine;
 
-namespace Game.Characters.CapabilitySystem.CapabilityStats
+namespace Game.Characters.CapabilitySystem.CapabilityStats.Penguin
 {
     [CreateAssetMenu(fileName = "LaserEyeCapabilityStats", menuName = "Characters/CapabilityStats/LaserEyeCapabilityStats")]
     public class LaserEyeCapabilityStats : Characters.CapabilityStats

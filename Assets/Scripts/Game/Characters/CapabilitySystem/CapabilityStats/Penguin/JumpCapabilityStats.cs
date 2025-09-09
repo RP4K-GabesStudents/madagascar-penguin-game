@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Characters.CapabilitySystem.CapabilityStats
+namespace Game.Characters.CapabilitySystem.CapabilityStats.Penguin
 {
     [CreateAssetMenu(fileName = "JumpCapabilityStats", menuName = "Characters/CapabilityStats/JumpCapabilityStats")]
     public class JumpCapabilityStats : Characters.CapabilityStats

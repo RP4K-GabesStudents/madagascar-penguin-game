@@ -1,11 +1,9 @@
-using System;
 using Game.Characters.CapabilitySystem.CapabilityStats;
+using Game.Characters.CapabilitySystem.CapabilityStats.Penguin;
 using Game.Characters.CapabilitySystem.CapabilityStats.PenguinAbilityCapabilityStats;
-using Scriptable_Objects.Penguin_Stats;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Game.Characters.CapabilitySystem.Capabilities.PenguinAbilityCapability
+namespace Game.Characters.CapabilitySystem.Capabilities.Penguin.PenguinAbilityCapability
 {
     public class IncreaseAgilityCapability : MonoBehaviour
     {

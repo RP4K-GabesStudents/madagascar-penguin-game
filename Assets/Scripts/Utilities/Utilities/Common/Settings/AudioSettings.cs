@@ -14,8 +14,9 @@ namespace Utilities.Utilities.Common.Settings
             Debug.Log("Audio settings saved");
             foreach (VolumeSettings volume in volumeSettings)
             {
-                float volumeValue = Mathf.Log10(Mathf.Clamp(volume.masterVolume.value, 0.0001f, 1f)) * 20f;
-                PlayerPrefs.SetFloat(volume.volumePathName, volumeValue);
+                PlayerPrefs.SetFloat(volume.volumePathName, volume.masterVolume.value);
+                Debug.Log($"Audio settings saved: {volume.volumePathName}: {volume.masterVolume.value}");
+
             }
             PlayerPrefs.Save();
         }
@@ -25,21 +26,19 @@ namespace Utilities.Utilities.Common.Settings
             Debug.Log("Loading Audio Settings");
             foreach (VolumeSettings volume in volumeSettings)
             {
-                float savedVolume = PlayerPrefs.GetFloat(volume.volumePathName, 0f);
-                float linearVolume = Mathf.Pow(10f, savedVolume / 20f); // Convert dB back to linear for slider
-                volume.masterVolume.value = linearVolume;
+                float savedVolume = PlayerPrefs.GetFloat(volume.volumePathName, 0.8f); //0-1 range
+                Debug.Log($"Loading Audio Settings: {volume.volumePathName}: {savedVolume}");
 
-                // Ensure we don't add multiple listeners
-                volume.masterVolume.onValueChanged.RemoveAllListeners();
-
+                float dbVolume = Mathf.Log10(Mathf.Clamp(savedVolume, 0.0001f, 1f)) * 20f;
+                audioMixer.SetFloat(volume.volumePathName, dbVolume);
+                volume.masterVolume.value = savedVolume;
+                
                 volume.masterVolume.onValueChanged.AddListener(newVolume =>
                 {
-                    float dbVolume = Mathf.Log10(Mathf.Clamp(newVolume, 0.0001f, 1f)) * 20f;
-                    audioMixer.SetFloat(volume.volumePathName, dbVolume);
+                    float x = Mathf.Log10(Mathf.Clamp(newVolume, 0.0001f, 1f)) * 20f;
+                    audioMixer.SetFloat(volume.volumePathName, x);
                 });
-
-                // Set initial volume on AudioMixer
-                audioMixer.SetFloat(volume.volumePathName, savedVolume);
+                
             }
         }
     }

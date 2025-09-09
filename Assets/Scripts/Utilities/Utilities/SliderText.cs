@@ -25,7 +25,9 @@ namespace Utilities.Utilities
 
         private void OnEnable()
         {
-            UpdateMax(slider.maxValue);
+            _maxValue = slider.maxValue;
+            UpdateCurrent(slider.value);
+            
             slider.onValueChanged.AddListener(UpdateCurrent);
         }
 

@@ -15,7 +15,7 @@ namespace Utilities.Utilities.Common.Settings
       }
       
       
-      private void Awake()
+      private void Start()
       {
          _settingsMenus = GetComponentsInChildren<ISettingsMenu>(true);
          if (_settingsLoaded) return;

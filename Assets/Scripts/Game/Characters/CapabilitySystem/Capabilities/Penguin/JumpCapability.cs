@@ -1,11 +1,9 @@
 using System.Collections;
-using Game.Characters.Capabilities;
-using Game.Characters.CapabilitySystem.CapabilityStats;
 using Game.Characters.CapabilitySystem.CapabilityStats.Penguin;
 using Managers;
 using UnityEngine;
 
-namespace Game.Characters.CapabilitySystem.Capabilities
+namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 {
     public class JumpCapability : BaseCapability, IInputSubscriber 
     {
@@ -25,6 +23,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             _stats = genericStats as JumpCapabilityStats;
             if (_stats == null) { Debug.LogAssertion($"Wrong stats assigned to object {name},expected {typeof(JumpCapabilityStats)}, but retrieved {genericStats.GetType()}.", gameObject); }
 
+            _owner.TryAddDataKey(CapabilityKeys.IsCrouching, 1); //force always grounded
             
             _rigidbody = _owner.rigidbody;
             _animator = _owner.GetComponent<Animator>();
@@ -48,13 +47,17 @@ namespace Game.Characters.CapabilitySystem.Capabilities
 
         public override bool CanExecute()
         {
-            return _owner.GetDataDictionaryValue(CapabilityKeys.IsGrounded).IntAsBool() && !_jumpOnCooldown && _jumpCount <= _stats.MaxJumps;
+            return !_jumpOnCooldown && (_owner.GetDataDictionaryValue(CapabilityKeys.IsGrounded).IntAsBool() || _jumpCount <= _stats.MaxJumps);
         }
 
         protected override void Execute()
         {
+            if (_owner.GetDataDictionaryValue(CapabilityKeys.IsGrounded).IntAsBool()) _jumpCount = 1;
+            else _jumpCount += 1;
+            
             _rigidbody.AddForce(transform.up * _stats.JumpPower, ForceMode.Impulse);
             _animator.SetTrigger(StaticUtilities.JumpingAnimID);
+            StartCoroutine(HandleCooldown());
         }
     }
 }

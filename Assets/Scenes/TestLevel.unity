@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126df6086e156e647b5a3b2162051f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolPathSoap: {fileID: 0}
+  patrolPathSoap: {fileID: 11400000, guid: cedbfc2158387e94b8f1354ebf479324, type: 2}
 --- !u!4 &121843023
 Transform:
   m_ObjectHideFlags: 0
@@ -4691,7 +4691,7 @@ MonoBehaviour:
   text: {fileID: 378612727}
   scene: {fileID: 102900000, guid: 99c9720ab356a0642a771bea13969a05, type: 3}
   textSpeed: 0.05
-  textDuration: 7
+  textDuration: 3
   spawnPoints:
   - {fileID: 1884273747659280228}
   - {fileID: 1884273747659280227}

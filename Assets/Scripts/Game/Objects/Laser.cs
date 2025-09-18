@@ -53,7 +53,6 @@ namespace Game.Objects
                 te.transform.SetPositionAndRotation(hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
                 te.transform.SetParent(hitInfo.transform, true);
             }
-            Debug.Log("i eat oranges for bnreakfast");
         }
 
         private static readonly WaitForSeconds Wait = new WaitForSeconds(3);

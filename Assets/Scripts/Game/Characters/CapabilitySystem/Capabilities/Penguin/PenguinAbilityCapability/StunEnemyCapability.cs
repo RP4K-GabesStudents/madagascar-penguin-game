@@ -16,7 +16,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin.PenguinAbilityCa
         {
             base.OnBound();
             _stats = genericStats as StunEnemiesCapabilityStats;
-            if (_stats == null) { Debug.LogAssertion($"Wrong stats assigned to object {name},expected {typeof(SpewCapabilityStats)}, but retrieved {genericStats.GetType()}.", gameObject); }
+            if (_stats == null) { Debug.LogAssertion($"Wrong stats assigned to object {name},expected {typeof(StunEnemiesCapabilityStats)}, but retrieved {genericStats.GetType()}.", gameObject); }
         }
 
         public override bool CanExecute()

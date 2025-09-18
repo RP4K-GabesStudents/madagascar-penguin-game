@@ -116,9 +116,9 @@ namespace Managers.Game
             }
             if (NetworkManager.ConnectedClients.Count == _playerPrefabs.Count)
             {
+                StopAllCoroutines();
                 SpawnPenguins();
                 OnGameStarting_ClientRpc();
-                StopAllCoroutines();
                 StartCoroutine(HandleDoorTimer());
             }
         }
@@ -169,7 +169,6 @@ namespace Managers.Game
             string missionText = "Level: " + scene.name + "\nTime: " + DateTime.Now.ToString("HH:mm:ss") + "\nMission: Defeat Horses";
             foreach (char c in missionText)
             {
-                Debug.Log();
                 text.text += c;
                 yield return new WaitForSeconds(textSpeed);
             }

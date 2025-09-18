@@ -5,6 +5,7 @@ using Eflatun.SceneReference;
 using Game.Characters;
 using TMPro;
 using Unity.Netcode;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,6 +18,10 @@ namespace Managers.Game
     {
         private static readonly int OnExploded = Animator.StringToHash("OnExploded");
         private static readonly int IsOpen = Animator.StringToHash("isOpen");
+        [SerializeField] private TextMeshProUGUI text;
+        [SerializeField] private SceneAsset scene;
+        [SerializeField] private float textSpeed;
+        [SerializeField] private float textDuration;
         [SerializeField] private List<Transform> spawnPoints;
         [SerializeField] private SceneReference selectionScene;
         [SerializeField] private GenericCharacter failSafePrefab;
@@ -155,6 +160,21 @@ namespace Managers.Game
             {
                 anima.SetBool(IsOpen, false);
             }
+            
+        }
+        
+        private IEnumerator StartText()
+        {
+            text.enabled = true;
+            string missionText = "Level: " + scene.name + "\nTime: " + DateTime.Now.ToString("HH:mm:ss") + "\nMission: Defeat Horses";
+            foreach (char c in missionText)
+            {
+                Debug.Log();
+                text.text += c;
+                yield return new WaitForSeconds(textSpeed);
+            }
+            yield return new WaitForSeconds(textDuration);
+            text.enabled = false;
         }
 
         
@@ -169,7 +189,7 @@ namespace Managers.Game
             {
                 go.SetActive(true);
             }
-          
+            StartCoroutine(StartText());
         }
     }
 }

@@ -869,8 +869,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   genericStats: {fileID: 11400000, guid: 38887b5aecd325148aa30da02b370efa, type: 2}
-  headXRotator: {fileID: 6894085869211046582}
-  bodyYRotator: {fileID: 8620510108498897084}
+  headXRotator: {fileID: 8620510108498897084}
+  bodyYRotator: {fileID: 4122951939630444314}
 --- !u!114 &5339870144740363924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1058,7 +1058,7 @@ Rigidbody:
   m_GameObject: {fileID: 5337494372767933401}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}

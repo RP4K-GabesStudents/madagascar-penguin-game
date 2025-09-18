@@ -25,6 +25,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 
             _owner.TryAddDataKey(CapabilityKeys.CurrentVelocityXZ, 0);
             _owner.TryAddDataKey(CapabilityKeys.CurrentVelocityY, 0);
+            _owner.TryAddDataKey(CapabilityKeys.IsGrounded, 1);
 
             _rigidbody = _owner.rigidbody;
             _animator = _owner.GetComponent<Animator>();

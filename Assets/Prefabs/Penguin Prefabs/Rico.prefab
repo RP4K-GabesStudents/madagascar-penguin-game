@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   genericStats: {fileID: 11400000, guid: 58adc01429ce50444ba11c760f2249ff, type: 2}
-  potionSpawnPoint: {fileID: 0}
+  potionSpawnPoint: {fileID: 2666674074161055246}
 --- !u!1 &533148246533694553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,7 +1348,7 @@ Rigidbody:
   m_GameObject: {fileID: 6695135885744906461}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}

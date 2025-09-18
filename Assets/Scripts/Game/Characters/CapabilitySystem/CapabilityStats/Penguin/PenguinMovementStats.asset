@@ -15,3 +15,6 @@ MonoBehaviour:
   <DisplayOnUI>k__BackingField: 0
   speed: 24
   maxSpeed: 24
+  groundCheckDistance: 0.5
+  groundCheckRadius: 0.3
+  groundCheckOffset: {x: 0, y: 0.2, z: 0}

@@ -41,7 +41,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
         {
             controls.Player.Jump.performed += ctx =>
             {
-                if (ctx.ReadValueAsButton()) Execute();
+                if (ctx.ReadValueAsButton()) TryExecute();
             };
         }
 

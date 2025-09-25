@@ -1,9 +1,6 @@
-using Game.Characters.Capabilities;
 using Game.Characters.CapabilitySystem.CapabilityStats;
 using Game.Inventory;
 using Game.Objects;
-using Interfaces;
-using Inventory;
 using Managers;
 using UnityEngine;
 
@@ -15,6 +12,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
 
         private InteractionCapabilityStats _stats;
 
+        private InventoryCapability _inventoryCapability;
         
         protected override void OnBound()
         {
@@ -22,6 +20,8 @@ namespace Game.Characters.CapabilitySystem.Capabilities
                                            
             _stats = genericStats as InteractionCapabilityStats;
             if (_stats == null) { Debug.LogAssertion($"Wrong stats assigned to object {name},expected {typeof(InteractionCapabilityStats)}, but retrieved {genericStats.GetType()}.", gameObject); }
+
+            _inventoryCapability = GetComponent<InventoryCapability>();
         }
         
         
@@ -32,26 +32,24 @@ namespace Game.Characters.CapabilitySystem.Capabilities
 
         protected override void Execute()
         {
+            Debug.Log("Interacted with:  ", (_interactable as MonoBehaviour)?.gameObject);
+            
+            _interactable.OnInteract(_owner);
+            _owner.animator.SetTrigger(StaticUtilities.InteractAnimID);
+            
             if (_interactable is Item i)
             {
-                if (_owner.inventory.HeyIPickedSomethingUp(i.ItemStats))
+                Debug.Log("Interacted with: AN ITEM" + i.name);
+
+                if (_inventoryCapability.TryPickup(i))
                 {
-                    _owner.animator.SetTrigger(StaticUtilities.InteractAnimID);
-                    Debug.LogWarning("success");
-                    _interactable.OnInteract(_owner);
-                    if(!_interactable.CanHover()) HandleHovering(null);
+                    Debug.Log("Succesfully picked up AN ITEM " + i.name);
+
                 }
-                else
-                {
-                    Debug.LogWarning("do a barrel roll {Failed to pick up item}");
-                }
+                return;
             }
-            else
-            {
-                _owner.animator.SetTrigger(StaticUtilities.InteractAnimID);
-                _interactable.OnInteract(_owner);
-                if(!_interactable.CanHover()) HandleHovering(null);
-            }
+            if(!_interactable.CanHover()) HandleHovering(null);
+
         }
 
         private void LateUpdate()

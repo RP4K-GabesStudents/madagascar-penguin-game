@@ -1,5 +1,6 @@
 using System;
 using Inventory;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace Game.Characters
@@ -65,7 +66,6 @@ namespace Game.Characters
          * For enhanced security, we could handle inputs via NetworkVariable and force server validation before allowing processing.
          */
         
-        public void SetSelected(int key) => _hotBar.UpdateScrollIndex(key);
-        public void ScrollSelected(float scroll) => _hotBar.UpdateScrollSlot((int)scroll);
+
     }
 }

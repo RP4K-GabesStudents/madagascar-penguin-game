@@ -31,6 +31,9 @@ namespace Managers.Game
         [SerializeField] private Image explosion;
         [SerializeField] private float selectionTime = 22f;
         [SerializeField] private float doorOpenDelay = 5f;
+        
+        
+        
         private NetworkVariable<float> _selectionTime = new ();
         private bool _isTimerOn;
         private Dictionary<ulong, ulong> _playerPrefabs = new ();
@@ -189,6 +192,8 @@ namespace Managers.Game
                 go.SetActive(true);
             }
             StartCoroutine(StartText());
+            
+            
         }
     }
 }

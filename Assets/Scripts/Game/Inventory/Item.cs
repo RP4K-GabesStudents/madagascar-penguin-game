@@ -52,7 +52,7 @@ namespace Game.Inventory
         [ClientRpc]
         private void Show_ClientRpc()
         {
-            
+            gameObject.SetActive(true);
         }
 
         public HoverInfoStats GetHoverInfoStats() => itemStats;
@@ -74,6 +74,15 @@ namespace Game.Inventory
         public virtual void UseItem() { Debug.Log("Used an item which does nothing: ", gameObject); }
 
 
+        public void StartUsing()
+        {
+            
+        }
+
+        public void StopUsing()
+        {
+            
+        }
     }
     
 }

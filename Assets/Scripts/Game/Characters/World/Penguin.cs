@@ -7,6 +7,9 @@ namespace Game.Characters.World
     public class Penguin : GenericCharacter, IDetectable
     {
         public static readonly List<Penguin> Penguins = new ();
+        public override void OnNetworkSpawn()
+        {]
+        }
 
         private void OnEnable()
         {

@@ -51,6 +51,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             _reference.Player.HotBarSlot5.performed += SelectSlotFive;
             
             Debug.LogError("Austin do dropping >:)");
+            Debug.LogError("Austin Try figure out, HOW DO WE GET THE HOTBAR TO BE NOT NULL... If you do wanna try, you need to CREATE THE HOTBAR ITEM SLOTS from the code... You need to make a loop");
         }
         private void Unsubscribe()
         {
@@ -140,9 +141,6 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             
             //If we fail... We drop what item?
             DropItem(_hotBar.SelectedItemIndex);
-
-            
-            
         } 
     }
 
@@ -182,7 +180,5 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             _stackSize = item.ItemStats.ItemLimit;
         }
         public Item currentItem => item;
-        
-        
     }
 }

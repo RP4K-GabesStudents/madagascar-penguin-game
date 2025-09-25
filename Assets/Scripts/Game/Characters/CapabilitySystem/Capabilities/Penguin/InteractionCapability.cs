@@ -32,6 +32,8 @@ namespace Game.Characters.CapabilitySystem.Capabilities
 
         protected override void Execute()
         {
+            if (_interactable == null) return;
+            
             Debug.Log("Interacted with:  ", (_interactable as MonoBehaviour)?.gameObject);
             
             _interactable.OnInteract(_owner);
@@ -39,14 +41,8 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             
             if (_interactable is Item i)
             {
-                Debug.Log("Interacted with: AN ITEM" + i.name);
-
-                if (_inventoryCapability.TryPickup(i))
-                {
-                    Debug.Log("Succesfully picked up AN ITEM " + i.name);
-
-                }
-                return;
+                _inventoryCapability.TryPickup(i);
+                Debug.Log("Successfully picked up AN ITEM " + i.name);
             }
             if(!_interactable.CanHover()) HandleHovering(null);
 

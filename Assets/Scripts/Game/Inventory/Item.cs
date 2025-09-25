@@ -36,21 +36,18 @@ namespace Game.Inventory
         {
             Hide_ClientRpc();
             ulong user = id.Receive.SenderClientId;
-            
             NetworkObject.ChangeOwnership(user);
-            
-            Debug.LogWarning("We don't actually know who the owning object is though (for reparenting)");
-            //NetworkObject.TrySetParent(user);
         }
 
         [ClientRpc]
-        private void Hide_ClientRpc()
+        public void Hide_ClientRpc()
         {
             gameObject.SetActive(false);
+            StopUsing();
         }
 
         [ClientRpc]
-        private void Show_ClientRpc()
+        public void Show_ClientRpc()
         {
             gameObject.SetActive(true);
         }
@@ -72,16 +69,18 @@ namespace Game.Inventory
         }
 
         public virtual void UseItem() { Debug.Log("Used an item which does nothing: ", gameObject); }
-
-
+        
+        
+        //Austin: make a Coroutine, or async/await to manage how an object works... Some can be used per click, others you can hold down... Do this how you want...
+        //Should probably validate "TryUseItem" on NetworkVariables exclusively ( for safety reasons )
         public void StartUsing()
         {
-            
+            Debug.Log("ITEM: StartUsing", gameObject);
         }
 
         public void StopUsing()
         {
-            
+            Debug.Log("ITEM: StopUsing", gameObject);
         }
     }
     

@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Game.Characters.Stats;
-using Game.Inventory;
 using Interfaces;
-using Inventory;
 using Managers;
 using Unity.Netcode;
 using UnityEngine;
@@ -29,8 +27,6 @@ namespace Game.Characters
 
         public Rigidbody rigidbody { get; private set; }
         public Animator animator { get; private set; }
-        public AnInventory inventory { get; private set; }
-        
         public Transform Head => head;
 
         public float Health
@@ -83,7 +79,6 @@ namespace Game.Characters
         {
             rigidbody = GetComponent<Rigidbody>();
             animator = GetComponent<Animator>();
-            inventory = GetComponent<AnInventory>();
         }
         
         #region Damagable

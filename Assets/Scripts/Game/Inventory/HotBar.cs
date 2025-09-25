@@ -1,15 +1,22 @@
-using System;
-using Game.Inventory;
+using Game.Characters.CapabilitySystem.Capabilities;
 using UnityEngine;
 using Utilities;
 
 namespace Inventory
 {
-    public class HotBar : AnInventory
+    public class HotBar : MonoBehaviour
     {
         private Itemslot _selectedItem;
-        public Itemslot SelectedItem => _selectedItem;
+        public int SelectedItemIndex => _curScrollIndex;
+        
         private int _curScrollIndex = 0;
+        
+        private InventoryCapability _currentCapability; // What it reads from.
+
+        [SerializeField] private Itemslot prefab;
+        [SerializeField] protected Itemslot[] itemSlots;
+        
+        
         private void Start()
         {
             foreach (var jeff in itemSlots)
@@ -19,8 +26,8 @@ namespace Inventory
             _selectedItem = itemSlots[_curScrollIndex];
             _selectedItem.MarkSelected();
         }
-
-        protected override void OnSlotUpdated(int index)
+        
+        public void OnSlotUpdated(int index)
         {
             if (Settings.GamePlaySettings.autoEquip)
             {

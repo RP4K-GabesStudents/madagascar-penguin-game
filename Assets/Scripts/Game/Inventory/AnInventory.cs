@@ -1,11 +1,7 @@
-
-using System;
-using System.Net.Security;
+using Inventory;
 using UnityEngine;
-using Utilities;
 
-
-namespace Inventory
+namespace Game.Inventory
 {
     public class AnInventory : MonoBehaviour
     {

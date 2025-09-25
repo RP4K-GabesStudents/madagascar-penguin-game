@@ -8,7 +8,8 @@ namespace Game.Characters.World
     {
         public static readonly List<Penguin> Penguins = new ();
         public override void OnNetworkSpawn()
-        {]
+        {
+            if(IsOwner) PlayerController.Instance.SubscribeTo(gameObject);
         }
 
         private void OnEnable()

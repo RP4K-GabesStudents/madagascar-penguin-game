@@ -1,3 +1,4 @@
+using System.Collections;
 using Game.Characters;
 using Game.Objects;
 using Inventory;
@@ -68,9 +69,19 @@ namespace Game.Inventory
             return true;
         }
 
-        public virtual void UseItem() { Debug.Log("Used an item which does nothing: ", gameObject); }
-        
-        
+        public virtual void UseItem()
+        {
+            StartCoroutine(ActivateItem());
+            Debug.Log("Used an item which does nothing: ", gameObject); 
+        }
+
+        private IEnumerator ActivateItem()
+        {
+            if (!TryUseItem()) yield break;
+            
+            yield return new WaitForSeconds(itemStats.CoolDownTime);
+        }
+
         //Austin: make a Coroutine, or async/await to manage how an object works... Some can be used per click, others you can hold down... Do this how you want...
         //Should probably validate "TryUseItem" on NetworkVariables exclusively ( for safety reasons )
         public void StartUsing()

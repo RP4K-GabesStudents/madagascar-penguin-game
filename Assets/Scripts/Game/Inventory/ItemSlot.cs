@@ -1,4 +1,5 @@
 
+using Game.Inventory;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;

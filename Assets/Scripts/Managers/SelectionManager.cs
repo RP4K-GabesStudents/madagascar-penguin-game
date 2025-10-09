@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Game.Characters;
+using Game.Characters.World;
 using TMPro;
 using UI;
 using UnityEngine;

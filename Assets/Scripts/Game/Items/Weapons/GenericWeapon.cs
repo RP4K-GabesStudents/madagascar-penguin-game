@@ -1,8 +1,7 @@
 using System;
 using System.Collections;
 using Abilities;
-using Game.Inventory;
-using Inventory;
+using Game.InventorySystem;
 using UnityEngine;
 
 namespace Game.Items.Weapons

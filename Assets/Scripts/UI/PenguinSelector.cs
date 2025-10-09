@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Game.Characters;
+using Game.Characters.World;
 using TMPro;
 using UI.Transition;
 using Unity.Cinemachine;

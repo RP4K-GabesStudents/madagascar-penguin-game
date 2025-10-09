@@ -1,7 +1,7 @@
 using Scriptable_Objects;
 using UnityEngine;
 
-namespace Game.Inventory
+namespace Game.InventorySystem
 {
     [CreateAssetMenu(fileName = "ItemStats", menuName = "Scriptable Objects/ItemStats")]
     public class ItemStats : HoverInfoStats

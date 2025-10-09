@@ -1,12 +1,11 @@
 using System.Collections;
-using Game.Characters;
+using Game.Characters.World;
 using Game.Objects;
-using Inventory;
 using Scriptable_Objects;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Inventory
+namespace Game.InventorySystem
 {
     [SelectionBase, RequireComponent(typeof(Highlight))]
     public class Item : NetworkBehaviour, IInteractable

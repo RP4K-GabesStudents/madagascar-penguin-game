@@ -6,7 +6,7 @@ namespace Utilities
     {
         public static event Action OnSettingsChanged;
         public static GamePlaySettings GamePlaySettings { get; private set; } = new GamePlaySettings();
-
+        
         public static void Save()
         {
             OnSettingsChanged?.Invoke();
@@ -22,9 +22,11 @@ namespace Utilities
     public struct GamePlaySettings
     {
         public bool autoEquip;
+        public bool dropIfInventoryFull;
         public GamePlaySettings(string profile)
         {
             autoEquip = true;
+            dropIfInventoryFull = true;
         }
     }
 }

@@ -16,9 +16,16 @@ namespace Game.AbilitySystem.Explosion
         private readonly Collider[] _collider = new Collider[9];
         [SerializeField] private bool isContactExplosive;
         private NetworkVariable<float> _curTime = new ();
+        
 
         public override void OnNetworkSpawn()
         {
+            if (!IsOwner)
+            {
+                enabled = false;
+                return;
+            }
+
             _curTime.Value = stats.ExplosionTime;
         }
 
@@ -34,6 +41,7 @@ namespace Game.AbilitySystem.Explosion
                 NetworkObject.Despawn(false);
             }
         }
+        
         private void Update()
         {
             _curTime.Value -= Time.deltaTime;

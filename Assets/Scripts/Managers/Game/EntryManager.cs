@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Eflatun.SceneReference;
 using Game.Characters;
+using Game.Characters.World;
 using TMPro;
 using Unity.Netcode;
 using UnityEditor;
@@ -47,6 +48,8 @@ namespace Managers.Game
         }
         private void OnDisable()
         {
+            if (!NetworkManager) return;
+            
             NetworkManager.SceneManager.OnLoadEventCompleted += StartGame;
             NetworkManager.SceneManager.OnLoadComplete += OnLocalLoaded;
         }

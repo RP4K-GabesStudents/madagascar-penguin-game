@@ -1,12 +1,9 @@
-
-using Game.Inventory;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Utilities.Hover;
 
-namespace Inventory
+namespace Game.InventorySystem
 {
     public class Itemslot : MonoBehaviour
     {
@@ -41,18 +38,18 @@ namespace Inventory
             return item;
         }
         
-        public void SetItem(ItemStats newItem)
+        public void SetItem(ItemStats newItem, int newInvCount)
         {
-            if (newItem == item)
-            {
-                InvCount += 1;
-            }
-            else
+            if (item != newItem)
             {
                 item = newItem;
-                image.sprite = newItem.Icon;
+                image.sprite = newItem?.Icon;
+                image.enabled = newItem;
             }
-            image.enabled = true;
+            if (InvCount != newInvCount)
+            {
+                InvCount = newInvCount;
+            }
         }
         
         public void RemoveItem()
@@ -80,11 +77,6 @@ namespace Inventory
             _hover.Shrink();
             frame.color = Color.gray;
         }
-
-        public bool CanAcceptItem(ItemStats items)
-        {
-            //Debug.Log(!item +"||("+ (items == item) +"&&" +(InvCount < item.ItemLimit) + ")");
-            return !item || (items == item && InvCount < item.ItemLimit);
-        }
+        
     }
 }

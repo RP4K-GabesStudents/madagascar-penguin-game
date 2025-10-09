@@ -140,7 +140,6 @@ GameObject:
   - component: {fileID: 8206148449103502881}
   - component: {fileID: 5466317513829920024}
   - component: {fileID: -5143739219388793016}
-  - component: {fileID: 4514667474088809558}
   - component: {fileID: 4789550851462934335}
   - component: {fileID: 982189211677679919}
   - component: {fileID: 1566496857088667617}
@@ -237,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 541103076
+  GlobalObjectIdHash: 435626353
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -300,18 +299,6 @@ MonoBehaviour:
     TriggerNameHash: 1137391654
     TransitionIndex: 0
   m_Animator: {fileID: 982189211677679919}
---- !u!114 &4514667474088809558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003442816039442314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eebe050a76d4158a9a570333cdcfd35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4789550851462934335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +338,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003442816039442314}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 065e51ec3f69958459b0167067355700, type: 3}
+  m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f38156afbc670634ba7a816797a5d6b9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -359,18 +346,7 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
-    'mixamorig:LeftHandIndex1'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
-    'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform
-    'mixamorig:RightHandIndex3'\n\tTransform 'mixamorig:RightFoot'\n\tand more ...\n\tFrom
-    animation clip 'Penguin Idle Sad'\n\tFrom animation clip 'Penguin Gangnam Style'\n\tFrom
-    animation clip 'Penguin Walking'\n\tFrom animation clip 'Penguin Sprint'\n\tFrom
-    animation clip 'Penguin Attack'\n\tFrom animation clip 'Penguin Interact'\n\tFrom
-    animation clip 'Penguin Jump Begin'\n\tFrom animation clip 'Penguin Slide Begin'\n\tFrom
-    animation clip 'Penguin Slide'\n\tFrom animation clip 'Penguin Slide Exit'\n\tand
-    more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -389,7 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   ownershipRequiredComponents:
-  - {fileID: 4514667474088809558}
+  - {fileID: 6376287583028010952}
   - {fileID: 4789550851462934335}
   - {fileID: 4649861158411503330}
 --- !u!114 &3926066548045525232

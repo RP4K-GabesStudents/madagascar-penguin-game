@@ -999,7 +999,6 @@ GameObject:
   - component: {fileID: 1468989231300640652}
   - component: {fileID: 6004874454248207697}
   - component: {fileID: -3895993161072226377}
-  - component: {fileID: 3483336554398772333}
   - component: {fileID: 4490126857485865009}
   m_Layer: 3
   m_Name: Kowalski
@@ -1284,18 +1283,6 @@ MonoBehaviour:
     TriggerNameHash: 1137391654
     TransitionIndex: 0
   m_Animator: {fileID: 6501870972322074783}
---- !u!114 &3483336554398772333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5337494372767933401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eebe050a76d4158a9a570333cdcfd35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4490126857485865009
 MonoBehaviour:
   m_ObjectHideFlags: 0

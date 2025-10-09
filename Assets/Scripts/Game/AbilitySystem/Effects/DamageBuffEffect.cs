@@ -1,5 +1,6 @@
 using System;
 using Game.Characters;
+using Game.Characters.World;
 using UnityEngine;
 
 namespace Game.AbilitySystem.Effects

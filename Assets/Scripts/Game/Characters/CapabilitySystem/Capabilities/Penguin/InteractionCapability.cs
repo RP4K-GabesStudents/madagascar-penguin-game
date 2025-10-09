@@ -1,5 +1,6 @@
 using Game.Characters.CapabilitySystem.CapabilityStats;
-using Game.Inventory;
+using Game.Characters.World;
+using Game.InventorySystem;
 using Game.Objects;
 using Managers;
 using UnityEngine;

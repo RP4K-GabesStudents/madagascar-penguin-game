@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.Characters
@@ -12,18 +13,20 @@ namespace Game.Characters
         private GameControls _gameControls ;
 
         public static PlayerController Instance { get; private set; }
+        
+        private void Awake()
+        {
+           if (Instance && Instance != this)
+           {
+               Destroy(this);
+               return;
+           }
+           Instance = this;
+           DontDestroyOnLoad(gameObject);
+        }
 
         public void SubscribeTo(GameObject obj)
         {
-
-            if (Instance && Instance != this)
-            {
-                Destroy(this);
-                return;
-            }
-
-            Instance = this;
-            
             IInputSubscriber[]  inputSubscribers = obj.GetComponentsInChildren<IInputSubscriber>();
             
             Debug.Log("Binding controls to: " + inputSubscribers.Length + " controllers.");

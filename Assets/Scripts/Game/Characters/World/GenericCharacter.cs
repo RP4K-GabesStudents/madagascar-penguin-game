@@ -5,8 +5,9 @@ using Interfaces;
 using Managers;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-namespace Game.Characters
+namespace Game.Characters.World
 {
     /// <summary>
     /// A Generic Character is like a husk; it describes how a character might work, but not what who controls it, or how it is controlled.
@@ -18,6 +19,7 @@ namespace Game.Characters
         
         [SerializeField] private Transform head;
         [SerializeField] protected CharacterStats stats;
+        private GameControls _gameControls;
         
         //This dictionary contains state information
         private readonly Dictionary<uint, int> _data = new();
@@ -98,9 +100,21 @@ namespace Game.Characters
         
         public void BindControls(GameControls controls)
         {
-            controls.Player.Attack.performed += ctx => animator.SetBool(StaticUtilities.AttackAnimID, ctx.ReadValueAsButton());
+            _gameControls = controls;
+            _gameControls.Player.Attack.performed += Attack; 
+            
         }
-        
+
+        private void Attack(InputAction.CallbackContext obj)
+        {
+            animator.SetBool(StaticUtilities.AttackAnimID, obj.ReadValueAsButton());
+        }
+
+        public override void OnDestroy()
+        {
+            if (_gameControls != null) _gameControls.Player.Attack.performed -= Attack; 
+        }
+
         public void ExecuteAttack()
         {
             Debug.Log("Trying to attack");

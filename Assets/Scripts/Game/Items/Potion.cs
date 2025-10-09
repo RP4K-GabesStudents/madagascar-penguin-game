@@ -1,6 +1,5 @@
-using Game.Inventory;
+using Game.InventorySystem;
 using Interfaces;
-using Inventory;
 using Scriptable_Objects;
 using UnityEngine;
 

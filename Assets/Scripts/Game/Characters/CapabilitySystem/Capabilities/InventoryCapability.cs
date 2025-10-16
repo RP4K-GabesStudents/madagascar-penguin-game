@@ -2,6 +2,7 @@ using Game.InventorySystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utilities;
+using Utilities.Utilities.General;
 
 namespace Game.Characters.CapabilitySystem.Capabilities
 {
@@ -81,7 +82,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
         }
         private void ScrollHotBar(InputAction.CallbackContext obj)
         {
-            int direction = obj.ReadValue<int>();
+            int direction = obj.ReadValue<float>().NormalizeToInt();
 
             if (CurrentSelectedItem) CurrentSelectedItem.Hide_ClientRpc();
 

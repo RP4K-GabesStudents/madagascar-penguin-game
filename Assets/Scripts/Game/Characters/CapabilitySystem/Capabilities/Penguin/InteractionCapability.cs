@@ -5,7 +5,7 @@ using Game.Objects;
 using Managers;
 using UnityEngine;
 
-namespace Game.Characters.CapabilitySystem.Capabilities
+namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 {
     public class InteractionCapability : BaseCapability, IInputSubscriber
     {
@@ -60,7 +60,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             Vector3 origin = _owner.Head.position;
             Vector3 direction = _owner.Head.forward;
 
-            bool byPass = Physics.Raycast(origin, direction, out var byPassed, _stats.InteractionRadius, _stats.CombinedLayers);
+            bool byPass = Physics.Raycast(origin, direction, out var byPassed, _stats.InteractionDistance, _stats.CombinedLayers);
             if (byPass)
             {
                 bool directHit = ((1 << byPassed.collider.gameObject.layer) & _stats.InteractionLayers) != 0;
@@ -92,7 +92,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
         }
 
 
-        private void OnDrawGizmosSelected()
+        private void OnDrawGizmos()
         {
             _stats ??= genericStats as InteractionCapabilityStats;
             if (_stats == null) return;
@@ -105,7 +105,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             Vector3 direction = _owner.Head.forward;
 
             // Raycast for bypass
-            bool byPass = Physics.Raycast(origin, direction, out RaycastHit byPassed, _stats.InteractionRadius, _stats.CombinedLayers);
+            bool byPass = Physics.Raycast(origin, direction, out RaycastHit byPassed, _stats.InteractionDistance, _stats.CombinedLayers);
             if (byPass)
             {
                 // Draw bypass ray
@@ -140,7 +140,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             else
             {
                 // Nothing hit: show max reach ray
-                Vector3 end = origin + direction * _stats.InteractionRadius;
+                Vector3 end = origin + direction * _stats.InteractionDistance;
                 Gizmos.color = Color.gray;
                 Gizmos.DrawLine(origin, end);
             }

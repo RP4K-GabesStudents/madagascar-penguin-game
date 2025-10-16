@@ -19,12 +19,12 @@ namespace Game.InventorySystem
 
         public void UpdateScrollIndex(int index)
         {
-            _selectedItem.MarkUnselected();
+            _selectedItem?.MarkUnselected();
             itemSlots[index].MarkSelected();
             _selectedItem = itemSlots[index];
             _curScrollIndex = index;
         }
-
+        
         public void UpdateScrollSlot(int index)
         {
             if (index == 0) return;

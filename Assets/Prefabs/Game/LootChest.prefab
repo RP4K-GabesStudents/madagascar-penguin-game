@@ -4835,6 +4835,8 @@ ParticleSystemRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4856,6 +4858,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -9701,6 +9704,8 @@ ParticleSystemRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9722,6 +9727,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -9818,6 +9824,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9839,6 +9847,7 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -10090,16 +10099,19 @@ PrefabInstance:
       addedObject: {fileID: 8621130411359981489}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df908e71c0255ca4aa868585fee07633, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5602563764909660069}
+      addedObject: {fileID: 824339702358265582}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df908e71c0255ca4aa868585fee07633, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 824339702358265582}
+      addedObject: {fileID: 5602563764909660069}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df908e71c0255ca4aa868585fee07633, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7613015971898971672}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df908e71c0255ca4aa868585fee07633, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8462472677959970641}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df908e71c0255ca4aa868585fee07633, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1111036045148415377}
     - targetCorrespondingSourceObject: {fileID: 1311702326449385159, guid: df908e71c0255ca4aa868585fee07633, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8472009959959774761}
@@ -10148,10 +10160,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2939422179652946801}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -10233,20 +10245,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6999999, y: 0.59999996, z: 0.9}
   m_Center: {x: 0, y: 0.29999998, z: 0}
---- !u!114 &5602563764909660069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3909018266714167527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6baa10920a77ce84c81b87c088d4f436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: 37e16571a66d3fd439f15b9c7082d3bc, type: 2}
-  hoverInfoStats: {fileID: 11400000, guid: cd1d4d3c598ea7042b0b7455c2c09454, type: 2}
 --- !u!114 &824339702358265582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10259,7 +10257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 18354854
+  GlobalObjectIdHash: 3671492766
   InScenePlacedSourceGlobalObjectIdHash: 2476470292
   DeferredDespawnTick: 0
   Ownership: 1
@@ -10272,6 +10270,23 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &5602563764909660069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909018266714167527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6baa10920a77ce84c81b87c088d4f436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  lootTable: {fileID: 11400000, guid: 37e16571a66d3fd439f15b9c7082d3bc, type: 2}
+  hoverInfoStats: {fileID: 11400000, guid: cd1d4d3c598ea7042b0b7455c2c09454, type: 2}
+  chestLid: {fileID: 0}
+  spawnPoint: {fileID: 0}
 --- !u!114 &7613015971898971672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10333,6 +10348,19 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   TransitionStateInfoList: []
   m_Animator: {fileID: 0}
+--- !u!114 &1111036045148415377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909018266714167527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054a365acb0e455ca7747a46d19dad31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
+  meshRenderers: []
 --- !u!4 &4428252069101732445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: df908e71c0255ca4aa868585fee07633, type: 3}

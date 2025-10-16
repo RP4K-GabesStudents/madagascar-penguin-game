@@ -1,10 +1,9 @@
-#if UNITASK
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace GabesCommonUtility.Sequence
+namespace Utilities.Vivox
 {
     /*
      * The SequenceStartPoint is responsible for running a chain of IEntrySequence steps in order.
@@ -108,4 +107,3 @@ namespace GabesCommonUtility.Sequence
         }
     }
 }
-#endif

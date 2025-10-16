@@ -1313,6 +1313,7 @@ GameObject:
   - component: {fileID: -8401715746559295906}
   - component: {fileID: 4139274893641682124}
   - component: {fileID: 8290479749822067794}
+  - component: {fileID: 7813465004201038338}
   m_Layer: 3
   m_Name: Rico
   m_TagString: Untagged
@@ -1613,6 +1614,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &7813465004201038338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6695135885744906461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc3bff339c84ceda34efa4faa760717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GabesCommonUtility.Multiplayer.Vivox.VivoxPlayerController
+  channelName: proximity
 --- !u!1 &6916665486763780613
 GameObject:
   m_ObjectHideFlags: 0

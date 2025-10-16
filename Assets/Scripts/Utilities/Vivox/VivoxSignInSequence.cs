@@ -1,13 +1,10 @@
-#if VIVOX
 using System;
 using Cysharp.Threading.Tasks;
-using GabesCommonUtility.Multiplayer.GameObjects;
-using GabesCommonUtility.Sequence;
 using Unity.Services.Authentication;
 using Unity.Services.Vivox;
 using UnityEngine;
 
-namespace GabesCommonUtility.Multiplayer.Vivox
+namespace Utilities.Vivox
 {
     public class VivoxSignInSequence : MonoBehaviour, IEntrySequence
     {
@@ -52,23 +49,19 @@ namespace GabesCommonUtility.Multiplayer.Vivox
                 return failure as IEntrySequence;
             }
 
-            string code;
-            #if UNITY_NETCODE_GAMEOBJECTS
-                code = LobbySystem.Instance.LobbyCode();
-                if (string.IsNullOrEmpty(code))
-                {
-                    Debug.LogError("We are not in a lobby, Could not join voice.", gameObject);
-                    return failure as IEntrySequence;
-                }
-            #endif
-                
-            #if UNITY_EDITOR
+            // string code;
+            //     code = LobbySystem.Instance.LobbyCode();
+            //     if (string.IsNullOrEmpty(code))
+            //     {
+            //         Debug.LogError("We are not in a lobby, Could not join voice.", gameObject);
+            //         return failure as IEntrySequence;
+            //     }
+            
             if (useDebugEcho)
             {
                 await VivoxService.Instance.JoinEchoChannelAsync("DEBUG", chatCapability);
                 return Default;
             }
-            #endif
 
             if (usePositionalAudio)
             {
@@ -76,10 +69,10 @@ namespace GabesCommonUtility.Multiplayer.Vivox
                 Channel3DProperties props = new Channel3DProperties();
                 await VivoxService.Instance.JoinPositionalChannelAsync("proximity",chatCapability, props, new ChannelOptions());
             }
-            else
-            {
-                await VivoxService.Instance.JoinGroupChannelAsync(code, chatCapability, new ChannelOptions());
-            }
+            // else
+            // {
+            //     await VivoxService.Instance.JoinGroupChannelAsync(code, chatCapability, new ChannelOptions());
+            // }
 
             return Default;
         }
@@ -106,4 +99,3 @@ namespace GabesCommonUtility.Multiplayer.Vivox
         }
     }
 }
-#endif

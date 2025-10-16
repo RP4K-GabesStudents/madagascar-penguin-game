@@ -1,9 +1,7 @@
-#if UNITASK
-
 using System;
 using Cysharp.Threading.Tasks;
 
-namespace GabesCommonUtility.Sequence
+namespace Utilities.Vivox
 {
    public interface IEntrySequence
    {
@@ -13,5 +11,3 @@ namespace GabesCommonUtility.Sequence
       public bool IsCompleted { get; }
    }
 }
-
-#endif

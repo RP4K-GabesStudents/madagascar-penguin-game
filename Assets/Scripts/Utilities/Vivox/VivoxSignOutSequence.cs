@@ -1,12 +1,10 @@
-#if VIVOX
 using System;
 using Cysharp.Threading.Tasks;
-using GabesCommonUtility.Sequence;
 using Unity.Services.Authentication;
 using Unity.Services.Vivox;
 using UnityEngine;
 
-namespace GabesCommonUtility.Multiplayer.Vivox
+namespace Utilities.Vivox
 {
     public class VivoxSignOutSequence : MonoBehaviour, IEntrySequence
     {
@@ -54,4 +52,3 @@ namespace GabesCommonUtility.Multiplayer.Vivox
         }
     }
 }
-#endif

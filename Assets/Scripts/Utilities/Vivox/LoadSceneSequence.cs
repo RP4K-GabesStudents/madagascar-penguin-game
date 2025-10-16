@@ -1,24 +1,17 @@
-#if UNITASK
 using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-#if SCENE_REFERENCE
 using Eflatun.SceneReference;
-#endif
 
-namespace GabesCommonUtility.Sequence
+namespace Utilities.Vivox
 {
     public class LoadSceneSequence : MonoBehaviour, IEntrySequence
     {
         [SerializeField] private Behaviour next;
-        
-#if SCENE_REFERENCE
+
         [SerializeField] private SceneReference selectionScene;
-#else
-        [SerializeField] private string sceneName;
-#endif
+        
         [SerializeField] private LoadSceneMode loadType = LoadSceneMode.Single;
         
         public IEntrySequence Default => next as IEntrySequence;
@@ -28,11 +21,9 @@ namespace GabesCommonUtility.Sequence
 
         public async UniTask<IEntrySequence> ExecuteSequence()
         {
-#if SCENE_REFERENCE
+
             await SceneManager.LoadSceneAsync(selectionScene.BuildIndex, loadType);
-#else
-            await SceneManager.LoadSceneAsync(sceneName, LoadType);
-#endif
+
             return Default;
         }
 
@@ -45,4 +36,3 @@ namespace GabesCommonUtility.Sequence
         }
     }
 }
-#endif

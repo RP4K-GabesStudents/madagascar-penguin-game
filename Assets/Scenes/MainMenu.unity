@@ -239,6 +239,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 453285849526612475, guid: 2e52cea4dd5b97e4f91f37b48f362f0f, type: 3}
   m_PrefabInstance: {fileID: 12379293}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &17003303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 17003306}
+  - component: {fileID: 17003308}
+  m_Layer: 0
+  m_Name: Vivox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &17003306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17003303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -614.9055, y: 0, z: -768.7667}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &17003308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17003303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140429a505f56c54fad9084934691136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Utilities.Vivox.SequenceStartPoint
+  start: {fileID: 0}
+  activateOnStart: 1
+  persist: 0
 --- !u!1 &21903978
 GameObject:
   m_ObjectHideFlags: 0
@@ -12458,3 +12505,4 @@ SceneRoots:
   - {fileID: 5012888305864940494}
   - {fileID: 1723571642}
   - {fileID: 1268356048}
+  - {fileID: 17003306}

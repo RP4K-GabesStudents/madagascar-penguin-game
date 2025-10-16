@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 3926066548045525232}
   - component: {fileID: 8888186743934133015}
   - component: {fileID: 6376287583028010952}
+  - component: {fileID: 3987251941360578099}
   m_Layer: 3
   m_Name: Skipper
   m_TagString: Untagged
@@ -446,6 +447,19 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   head: {fileID: 9107652766263297373}
   stats: {fileID: 11400000, guid: 2968fe95d98b23848ad5658ef9504028, type: 2}
+--- !u!114 &3987251941360578099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003442816039442314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc3bff339c84ceda34efa4faa760717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GabesCommonUtility.Multiplayer.Vivox.VivoxPlayerController
+  channelName: proximity
 --- !u!1 &1619603673811056745
 GameObject:
   m_ObjectHideFlags: 0

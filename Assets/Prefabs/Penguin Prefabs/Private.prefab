@@ -993,6 +993,7 @@ GameObject:
   - component: {fileID: -6734073591952251587}
   - component: {fileID: 4415416989196722085}
   - component: {fileID: 1434677132773800893}
+  - component: {fileID: 5211924514468482038}
   m_Layer: 3
   m_Name: Private
   m_TagString: Untagged
@@ -1306,6 +1307,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GabesCommonUtility.Multiplayer.Vivox.VivoxPlayerController
   channelName: proximity
+--- !u!114 &5211924514468482038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4143693464081881456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee47aca0e8114e11925e400f6456f05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.InventorySystem.Inventory
+  items:
+  - item: {fileID: 0}
+  - item: {fileID: 0}
+  - item: {fileID: 0}
+  - item: {fileID: 0}
+  - item: {fileID: 0}
 --- !u!1 &4268938692238071021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,6 +1564,7 @@ GameObject:
   - component: {fileID: 2714031855451018466}
   - component: {fileID: 4815257952366720663}
   - component: {fileID: 3659577698715269996}
+  - component: {fileID: 2183900110180205113}
   m_Layer: 3
   m_Name: CapabilitySystem
   m_TagString: Untagged
@@ -1673,6 +1693,20 @@ MonoBehaviour:
   genericStats: {fileID: 11400000, guid: eaae2e00a014bb24d9da55c4aec1de8b, type: 2}
   penguinStats: {fileID: 11400000, guid: 7832a7955506a3b4996d0f1f9c99eb23, type: 2}
   rb: {fileID: 3229542108961960004}
+--- !u!114 &2183900110180205113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7065937808384566773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eee9396d6834efb92456b9dd64dfee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Characters.CapabilitySystem.Capabilities.InventoryCapability
+  parent: {fileID: 7285164625027528209}
+  hotBarPrefab: {fileID: 8816533995647191451, guid: 4f97b0418f4fdcc43b6ff1d5e0ab18d0, type: 3}
 --- !u!1 &7093692428461234193
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
 
         public void BindControls(GameControls controls)
         {
-            _inventory = GetComponent<Inventory>();
+            _inventory = GetComponentInParent<Inventory>();
             _hotBar = Instantiate(hotBarPrefab);
             _hotBar.SetTargetInventory(_inventory);
             Unsubscribe();
@@ -39,9 +39,8 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             _reference.Player.HotBarSlot4.performed += SelectSlotFour;
             _reference.Player.HotBarSlot5.performed += SelectSlotFive;
 
-            Debug.LogError("Austin do dropping >:)");
-            Debug.LogError(
-                "Austin Try figure out, HOW DO WE GET THE HOTBAR TO BE NOT NULL... If you do wanna try, you need to CREATE THE HOTBAR ITEM SLOTS from the code... You need to make a loop");
+            Debug.LogError("Gabe do dropping >:)");
+            Debug.LogError("Gabe Try figure out, HOW DO WE GET THE HOTBAR TO BE NOT NULL... If you do wanna try, you need to CREATE THE HOTBAR ITEM SLOTS from the code... You need to make a loop");
         }
         private void Unsubscribe()
         {

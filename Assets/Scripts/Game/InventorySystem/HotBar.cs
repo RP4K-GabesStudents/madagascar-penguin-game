@@ -5,28 +5,17 @@ namespace Game.InventorySystem
 {
     public class HotBar : MonoBehaviour
     {
+        [SerializeField] private Transform parent;
+        
         private Itemslot _selectedItem;
         public int SelectedItemIndex => _curScrollIndex;
 
         private int _curScrollIndex = 0;
 
-        private InventorySystem.Inventory _inventory; // What it reads from.
+        private Inventory _inventory; // What it reads from.
 
         [SerializeField] private Itemslot prefab;//fill this out 10/08/25
-        private List<Itemslot> itemSlots;
-
-
-        private void Start()
-        {
-            foreach (var jeff in itemSlots)
-            {
-                jeff.RemoveItem();
-            }
-
-            _selectedItem = itemSlots[_curScrollIndex];
-            _selectedItem.MarkSelected();
-        }
-
+        private List<Itemslot> itemSlots = new ();
 
         public void UpdateScrollIndex(int index)
         {
@@ -71,7 +60,7 @@ namespace Game.InventorySystem
 
             for (int i = 0; i < _inventory.items.Length; i++)
             {
-                itemSlots.Add(Instantiate(prefab, transform));
+                itemSlots.Add(Instantiate(prefab, parent));
             }
         }
 

@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 8888186743934133015}
   - component: {fileID: 6376287583028010952}
   - component: {fileID: 3987251941360578099}
+  - component: {fileID: -570479029237923672}
   m_Layer: 3
   m_Name: Skipper
   m_TagString: Untagged
@@ -460,6 +461,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GabesCommonUtility.Multiplayer.Vivox.VivoxPlayerController
   channelName: proximity
+--- !u!114 &-570479029237923672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003442816039442314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee47aca0e8114e11925e400f6456f05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.InventorySystem.Inventory
+  items:
+  - item: {fileID: 0}
+  - item: {fileID: 0}
+  - item: {fileID: 0}
+  - item: {fileID: 0}
+  - item: {fileID: 0}
 --- !u!1 &1619603673811056745
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +977,7 @@ GameObject:
   - component: {fileID: 5221203670610707296}
   - component: {fileID: 1923665446356702862}
   - component: {fileID: 3324825901983795113}
+  - component: {fileID: 5905781941676255711}
   m_Layer: 3
   m_Name: CapabilitySystem
   m_TagString: Untagged
@@ -1097,6 +1117,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 9f33fb13ed63378489aea85c26a64a0f, type: 2}
+--- !u!114 &5905781941676255711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454271146466770685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eee9396d6834efb92456b9dd64dfee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Characters.CapabilitySystem.Capabilities.InventoryCapability
+  parent: {fileID: 1111454249827601835}
+  hotBarPrefab: {fileID: 8816533995647191451, guid: 4f97b0418f4fdcc43b6ff1d5e0ab18d0, type: 3}
 --- !u!1 &4510296497966958280
 GameObject:
   m_ObjectHideFlags: 0

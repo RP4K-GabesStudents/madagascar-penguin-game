@@ -30,6 +30,7 @@ namespace GabesCommonUtility.Multiplayer.Vivox
                     VivoxService.Instance.ActiveChannels.Count > 0
                 );
 
+                if (gameObject == null)return;
                 // Now safe to set 3D position
                 VivoxService.Instance.Set3DPosition(gameObject, channelName, true);
                 isPositionTracking = true;

@@ -776,6 +776,7 @@ GameObject:
   - component: {fileID: 5339870144740363924}
   - component: {fileID: 7798475474129169558}
   - component: {fileID: 2252928912857544677}
+  - component: {fileID: 2555539779253001705}
   m_Layer: 3
   m_Name: CapabilitySystem
   m_TagString: Untagged
@@ -917,6 +918,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   genericStats: {fileID: 11400000, guid: b1cf00191b5efc044a94f93ee8dd9357, type: 2}
+--- !u!114 &2555539779253001705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4677309457915811258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eee9396d6834efb92456b9dd64dfee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Characters.CapabilitySystem.Capabilities.InventoryCapability
+  parent: {fileID: 3175320014947171525}
+  hotBarPrefab: {fileID: 8816533995647191451, guid: 4f97b0418f4fdcc43b6ff1d5e0ab18d0, type: 3}
 --- !u!1 &5272913329064238468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1016,7 @@ GameObject:
   - component: {fileID: -3895993161072226377}
   - component: {fileID: 4490126857485865009}
   - component: {fileID: -3329235201725273856}
+  - component: {fileID: 5884572277915376073}
   m_Layer: 3
   m_Name: Kowalski
   m_TagString: Untagged
@@ -1314,6 +1330,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GabesCommonUtility.Multiplayer.Vivox.VivoxPlayerController
   channelName: proximity
+--- !u!114 &5884572277915376073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337494372767933401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee47aca0e8114e11925e400f6456f05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.InventorySystem.Inventory
+  items:
+  - item: {fileID: 0}
+  - item: {fileID: 0}
+  - item: {fileID: 0}
+  - item: {fileID: 0}
+  - item: {fileID: 0}
 --- !u!1 &5457011709875130886
 GameObject:
   m_ObjectHideFlags: 0

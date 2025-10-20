@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6066280917356043264}
   - component: {fileID: 3986142076912844593}
   - component: {fileID: 6757110533872456620}
-  - component: {fileID: 6680983038775465447}
   - component: {fileID: -3228248186855384914}
   - component: {fileID: -3912814324351768058}
-  m_Layer: 10
+  - component: {fileID: 2457050810071131194}
+  m_Layer: 11
   m_Name: Dagger Cobalt 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,10 +45,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667495223338233006}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   itemStats: {fileID: 11400000, guid: c8503b5dfd739a2449d718d4147a41c2, type: 2}
 --- !u!114 &6757110533872456620
 MonoBehaviour:
@@ -100,23 +101,9 @@ MonoBehaviour:
   SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
+  AutoObjectParentSync: 0
+  SyncOwnerTransformWhenParented: 0
   AllowOwnerToParent: 0
---- !u!114 &6680983038775465447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667495223338233006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  abilityStats: {fileID: 11400000, guid: d6e3006ea0c607c4e9399a3e7ac50efb, type: 2}
 --- !u!114 &-3228248186855384914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +167,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &2457050810071131194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667495223338233006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054a365acb0e455ca7747a46d19dad31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
+  meshRenderers: []
 --- !u!1 &8794085304376838016
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8122687106763288141}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Rotation Axis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5487917471690704481, guid: b9b18a9b1a11c97478478df3e4b03cd7, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8644529427207980030, guid: b9b18a9b1a11c97478478df3e4b03cd7, type: 3}
       propertyPath: m_LocalScale.y
@@ -306,7 +306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 695296540965821981, guid: a5dbee4201154ce4a86c93aba2dfd42a, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1653375347207363815, guid: a5dbee4201154ce4a86c93aba2dfd42a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -412,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940193185202658846, guid: e856dcc4439cba14694b13c8c87d0de5, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -438,7 +438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6966787696497520580, guid: e2bea9e8a24ea5242aa28b34b5cb4099, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8568329424752393276, guid: e2bea9e8a24ea5242aa28b34b5cb4099, type: 3}
       propertyPath: m_LocalScale.x
@@ -516,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 883408280639204631, guid: c0c9048ea2c3e194198a0878b39c427a, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7346804245973461228, guid: c0c9048ea2c3e194198a0878b39c427a, type: 3}
       propertyPath: m_LocalScale.x
@@ -634,7 +634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6285747551883077943, guid: 768fb4b7de3021844bfeb7fb818a36cf, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -700,7 +700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4771797189472904992, guid: b29a4e1c6d051944bb742c93725a089d, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

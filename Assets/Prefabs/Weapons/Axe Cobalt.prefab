@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2655456788986720676}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rotation Axit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,11 +48,11 @@ GameObject:
   - component: {fileID: 7237355264279222305}
   - component: {fileID: 3257040851466105109}
   - component: {fileID: 4465720385035874901}
-  - component: {fileID: 4530569007538111315}
   - component: {fileID: 1376943551456142258}
   - component: {fileID: 6823207419942884438}
   - component: {fileID: 8139237201888929410}
-  m_Layer: 10
+  - component: {fileID: 3767999776139804621}
+  m_Layer: 11
   m_Name: Axe Cobalt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,10 +82,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7411099522968000106}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -124,23 +124,9 @@ MonoBehaviour:
   SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
+  AutoObjectParentSync: 0
+  SyncOwnerTransformWhenParented: 0
   AllowOwnerToParent: 0
---- !u!114 &4530569007538111315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7411099522968000106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  abilityStats: {fileID: 11400000, guid: 2550bc1a450c4324b882d8bdf37bf832, type: 2}
 --- !u!114 &1376943551456142258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   itemStats: {fileID: 11400000, guid: d8c74a3062fab9248a84c762a69212ff, type: 2}
 --- !u!114 &6823207419942884438
 MonoBehaviour:
@@ -217,6 +204,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &3767999776139804621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411099522968000106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054a365acb0e455ca7747a46d19dad31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
+  meshRenderers: []
 --- !u!1001 &546067952134547386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5952102341777818167, guid: 5d2a0cea4d45df849a41275e34078dcc, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -297,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2587362088917621904, guid: 8f353cb5487d101459733467c690d396, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9027854205351531815, guid: 8f353cb5487d101459733467c690d396, type: 3}
       propertyPath: m_LocalPosition.x
@@ -403,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2811433917785394666, guid: c696f212c9989b049b0e0148f93e2c89, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -469,7 +469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5952102341777818167, guid: 5d2a0cea4d45df849a41275e34078dcc, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -535,7 +535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4882744349341721868, guid: c8c0a3a5536317e4fa26fd7c48e630a8, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -601,7 +601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7929434412839861509, guid: adabdfa0f108a744b802ef2c2fc7f9dd, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

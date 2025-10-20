@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3694156177226678620}
   - component: {fileID: 706160681670158063}
-  - component: {fileID: 491572761468196162}
   - component: {fileID: 4128733210737764472}
   - component: {fileID: 8894762768363780725}
   - component: {fileID: 5625704916863140638}
   - component: {fileID: 7251714894692364031}
-  m_Layer: 10
+  - component: {fileID: 6519915547497260121}
+  m_Layer: 11
   m_Name: Dagger Bronze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,23 +60,9 @@ MonoBehaviour:
   SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
+  AutoObjectParentSync: 0
+  SyncOwnerTransformWhenParented: 0
   AllowOwnerToParent: 0
---- !u!114 &491572761468196162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730041156637935195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  abilityStats: {fileID: 11400000, guid: 0af00fb599a57764ba2290734d7db34e, type: 2}
 --- !u!114 &4128733210737764472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   itemStats: {fileID: 11400000, guid: bfdd7c30916b205408ca2c17249e900c, type: 2}
 --- !u!54 &8894762768363780725
 Rigidbody:
@@ -97,10 +84,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730041156637935195}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -180,6 +167,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &6519915547497260121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730041156637935195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054a365acb0e455ca7747a46d19dad31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
+  meshRenderers: []
 --- !u!1 &6939538561994735900
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1122797010353273430}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Rotation Axis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1286515373566564367, guid: 760e8f0c199159646a07d72ca8686e76, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7819214658308239886, guid: 760e8f0c199159646a07d72ca8686e76, type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,7 +298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 604037551641445478, guid: 6eba83b42d313f245aaad8ab55439781, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8512218879483321823, guid: 6eba83b42d313f245aaad8ab55439781, type: 3}
       propertyPath: m_LocalPosition.x
@@ -364,7 +364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2204644972383925608, guid: 6afe8ee1169a90746a11f8890f27d988, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7265507757436942052, guid: 6afe8ee1169a90746a11f8890f27d988, type: 3}
       propertyPath: m_LocalPosition.x
@@ -470,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9093193661759747562, guid: 41db71ebb168efb4587a6fd88f9e39d8, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -496,7 +496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 623584703159595616, guid: 04e8990864f4d2446b9a1e77b51f2ebc, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6314799676510045744, guid: 04e8990864f4d2446b9a1e77b51f2ebc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -602,7 +602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5850065338930268510, guid: 4beb751aecc29e34b92ab26113731668, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -628,7 +628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5195767179873228744, guid: f58656b8c30c9384cb8594aa25494e78, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7880791087370575285, guid: f58656b8c30c9384cb8594aa25494e78, type: 3}
       propertyPath: m_LocalPosition.x

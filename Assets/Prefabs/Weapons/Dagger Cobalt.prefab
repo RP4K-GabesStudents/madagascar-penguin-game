@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7369646712811231577}
   - component: {fileID: 1001286230333318587}
   - component: {fileID: 3054988171845524554}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DaggerHIlt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,6 +61,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -82,6 +84,7 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -97,11 +100,11 @@ GameObject:
   - component: {fileID: 3488071402723793311}
   - component: {fileID: 323736275569190837}
   - component: {fileID: -6149162565534729674}
-  - component: {fileID: 4350956795713314053}
   - component: {fileID: 8216556247238232607}
   - component: {fileID: -1512980399921887482}
   - component: {fileID: -1058523651849343724}
-  m_Layer: 0
+  - component: {fileID: 2381859933538288049}
+  m_Layer: 11
   m_Name: Dagger Cobalt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,8 +155,8 @@ MonoBehaviour:
   SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
+  AutoObjectParentSync: 0
+  SyncOwnerTransformWhenParented: 0
   AllowOwnerToParent: 0
 --- !u!114 &-6149162565534729674
 MonoBehaviour:
@@ -167,21 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemStats: {fileID: 11400000, guid: c8503b5dfd739a2449d718d4147a41c2, type: 2}
---- !u!114 &4350956795713314053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8080106881351413084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  abilityStats: {fileID: 11400000, guid: d6e3006ea0c607c4e9399a3e7ac50efb, type: 2}
+  itemStats: {fileID: 11400000, guid: c8503b5dfd739a2449d718d4147a41c2, type: 2}
 --- !u!54 &8216556247238232607
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -189,10 +179,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8080106881351413084}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -272,6 +262,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &2381859933538288049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080106881351413084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054a365acb0e455ca7747a46d19dad31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
+  meshRenderers: []
 --- !u!1001 &599274949432236373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,6 +286,10 @@ PrefabInstance:
     - target: {fileID: 1710842685335415028, guid: 4b33cb0929e88424fb91c5512c363861, type: 3}
       propertyPath: m_Name
       value: m_dagger_a_head
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710842685335415028, guid: 4b33cb0929e88424fb91c5512c363861, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8044407182573534570, guid: 4b33cb0929e88424fb91c5512c363861, type: 3}
       propertyPath: m_LocalPosition.x
@@ -386,6 +393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_dagger_a_pommel
       objectReference: {fileID: 0}
+    - target: {fileID: 8927434999909188705, guid: 7db1aea009733724ab04ebdad07edbe0, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -448,6 +459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_dagger_a_guard_prongs
       objectReference: {fileID: 0}
+    - target: {fileID: 9215082042544027157, guid: 7bfc91f4bcd6efe4fa0ad1b944d145bf, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -469,6 +484,10 @@ PrefabInstance:
     - target: {fileID: 2548341161560484448, guid: c0c4aac4b09bc8d4ea4d6a7cd8a11c78, type: 3}
       propertyPath: m_Name
       value: m_dagger_a_guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548341161560484448, guid: c0c4aac4b09bc8d4ea4d6a7cd8a11c78, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8848180024584385685, guid: c0c4aac4b09bc8d4ea4d6a7cd8a11c78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -531,6 +550,10 @@ PrefabInstance:
     - target: {fileID: 5487917471690704481, guid: b9b18a9b1a11c97478478df3e4b03cd7, type: 3}
       propertyPath: m_Name
       value: m_dagger_a_hilt_wraps
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487917471690704481, guid: b9b18a9b1a11c97478478df3e4b03cd7, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8644529427207980030, guid: b9b18a9b1a11c97478478df3e4b03cd7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -633,6 +656,10 @@ PrefabInstance:
     - target: {fileID: 8940193185202658846, guid: e856dcc4439cba14694b13c8c87d0de5, type: 3}
       propertyPath: m_Name
       value: m_dagger_a_guard 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940193185202658846, guid: e856dcc4439cba14694b13c8c87d0de5, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

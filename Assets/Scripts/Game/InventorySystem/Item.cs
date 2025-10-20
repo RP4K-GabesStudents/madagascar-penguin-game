@@ -1,4 +1,5 @@
 using System.Collections;
+using Game.Characters.CapabilitySystem.Capabilities;
 using Game.Characters.World;
 using Game.Objects;
 using Scriptable_Objects;
@@ -15,9 +16,12 @@ namespace Game.InventorySystem
         protected GenericCharacter _oner;
         protected Highlight _highlight;
 
+        private Rigidbody _rb;
+
         protected virtual void Awake()
         {
             _highlight =  GetComponent<Highlight>();
+            _rb =  GetComponent<Rigidbody>();
         }
 
         public void OnInteract(GenericCharacter oner)
@@ -37,6 +41,8 @@ namespace Game.InventorySystem
             Hide_ClientRpc();
             ulong user = id.Receive.SenderClientId;
             NetworkObject.ChangeOwnership(user);
+            _rb.isKinematic = true;
+
         }
 
         [ClientRpc]
@@ -92,6 +98,35 @@ namespace Game.InventorySystem
         {
             Debug.Log("ITEM: StopUsing", gameObject);
         }
+
+        public void AttachTo(NetworkObject parent,  bool resetPos = true, bool resetRot = true, bool resetScale = false)
+        {
+
+            AttachTo_ServerRpc(parent.NetworkObjectId, resetScale, resetPos, resetRot);
+        }
+        
+        
+        [ServerRpc(RequireOwnership = false)]
+        public void AttachTo_ServerRpc(ulong id, bool resetScale, bool resetPos, bool resetRot)
+        {
+            AttachTo_ClientRpc(id, resetScale,  resetPos, resetRot);
+        }
+    
+        [ClientRpc]
+        private void AttachTo_ClientRpc(ulong id, bool resetScale, bool resetPos, bool resetRot)
+        {
+            if (!NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(id, out NetworkObject attachRoot)){
+                Debug.LogError("Couldn't attach to target object, " , gameObject);
+                return;
+            }
+            
+            InventoryCapability capability = attachRoot.GetComponentInChildren<InventoryCapability>();
+            transform.SetParent(capability.Parent, !resetScale);
+            if (resetPos && resetRot)  transform.SetLocalPositionAndRotation(Vector3.zero,   Quaternion.identity);
+            else if (resetPos) transform.localPosition = Vector3.zero;
+            else if (resetRot) transform.localRotation = Quaternion.identity;
+        }
+        
     }
     
 }

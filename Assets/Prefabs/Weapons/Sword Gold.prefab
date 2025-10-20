@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4945253266830661784}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Rotation Axis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,12 +42,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1436908791190693265}
   - component: {fileID: 5909586936510528074}
-  - component: {fileID: 1164337936940688547}
   - component: {fileID: 3318412059549177692}
   - component: {fileID: 8018842745396997835}
   - component: {fileID: -678336079213602819}
   - component: {fileID: -3509163322363152090}
-  m_Layer: 10
+  - component: {fileID: 1022145466898061325}
+  m_Layer: 11
   m_Name: Sword Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,23 +92,9 @@ MonoBehaviour:
   SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
+  AutoObjectParentSync: 0
+  SyncOwnerTransformWhenParented: 0
   AllowOwnerToParent: 0
---- !u!114 &1164337936940688547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6234453661874173842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  abilityStats: {fileID: 11400000, guid: 08cd7e3087a00ca48861481edab482f7, type: 2}
 --- !u!114 &3318412059549177692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   itemStats: {fileID: 11400000, guid: 1f07285f3096f4a4799786c619037abc, type: 2}
 --- !u!54 &8018842745396997835
 Rigidbody:
@@ -129,10 +116,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6234453661874173842}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -212,6 +199,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &1022145466898061325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234453661874173842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054a365acb0e455ca7747a46d19dad31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
+  meshRenderers: []
 --- !u!1001 &2110312031531411888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,15 +222,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1198020945419507846, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2225571782661807411, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2261139034365424911, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4083115748105137250, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
       propertyPath: m_Name
@@ -238,19 +238,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4083115748105137250, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4917177640573630393, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7065555875422073106, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7771476957195176133, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7936494138625967313, guid: a7011c219d3976143b1b56c58b09ecff, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1095,8 +1095,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 0
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 1
+  SyncOwnerTransformWhenParented: 0
+  AllowOwnerToParent: 0
 --- !u!114 &6867379200517847713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1184,9 +1184,9 @@ MonoBehaviour:
   SyncRotAngleX: 1
   SyncRotAngleY: 1
   SyncRotAngleZ: 1
-  SyncScaleX: 0
-  SyncScaleY: 0
-  SyncScaleZ: 0
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01

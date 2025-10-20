@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 673975752129001860}
   - component: {fileID: -8327244620673035378}
   - component: {fileID: -2213304790679688160}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Staff Bronze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,10 +98,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3043667987772731124}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -187,6 +187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_staff_b_wraps_2
       objectReference: {fileID: 0}
+    - target: {fileID: 7972321540280886673, guid: ccb37c73bb5e971449dd73b1f1be0ceb, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -248,6 +252,10 @@ PrefabInstance:
     - target: {fileID: 8848827492805257667, guid: 589cec7fb233fae458c336cb6a24b401, type: 3}
       propertyPath: m_Name
       value: m_staff_b_guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848827492805257667, guid: 589cec7fb233fae458c336cb6a24b401, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -311,6 +319,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_staff_b_wraps_4
       objectReference: {fileID: 0}
+    - target: {fileID: 8296396153863977248, guid: 53d16927480bb26479e22269079667ac, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -373,6 +385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_staff_b_wraps_1
       objectReference: {fileID: 0}
+    - target: {fileID: 9180030880605249900, guid: d19a62399f7ff9a4285b6599325678c9, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -394,6 +410,10 @@ PrefabInstance:
     - target: {fileID: 4763139533469698696, guid: 6d636466b7231b34a929e94f2dcbde07, type: 3}
       propertyPath: m_Name
       value: m_staff_b_wraps_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763139533469698696, guid: 6d636466b7231b34a929e94f2dcbde07, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9091936026671047704, guid: 6d636466b7231b34a929e94f2dcbde07, type: 3}
       propertyPath: m_LocalPosition.x
@@ -456,6 +476,10 @@ PrefabInstance:
     - target: {fileID: 1896313697738454267, guid: 1a42b8525e6a2264d8bd6d1af9439d97, type: 3}
       propertyPath: m_Name
       value: m_staff_b_head_holder_1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896313697738454267, guid: 1a42b8525e6a2264d8bd6d1af9439d97, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9051791518328262676, guid: 1a42b8525e6a2264d8bd6d1af9439d97, type: 3}
       propertyPath: m_LocalScale.y
@@ -522,6 +546,10 @@ PrefabInstance:
     - target: {fileID: 3931234946267279584, guid: e6bdfde37fdaa4147a92edfd47f164bc, type: 3}
       propertyPath: m_Name
       value: m_staff_b_head_orb
+      objectReference: {fileID: 0}
+    - target: {fileID: 3931234946267279584, guid: e6bdfde37fdaa4147a92edfd47f164bc, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8195874471610045538, guid: e6bdfde37fdaa4147a92edfd47f164bc, type: 3}
       propertyPath: m_LocalScale.x
@@ -649,6 +677,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_staff_b_guard (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8848827492805257667, guid: 589cec7fb233fae458c336cb6a24b401, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -670,6 +702,10 @@ PrefabInstance:
     - target: {fileID: 4139773242969263175, guid: 5d4d7a87c62dbbf45836d15607abbcae, type: 3}
       propertyPath: m_Name
       value: m_staff_b_hilt
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139773242969263175, guid: 5d4d7a87c62dbbf45836d15607abbcae, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4325298957788477229, guid: 5d4d7a87c62dbbf45836d15607abbcae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -781,6 +817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: m_staff_b_guard (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8848827492805257667, guid: 589cec7fb233fae458c336cb6a24b401, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -802,6 +842,10 @@ PrefabInstance:
     - target: {fileID: 1896313697738454267, guid: 1a42b8525e6a2264d8bd6d1af9439d97, type: 3}
       propertyPath: m_Name
       value: m_staff_b_head_holder_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896313697738454267, guid: 1a42b8525e6a2264d8bd6d1af9439d97, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9051791518328262676, guid: 1a42b8525e6a2264d8bd6d1af9439d97, type: 3}
       propertyPath: m_LocalScale.y

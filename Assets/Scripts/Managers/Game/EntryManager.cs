@@ -48,7 +48,7 @@ namespace Managers.Game
         }
         private void OnDisable()
         {
-            if (!NetworkManager) return;
+            if (!NetworkManager || NetworkManager.SceneManager == null) return;
             
             NetworkManager.SceneManager.OnLoadEventCompleted += StartGame;
             NetworkManager.SceneManager.OnLoadComplete += OnLocalLoaded;

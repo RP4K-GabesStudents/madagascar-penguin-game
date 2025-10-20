@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6159281728721702201}
   - component: {fileID: 6457358767466101596}
-  - component: {fileID: 1106465253040169026}
   - component: {fileID: 6963936859743959546}
-  - component: {fileID: 4306713623679435206}
+  - component: {fileID: 1106465253040169026}
   - component: {fileID: 2069501394774995352}
   - component: {fileID: -6382905699519082545}
-  m_Layer: 10
+  - component: {fileID: 3754288612178288645}
+  m_Layer: 11
   m_Name: Spear Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,10 +45,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61662243074130738}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -65,19 +65,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1106465253040169026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61662243074130738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemStats: {fileID: 11400000, guid: f1a1091367c50874184e76cad676ba2f, type: 2}
 --- !u!114 &6963936859743959546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,10 +87,10 @@ MonoBehaviour:
   SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
+  AutoObjectParentSync: 0
+  SyncOwnerTransformWhenParented: 0
   AllowOwnerToParent: 0
---- !u!114 &4306713623679435206
+--- !u!114 &1106465253040169026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,11 +99,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 61662243074130738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4ba9f3c4e9b774c8f2fa89ee5614fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  abilityStats: {fileID: 11400000, guid: 38429bbe992d9a042821e9f216894fe6, type: 2}
+  itemStats: {fileID: 11400000, guid: f1a1091367c50874184e76cad676ba2f, type: 2}
 --- !u!114 &2069501394774995352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +167,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &3754288612178288645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61662243074130738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054a365acb0e455ca7747a46d19dad31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
+  meshRenderers: []
 --- !u!1 &7654621084517412852
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5786069865318434884}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Rotation Axis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4535944438286298329, guid: 35be2f0bb767100498aee2bb89bfe1f8, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -311,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4934897659585062313, guid: b1fa46b4b7af30a449ef89e0cdcb834f, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8949338596401775107, guid: b1fa46b4b7af30a449ef89e0cdcb834f, type: 3}
       propertyPath: m_LocalScale.x
@@ -441,7 +441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4996180758706718132, guid: 0031fd79dd1ef6b46b9f40e2daf875de, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -467,7 +467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7340856433407693319, guid: 585314ae27916134e86fc78267724d02, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8818368107143159524, guid: 585314ae27916134e86fc78267724d02, type: 3}
       propertyPath: m_LocalScale.x
@@ -585,7 +585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7379112560233095859, guid: 16f4d482fc1dd0847a029ec6b218d454, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8109749758750436149, guid: 16f4d482fc1dd0847a029ec6b218d454, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -667,7 +667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6074729928557249928, guid: 344f43922db1a03458c5e81a884477e2, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -745,7 +745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8852154628477333103, guid: 373be69603eb67944b90141c0c9b4cad, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -771,7 +771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209080234424625758, guid: 74e65d50994ff634e92a6214ba24185e, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8807669837651478618, guid: 74e65d50994ff634e92a6214ba24185e, type: 3}
       propertyPath: m_LocalScale.z

@@ -1,4 +1,6 @@
+using System;
 using Game.InventorySystem;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utilities;
@@ -15,7 +17,16 @@ namespace Game.Characters.CapabilitySystem.Capabilities
         private Inventory _inventory;
         [SerializeField] private Transform parent;
         [SerializeField] private HotBar hotBarPrefab; //fill this out later 10/08/25
+        private NetworkObject rootParent;
         
+        public Transform Parent => parent;
+
+
+        private void Awake()
+        {
+            rootParent = transform.root.GetComponent<NetworkObject>();
+        }
+
         #region Controls
 
         public void BindControls(GameControls controls)
@@ -117,8 +128,10 @@ namespace Game.Characters.CapabilitySystem.Capabilities
                 return;
             }
 
+
             //Attach the item to our mouth, place it in the correct spot... When can we NOT pick an object?
-            item.transform.SetParent(parent, false);
+            item.AttachTo(rootParent, true, true, false);
+            
             if (Settings.GamePlaySettings.autoEquip)
             {
                 _hotBar.UpdateScrollIndex(index);

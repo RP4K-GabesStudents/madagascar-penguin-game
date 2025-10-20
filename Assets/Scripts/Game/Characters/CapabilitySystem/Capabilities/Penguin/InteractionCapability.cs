@@ -56,7 +56,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 
         private void CheckForInteractable()
         {
-
+            //We should really allow the use of the camera.
             Vector3 origin = _owner.Head.position;
             Vector3 direction = _owner.Head.forward;
 

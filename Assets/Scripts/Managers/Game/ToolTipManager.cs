@@ -1,8 +1,6 @@
-using System;
 using Scriptable_Objects;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Managers
 {
@@ -27,19 +25,28 @@ namespace Managers
 
         public void ShowToolTip(HoverInfoStats stats)
         {
+            
             _currentHoverInfo = stats;
-            //canvas.enabled = true;
-            enabled = stats;
+            
+            if (!stats)
+            {
+                HideToolTip();
+                return;
+            }
+            
+            canvas.enabled = true;
+            enabled = _currentHoverInfo.StringNeedsFormatting(out string s);
+            toolTipText.text = s;
         }
         private void LateUpdate()
         {
+            //VERY EXPENSIVE FUNCTION, JUST TO MAKE IT RAINBOW.
             toolTipText.text = _currentHoverInfo.GetFormattedString();
         }
         public void HideToolTip()
         {
             enabled = false;
-            //canvas.enabled = false;
-            toolTipText.text = string.Empty;
+            canvas.enabled = false;
         }
     }
 }

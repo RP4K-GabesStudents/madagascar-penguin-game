@@ -18,6 +18,12 @@ namespace Scriptable_Objects
             return str;
         }
 
+        public bool StringNeedsFormatting(out string formatted)
+        {
+            formatted = hoverInfoName.Replace("{input}", "<color=#" + ColorUtility.ToHtmlStringRGB(ColourManager.CurColour) + ">[" + Input + "]</color>");
+            return formatted != hoverInfoName;
+        }
+
         public void RecompileString()
         {
             if (reference == null) return;

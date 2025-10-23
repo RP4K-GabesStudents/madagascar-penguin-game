@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Game.Characters.Stats;
-using Interfaces;
+using Game.Objects;
 using Managers;
 using Unity.Netcode;
 using UnityEngine;

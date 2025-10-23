@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5780963407852368393}
   - component: {fileID: -4876167780371584378}
   - component: {fileID: 1691300903725891851}
+  - component: {fileID: 3492791159979514299}
   m_Layer: 11
   m_Name: Torch Gold
   m_TagString: Untagged
@@ -130,6 +131,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &3492791159979514299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6992416994274839239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9040f9f4d3328f4a9a818f185410d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.CollisionDamager
+  collisionDamagerStats: {fileID: 11400000, guid: 9c3f1a0e73b08da42b557d0a820f518c, type: 2}
 --- !u!1001 &308002750186062094
 PrefabInstance:
   m_ObjectHideFlags: 0

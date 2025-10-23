@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -658468580258518873}
   - component: {fileID: 1015688082443792903}
   - component: {fileID: 5593997171770977425}
+  - component: {fileID: 4176441390186333870}
   m_Layer: 11
   m_Name: Spear Cobalt
   m_TagString: Untagged
@@ -180,6 +181,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
   meshRenderers: []
+--- !u!114 &4176441390186333870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684179831928846658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9040f9f4d3328f4a9a818f185410d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.CollisionDamager
+  collisionDamagerStats: {fileID: 11400000, guid: 9c3f1a0e73b08da42b557d0a820f518c, type: 2}
 --- !u!1 &4771485023196886467
 GameObject:
   m_ObjectHideFlags: 0

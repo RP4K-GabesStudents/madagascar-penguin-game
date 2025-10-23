@@ -1,6 +1,6 @@
 using Detection;
 using Game.Characters.CapabilitySystem.Capabilities.AI.Detection;
-using Interfaces;
+using Game.Objects;
 using Managers;
 using Unity.Netcode;
 using UnityEngine;

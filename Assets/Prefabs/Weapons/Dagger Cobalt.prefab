@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: -1512980399921887482}
   - component: {fileID: -1058523651849343724}
   - component: {fileID: 2381859933538288049}
+  - component: {fileID: 2245118044948056438}
   m_Layer: 11
   m_Name: Dagger Cobalt
   m_TagString: Untagged
@@ -275,6 +276,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
   meshRenderers: []
+--- !u!114 &2245118044948056438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080106881351413084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9040f9f4d3328f4a9a818f185410d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.CollisionDamager
+  collisionDamagerStats: {fileID: 11400000, guid: 9c3f1a0e73b08da42b557d0a820f518c, type: 2}
 --- !u!1001 &599274949432236373
 PrefabInstance:
   m_ObjectHideFlags: 0

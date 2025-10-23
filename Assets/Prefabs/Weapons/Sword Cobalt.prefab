@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 1441976298692327569}
   - component: {fileID: -1305539869135450789}
   - component: {fileID: 3238323654991265536}
+  - component: {fileID: -746519010547618008}
   m_Layer: 11
   m_Name: Sword Cobalt
   m_TagString: Untagged
@@ -221,6 +222,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
   meshRenderers: []
+--- !u!114 &-746519010547618008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247142655523718202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9040f9f4d3328f4a9a818f185410d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.CollisionDamager
+  collisionDamagerStats: {fileID: 11400000, guid: 9c3f1a0e73b08da42b557d0a820f518c, type: 2}
 --- !u!1001 &620095027898644169
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -7287857946714479105}
   - component: {fileID: 1443062099417208122}
   - component: {fileID: 4014967663694716213}
+  - component: {fileID: -5354767367357037495}
   m_Layer: 11
   m_Name: Sword Bronze
   m_TagString: Untagged
@@ -180,6 +181,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
   meshRenderers: []
+--- !u!114 &-5354767367357037495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2579503249034360556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9040f9f4d3328f4a9a818f185410d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.CollisionDamager
+  collisionDamagerStats: {fileID: 11400000, guid: 9c3f1a0e73b08da42b557d0a820f518c, type: 2}
 --- !u!1 &6255830642900460521
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4692081528738355619}
   - component: {fileID: -6257534919897430416}
   - component: {fileID: 4677893104581689353}
+  - component: {fileID: -2510055390997666192}
   m_Layer: 11
   m_Name: Staff Gold
   m_TagString: Untagged
@@ -131,6 +132,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &-2510055390997666192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556344686512208408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9040f9f4d3328f4a9a818f185410d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.CollisionDamager
+  collisionDamagerStats: {fileID: 11400000, guid: 9c3f1a0e73b08da42b557d0a820f518c, type: 2}
 --- !u!1001 &324066780974883352
 PrefabInstance:
   m_ObjectHideFlags: 0

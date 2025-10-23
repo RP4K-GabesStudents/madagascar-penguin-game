@@ -1,4 +1,4 @@
-using Interfaces;
+using Game.Objects;
 using Scriptable_Objects;
 using UnityEngine;
 

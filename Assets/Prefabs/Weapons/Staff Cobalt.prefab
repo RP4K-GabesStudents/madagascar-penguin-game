@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8431946532748260107}
   - component: {fileID: -8835017889516924816}
   - component: {fileID: 8919743578745055990}
+  - component: {fileID: -4406611591640539202}
   m_Layer: 11
   m_Name: Staff Cobalt
   m_TagString: Untagged
@@ -131,6 +132,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &-4406611591640539202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2941292733778045815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9040f9f4d3328f4a9a818f185410d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.CollisionDamager
+  collisionDamagerStats: {fileID: 11400000, guid: 9c3f1a0e73b08da42b557d0a820f518c, type: 2}
 --- !u!1001 &2731818233612289501
 PrefabInstance:
   m_ObjectHideFlags: 0

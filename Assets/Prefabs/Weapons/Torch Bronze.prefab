@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 292696828098384044}
   - component: {fileID: -6631073896931438055}
   - component: {fileID: -1741083696698679347}
+  - component: {fileID: 5145619754435923893}
   m_Layer: 11
   m_Name: Torch Bronze
   m_TagString: Untagged
@@ -185,6 +186,19 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &5145619754435923893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067465960413162416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9040f9f4d3328f4a9a818f185410d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.CollisionDamager
+  collisionDamagerStats: {fileID: 11400000, guid: 9c3f1a0e73b08da42b557d0a820f518c, type: 2}
 --- !u!1001 &2419775888805194669
 PrefabInstance:
   m_ObjectHideFlags: 0

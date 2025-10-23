@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: -1511372387283761859}
   - component: {fileID: 8553033878104478680}
   - component: {fileID: 3838522980344653640}
+  - component: {fileID: -5710354260238804575}
   m_Layer: 11
   m_Name: Axe Bronze
   m_TagString: Untagged
@@ -216,6 +217,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
   meshRenderers: []
+--- !u!114 &-5710354260238804575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928946474527391934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9040f9f4d3328f4a9a818f185410d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.CollisionDamager
+  collisionDamagerStats: {fileID: 11400000, guid: 9c3f1a0e73b08da42b557d0a820f518c, type: 2}
 --- !u!1001 &816993041661780185
 PrefabInstance:
   m_ObjectHideFlags: 0

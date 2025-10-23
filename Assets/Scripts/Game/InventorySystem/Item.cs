@@ -2,6 +2,7 @@ using System.Collections;
 using Game.Characters.CapabilitySystem.Capabilities;
 using Game.Characters.World;
 using Game.Objects;
+using Managers;
 using Scriptable_Objects;
 using Unity.Netcode;
 using UnityEngine;
@@ -15,12 +16,14 @@ namespace Game.InventorySystem
         public ItemStats ItemStats => itemStats;
         protected GenericCharacter _oner;
         protected Highlight _highlight;
+        private static int _excludedLayer;
 
         private Rigidbody _rb;
 
         protected virtual void Awake()
         {
-            _highlight =  GetComponent<Highlight>();
+            _excludedLayer = LayerMask.NameToLayer("Player");
+            _highlight = GetComponent<Highlight>();
             _rb =  GetComponent<Rigidbody>();
         }
 
@@ -39,9 +42,10 @@ namespace Game.InventorySystem
         private void Interact_ServerRpc(ServerRpcParams id = default)
         {
             Hide_ClientRpc();
+            ExcludePlayer_ClientRpc(StaticUtilities.PlayerLayer);
             ulong user = id.Receive.SenderClientId;
             NetworkObject.ChangeOwnership(user);
-            _rb.isKinematic = true;
+            _rb.useGravity = false;
 
         }
 
@@ -56,6 +60,12 @@ namespace Game.InventorySystem
         public void Show_ClientRpc()
         {
             gameObject.SetActive(true);
+        }
+
+        [ClientRpc]
+        private void ExcludePlayer_ClientRpc(int layer)
+        {
+            _rb.excludeLayers = layer;
         }
 
         public HoverInfoStats GetHoverInfoStats() => itemStats;
@@ -92,11 +102,13 @@ namespace Game.InventorySystem
         public void StartUsing()
         {
             Debug.Log("ITEM: StartUsing", gameObject);
+            
         }
 
         public void StopUsing()
         {
             Debug.Log("ITEM: StopUsing", gameObject);
+            
         }
 
         public void AttachTo(NetworkObject parent,  bool resetPos = true, bool resetRot = true, bool resetScale = false)

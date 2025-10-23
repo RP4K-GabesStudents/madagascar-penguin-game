@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 6823207419942884438}
   - component: {fileID: 8139237201888929410}
   - component: {fileID: 3767999776139804621}
+  - component: {fileID: -3282050487464217204}
   m_Layer: 11
   m_Name: Axe Cobalt
   m_TagString: Untagged
@@ -217,6 +218,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.Highlight
   meshRenderers: []
+--- !u!114 &-3282050487464217204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411099522968000106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9040f9f4d3328f4a9a818f185410d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.CollisionDamager
+  collisionDamagerStats: {fileID: 11400000, guid: 9c3f1a0e73b08da42b557d0a820f518c, type: 2}
 --- !u!1001 &546067952134547386
 PrefabInstance:
   m_ObjectHideFlags: 0

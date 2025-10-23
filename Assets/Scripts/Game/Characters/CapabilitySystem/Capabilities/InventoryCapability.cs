@@ -51,8 +51,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             _reference.Player.HotBarSlot4.performed += SelectSlotFour;
             _reference.Player.HotBarSlot5.performed += SelectSlotFive;
 
-            Debug.LogError("Gabe do dropping >:)");
-            Debug.LogError("Gabe Try figure out, HOW DO WE GET THE HOTBAR TO BE NOT NULL... If you do wanna try, you need to CREATE THE HOTBAR ITEM SLOTS from the code... You need to make a loop");
+            Debug.LogError("Austin do dropping >:)");
         }
         private void Unsubscribe()
         {

@@ -139,7 +139,35 @@ namespace Game.InventorySystem
             else if (resetPos) transform.localPosition = Vector3.zero;
             else if (resetRot) transform.localRotation = Quaternion.identity;
         }
-        
+
+        public void Drop()
+        {
+            Debug.Log("ITEM: Drop");
+            Drop_ServerRpc();
+        }
+
+        [ServerRpc]
+        public void Drop_ServerRpc()
+        {
+            Debug.Log("ITEM: Drop server");
+            Vector3 forward = transform.parent.forward;
+            Drop_ClientRpc();
+            
+            transform.parent = null;
+            _rb.useGravity = true;
+            _rb.constraints = RigidbodyConstraints.None;
+            _rb.AddForce(forward * Random.Range(0, 3), ForceMode.Impulse);
+            _rb.AddTorque(Random.insideUnitSphere * 10, ForceMode.Impulse);
+            
+            Debug.DrawRay(transform.position, forward * 10, Color.red);
+        }
+
+        [ClientRpc]
+        public void Drop_ClientRpc()
+        {
+            Debug.Log("ITEM: Drop Client");
+            transform.parent = null;
+        }
     }
     
 }

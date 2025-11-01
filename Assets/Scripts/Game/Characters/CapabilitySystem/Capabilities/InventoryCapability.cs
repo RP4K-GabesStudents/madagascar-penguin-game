@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks.Triggers;
 using Game.InventorySystem;
 using Unity.Netcode;
 using UnityEngine;
@@ -50,6 +51,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             _reference.Player.HotBarSlot3.performed += SelectSlotThree;
             _reference.Player.HotBarSlot4.performed += SelectSlotFour;
             _reference.Player.HotBarSlot5.performed += SelectSlotFive;
+            _reference.Player.Drop.performed += DropCurrentItem;
 
             Debug.LogError("Austin do dropping >:). I tried");
         }
@@ -64,7 +66,14 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             _reference.Player.HotBarSlot3.performed -= SelectSlotThree;
             _reference.Player.HotBarSlot4.performed -= SelectSlotFour;
             _reference.Player.HotBarSlot5.performed -= SelectSlotFive;
+            _reference.Player.Drop.performed -= DropCurrentItem;
         }
+
+        private void DropCurrentItem(InputAction.CallbackContext obj)
+        {
+            DropItem(_hotBar.SelectedItemIndex);
+        }
+
         private void OnEnable()
         {
             Subscribe();
@@ -110,7 +119,14 @@ namespace Game.Characters.CapabilitySystem.Capabilities
         }
         private void DropItem(int slot)
         {
-            _inventory.DropItem(slot);
+            Debug.Log($"Tried Dropping item {slot}");
+            
+            if (_inventory.TryDropItem(slot, out Item item))
+            {
+                item.Drop();
+                Debug.Log("Dropped item");
+            }
+        
         }
         public void TryPickup(Item item, int stackSize = 1)
         {

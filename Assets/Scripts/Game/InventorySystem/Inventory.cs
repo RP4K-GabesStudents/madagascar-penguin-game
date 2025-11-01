@@ -1,5 +1,7 @@
 using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using Utilities.Utilities.General;
 
 namespace Game.InventorySystem
 {
@@ -8,17 +10,26 @@ namespace Game.InventorySystem
         public ItemContainer[] items = new ItemContainer[10];
         public event Action OnInventoryChanged;
         
-        public void DropItem(int slot)
+        public bool TryDropItem(int slot, out Item item)
         {
-            var item = items[slot];
-            if (item == null) return;
             
+            if (!items.IsValidIndex(slot))
+            {
+                Debug.LogError("this is a very serious problem fix immediately");
+                item = null;
+                return false;    
+            }
             
-            
-            item.SetItem(null, 0);
+            var itemSlot = items[slot];
+            item = itemSlot.CurrentItem;
+            if (item == null) return false;
+
+            itemSlot.TakeItem(1);
             //Austin fill this out... im trying man
             OnInventoryChanged?.Invoke();
             Debug.LogError("Austin do dropping >:). im trying");
+            
+            return true;
         }
 
         public int TryPickup(Item item, int stackSize = 1)

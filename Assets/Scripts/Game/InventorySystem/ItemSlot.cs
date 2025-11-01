@@ -77,6 +77,5 @@ namespace Game.InventorySystem
             _hover.Shrink();
             frame.color = Color.gray;
         }
-        
     }
 }

@@ -44,6 +44,19 @@ namespace Game.InventorySystem
             _stackSize = item.ItemStats.ItemLimit;
         }
 
+        public bool TakeItem(int amount)
+        {
+            if (_currentStackSize < amount) return false;
+            _currentStackSize -= amount;
+            if (_currentStackSize == 0)
+            {
+                _currentStackSize = 0;
+                _stackSize = 0;
+                item = null;
+            }
+            return true;
+        }
+
         public Item CurrentItem => item;
     }
 }

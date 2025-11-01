@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using Abilities;
 using Game.InventorySystem;
 using UnityEngine;
@@ -13,6 +11,7 @@ namespace Game.Items.Weapons
         private Coroutine _reFire;
         private float _curLifeTime;
         [SerializeField] protected WeaponStats abilityStats;
+        public int additionalProjectiles;
 
         private void Start()
         {

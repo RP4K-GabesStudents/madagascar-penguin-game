@@ -1,4 +1,7 @@
+using System;
 using Game.Characters.CapabilitySystem.CapabilityStats.Penguin;
+using Game.InventorySystem;
+using Game.Items.Weapons;
 using Managers.Pooling_System;
 using Unity.Netcode;
 using UnityEngine;
@@ -11,12 +14,13 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
         [SerializeField] private Transform[] eyes;
         [SerializeField] private Transform cam;
         private LaserEyeCapabilityStats _stats;
+        private InventoryCapability _inventory;
         private const float TargetDistance = 50;
         
         protected override void OnBound()
         {
             base.OnBound();
-                                           
+            _inventory = GetComponent<InventoryCapability>();                               
             _stats = genericStats as LaserEyeCapabilityStats;
             if (_stats == null) { Debug.LogAssertion($"Wrong stats assigned to object {name},expected {typeof(LaserEyeCapabilityStats)}, but retrieved {genericStats.GetType()}.", gameObject); }
         }
@@ -38,7 +42,14 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
         {
             Vector3[] locations = new Vector3[_stats.NumProjectiles];
             Quaternion[] rotations = new Quaternion[_stats.NumProjectiles];
-
+            int numprojectiles = _stats.NumProjectiles;
+            if (_inventory != null)
+            {
+                if (_inventory.CurrentSelectedItem is GenericWeapon weapon)
+                {
+                    numprojectiles += weapon.additionalProjectiles;    
+                }
+            }
             for (var index = 0; index < eyes.Length; index++)
             {
                 var trans = eyes[index];
@@ -49,7 +60,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
                 
                 Vector3 laserDir = (target - pos).normalized;
                 Quaternion laserRot = Quaternion.LookRotation(laserDir, laserDir);
-                for (int i = 0; i < _stats.NumProjectiles; ++i)
+                for (int i = 0; i < numprojectiles; ++i)
                 {
                     float ang = _stats.Inaccuracy;
                     float pitch = Random.Range(-ang, ang);

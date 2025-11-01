@@ -47,8 +47,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3694156177226678620}
-  - component: {fileID: 8999527937854708644}
   - component: {fileID: 300013510385417572}
+  - component: {fileID: 8999527937854708644}
   - component: {fileID: 891354663697634764}
   - component: {fileID: -2504259252716765807}
   - component: {fileID: -1986327323877959566}
@@ -77,20 +77,6 @@ Transform:
   - {fileID: 2667104760137195888}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8999527937854708644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730041156637935195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  itemStats: {fileID: 11400000, guid: 99f862bf439f8ae4a8e5803586e13988, type: 2}
 --- !u!114 &300013510385417572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +102,20 @@ MonoBehaviour:
   AutoObjectParentSync: 0
   SyncOwnerTransformWhenParented: 0
   AllowOwnerToParent: 0
+--- !u!114 &8999527937854708644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730041156637935195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2722d4decb3e93d478738534787a9bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  itemStats: {fileID: 11400000, guid: 99f862bf439f8ae4a8e5803586e13988, type: 2}
 --- !u!54 &891354663697634764
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,8 +1,8 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-
-namespace GabesCommonUtility.Game
+namespace Utilities
 {
     public class RagdollController : MonoBehaviour
     {
@@ -13,13 +13,17 @@ namespace GabesCommonUtility.Game
         [Header("Rigidbodies")]
         [SerializeField] private Rigidbody coreRigidbody;
         [SerializeField] private Rigidbody[] ragdollRigidbodies;
+
+        
+        [SerializeField] private Collider[] mainCollider;
+        [SerializeField] private Collider[] ragdollCollider;
         
         [Header("Behaviors")]
         [Tooltip("These behaviors will be enabled when ragdoll is active")]
-        [SerializeField] private MonoBehaviour[] enableOnRagdoll;
+        [SerializeField] private Behaviour[] enableOnRagdoll;
         
         [Tooltip("These behaviors will be disabled when ragdoll is active")]
-        [SerializeField] private MonoBehaviour[] disableOnRagdoll;
+        [SerializeField] private Behaviour[] disableOnRagdoll;
         
         private bool _isRagdolled;
         
@@ -39,6 +43,10 @@ namespace GabesCommonUtility.Game
             coreRigidbody = GetComponent<Rigidbody>();
             ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
             if (coreRigidbody != null) ragdollRigidbodies = ragdollRigidbodies.Skip(1).ToArray();
+
+            mainCollider = new[] { GetComponent<Collider>() };
+            ragdollCollider = GetComponentsInChildren<Collider>();
+            if (mainCollider != null && mainCollider[0] != null) ragdollCollider = ragdollCollider.Skip(1).ToArray();
             Debug.Log($"Gathered {ragdollRigidbodies.Length} rigidbodies for ragdoll");
         }
 
@@ -63,15 +71,25 @@ namespace GabesCommonUtility.Game
             
             
             // Enable specified behaviors
-            foreach (MonoBehaviour behaviour in enableOnRagdoll)
+            foreach (Behaviour behaviour in enableOnRagdoll)
             {
                 behaviour.enabled = enable;
             }
             
             // Disable specified behaviors
-            foreach (MonoBehaviour behaviour in disableOnRagdoll)
+            foreach (Behaviour behaviour in disableOnRagdoll)
             {
                 behaviour.enabled = !enable;
+            }
+
+            foreach (Collider col in mainCollider)
+            {
+                col.enabled = !enable;
+            }
+
+            foreach (Collider col in ragdollCollider)
+            {
+                col.enabled = enable;
             }
         }
         

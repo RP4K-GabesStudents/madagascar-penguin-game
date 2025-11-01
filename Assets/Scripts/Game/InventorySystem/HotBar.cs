@@ -47,7 +47,7 @@ namespace Game.InventorySystem
             for (int i = 0; i < itemSlots.Count; i++)
             {
                 var container = _inventory.items[i];
-                itemSlots[i].SetItem(container.currentItem?.ItemStats, container.CurrentStackSize);
+                itemSlots[i].SetItem(container.CurrentItem?.ItemStats, container.CurrentStackSize);
             }
         }
 

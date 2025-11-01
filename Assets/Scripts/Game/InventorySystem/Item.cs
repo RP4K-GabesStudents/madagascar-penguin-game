@@ -46,7 +46,7 @@ namespace Game.InventorySystem
             ulong user = id.Receive.SenderClientId;
             NetworkObject.ChangeOwnership(user);
             _rb.useGravity = false;
-
+            _rb.constraints = RigidbodyConstraints.FreezeAll;
         }
 
         [ClientRpc]
@@ -66,6 +66,7 @@ namespace Game.InventorySystem
         private void ExcludePlayer_ClientRpc(int layer)
         {
             _rb.excludeLayers = layer;
+            _rb.constraints = RigidbodyConstraints.FreezeAll;
         }
 
         public HoverInfoStats GetHoverInfoStats() => itemStats;

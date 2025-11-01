@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Game.Objects.CollisionDamagerStats
   minDamage: 3
   maxDamage: 57
-  minForce: 0
-  maxForce: 9
+  minForce: 0.2
+  maxForce: 7
   damageCurve:
     serializedVersion: 2
     m_Curve:

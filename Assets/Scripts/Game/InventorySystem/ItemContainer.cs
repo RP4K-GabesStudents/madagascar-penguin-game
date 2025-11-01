@@ -44,6 +44,6 @@ namespace Game.InventorySystem
             _stackSize = item.ItemStats.ItemLimit;
         }
 
-        public Item currentItem => item;
+        public Item CurrentItem => item;
     }
 }

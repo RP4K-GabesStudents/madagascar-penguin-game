@@ -10,7 +10,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
 {
     public class InventoryCapability : MonoBehaviour, IInputSubscriber
     {
-        public Item CurrentSelectedItem => _inventory.items[_hotBar.SelectedItemIndex].currentItem;
+        public Item CurrentSelectedItem => _inventory.items[_hotBar.SelectedItemIndex].CurrentItem;
         private GameControls _reference; // Temporary solution...
         private PlayerController _player;
         private HotBar _hotBar;
@@ -51,7 +51,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities
             _reference.Player.HotBarSlot4.performed += SelectSlotFour;
             _reference.Player.HotBarSlot5.performed += SelectSlotFive;
 
-            Debug.LogError("Austin do dropping >:)");
+            Debug.LogError("Austin do dropping >:). I tried");
         }
         private void Unsubscribe()
         {

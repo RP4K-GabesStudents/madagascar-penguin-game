@@ -6,6 +6,8 @@ namespace Game.Objects
     {
         public void TakeDamage(float damage, Vector3 force)
         {
+            Debug.Log("I have taken damage: " + damage);
+            
             damage *= 1-DamageRes;
             if (damage <= 0)
             {

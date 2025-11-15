@@ -1492,6 +1492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   genericStats: {fileID: 11400000, guid: 3bea371a6175a7b49998a820dce5d8a8, type: 2}
+  interactOrigin: {fileID: 204917448477973637}
 --- !u!114 &193335057079775093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2155,7 +2156,7 @@ MonoBehaviour:
   mainCollider:
   - {fileID: 1329153267810074606}
   ragdollCollider:
-  - {fileID: 4332087527108088719}
+  - {fileID: 0}
   - {fileID: 5861018444673500534}
   - {fileID: 3209710554799186732}
   - {fileID: 1665766070931916134}
@@ -2211,7 +2212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6983048279607023872}
   - component: {fileID: 3857294812263154852}
-  - component: {fileID: 4332087527108088719}
+  - component: {fileID: 1261975450972466892}
   m_Layer: 12
   m_Name: mixamorig:Hips
   m_TagString: Untagged
@@ -2264,8 +2265,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4332087527108088719
-BoxCollider:
+--- !u!136 &1261975450972466892
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2282,9 +2283,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.14, y: 0.3, z: 0.12}
-  m_Center: {x: 0, y: 0.16, z: 0.03}
+  serializedVersion: 2
+  m_Radius: 0.12
+  m_Height: 0.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.12, z: 0.02}
 --- !u!1 &5726046246952931857
 GameObject:
   m_ObjectHideFlags: 0

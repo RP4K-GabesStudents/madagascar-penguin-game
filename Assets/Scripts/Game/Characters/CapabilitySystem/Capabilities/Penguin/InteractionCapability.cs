@@ -4,17 +4,19 @@ using Game.InventorySystem;
 using Game.Objects;
 using Managers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 {
     public class InteractionCapability : BaseCapability, IInputSubscriber
     {
         private IInteractable _interactable;
-
+        
         private InteractionCapabilityStats _stats;
 
         private InventoryCapability _inventoryCapability;
-        
+
+        [SerializeField] private Transform interactOrigin;
         protected override void OnBound()
         {
             base.OnBound();
@@ -57,8 +59,8 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
         private void CheckForInteractable()
         {
             //We should really allow the use of the camera.
-            Vector3 origin = _owner.Head.position;
-            Vector3 direction = _owner.Head.forward;
+            Vector3 origin = interactOrigin.position;
+            Vector3 direction = interactOrigin.position;
 
             bool byPass = Physics.Raycast(origin, direction, out var byPassed, _stats.InteractionDistance, _stats.CombinedLayers);
             if (byPass)

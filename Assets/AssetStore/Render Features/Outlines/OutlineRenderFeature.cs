@@ -34,6 +34,9 @@ namespace Xenon
             public float SteepAngleThreshold = 0.2f;
             public float SteepAngleMultiplier = 25f;
             public Color OutlineColor = Color.white;
+            public float MinDist = 0;
+            public float MaxDist = 1000;
+            public float FadeRange = 5;
         }
 
         public class OutlineData : ContextItem

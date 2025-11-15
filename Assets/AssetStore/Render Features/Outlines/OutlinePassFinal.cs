@@ -22,6 +22,9 @@ namespace Xenon
         private static readonly int SteepAngleThreshold = Shader.PropertyToID("_SteepAngleThreshold");
         private static readonly int SteepAngleMultiplier = Shader.PropertyToID("_SteepAngleMultiplier");
         private static readonly int OutlineColor = Shader.PropertyToID("_OutlineColor");
+        private static readonly int MinDist = Shader.PropertyToID("_MinDist");
+        private static readonly int MaxDist = Shader.PropertyToID("_MaxDist");
+        private static readonly int FadeRange = Shader.PropertyToID("_FadeRange");
 
         private readonly Material _blitMaterial;
 
@@ -39,6 +42,9 @@ namespace Xenon
             _blitMaterial.SetFloat(NormalThreshold, outlineSettings.NormalThreshold);
             _blitMaterial.SetFloat(SteepAngleThreshold, outlineSettings.SteepAngleThreshold);
             _blitMaterial.SetFloat(SteepAngleMultiplier, outlineSettings.SteepAngleMultiplier);
+            _blitMaterial.SetFloat(MinDist, outlineSettings.MinDist);
+            _blitMaterial.SetFloat(MaxDist, outlineSettings.MaxDist);
+            _blitMaterial.SetFloat(FadeRange, outlineSettings.FadeRange);
             _blitMaterial.SetColor(OutlineColor, outlineSettings.OutlineColor);
         }
 

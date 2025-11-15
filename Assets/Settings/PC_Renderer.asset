@@ -28,12 +28,47 @@ MonoBehaviour:
     OutlineScale: 0.6
     RobertsCrossMultiplier: 100
     DepthThreshold: 10
-    NormalThreshold: 0.3
+    NormalThreshold: 0.4
     SteepAngleThreshold: 0.2
     SteepAngleMultiplier: 25
     OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     MinDist: 0
     MaxDist: 1000
+    FadeRange: 0
+--- !u!114 &-2182273141441989241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd6e526a1bb489a8df34cbfcfca6bfc, type: 3}
+  m_Name: WeaponOutlineRenderFeature
+  m_EditorClassIdentifier: Assembly-CSharp::Xenon.OutlineRenderFeature
+  m_Active: 1
+  FeatureSettings:
+    RenderPassEvent: 600
+    LayerMask:
+      serializedVersion: 2
+      m_Bits: 1024
+    RenderingLayerMask:
+      serializedVersion: 0
+      m_Bits: 4294967295
+    OverrideMaterial: {fileID: 2100000, guid: cb57ede9410f32247b38bc40d7e0486e, type: 2}
+    BlitMaterial: {fileID: 2100000, guid: ee43a77269e02c14fa12a20c996e9022, type: 2}
+    ClearDepth: 0
+  MaterialSettings:
+    OutlineScale: 0.42
+    RobertsCrossMultiplier: 100
+    DepthThreshold: 10
+    NormalThreshold: 0.4
+    SteepAngleThreshold: 0.2
+    SteepAngleMultiplier: 25
+    OutlineColor: {r: 0.709314, g: 1, b: 0, a: 1}
+    MinDist: 0
+    MaxDist: 10
     FadeRange: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -63,7 +98,8 @@ MonoBehaviour:
   - {fileID: 7833122117494664109}
   - {fileID: 5695039746906529837}
   - {fileID: -3786264512221429328}
-  m_RendererFeatureMap: ad6b866f10d7b46c2d2018e879d8084fb0c15f937c7c74cb
+  - {fileID: -2182273141441989241}
+  m_RendererFeatureMap: ad6b866f10d7b46c2d2018e879d8084fb0c15f937c7c74cb877579d92302b7e1
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}

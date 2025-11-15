@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 6897555736712051738}
   - component: {fileID: 3808887511981202367}
   - component: {fileID: 1365245281658056753}
-  - component: {fileID: 2737570244842634981}
-  - component: {fileID: 6132644557410855936}
   m_Layer: 0
   m_Name: E_shin.R
   m_TagString: Untagged
@@ -133,75 +131,6 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!144 &2737570244842634981
-CharacterJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247107633503543312}
-  serializedVersion: 3
-  m_ConnectedBody: {fileID: 0}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  m_SwingAxis: {x: 0, y: 1, z: 0}
-  m_TwistLimitSpring:
-    spring: 0
-    damper: 0
-  m_LowTwistLimit:
-    limit: -20
-    bounciness: 0
-    contactDistance: 0
-  m_HighTwistLimit:
-    limit: 70
-    bounciness: 0
-    contactDistance: 0
-  m_SwingLimitSpring:
-    spring: 0
-    damper: 0
-  m_Swing1Limit:
-    limit: 40
-    bounciness: 0
-    contactDistance: 0
-  m_Swing2Limit:
-    limit: 40
-    bounciness: 0
-    contactDistance: 0
-  m_EnableProjection: 0
-  m_ProjectionDistance: 0.1
-  m_ProjectionAngle: 180
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!136 &6132644557410855936
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247107633503543312}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &316152932645799602
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +204,6 @@ GameObject:
   - component: {fileID: 7110474564785525459}
   - component: {fileID: 8358414482779549414}
   - component: {fileID: 4208077445508902820}
-  - component: {fileID: 8410018693716511650}
   - component: {fileID: 8190909821891884047}
   m_Layer: 0
   m_Name: E_toe.L
@@ -373,29 +301,6 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &8410018693716511650
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369177574102826517}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &8190909821891884047
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1471,10 +1376,10 @@ MonoBehaviour:
   - {fileID: 6506285740588254664}
   - {fileID: 29900239600090600}
   - {fileID: 3007479466896677129}
-  - {fileID: 8410018693716511650}
+  - {fileID: 0}
   - {fileID: 8190909821891884047}
   - {fileID: 6897555736712051738}
-  - {fileID: 6132644557410855936}
+  - {fileID: 0}
   - {fileID: 6764048047932750558}
   - {fileID: 1671119796918642083}
   enableOnRagdoll: []
@@ -1525,10 +1430,10 @@ MonoBehaviour:
   - {fileID: 6506285740588254664}
   - {fileID: 29900239600090600}
   - {fileID: 3007479466896677129}
-  - {fileID: 8410018693716511650}
+  - {fileID: 0}
   - {fileID: 8190909821891884047}
   - {fileID: 6897555736712051738}
-  - {fileID: 6132644557410855936}
+  - {fileID: 0}
   - {fileID: 6764048047932750558}
   - {fileID: 1671119796918642083}
   enableOnRagdoll: []
@@ -5380,7 +5285,6 @@ GameObject:
   - component: {fileID: 29900239600090600}
   - component: {fileID: 5098624106538999176}
   - component: {fileID: 2912547471126964774}
-  - component: {fileID: 752719547259631434}
   m_Layer: 0
   m_Name: E_shin.L
   m_TagString: Untagged
@@ -5498,52 +5402,6 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!144 &752719547259631434
-CharacterJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9026213682930714816}
-  serializedVersion: 3
-  m_ConnectedBody: {fileID: 0}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  m_SwingAxis: {x: 0, y: 1, z: 0}
-  m_TwistLimitSpring:
-    spring: 0
-    damper: 0
-  m_LowTwistLimit:
-    limit: -20
-    bounciness: 0
-    contactDistance: 0
-  m_HighTwistLimit:
-    limit: 70
-    bounciness: 0
-    contactDistance: 0
-  m_SwingLimitSpring:
-    spring: 0
-    damper: 0
-  m_Swing1Limit:
-    limit: 40
-    bounciness: 0
-    contactDistance: 0
-  m_Swing2Limit:
-    limit: 40
-    bounciness: 0
-    contactDistance: 0
-  m_EnableProjection: 0
-  m_ProjectionDistance: 0.1
-  m_ProjectionAngle: 180
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!1 &9211594740179517886

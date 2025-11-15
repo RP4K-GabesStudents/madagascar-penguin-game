@@ -1495,33 +1495,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Utilities.RagdollController
   startRagdolled: 0
-  coreRigidbody: {fileID: 0}
+  coreRigidbody: {fileID: 6431177547725737021}
   ragdollRigidbodies:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4059532765999724962}
+  - {fileID: 6337264516371270088}
   - {fileID: 2558069912040214499}
   - {fileID: 8569324837430476941}
   - {fileID: 433253528889981249}
   - {fileID: 7367371829925554363}
   - {fileID: 4522462513022051312}
+  - {fileID: 5865548656446679904}
   - {fileID: 8404070668009681491}
   - {fileID: 5098624106538999176}
-  - {fileID: 0}
+  - {fileID: 7504147958302412010}
+  - {fileID: 8358414482779549414}
   - {fileID: 3808887511981202367}
+  - {fileID: 3254876614361429511}
+  - {fileID: 1113221390023325203}
   mainCollider:
-  - {fileID: 0}
+  - {fileID: 5018693529652875774}
   ragdollCollider:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8082014606467313173}
   - {fileID: 3311362517906601223}
   - {fileID: 775445180650476388}
   - {fileID: 3728978433873526130}
   - {fileID: 4547564566700963506}
   - {fileID: 961842110975568941}
-  - {fileID: 0}
+  - {fileID: 3268668157236326735}
+  - {fileID: 6506285740588254664}
   - {fileID: 29900239600090600}
-  - {fileID: 0}
+  - {fileID: 3007479466896677129}
+  - {fileID: 8410018693716511650}
+  - {fileID: 8190909821891884047}
   - {fileID: 6897555736712051738}
+  - {fileID: 6132644557410855936}
+  - {fileID: 6764048047932750558}
+  - {fileID: 1671119796918642083}
   enableOnRagdoll: []
   disableOnRagdoll:
   - {fileID: 2260318700851143159}

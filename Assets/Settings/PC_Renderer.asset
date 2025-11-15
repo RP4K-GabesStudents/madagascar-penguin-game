@@ -17,7 +17,7 @@ MonoBehaviour:
     RenderPassEvent: 600
     LayerMask:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 2147491831
     RenderingLayerMask:
       serializedVersion: 0
       m_Bits: 4294967295
@@ -47,12 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd6e526a1bb489a8df34cbfcfca6bfc, type: 3}
   m_Name: WeaponOutlineRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::Xenon.OutlineRenderFeature
-  m_Active: 1
+  m_Active: 0
   FeatureSettings:
     RenderPassEvent: 600
     LayerMask:
       serializedVersion: 2
-      m_Bits: 1024
+      m_Bits: 3072
     RenderingLayerMask:
       serializedVersion: 0
       m_Bits: 4294967295
@@ -66,7 +66,7 @@ MonoBehaviour:
     NormalThreshold: 0.4
     SteepAngleThreshold: 0.2
     SteepAngleMultiplier: 25
-    OutlineColor: {r: 0.709314, g: 1, b: 0, a: 1}
+    OutlineColor: {r: 0.3137255, g: 1, b: 0.28235295, a: 1}
     MinDist: 0
     MaxDist: 10
     FadeRange: 0
@@ -99,7 +99,8 @@ MonoBehaviour:
   - {fileID: 5695039746906529837}
   - {fileID: -3786264512221429328}
   - {fileID: -2182273141441989241}
-  m_RendererFeatureMap: ad6b866f10d7b46c2d2018e879d8084fb0c15f937c7c74cb877579d92302b7e1
+  - {fileID: 4655622770436561076}
+  m_RendererFeatureMap: ad6b866f10d7b46c2d2018e879d8084fb0c15f937c7c74cb877579d92302b7e1b45817403e189c40
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -128,6 +129,41 @@ MonoBehaviour:
   m_DepthTextureFormat: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 0
+--- !u!114 &4655622770436561076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd6e526a1bb489a8df34cbfcfca6bfc, type: 3}
+  m_Name: PenguinOutlineRenderFeature
+  m_EditorClassIdentifier: Assembly-CSharp::Xenon.OutlineRenderFeature
+  m_Active: 1
+  FeatureSettings:
+    RenderPassEvent: 500
+    LayerMask:
+      serializedVersion: 2
+      m_Bits: 8
+    RenderingLayerMask:
+      serializedVersion: 0
+      m_Bits: 1
+    OverrideMaterial: {fileID: 2100000, guid: 89ada25931cf34a4598bfb8bfbd236ec, type: 2}
+    BlitMaterial: {fileID: 2100000, guid: 79a400239ede1e148a38c61307f36c5e, type: 2}
+    ClearDepth: 0
+  MaterialSettings:
+    OutlineScale: 1
+    RobertsCrossMultiplier: 100
+    DepthThreshold: 4
+    NormalThreshold: 1
+    SteepAngleThreshold: 0.2
+    SteepAngleMultiplier: 25
+    OutlineColor: {r: 1, g: 1, b: 1, a: 0.2784314}
+    MinDist: 0
+    MaxDist: 1000
+    FadeRange: 5
 --- !u!114 &5695039746906529837
 MonoBehaviour:
   m_ObjectHideFlags: 0

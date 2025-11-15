@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: S_ScreenWeapons
-  m_Shader: {fileID: -6465566751694194690, guid: 6c897a44b62e6d84e9b0f6d5238a158e, type: 3}
+  m_Name: S_ViewPenguins
+  m_Shader: {fileID: -6465566751694194690, guid: 4f3bc6b888d3080448e0c3bb6fc9deb0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -18,7 +18,8 @@ Material:
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -37,16 +38,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DepthThreshold: 10
-    - _FadeRange: 0
-    - _MaxDist: 10
-    - _MinDist: 0
-    - _NormalThreshold: 0.4
-    - _OutlineScale: 0.42
-    - _RobertsCrossMultiplier: 100
-    - _SteepAngleMultiplier: 25
-    - _SteepAngleThreshold: 0.2
-    m_Colors:
-    - _OutlineColor: {r: 0.3137255, g: 1, b: 0.28235295, a: 1}
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+--- !u!114 &5853375521064080002
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10

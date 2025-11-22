@@ -836,7 +836,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056678679654405874}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1376,10 +1376,8 @@ MonoBehaviour:
   - {fileID: 6506285740588254664}
   - {fileID: 29900239600090600}
   - {fileID: 3007479466896677129}
-  - {fileID: 0}
   - {fileID: 8190909821891884047}
   - {fileID: 6897555736712051738}
-  - {fileID: 0}
   - {fileID: 6764048047932750558}
   - {fileID: 1671119796918642083}
   enableOnRagdoll: []
@@ -1561,7 +1559,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2641765694364189601}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1578,7 +1576,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f811371fcccce3d48b4021c3c6fde835, type: 2}
+  - {fileID: 2100000, guid: 1d2900dfdfd688e4c9898e457872d97a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1641,10 +1639,10 @@ SkinnedMeshRenderer:
   - {fileID: 4661186434651770713}
   - {fileID: 5286185731166068895}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 1413279478101561784}
+  m_RootBone: {fileID: 8955466399801094243}
   m_AABB:
-    m_Center: {x: 0.0006450531, y: 0.015868064, z: 0.0064003845}
-    m_Extent: {x: 0.0018449118, y: 0.0021704333, z: 0.0028846082}
+    m_Center: {x: 0, y: 0.0044572377, z: 0.0018617951}
+    m_Extent: {x: 0.0018449118, y: 0.0018369056, z: 0.0036098484}
   m_DirtyAABB: 0
 --- !u!1 &2667847107941116118
 GameObject:
@@ -1734,7 +1732,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2694612115008730263}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1751,7 +1749,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f811371fcccce3d48b4021c3c6fde835, type: 2}
+  - {fileID: 2100000, guid: 1d2900dfdfd688e4c9898e457872d97a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2121,7 +2119,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3042493054723957053}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2282,7 +2280,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3244937247073355135}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2407,7 +2405,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3356822292152420758}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2716,7 +2714,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3901472013052197759}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2733,7 +2731,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f811371fcccce3d48b4021c3c6fde835, type: 2}
+  - {fileID: 2100000, guid: 1d2900dfdfd688e4c9898e457872d97a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2891,7 +2889,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f811371fcccce3d48b4021c3c6fde835, type: 2}
+  - {fileID: 2100000, guid: 1d2900dfdfd688e4c9898e457872d97a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3219,7 +3217,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4623331156115166713}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -3236,7 +3234,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f811371fcccce3d48b4021c3c6fde835, type: 2}
+  - {fileID: 2100000, guid: 1d2900dfdfd688e4c9898e457872d97a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4049,7 +4047,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6650322028313468005}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4400,7 +4398,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7134930430331517942}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4749,7 +4747,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7915790674275059919}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4892,7 +4890,7 @@ Transform:
   m_GameObject: {fileID: 8160863621241405306}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000045200032, y: -3.8191675e-13, z: 3.0198076e-14, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0277, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 99.999985, z: 99.999985}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4906,7 +4904,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8160863621241405306}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4920,7 +4918,7 @@ SkinnedMeshRenderer:
   m_SmallMeshCulling: 1
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9cffc9d6ae14f844c84551ab4cf3d21c, type: 2}
@@ -4986,10 +4984,10 @@ SkinnedMeshRenderer:
   - {fileID: 4661186434651770713}
   - {fileID: 5286185731166068895}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 1413279478101561784}
+  m_RootBone: {fileID: 8955466399801094243}
   m_AABB:
-    m_Center: {x: 0.0009931505, y: 0.018673657, z: 0.0065652737}
-    m_Extent: {x: 0.00092532905, y: 0.00034820475, z: 0.00038939994}
+    m_Center: {x: 0, y: 0.0049984, z: 0.00274382}
+    m_Extent: {x: 0.00092532905, y: 0.001552878, z: 0.0014487801}
   m_DirtyAABB: 0
 --- !u!1 &8166894607973176396
 GameObject:
@@ -5063,7 +5061,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8855141385384881029}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -5188,7 +5186,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8898210575738328191}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -5205,7 +5203,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f811371fcccce3d48b4021c3c6fde835, type: 2}
+  - {fileID: 2100000, guid: 1d2900dfdfd688e4c9898e457872d97a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

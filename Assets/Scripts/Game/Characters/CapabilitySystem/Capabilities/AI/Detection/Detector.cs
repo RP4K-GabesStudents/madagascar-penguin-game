@@ -72,13 +72,16 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
             //almond
             int hits = Physics.OverlapSphereNonAlloc(head.position, detectorStats.DetectRange, _colliders,
                 detectorStats.BlockingLayerMask);
+            Debug.Log("Tarets hit: " + hits);
             for (int i = 0; i < hits; i++)
             {
                 if (_detectables.ContainsKey(_colliders[i]) || !CanSeeTarget(_colliders[i].transform.position)) continue;
                 Rigidbody c = _colliders[i].attachedRigidbody;
+                Debug.Log("Detected target: " + _colliders[i].gameObject.name);
                 if (!c) continue;
                 if (c.TryGetComponent(out IDetectable detectable))
                 {
+                    Debug.Log("Detected target in collider: " + _colliders[i].gameObject.name);
                     _detectables.Add(_colliders[i], new DetectableTarget(detectable));
                 }
             }
@@ -88,6 +91,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
         {
             Vector3 forward = (targetPosition - head.position).normalized;
             bool canSee = Physics.Raycast(head.position, forward, out var hit, detectorStats.DetectRange, detectorStats.DetectLayerMask);
+            Debug.Log("can see target: " + canSee);
             return canSee && Vector3.Dot(head.forward, forward) >= detectorStats.DetectAngle;
         } 
 
@@ -100,13 +104,16 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
             
             foreach (var detectable in _detectables)
             {
+                Debug.Log("detectable name: " + detectable.Key.name);
                 DetectableTarget current = detectable.Value;
                 if (!CanSeeTarget(detectable.Key.transform.position))
                 {
+                    Debug.Log(CanSeeTarget(detectable.Key.transform.position));
                     current.CurTime -= dt;
                     if (current.CurTime <= 0)
                     {
                         _detectables.Remove(detectable.Key);
+                        Debug.Log("detectable: " + detectable.Key.gameObject.name);
                     }
                 }
                 else

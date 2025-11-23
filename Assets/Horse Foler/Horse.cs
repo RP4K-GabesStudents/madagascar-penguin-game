@@ -5,6 +5,7 @@ using Managers;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
+using Utilities;
 
 namespace Horse_Foler
 {
@@ -16,6 +17,7 @@ namespace Horse_Foler
         private NavMeshAgent _navMesh;
         [SerializeField] private Transform attackLocation;
         [SerializeField] private ParticleSystem gabesParticles;
+        private RagdollController _ragdollController;
         
         
         private float _distanceToTarget;
@@ -27,6 +29,7 @@ namespace Horse_Foler
 
         private void Awake()
         {
+            _ragdollController = GetComponent<RagdollController>();
             _navMesh = GetComponent<NavMeshAgent>();
             _animator = GetComponent<Animator>();
             _animator.enabled = true;
@@ -49,19 +52,20 @@ namespace Horse_Foler
         }
         private void Move()
         {
-            
             _navMesh.SetDestination(_nearestTarget.transform.position);
         }
 
         public void Die()
         {
-            _animator.enabled = false;
+            _ragdollController.SetRagdoll(true);
             Destroy(gameObject, 10f);
         }
 
         public void Die(Vector3 force)
         {
-            throw new System.NotImplementedException();
+            _ragdollController.SetRagdoll(true);
+            _ragdollController.ApplyForce(force);
+            Destroy(gameObject, 10f);
         }
 
         public void OnHurt(float amount, Vector3 force)

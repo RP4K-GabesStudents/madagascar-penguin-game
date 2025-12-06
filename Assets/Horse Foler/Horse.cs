@@ -1,4 +1,3 @@
-using Detection;
 using Game.Characters.CapabilitySystem.Capabilities.AI.Detection;
 using Game.Objects;
 using Managers;

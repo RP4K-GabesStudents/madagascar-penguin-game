@@ -25,6 +25,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _BUBBLES
   - _GLOW
   - _GRADIENT
   m_InvalidKeywords: []
@@ -53,9 +54,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BUBBLES: 0
+    - _BUBBLES: 1
     - _BlendMix: 1
-    - _BubbleCull: 0.702
+    - _BubbleCull: 0.806
     - _BubbleFactor: 8
     - _BubbleSpeed: 0
     - _FillStart: -0.001
@@ -77,8 +78,8 @@ Material:
     - _fillPercent: 1
     - _t: 1
     m_Colors:
-    - _BubbleColor: {r: 298.24136, g: 531.32074, b: 316.3446, a: 1}
-    - _BubbleScale: {r: 110.64, g: 4, b: 0, a: 0}
+    - _BubbleColor: {r: 0.018203208, g: 0.032429244, b: 0.019308142, a: 1}
+    - _BubbleScale: {r: 11.79, g: 4, b: 0, a: 0}
     - _BubbleSpeed: {r: 0.05, g: -0.2, b: 0, a: 0}
     - _Colour: {r: 0.7830189, g: 0.7311125, b: 0.121885, a: 0}
     - _ColourRippleOne: {r: 0.1124257, g: 0.09313814, b: 0.8584906, a: 0}

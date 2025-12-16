@@ -936,6 +936,31 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a147bb77575c244ab41b60fc06e4f45, type: 3}
+--- !u!1 &690603119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6587333144859577702, guid: 69edf31a96789514b85dbbb5900246b2, type: 3}
+  m_PrefabInstance: {fileID: 8036464291932992360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &690603121 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3521457918375000081, guid: 69edf31a96789514b85dbbb5900246b2, type: 3}
+  m_PrefabInstance: {fileID: 8036464291932992360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &690603123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690603119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d052d84e78cb04e8d04c96e3ede77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Potions.PotionCloud
+  tempPotionCloud: {fileID: 2100000, guid: a593ba8465943534d866f2b24f8fea55, type: 2}
+  lingeringParticles: {fileID: 892883354}
+  smokeParticles: {fileID: 690603121}
 --- !u!1 &751870988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,6 +1453,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e813ed1885a0fc74a9c42d30dd5fb8c6, type: 3}
+--- !u!198 &892883354 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5599628448549656904, guid: 69edf31a96789514b85dbbb5900246b2, type: 3}
+  m_PrefabInstance: {fileID: 8036464291932992360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1017106414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3564,7 +3594,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6587333144859577702, guid: 69edf31a96789514b85dbbb5900246b2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 690603123}
   m_SourcePrefab: {fileID: 100100000, guid: 69edf31a96789514b85dbbb5900246b2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

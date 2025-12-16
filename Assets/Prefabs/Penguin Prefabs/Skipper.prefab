@@ -1545,7 +1545,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   genericStats: {fileID: 11400000, guid: 3bea371a6175a7b49998a820dce5d8a8, type: 2}
-  interactOrigin: {fileID: 8187756646334749129}
+  interactOrigin: {fileID: 8960545574107318711}
+  interactionCamera: {fileID: 0}
+  showDebugRays: 1
 --- !u!114 &1311329519067989199
 MonoBehaviour:
   m_ObjectHideFlags: 0

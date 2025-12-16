@@ -1,10 +1,8 @@
 using Game.Characters.CapabilitySystem.CapabilityStats;
-using Game.Characters.World;
 using Game.InventorySystem;
 using Game.Objects;
 using Managers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 {
@@ -17,14 +15,45 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
         private InventoryCapability _inventoryCapability;
 
         [SerializeField] private Transform interactOrigin;
+        
+        // Camera reference - assign in inspector or will auto-find MainCamera
+        private Camera _interactionCamera;
+        
+        [SerializeField] private bool showDebugRays = true; // Toggle in inspector
+        
         protected override void OnBound()
         {
             base.OnBound();
                                            
             _stats = genericStats as InteractionCapabilityStats;
-            if (_stats == null) { Debug.LogAssertion($"Wrong stats assigned to object {name},expected {typeof(InteractionCapabilityStats)}, but retrieved {genericStats.GetType()}.", gameObject); }
+            if (_stats == null)
+            {
+                Debug.LogAssertion($"Wrong stats assigned to object {name},expected {typeof(InteractionCapabilityStats)}, but retrieved {genericStats.GetType()}.", gameObject);
+            }
 
             _inventoryCapability = GetComponent<InventoryCapability>();
+            
+            // Try to find camera if not assigned
+            if (_interactionCamera == null)
+            {
+                // Try Camera.main first
+                _interactionCamera = Camera.main;
+                
+                // If still null, try finding any camera
+                if (_interactionCamera == null)
+                {
+                    _interactionCamera = FindObjectOfType<Camera>();
+                }
+            }
+            
+            if (_interactionCamera == null)
+            {
+                Debug.LogError($"[InteractionCapability] No camera found! Please assign a camera in the inspector or tag your camera as 'MainCamera'. Object: {gameObject.name}");
+            }
+            else
+            {
+                Debug.Log($"[InteractionCapability] Using camera: {_interactionCamera.name}");
+            }
         }
         
         
@@ -58,16 +87,43 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 
         private void CheckForInteractable()
         {
-            //We should really allow the use of the camera.
-            Vector3 origin = interactOrigin.position;
-            Vector3 direction = interactOrigin.position;
+            // Try to find camera if still null
+            if (_interactionCamera == null)
+            {
+                _interactionCamera = Camera.main;
+                if (_interactionCamera == null)
+                {
+                    Debug.LogWarning("Main Camera is null in CheckForInteractable!");
+                    return;
+                }
+            }
+            
+            // Raycast from camera through screen center
+            Ray cameraRay = _interactionCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+            Vector3 origin = cameraRay.origin;
+            Vector3 direction = cameraRay.direction;
+
+            if (showDebugRays)
+            {
+                Debug.DrawRay(origin, direction * _stats.InteractionDistance, Color.cyan, 0.1f);
+            }
 
             bool byPass = Physics.Raycast(origin, direction, out var byPassed, _stats.InteractionDistance, _stats.CombinedLayers);
             if (byPass)
             {
+                if (showDebugRays)
+                {
+                    Debug.DrawLine(origin, byPassed.point, Color.yellow, 0.1f);
+                }
+                
                 bool directHit = ((1 << byPassed.collider.gameObject.layer) & _stats.InteractionLayers) != 0;
                 if (directHit)
                 {
+                    if (showDebugRays)
+                    {
+                        Debug.DrawLine(origin, byPassed.point, Color.red, 0.1f);
+                    }
+                    
                     Rigidbody rb = byPassed.rigidbody;
                     if (rb && rb.TryGetComponent(out IInteractable interactable))
                     {
@@ -80,7 +136,11 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
                     bool interactHit = Physics.SphereCast(origin, _stats.InteractionRadius, direction, out RaycastHit hitInfo, _stats.InteractionDistance, _stats.InteractionLayers);
                     if (interactHit)
                     {
-                        Debug.DrawLine(origin, hitInfo.point, Color.green, 0.1f);
+                        if (showDebugRays)
+                        {
+                            Debug.DrawLine(origin, hitInfo.point, Color.green, 0.1f);
+                        }
+                        
                         Rigidbody rb = hitInfo.rigidbody;
                         if (rb && rb.TryGetComponent(out IInteractable interactable))
                         {
@@ -99,12 +159,14 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
             _stats ??= genericStats as InteractionCapabilityStats;
             if (_stats == null) return;
             
-            _owner ??= transform.root.GetComponent<GenericCharacter>();
-            if (_owner == null) return;
+            // Get camera for gizmo visualization
+            Camera cam = Camera.main;
+            if (cam == null) return;
             
-            // GENERATED BY CHAT GPT
-            Vector3 origin = _owner.Head.position;
-            Vector3 direction = _owner.Head.forward;
+            // Use camera ray for gizmos (this only works in Scene view)
+            Ray cameraRay = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+            Vector3 origin = cameraRay.origin;
+            Vector3 direction = cameraRay.direction;
 
             // Raycast for bypass
             bool byPass = Physics.Raycast(origin, direction, out RaycastHit byPassed, _stats.InteractionDistance, _stats.CombinedLayers);

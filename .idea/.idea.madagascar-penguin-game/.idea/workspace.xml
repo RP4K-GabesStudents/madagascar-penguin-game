@@ -5,9 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbdf07ff-7e02-4436-91c3-f19a84f260b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/RagdollController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/RagdollController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/TetherObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/TetherObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/Components/Audio/Detection.Audio.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/Components/Audio/Detection.Audio.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/Components/Vision/Detection.Vision.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/Components/Vision/Detection.Vision.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/Controllers/DetectionControllerStats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/Controllers/DetectionControllerStats.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/Controllers/DetectionStatusToMesh.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/Controllers/DetectionStatusToMesh.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/Core/DetectedObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Detection/Core/DetectedObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Horse Foler/DetectorStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Horse Foler/DetectorStats.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Horse Foler/Horse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Horse Foler/Horse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/AI/Detection.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/AI/Detection/Detector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/AI/Detection/Detector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/AI/Detection/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/AI/Detection/Editor/DetectorEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/AI/Detection/Editor/DetectorEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/AI/Detection/IDetectable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/AI/Detection/IDetectable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/World/Penguin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/World/Penguin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Entities/Kroog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Entities/Kroog.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +38,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Detection/Controllers/DetectionControllerStats.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Detection/Controllers/DetectionStatusToMesh.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Detection/Core/DetectedObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Transition/PenguinSelectorStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Editor/ReverseAnimationContent.cs" root0="FORCE_HIGHLIGHTING" />

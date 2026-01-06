@@ -1,4 +1,3 @@
-using Game.Characters.CapabilitySystem.Capabilities.AI.Detection;
 using Game.Entities.EntityStats;
 using Game.Objects;
 using Unity.Netcode;
@@ -15,7 +14,7 @@ namespace Game.Entities
         [SerializeField] private GameObject kroogPrefab;
         private Rigidbody _rb;
         private NavMeshAgent _navMeshAgent;
-        private Detector _detector;
+        //private Detector _detector;
         private GameObject _nearestTarget;
 
         private void Awake()

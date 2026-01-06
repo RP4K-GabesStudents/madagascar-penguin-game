@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Detection;
+using Detection.Core;
+using UnityEngine;
 
 namespace Game.Characters.World
 {
@@ -22,9 +24,14 @@ namespace Game.Characters.World
             Penguins.Remove(this);
         }
 
-        public void OnDetected()
+        public void OnDetectedBy(MonoBehaviour detector)
         {
-            
+            Debug.Log("OnDetected", gameObject);
+        }
+
+        public void OnDetectionLost(MonoBehaviour detector)
+        {
+            Debug.Log("OnDetectionLost", gameObject);
         }
     }
 }

@@ -1,4 +1,3 @@
-using Game.Characters.CapabilitySystem.Capabilities.AI.Detection;
 using Game.Objects;
 using Managers;
 using Unity.Netcode;
@@ -22,7 +21,7 @@ namespace Horse_Foler
         private float _distanceToTarget;
         private float _nearestDistance = float.MaxValue;
         private GameObject _nearestTarget;
-        private Detector _detector;
+        //private Detector _detector;
         
         private readonly Collider[] _hits = new Collider[10];
 
@@ -51,7 +50,8 @@ namespace Horse_Foler
         }
         private void Move()
         {
-            _navMesh.SetDestination(_nearestTarget.transform.position);
+            if(_nearestTarget)
+              _navMesh.SetDestination(_nearestTarget.transform.position);
         }
 
         public void Die()

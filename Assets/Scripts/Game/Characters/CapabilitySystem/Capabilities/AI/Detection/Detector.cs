@@ -17,6 +17,10 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
         [SerializeField] private DetectorStats detectorStats;
         [SerializeField] private Transform head;
         [SerializeField] private MeshRenderer meshRenderer;
+        
+        [Header("Gizmo Settings")]
+        public DetectorGizmoSettings gizmoSettings = new DetectorGizmoSettings();
+        
         private Material _detectionMaterial;
         private Transform _target;
         private float _curDetectionTime;
@@ -46,17 +50,19 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
 
         private void OnDrawGizmos()
         {
-            if (head == null) return;
+            if (head == null || !gizmoSettings.showTargetLine) return;
             
             // Draw line to current target if detected and visible
             if (CurTargets != null && _target != null)
             {
                 bool canSee = CanSeeTarget(_target.position);
-                Gizmos.color = canSee ? new Color(0f, 1f, 0f, 0.8f) : new Color(1f, 0.5f, 0f, 0.6f); // Green if visible, orange if lost
+                Gizmos.color = canSee ? gizmoSettings.targetVisibleColor : gizmoSettings.targetLostColor;
                 Gizmos.DrawLine(head.position, _target.position);
                 
                 // Draw sphere at target
-                Gizmos.color = canSee ? new Color(0f, 1f, 0f, 0.4f) : new Color(1f, 0.5f, 0f, 0.3f);
+                Color sphereColor = canSee ? gizmoSettings.targetVisibleColor : gizmoSettings.targetLostColor;
+                sphereColor.a *= 0.5f;
+                Gizmos.color = sphereColor;
                 Gizmos.DrawSphere(_target.position, 0.5f);
             }
         }
@@ -70,47 +76,62 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
             float angleInDegrees = Mathf.Acos(detectorStats.DetectAngle) * Mathf.Rad2Deg;
 
             // 1. Draw detection range sphere (outer boundary)
-            Gizmos.color = new Color(0.3f, 0.6f, 1f, 0.15f); // Light blue, transparent
-            Gizmos.DrawWireSphere(origin, range);
+            if (gizmoSettings.showDetectionRange)
+            {
+                Gizmos.color = gizmoSettings.detectionRangeColor;
+                Gizmos.DrawWireSphere(origin, range);
+            }
 
             // 2. Draw forward direction ray
-            Gizmos.color = new Color(1f, 1f, 0f, 0.9f); // Bright yellow
-            Gizmos.DrawRay(origin, head.forward * range);
+            if (gizmoSettings.showForwardDirection)
+            {
+                Gizmos.color = gizmoSettings.forwardDirectionColor;
+                Gizmos.DrawRay(origin, head.forward * range);
+            }
 
             // 3. Draw vision cone edges
-            Gizmos.color = new Color(0f, 1f, 0.5f, 0.7f); // Cyan/green
-            
-            // Vertical cone edges (up/down)
-            Vector3 upEdge = Quaternion.Euler(angleInDegrees, 0, 0) * head.forward * range;
-            Vector3 downEdge = Quaternion.Euler(-angleInDegrees, 0, 0) * head.forward * range;
-            Gizmos.DrawRay(origin, upEdge);
-            Gizmos.DrawRay(origin, downEdge);
+            if (gizmoSettings.showVisionCone)
+            {
+                Gizmos.color = gizmoSettings.visionConeColor;
+                
+                // Vertical cone edges (up/down)
+                Vector3 upEdge = Quaternion.Euler(angleInDegrees, 0, 0) * head.forward * range;
+                Vector3 downEdge = Quaternion.Euler(-angleInDegrees, 0, 0) * head.forward * range;
+                Gizmos.DrawRay(origin, upEdge);
+                Gizmos.DrawRay(origin, downEdge);
 
-            // Horizontal cone edges (left/right)
-            Vector3 rightEdge = Quaternion.Euler(0, angleInDegrees, 0) * head.forward * range;
-            Vector3 leftEdge = Quaternion.Euler(0, -angleInDegrees, 0) * head.forward * range;
-            Gizmos.DrawRay(origin, rightEdge);
-            Gizmos.DrawRay(origin, leftEdge);
+                // Horizontal cone edges (left/right)
+                Vector3 rightEdge = Quaternion.Euler(0, angleInDegrees, 0) * head.forward * range;
+                Vector3 leftEdge = Quaternion.Euler(0, -angleInDegrees, 0) * head.forward * range;
+                Gizmos.DrawRay(origin, rightEdge);
+                Gizmos.DrawRay(origin, leftEdge);
+            }
 
             // 4. Draw diagonal cone edges for better visualization
-            Gizmos.color = new Color(0f, 1f, 0.5f, 0.4f); // Lighter cyan
-            Vector3 topRightEdge = Quaternion.Euler(angleInDegrees * 0.7f, angleInDegrees * 0.7f, 0) * head.forward * range;
-            Vector3 topLeftEdge = Quaternion.Euler(angleInDegrees * 0.7f, -angleInDegrees * 0.7f, 0) * head.forward * range;
-            Vector3 bottomRightEdge = Quaternion.Euler(-angleInDegrees * 0.7f, angleInDegrees * 0.7f, 0) * head.forward * range;
-            Vector3 bottomLeftEdge = Quaternion.Euler(-angleInDegrees * 0.7f, -angleInDegrees * 0.7f, 0) * head.forward * range;
-            
-            Gizmos.DrawRay(origin, topRightEdge);
-            Gizmos.DrawRay(origin, topLeftEdge);
-            Gizmos.DrawRay(origin, bottomRightEdge);
-            Gizmos.DrawRay(origin, bottomLeftEdge);
+            if (gizmoSettings.showDiagonalEdges)
+            {
+                Gizmos.color = gizmoSettings.visionConeDiagonalColor;
+                Vector3 topRightEdge = Quaternion.Euler(angleInDegrees * 0.7f, angleInDegrees * 0.7f, 0) * head.forward * range;
+                Vector3 topLeftEdge = Quaternion.Euler(angleInDegrees * 0.7f, -angleInDegrees * 0.7f, 0) * head.forward * range;
+                Vector3 bottomRightEdge = Quaternion.Euler(-angleInDegrees * 0.7f, angleInDegrees * 0.7f, 0) * head.forward * range;
+                Vector3 bottomLeftEdge = Quaternion.Euler(-angleInDegrees * 0.7f, -angleInDegrees * 0.7f, 0) * head.forward * range;
+                
+                Gizmos.DrawRay(origin, topRightEdge);
+                Gizmos.DrawRay(origin, topLeftEdge);
+                Gizmos.DrawRay(origin, bottomRightEdge);
+                Gizmos.DrawRay(origin, bottomLeftEdge);
+            }
 
             // 5. Draw cone arc circles at intervals
-            DrawConeArc(origin, head.forward, head.up, angleInDegrees, range * 0.33f, new Color(0f, 1f, 0.5f, 0.3f));
-            DrawConeArc(origin, head.forward, head.up, angleInDegrees, range * 0.66f, new Color(0f, 1f, 0.5f, 0.3f));
-            DrawConeArc(origin, head.forward, head.up, angleInDegrees, range, new Color(0f, 1f, 0.5f, 0.5f));
+            if (gizmoSettings.showConeArcs)
+            {
+                DrawConeArc(origin, head.forward, head.up, angleInDegrees, range * 0.33f, gizmoSettings.coneArcNearColor);
+                DrawConeArc(origin, head.forward, head.up, angleInDegrees, range * 0.66f, gizmoSettings.coneArcMidColor);
+                DrawConeArc(origin, head.forward, head.up, angleInDegrees, range, gizmoSettings.coneArcFarColor);
+            }
 
             // 6. Show raycast results to potential targets
-            if (Application.isPlaying)
+            if (gizmoSettings.showDetectables && Application.isPlaying)
             {
                 foreach (var detectable in _detectables)
                 {
@@ -118,39 +139,47 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
                     bool canSee = CanSeeTarget(targetPos);
                     float detectionProgress = detectable.Value.CurTime / detectorStats.DetectionTime;
                     
-                    // Color based on detection progress: white -> yellow -> red
+                    // Color based on detection progress
                     Color lineColor = canSee 
-                        ? Color.Lerp(Color.white, Color.red, detectionProgress) 
-                        : new Color(0.5f, 0.5f, 0.5f, 0.3f); // Gray if can't see
+                        ? Color.Lerp(gizmoSettings.detectableStartColor, gizmoSettings.detectableEndColor, detectionProgress) 
+                        : gizmoSettings.detectableBlockedColor;
                     
                     Gizmos.color = lineColor;
                     Gizmos.DrawLine(origin, targetPos);
                     
                     // Draw small sphere at detectable
-                    Gizmos.color = new Color(lineColor.r, lineColor.g, lineColor.b, 0.6f);
+                    Color sphereColor = lineColor;
+                    sphereColor.a *= 0.6f;
+                    Gizmos.color = sphereColor;
                     Gizmos.DrawSphere(targetPos, 0.3f);
                 }
+            }
 
-                // 7. Show current target status
+            // 7. Show current target status
+            if (gizmoSettings.showCurrentTarget && Application.isPlaying)
+            {
                 if (CurTargets != null && _target != null)
                 {
-                    Gizmos.color = new Color(1f, 0f, 0f, 0.8f); // Bright red
+                    Gizmos.color = gizmoSettings.targetLockedColor;
                     Gizmos.DrawLine(origin, _target.position);
                     Gizmos.DrawWireSphere(_target.position, 0.7f);
                     
                     // Show chase timer
                     float chaseProgress = _curDetectionTime / detectorStats.ChaseTime;
-                    Gizmos.color = Color.Lerp(Color.red, Color.yellow, chaseProgress);
+                    Gizmos.color = Color.Lerp(gizmoSettings.chaseTimerStartColor, gizmoSettings.chaseTimerEndColor, chaseProgress);
                     Gizmos.DrawWireSphere(_target.position, 0.5f);
                 }
             }
 
             // 8. Draw distance markers
-            Gizmos.color = new Color(1f, 1f, 1f, 0.3f); // White, transparent
-            for (int i = 1; i <= 3; i++)
+            if (gizmoSettings.showDistanceMarkers)
             {
-                float distance = range * (i / 3f);
-                Gizmos.DrawWireSphere(origin, distance);
+                Gizmos.color = gizmoSettings.distanceMarkerColor;
+                for (int i = 1; i <= 3; i++)
+                {
+                    float distance = range * (i / 3f);
+                    Gizmos.DrawWireSphere(origin, distance);
+                }
             }
         }
 
@@ -179,7 +208,6 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
         //REMINDER: remove targets
         private void HandleVision()
         {
-            //almond
             int hits = Physics.OverlapSphereNonAlloc(head.position, detectorStats.DetectRange, _colliders,
                 detectorStats.BlockingLayerMask);
             Debug.Log("Targets hit: " + hits);
@@ -205,7 +233,6 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
             return canSee && Vector3.Dot(head.forward, forward) >= detectorStats.DetectAngle;
         } 
 
-        //
         private void UpdateTargets()
         {
             if (_detectables.Count == 0) return;
@@ -273,7 +300,6 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
                 MarkAsLost();
             }
         }
-        
 
         private struct DetectableTarget
         {
@@ -287,4 +313,46 @@ namespace Game.Characters.CapabilitySystem.Capabilities.AI.Detection
             }
         }
     }
+}
+[System.Serializable]
+public class DetectorGizmoSettings
+{
+    [Header("Gizmo Toggles")]
+    public bool showDetectionRange = true;
+    public bool showForwardDirection = true;
+    public bool showVisionCone = true;
+    public bool showDiagonalEdges = true;
+    public bool showConeArcs = true;
+    public bool showDistanceMarkers = true;
+    public bool showDetectables = true;
+    public bool showCurrentTarget = true;
+    public bool showTargetLine = true;
+        
+    [Header("Colors - Detection Range")]
+    public Color detectionRangeColor = new Color(0.3f, 0.6f, 1f, 0.15f);
+        
+    [Header("Colors - Forward Direction")]
+    public Color forwardDirectionColor = new Color(1f, 1f, 0f, 0.9f);
+        
+    [Header("Colors - Vision Cone")]
+    public Color visionConeColor = new Color(0f, 1f, 0.5f, 0.7f);
+    public Color visionConeDiagonalColor = new Color(0f, 1f, 0.5f, 0.4f);
+    public Color coneArcNearColor = new Color(0f, 1f, 0.5f, 0.3f);
+    public Color coneArcMidColor = new Color(0f, 1f, 0.5f, 0.3f);
+    public Color coneArcFarColor = new Color(0f, 1f, 0.5f, 0.5f);
+        
+    [Header("Colors - Distance Markers")]
+    public Color distanceMarkerColor = new Color(1f, 1f, 1f, 0.3f);
+        
+    [Header("Colors - Detectables")]
+    public Color detectableStartColor = Color.white;
+    public Color detectableEndColor = Color.red;
+    public Color detectableBlockedColor = new Color(0.5f, 0.5f, 0.5f, 0.3f);
+        
+    [Header("Colors - Current Target")]
+    public Color targetVisibleColor = new Color(0f, 1f, 0f, 0.8f);
+    public Color targetLostColor = new Color(1f, 0.5f, 0f, 0.6f);
+    public Color targetLockedColor = new Color(1f, 0f, 0f, 0.8f);
+    public Color chaseTimerStartColor = Color.red;
+    public Color chaseTimerEndColor = Color.yellow;
 }

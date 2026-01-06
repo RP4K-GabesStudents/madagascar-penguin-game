@@ -5,23 +5,23 @@ namespace Utilities
     public class Tether : MonoBehaviour
     {
         [SerializeField] private float maxDistance = 50f;
-    
+        [SerializeField] private Transform readTransform;
         private Vector3 _originalPosition;
         private Rigidbody _rb;
 
         private void Start()
         {
             // Store the object's starting position
-            _originalPosition = transform.position;
+            _originalPosition = readTransform.position;
         
             // Get the Rigidbody component
-            _rb = GetComponent<Rigidbody>();
+            _rb = readTransform.GetComponent<Rigidbody>();
         }
 
         private void FixedUpdate()
         {
             // Calculate distance from original position
-            float distance = Vector3.Distance(transform.position, _originalPosition);
+            float distance = Vector3.Distance(readTransform.position, _originalPosition);
         
             // If distance exceeds max, teleport back
             if (distance > maxDistance)
@@ -38,7 +38,7 @@ namespace Utilities
                 else
                 {
                     // Fallback if no Rigidbody
-                    transform.position = _originalPosition;
+                    readTransform.position = _originalPosition;
                 }
             }
         }

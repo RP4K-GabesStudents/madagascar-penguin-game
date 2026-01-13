@@ -1,9 +1,11 @@
 using System;
+using AI.Navigation.Logic;
 using Game.Characters.CapabilitySystem.Capabilities.AI;
+using Managers.Movement.Stats;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Managers.Movement.Stats
+namespace Managers.Movement.AiStats
 {
     [CreateAssetMenu(fileName = "PatrollingMoveStats", menuName = "MoveType/Patrolling Move")]
     public class PatrollingMoveStats : MoveTypeStats
@@ -12,7 +14,7 @@ namespace Managers.Movement.Stats
 
         public override Type CreateTypeObject()
         {
-            return GetType();
+            return typeof(PatrollingMovement);
         }
     }
 
@@ -46,5 +48,4 @@ namespace Managers.Movement.Stats
             }
         }
     }
-
 }

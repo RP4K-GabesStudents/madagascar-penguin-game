@@ -107,7 +107,7 @@ namespace Utilities
         {
             if (!_isRagdolled)
             {
-                coreRigidbody .AddForce(force,mode);
+                coreRigidbody?.AddForce(force,mode);
             }
             else
             {

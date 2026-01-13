@@ -1,0 +1,24 @@
+{
+    "name": "Ai.Navigation.Logic.AI.Navigation.Logic.Navmesh",
+    "rootNamespace": "",
+    "references": [
+        "AI.Navigation.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "NAVIGATION"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.ai.navigation",
+            "expression": "",
+            "define": "NAVIGATION"
+        }
+    ],
+    "noEngineReferences": false
+}

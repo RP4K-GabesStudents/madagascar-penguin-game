@@ -1,3 +1,4 @@
+using AI.Navigation.Logic;
 using UnityEngine;
 
 namespace Managers.Movement

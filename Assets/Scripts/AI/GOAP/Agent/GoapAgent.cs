@@ -10,7 +10,6 @@ using Utilities;
 namespace AI.GOAP.Agent
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    [RequireComponent(typeof(AnimationController))]
     public class GoapAgent : MonoBehaviour
     {
         [Header("Sensors")] 
@@ -25,7 +24,7 @@ namespace AI.GOAP.Agent
         [SerializeField] private Transform target3;
         
         private NavMeshAgent _agent;
-        private AnimationController _animController;
+        private Animator _animController;
         private Rigidbody _rigidbody;
         private LocationStats _locationstats;
         private IGoapPlanner _goapPlanner;
@@ -53,7 +52,7 @@ namespace AI.GOAP.Agent
         private void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
-            _animController = GetComponent<AnimationController>();
+            _animController = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody>();
             _rigidbody.freezeRotation = true;
             
@@ -73,7 +72,6 @@ namespace AI.GOAP.Agent
         private void Update()
         {
             _statTimer.Tick(Time.deltaTime);
-            _animController.SetSpeed(_agent.velocity.magnitude);
 
             if (_curAction == null)
             {

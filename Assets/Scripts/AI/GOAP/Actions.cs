@@ -15,16 +15,11 @@ namespace AI.GOAP
         public bool CanPerform { get; }
         public bool Complete { get; }
         private IStrategies _strategy;
-
         private Actions(string name)
         {
             Name = name;
         }
-
         public void Start() => _strategy.Start();
-            
-        
-
         public void Update(float deltaTime)
         {
             if (CanPerform)

@@ -42,6 +42,7 @@ namespace UI
                         quickJoinButton.onClick.AddListener(JoinGame); 
                         startGameButton.onClick.AddListener(StartGame);
                         UpdateLobby();
+                        quickJoinButton.enabled = false;
                 }
 
                 private async void StartGame()
@@ -58,7 +59,7 @@ namespace UI
                 private void UpdateLobby()
                 {
                         startGameButton.gameObject.SetActive(LobbySystemManager.Instance.IsHost());
-                        quickJoinButton.gameObject.SetActive(LobbySystemManager.Instance.CurrentLobby == null);
+                        //quickJoinButton.gameObject.SetActive(LobbySystemManager.Instance.CurrentLobby == null);
                         startGameButton.interactable = true;
                         lobbyText.text = LobbySystemManager.Instance.IsHost().ToString();
                         

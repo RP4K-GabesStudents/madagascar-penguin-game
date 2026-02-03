@@ -19,6 +19,7 @@ namespace Utilities.Utilities
         [SerializeField] private Slider slider;
         [SerializeField] private TextMeshProUGUI text;
         [SerializeField] private bool inverse;
+        [SerializeField] private new string name;
         private float _maxValue;
         private float _currentValue;
 
@@ -53,7 +54,7 @@ namespace Utilities.Utilities
             switch (sliderType)
             {
                 case ESliderType.Percentage:
-                    text.text = ((int)(percent * 100)) + "%";
+                    text.text = name + ((int)(percent * 100)) + "%";
                     break;
                 case ESliderType.Number:
                     text.text = _currentValue.ToString(CultureInfo.InvariantCulture);

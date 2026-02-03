@@ -69,7 +69,7 @@ namespace GabesCommonUtility.Multiplayer.GameObjects.Sequencing
                 
                 
                 // Ensure NetworkManager exists
-                if (NetworkManager.Singleton == null || NetworkManager.Singleton.IsConnectedClient)
+                if (NetworkManager.Singleton == null || NetworkManager.Singleton.IsClient || NetworkManager.Singleton.IsServer)
                 {
                     DisplayMessage?.Invoke("[NetcodeAutoHostSequence] NetworkManager.Singleton is null!");
                     Debug.LogError("[NetcodeAutoHostSequence] NetworkManager.Singleton is null. Make sure NetworkManager exists in the scene.");

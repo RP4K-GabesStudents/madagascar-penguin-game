@@ -2,6 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using GabesCommonUtility.Sequence;
 using Unity.Netcode;
+using Unity.Services.Multiplayer;
 using UnityEngine;
 #if UNITY_EDITOR && PARREL_SYNC
 using ParrelSync;
@@ -37,29 +38,38 @@ namespace GabesCommonUtility.Multiplayer.GameObjects.Sequencing
 #if UNITY_EDITOR && PARREL_SYNC
             return !ClonesManager.IsClone();
 #elif UNITY_EDITOR
-            // Check if this is the main editor in Multiplayer Play Mode
-            // MPM sets a specific command line argument for virtual players
-            string[] args = System.Environment.GetCommandLineArgs();
-            for (int i = 0; i < args.Length; i++)
+            // Check if this is a virtual player in Multiplayer Play Mode
+            // CurrentPlayer.ReadOnly returns true for virtual players
+            var arguments = Environment.GetCommandLineArgs();
+            int nameIndex = Array.IndexOf(arguments, "-name");
+
+            foreach (string  s in arguments)
             {
-                // Virtual players have the -mppm argument
-                if (args[i] == "-mppm")
+                Debug.Log(s);
+            }
+        
+            if(nameIndex >= 0 && nameIndex + 1 < arguments.Length)
+            {
+                var playerName = arguments[nameIndex + 1];
+                if(playerName != "Player1")
                 {
-                    return false; // This is a virtual player (client)
+                    return false;
                 }
             }
-            return true; // This is the main editor (host)
 #else
             return true; // In builds, default to host
 #endif
+            return true;
         }
 
         public async UniTask<IEntrySequence> ExecuteSequence()
         {
             try
             {
+                
+                
                 // Ensure NetworkManager exists
-                if (NetworkManager.Singleton == null)
+                if (NetworkManager.Singleton == null || NetworkManager.Singleton.IsConnectedClient)
                 {
                     DisplayMessage?.Invoke("[NetcodeAutoHostSequence] NetworkManager.Singleton is null!");
                     Debug.LogError("[NetcodeAutoHostSequence] NetworkManager.Singleton is null. Make sure NetworkManager exists in the scene.");

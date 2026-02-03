@@ -167,6 +167,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6468820922368892057, guid: 62312cca6533bb04bb81a6d43caaa4f3, type: 3}
+      propertyPath: NetworkConfig.PlayerPrefab
+      value: 
+      objectReference: {fileID: 5337494372767933401, guid: 1a147bb77575c244ab41b60fc06e4f45, type: 3}
+    - target: {fileID: 6468820922368892057, guid: 62312cca6533bb04bb81a6d43caaa4f3, type: 3}
+      propertyPath: NetworkConfig.EnableSceneManagement
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6528507579785989455, guid: 62312cca6533bb04bb81a6d43caaa4f3, type: 3}
       propertyPath: m_Name
       value: NetworkManager
@@ -997,7 +1005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1925939469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,7 +1069,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1495367773825983935, guid: 7b195bfbfbea7dd4ab8659df02279e54, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 931322470
+      value: 2277067150
       objectReference: {fileID: 0}
     - target: {fileID: 1495367773825983935, guid: 7b195bfbfbea7dd4ab8659df02279e54, type: 3}
       propertyPath: InScenePlacedSourceGlobalObjectIdHash

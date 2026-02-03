@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1657264732}
   - component: {fileID: 1657264733}
-  - component: {fileID: 1657264735}
   - component: {fileID: 1657264734}
   m_Layer: 0
   m_Name: OnSceneLoaded
@@ -165,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d49439e5b5f794d95a0242b1da8cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.Sequence::GabesCommonUtility.Sequence.SequenceEntryPoint
-  start: {fileID: 1657264735}
+  start: {fileID: 1657264734}
   activateOnStart: 1
   persist: 0
   startDelay: 0
@@ -181,23 +180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0909214e9250943b278af15c3158e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.Multiplayer.GameObjects.Sequencing::GabesCommonUtility.Multiplayer.GameObjects.Sequencing.NetcodeAutoHostSequence
-  next: {fileID: 2028451579}
+  hostSuccess: {fileID: 2028451579}
+  clientSuccess: {fileID: 2028451579}
   failure: {fileID: 0}
---- !u!114 &1657264735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657264731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8516f6cdc1846d08ef2b7ec494c4d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.Multiplayer.GameObjects.Sequencing::GabesCommonUtility.Multiplayer.GameObjects.Sequencing.NetcodeSigninSequence
-  signInMode: 0
-  next: {fileID: 1657264734}
-  failure: {fileID: 0}
+  clientConnectionTimeout: 10
 --- !u!1 &2028451575
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +221,7 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
+  SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1

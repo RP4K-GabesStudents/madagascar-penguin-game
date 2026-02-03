@@ -1,7 +1,7 @@
+using GabesCommonUtility.UI.Hover;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Utilities.Hover;
 
 namespace Game.InventorySystem
 {

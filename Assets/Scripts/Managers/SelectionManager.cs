@@ -1,13 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Game.Characters;
+using GabesCommonUtility.Extensions;
 using Game.Characters.World;
-using TMPro;
 using UI;
 using UnityEngine;
-using Utilities.Utilities.General;
 
 
 namespace Managers

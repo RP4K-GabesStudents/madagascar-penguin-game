@@ -5,7 +5,7 @@ namespace GabesCommonUtility.Game
 {
 
 [CustomEditor(typeof(RagdollController))]
-public class RagdollControllerEditor : Editor
+public class RagdollControllerEditor : UnityEditor.Editor
 {
     private SerializedProperty _startRagdolled;
     private SerializedProperty _ragdollRigidbodies;

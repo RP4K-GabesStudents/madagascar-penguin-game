@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEditor;
-using Utilities;
 
 namespace GabesCommonUtility.Game
 {
@@ -11,8 +10,6 @@ public class RagdollControllerEditor : Editor
     private SerializedProperty _startRagdolled;
     private SerializedProperty _ragdollRigidbodies;
     private SerializedProperty _coreRigidbody;
-    private SerializedProperty _mainCollider;
-    private SerializedProperty _ragdollCollider;
     private SerializedProperty _enableOnRagdoll;
     private SerializedProperty _disableOnRagdoll;
     
@@ -21,8 +18,6 @@ public class RagdollControllerEditor : Editor
         _startRagdolled = serializedObject.FindProperty("startRagdolled");
         _ragdollRigidbodies = serializedObject.FindProperty("ragdollRigidbodies");
         _coreRigidbody = serializedObject.FindProperty("coreRigidbody");
-        _mainCollider = serializedObject.FindProperty("mainCollider");
-        _ragdollCollider = serializedObject.FindProperty("ragdollCollider");
         _enableOnRagdoll = serializedObject.FindProperty("enableOnRagdoll");
         _disableOnRagdoll = serializedObject.FindProperty("disableOnRagdoll");
     }
@@ -56,9 +51,6 @@ public class RagdollControllerEditor : Editor
         
         EditorGUILayout.PropertyField(_coreRigidbody, new GUIContent("Core Rigidbody"), true);
         EditorGUILayout.PropertyField(_ragdollRigidbodies, new GUIContent("Ragdoll Rigidbodies"), true);
-        
-        EditorGUILayout.PropertyField(_mainCollider, new GUIContent("Main Colliders"), true);
-        EditorGUILayout.PropertyField(_ragdollCollider, new GUIContent("Ragdoll Colliders"), true);
         
         EditorGUILayout.Space();
         

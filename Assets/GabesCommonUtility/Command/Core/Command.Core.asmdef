@@ -1,0 +1,11 @@
+{
+	"name": "Command.Core",
+	"references": ["UniTask"],
+	"versionDefines": [
+		{
+			"name": "com.cysharp.unitask",
+			"expression": "",
+			"define": "USE_UNITASK"
+		}
+	]
+}

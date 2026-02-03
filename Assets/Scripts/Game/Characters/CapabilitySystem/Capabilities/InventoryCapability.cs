@@ -1,11 +1,9 @@
-using System;
-using Cysharp.Threading.Tasks.Triggers;
+using GabesCommonUtility.Extensions;
 using Game.InventorySystem;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utilities;
-using Utilities.Utilities.General;
 
 namespace Game.Characters.CapabilitySystem.Capabilities
 {

@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 1657264732}
   - component: {fileID: 1657264733}
   - component: {fileID: 1657264735}
+  - component: {fileID: 1657264734}
   m_Layer: 0
   m_Name: OnSceneLoaded
   m_TagString: Untagged
@@ -211,6 +212,21 @@ MonoBehaviour:
   start: {fileID: 1657264735}
   activateOnStart: 1
   persist: 0
+  startDelay: 0.1
+--- !u!114 &1657264734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657264731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0909214e9250943b278af15c3158e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GabesCommonUtility.Multiplayer.GameObjects.Sequencing::GabesCommonUtility.Multiplayer.GameObjects.Sequencing.NetcodeAutoHostSequence
+  next: {fileID: 2028451579}
+  failure: {fileID: 0}
 --- !u!114 &1657264735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.Multiplayer.GameObjects.Sequencing::GabesCommonUtility.Multiplayer.GameObjects.Sequencing.NetcodeSigninSequence
   signInMode: 0
-  next: {fileID: 0}
+  next: {fileID: 1657264734}
   failure: {fileID: 0}
 --- !u!1 &1925939468
 GameObject:
@@ -344,7 +360,7 @@ Transform:
   m_GameObject: {fileID: 2028451575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -359,16 +375,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2028451575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77754c9890ef5cb438244f2021d0602b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f47573cac89a7b4290811a3b02c5b9e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.Multiplayer.GameObjects::GabesCommonUtility.Multiplayer.GameObjects.PlayerSpawnSequence
-  ShowTopMostFoldoutHeaderGroup: 1
-  playerPrefab: {fileID: 6956146060486558797, guid: 1a147bb77575c244ab41b60fc06e4f45, type: 3}
-  randomSpawnPoint: []
-  occupiedCheckLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  occupiedCheckRadius: 1
+  m_EditorClassIdentifier: GabesCommonUtility.Multiplayer.GameObjects.Sequencing::GabesCommonUtility.SpawnNetworkObjectSequence
+  networkPrefab: {fileID: 5337494372767933401, guid: 1a147bb77575c244ab41b60fc06e4f45, type: 3}
+  success: {fileID: 0}
+  failure: {fileID: 0}
+  destroyAfterSpawn: 0
 --- !u!1001 &2071012062
 PrefabInstance:
   m_ObjectHideFlags: 0

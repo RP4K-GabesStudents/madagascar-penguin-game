@@ -1,5 +1,6 @@
 #if UNITASK
 using System;
+using System.Collections;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -16,6 +17,8 @@ namespace GabesCommonUtility.Sequence
         
         [SerializeField] private bool activateOnStart = true;
         [SerializeField] private bool persist = false;
+
+        public float startDelay = 0;
 
         private int _chainLength;
         private int _currentLength;
@@ -35,8 +38,9 @@ namespace GabesCommonUtility.Sequence
             _chainLength = CountChain(start as IEntrySequence);
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
+            yield return new WaitForSeconds(startDelay);
             if (activateOnStart) ActivateAndForget();
         }
 

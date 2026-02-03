@@ -308,7 +308,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.65
+  m_fontSize: 26.85
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 4172218965739726109}
   - component: {fileID: 7352261247902153532}
   - component: {fileID: 2693570384683915970}
-  - component: {fileID: 5986469451754302723}
+  - component: {fileID: 5920743629833870565}
   m_Layer: 5
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -540,7 +540,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5986469451754302723
+--- !u!114 &5920743629833870565
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -551,52 +551,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e821892d9fd95b489c06f0bb0740773, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  hoverSize: {x: 1.1, y: 1.1}
-  useLiteralScale: 1
-  transitionDuration: 0.2
-  transitionCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.43905658
-      value: 0.27930912
-      inSlope: 2.0741544
-      outSlope: 2.0741544
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.88942915
-      value: 1.2436486
-      inSlope: -1.3416226
-      outSlope: -1.3416226
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.09211431
-      outWeight: 1
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorClassIdentifier: GabesCommonUtility.UI.Hover::GabesCommonUtility.UI.Hover.UIHoverScale
+  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &9105097145254323407
 GameObject:
   m_ObjectHideFlags: 0

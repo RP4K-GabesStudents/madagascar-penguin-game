@@ -52,7 +52,7 @@ MonoBehaviour:
     RenderPassEvent: 600
     LayerMask:
       serializedVersion: 2
-      m_Bits: 2147491315
+      m_Bits: 2147491251
     RenderingLayerMask:
       serializedVersion: 0
       m_Bits: 1
@@ -168,15 +168,15 @@ MonoBehaviour:
   - {fileID: 7833122117494664109}
   - {fileID: 5695039746906529837}
   - {fileID: 6423690818467213092}
+  - {fileID: 7662963858950643400}
   - {fileID: -3786264512221429328}
   - {fileID: 4655622770436561076}
-  - {fileID: 7662963858950643400}
   - {fileID: -4541534126576881520}
   - {fileID: -2182273141441989241}
   - {fileID: 8729436464925263934}
   - {fileID: -561091359256792624}
   - {fileID: 1944613795871397334}
-  m_RendererFeatureMap: ad6b866f10d7b46c2d2018e879d8084f242fade5c3882559b0c15f937c7c74cbb45817403e189c40c8de68930751586a90301222c63af9c0877579d92302b7e13e4836dd36302579d031f5ac619a36f8d6153dc0f1a7fc1a
+  m_RendererFeatureMap: ad6b866f10d7b46c2d2018e879d8084f242fade5c3882559c8de68930751586ab0c15f937c7c74cbb45817403e189c4090301222c63af9c0877579d92302b7e13e4836dd36302579d031f5ac619a36f8d6153dc0f1a7fc1a
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_DepthPrimingMode: 0
   m_CopyDepthMode: 0
   m_DepthAttachmentFormat: 0
-  m_DepthTextureFormat: 0
+  m_DepthTextureFormat: 90
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 0
 --- !u!114 &1944613795871397334
@@ -263,7 +263,7 @@ MonoBehaviour:
       m_Bits: 1
     OverrideMaterial: {fileID: 2100000, guid: 89ada25931cf34a4598bfb8bfbd236ec, type: 2}
     BlitMaterial: {fileID: 2100000, guid: 79a400239ede1e148a38c61307f36c5e, type: 2}
-    ClearDepth: 0
+    ClearDepth: 1
   MaterialSettings:
     OutlineScale: 1
     RobertsCrossMultiplier: 100
@@ -350,15 +350,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd6e526a1bb489a8df34cbfcfca6bfc, type: 3}
   m_Name: HostileOutline
   m_EditorClassIdentifier: Assembly-CSharp::Xenon.OutlineRenderFeature
-  m_Active: 0
+  m_Active: 1
   FeatureSettings:
-    RenderPassEvent: 450
+    RenderPassEvent: 500
     LayerMask:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 64
     RenderingLayerMask:
       serializedVersion: 0
-      m_Bits: 2
+      m_Bits: 1
     OverrideMaterial: {fileID: 2100000, guid: d76e82b941e977b4d9dae8eb3f214bd1, type: 2}
     BlitMaterial: {fileID: 2100000, guid: 83634ce520392c745abc51fe806196dc, type: 2}
     ClearDepth: 0

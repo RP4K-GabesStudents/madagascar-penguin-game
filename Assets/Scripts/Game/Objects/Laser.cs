@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Managers;
 using Managers.Pooling_System;
@@ -11,23 +12,28 @@ namespace Game.Objects
     {
         [SerializeField] private ProjectileStats laserStats;
         [SerializeField] private new Rigidbody rigidbody;
-        
+        [SerializeField] private TrailRenderer trailRenderer;
 
         private GameObject _oner;
         private int _targetLayers;
+        
+        private Coroutine _lifeTime;
+        private Coroutine _destroyLaser;
+        
         public void Init(int targetLayers)
         {
             _targetLayers = targetLayers;
-            StartCoroutine(DestroyLaser());
+            rigidbody.isKinematic = false;
             rigidbody.linearVelocity = transform.forward * laserStats.Speed;
+            _lifeTime = StartCoroutine(LifeTime());
+            trailRenderer.emitting = true;
         }
-        private void OnTriggerEnter(Collider other)
+
+        private void OnCollisionEnter(Collision other)
         {
-            if (!IsServer) return;
-            Rigidbody hitInfoRigidbody = other.attachedRigidbody;
+            Rigidbody hitInfoRigidbody = other.rigidbody;
             if (hitInfoRigidbody != null)
             {
-                
                 if ((1 << hitInfoRigidbody.gameObject.layer & _targetLayers) == 0) return;
                 
                 if (hitInfoRigidbody.TryGetComponent(out IDamageable damageable))
@@ -35,38 +41,69 @@ namespace Game.Objects
                     damageable.TakeDamage(laserStats.Damage, Vector3.zero);
                 }
             }
-            PlayPartice_ClientRpc(transform.position, transform.forward);
-            if (NetworkObject.IsSpawned)
+            if(IsServer) OnCollision_ServerRpc();
+            else
             {
-                NetworkObject.Despawn(false);
+                _destroyLaser ??= StartCoroutine(DestroyLaser());
+                SpawnHit(transform.position, transform.forward);
             }
         }
 
-        [ClientRpc]
+        [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Server)]
+        private void OnCollision_ServerRpc()
+        {
+            PlayPartice_ClientRpc(transform.position, transform.forward);
+            NetworkObject.Despawn(false);
+        }
+
+        [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Server)]
         private void PlayPartice_ClientRpc(Vector3 position, Vector3 forward)
+        {
+            _destroyLaser ??= StartCoroutine(DestroyLaser());
+            
+            if (!IsClient) return; //<< Server doesn't need to do this.
+            SpawnHit(position, forward);
+        }
+
+        private void SpawnHit(Vector3 position, Vector3 forward)
         {
             bool hit = Physics.Raycast(position + forward * -0.25f, forward, out RaycastHit hitInfo, 0.5f);
             if (hit)
             {
-                var te = PoolingManager.SpawnObject(laserStats.LaserSpark.name);
+                var te = PoolingManager.SpawnObject(laserStats.LaserSpark.name); //Allow entirely clientside.
                 te.transform.SetPositionAndRotation(hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
                 te.transform.SetParent(hitInfo.transform, true);
             }
         }
 
-        private static readonly WaitForSeconds Wait = new WaitForSeconds(3);
+        private IEnumerator LifeTime()
+        {
+            yield return new WaitForSeconds(laserStats.Lifetime);
+            _destroyLaser ??= StartCoroutine(DestroyLaser());
+            _lifeTime = null;
+        }
+
         private IEnumerator DestroyLaser()
         {
-            yield return Wait;
+            if(_lifeTime != null) StopCoroutine(_lifeTime);
+
+            trailRenderer.emitting = false;
+            rigidbody.isKinematic = true;
+            yield return new WaitForSeconds(trailRenderer.time);
             if (NetworkObject.IsSpawned)
             {
                 NetworkObject.Despawn(false);
             }
+
+            _destroyLaser = null;
         }
 
         public void Spawn(ulong spawnID)
         {
             StopAllCoroutines();
+            _destroyLaser = null;
+            _lifeTime = null;
+            
             NetworkObject.SpawnWithOwnership(spawnID);
             Init(StaticUtilities.EnemyAttackLayers);
         }
@@ -76,7 +113,6 @@ namespace Game.Objects
             if (NetworkObject.IsSpawned)
             {
                 NetworkObject.Despawn(false);
-                
             }
         }
         public override void OnNetworkDespawn()

@@ -9,7 +9,7 @@ namespace Managers.Pooling_System
         private Dictionary<string, Pool> _pools = new ();
         private static PoolingManager _instance;
         [SerializeField] private PoolData[] poolData;
-        
+        [SerializeField] private bool saveParent = false;
         private void Awake()
         {
             if (_instance && _instance != this)
@@ -31,8 +31,8 @@ namespace Managers.Pooling_System
                 if (prefab is IPoolable)
                 { 
                     MonoBehaviour[] monoBehaviours = new MonoBehaviour[moon.prefabAmount];
-                    Transform sun = new GameObject(prefab.name).transform;
-                    sun.SetParent(transform);
+                    Transform sun = new GameObject(prefab.name + " POOL").transform;
+                    if(saveParent) sun.SetParent(transform);
                     for (int i = 0; i < moon.prefabAmount; i++)
                     {
                         monoBehaviours[i] = Instantiate(prefab, sun);

@@ -73,16 +73,17 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
                 }
             }
 
-            PlayParticle_ClientRpc(locations, rotations);
+            PlayParticle_ClientRpc();
+            // PlayParticle_ClientRpc(locations, rotations);
         }
         
     
         [ClientRpc]
-        private void PlayParticle_ClientRpc(Vector3[] location, Quaternion[] rotation)
+        private void PlayParticle_ClientRpc()
         {
-            for (int i = 0; i < location.Length; ++i)
+            for (int i = 0; i < eyes.Length; ++i)
             {
-                ParticleSystem particles = Instantiate(_stats.ParticleSystem, location[i], rotation[i]);
+                ParticleSystem particles = Instantiate(_stats.ParticleSystem, eyes[i]);
                 Destroy(particles.gameObject, particles.main.duration);
             }
         }

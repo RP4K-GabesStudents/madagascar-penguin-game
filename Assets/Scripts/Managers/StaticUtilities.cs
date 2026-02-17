@@ -4,6 +4,7 @@ namespace Managers
 {
     public static class StaticUtilities
     {
+
         //animations
         public static readonly int ForwardAnimID = Animator.StringToHash("Forward");
         public static readonly int IdleStateAnimID = Animator.StringToHash("IdleState");
@@ -25,6 +26,7 @@ namespace Managers
         public static readonly int AttackableLayers = EnemyLayer | PlayerLayer | DestructableLayer | DefaultLayer | PhysicsLayer;
         public static readonly int EnemyAttackLayers = EnemyLayer | DestructableLayer | DefaultLayer;
         public static readonly int InteractableLayers = PhysicsLayer | InteractableLayer;
-
+        
+        public static readonly int SurfaceLayers = GroundLayers | AttackableLayers | InteractableLayers;
     }
 }

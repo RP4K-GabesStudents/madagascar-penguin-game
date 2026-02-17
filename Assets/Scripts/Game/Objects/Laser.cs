@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Managers;
 using Managers.Pooling_System;
@@ -27,6 +26,7 @@ namespace Game.Objects
             rigidbody.linearVelocity = transform.forward * laserStats.Speed;
             _lifeTime = StartCoroutine(LifeTime());
             trailRenderer.emitting = true;
+            trailRenderer.Clear();
         }
 
         private void OnCollisionEnter(Collision other)
@@ -35,44 +35,41 @@ namespace Game.Objects
             if (hitInfoRigidbody != null)
             {
                 if ((1 << hitInfoRigidbody.gameObject.layer & _targetLayers) == 0) return;
-                
+
                 if (hitInfoRigidbody.TryGetComponent(out IDamageable damageable))
                 {
                     damageable.TakeDamage(laserStats.Damage, Vector3.zero);
                 }
             }
-            if(IsServer) OnCollision_ServerRpc();
-            else
-            {
-                _destroyLaser ??= StartCoroutine(DestroyLaser());
-                SpawnHit(transform.position, transform.forward);
-            }
+            _destroyLaser ??= StartCoroutine(DestroyLaser());
+
+            ContactPoint contact = other.GetContact(0);
+            if (IsServer) PlayParticle_ClientRpc(contact.point, contact.normal);
+            if (IsClient) SpawnHit(contact.point, contact.normal, other.transform);
         }
 
-        [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Server)]
-        private void OnCollision_ServerRpc()
+        [Rpc(SendTo.NotServer, InvokePermission = RpcInvokePermission.Server)]
+        private void PlayParticle_ClientRpc(Vector3 point, Vector3 normal)
         {
-            PlayPartice_ClientRpc(transform.position, transform.forward);
-            NetworkObject.Despawn(false);
+            // Raycast is only used to recover the local Transform for parenting,
+            // not to determine position or orientation
+            bool hit = Physics.Raycast(point + normal * 0.5f, -normal, out RaycastHit hitInfo, 1f, StaticUtilities.SurfaceLayers);
+            SpawnHit(point, normal, hit ? hitInfo.transform : null);
         }
 
-        [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Server)]
-        private void PlayPartice_ClientRpc(Vector3 position, Vector3 forward)
+        private void SpawnHit(Vector3 point, Vector3 normal, Transform hitTransform)
         {
             _destroyLaser ??= StartCoroutine(DestroyLaser());
-            
-            if (!IsClient) return; //<< Server doesn't need to do this.
-            SpawnHit(position, forward);
-        }
 
-        private void SpawnHit(Vector3 position, Vector3 forward)
-        {
-            bool hit = Physics.Raycast(position + forward * -0.25f, forward, out RaycastHit hitInfo, 0.5f);
-            if (hit)
+            var spark = PoolingManager.SpawnObject(laserStats.LaserSpark.name);
+            spark.transform.SetPositionAndRotation(
+                point,
+                Quaternion.LookRotation(Vector3.Reflect(-normal, normal))
+            );
+
+            if (hitTransform != null)
             {
-                var te = PoolingManager.SpawnObject(laserStats.LaserSpark.name); //Allow entirely clientside.
-                te.transform.SetPositionAndRotation(hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
-                te.transform.SetParent(hitInfo.transform, true);
+                spark.transform.SetParent(hitTransform, true);
             }
         }
 
@@ -90,11 +87,7 @@ namespace Game.Objects
             trailRenderer.emitting = false;
             rigidbody.isKinematic = true;
             yield return new WaitForSeconds(trailRenderer.time);
-            if (NetworkObject.IsSpawned)
-            {
-                NetworkObject.Despawn(false);
-            }
-
+            NetworkObject.Despawn(false);
             _destroyLaser = null;
         }
 

@@ -1,0 +1,31 @@
+{
+    "name": "GabesCommonUtility.Multiplayer.QuickLoad",
+    "rootNamespace": "GabesCommonUtility",
+    "references": [
+        "Unity.Netcode.Runtime",
+        "Unity.TextMeshPro",
+        "Unity.Services.Authentication",
+        "UniTask",
+        "GabesCommonUtility.Game.Common"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.netcode.gameobjects",
+            "expression": "",
+            "define": "UNITY_NETCODE_GAMEOBJECTS"
+        },
+        {
+            "name": "com.cysharp.unitask",
+            "expression": "",
+            "define": "UNITASK"
+        }
+    ],
+    "noEngineReferences": false
+}

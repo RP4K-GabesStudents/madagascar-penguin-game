@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4166716389
+  GlobalObjectIdHash: 2276426675
   InScenePlacedSourceGlobalObjectIdHash: 2276426675
   DeferredDespawnTick: 0
   Ownership: 1
@@ -215,9 +215,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!114 &1742411113656590794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   SyncRotAngleY: 1
   SyncRotAngleZ: 1
   SyncScaleX: 1
-  SyncScaleY: 0
+  SyncScaleY: 1
   SyncScaleZ: 1
   PositionThreshold: 0.001
   RotAngleThreshold: 28

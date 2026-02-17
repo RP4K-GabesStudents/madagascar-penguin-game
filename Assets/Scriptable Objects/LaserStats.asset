@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: LaserStats
   m_EditorClassIdentifier: 
   damage: 100
-  speed: 10
+  speed: 100
   lifetime: 30
   abilityTime: 30
-  maxSpeed: 5
+  maxSpeed: 100
   amountFired: 1
   laserSpark: {fileID: 5283510329268200364, guid: 6adab394745e00c4ba75d45f3a6a4fa0, type: 3}

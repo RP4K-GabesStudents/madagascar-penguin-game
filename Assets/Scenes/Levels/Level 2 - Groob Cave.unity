@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e1ec67139d9e36a459c101d54c531731, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 162.166
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (2)
@@ -259,6 +263,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -534.604
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -342,6 +350,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -9.960999
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -355,6 +367,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1601556727930852457, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3906092469638939169, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.8284001
@@ -493,6 +509,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -43.094
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (7)
@@ -534,6 +554,10 @@ PrefabInstance:
     - target: {fileID: 1127057802689605898, guid: 385b757f8610ac8408d2966087385dc1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2107900504912646597, guid: 385b757f8610ac8408d2966087385dc1, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3912748527566979841, guid: 385b757f8610ac8408d2966087385dc1, type: 3}
       propertyPath: m_LocalScale.x
@@ -661,6 +685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 69.701
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -735,6 +763,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -825,6 +857,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -902,6 +938,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 21.807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -1032,7 +1072,7 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
+  SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
@@ -1126,6 +1166,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -444.811
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -1225,6 +1269,10 @@ PrefabInstance:
     - target: {fileID: 5433722654774312327, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1333,6 +1381,10 @@ PrefabInstance:
     - target: {fileID: 6166172069533342233, guid: 4f58f036eb429ca42b2de0fe7a11fec6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617108741154158476, guid: 4f58f036eb429ca42b2de0fe7a11fec6, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1485,6 +1537,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3231953639893657562, guid: 78773f3202106b541baf9be6fdf10e3a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4074939920779961825, guid: 78773f3202106b541baf9be6fdf10e3a, type: 3}
       propertyPath: m_Name
       value: StalagmitesGroup_14
@@ -1566,6 +1622,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -743.82
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (11)
@@ -1595,6 +1655,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1902208489702198912, guid: 045c16558435b494f81055cde4492e21, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5360309478588584223, guid: 045c16558435b494f81055cde4492e21, type: 3}
       propertyPath: m_Name
       value: StalagmiteBig_5 (1)
@@ -1676,6 +1740,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1902208489702198912, guid: 045c16558435b494f81055cde4492e21, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5360309478588584223, guid: 045c16558435b494f81055cde4492e21, type: 3}
       propertyPath: m_Name
       value: StalagmiteBig_5
@@ -1805,6 +1873,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -158.927
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1902,9 +1974,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 135.528
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1927,6 +2007,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1601556727930852457, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3906092469638939169, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.8525863
@@ -2071,6 +2155,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -243.45099
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2143,6 +2231,10 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2217,6 +2309,10 @@ PrefabInstance:
     - target: {fileID: 3330515565251048610, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2295,6 +2391,10 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2402,6 +2502,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 205.893
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2503,6 +2607,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -2615,6 +2723,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5472655215092469436, guid: 1efc13ae84e6d304f8e6fa099c99685d, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2725,6 +2837,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 349.404
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (5)
@@ -2813,6 +2929,10 @@ PrefabInstance:
     - target: {fileID: 5212021944570453279, guid: 9662368661170cf4390751e4319b2563, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7635288919685286652, guid: 9662368661170cf4390751e4319b2563, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2917,6 +3037,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.804
       objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2950,6 +3074,10 @@ PrefabInstance:
     - target: {fileID: 1127057802689605898, guid: 385b757f8610ac8408d2966087385dc1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2107900504912646597, guid: 385b757f8610ac8408d2966087385dc1, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3912748527566979841, guid: 385b757f8610ac8408d2966087385dc1, type: 3}
       propertyPath: m_LocalScale.x
@@ -3029,6 +3157,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1601556727930852457, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3906092469638939169, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.8429319
@@ -3132,6 +3264,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1601556727930852457, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3906092469638939169, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.7684388
@@ -3294,6 +3430,10 @@ PrefabInstance:
     - target: {fileID: 2793017459926099131, guid: adef1087abf3f184589cf979d44fcc4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.138
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687596445332282358, guid: adef1087abf3f184589cf979d44fcc4b, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3479,6 +3619,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -193.27
       objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3552,9 +3696,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 133.104
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3664,6 +3816,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.068
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3736,6 +3892,10 @@ PrefabInstance:
     - target: {fileID: 5433722654774312327, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 132.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3875,6 +4035,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 323.529
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -4038,6 +4202,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4086,6 +4254,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1601556727930852457, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3906092469638939169, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
       propertyPath: m_LocalScale.x
       value: 6.6390758
@@ -4227,6 +4399,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 13.482
       objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4335,6 +4511,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7635288919685286652, guid: 9662368661170cf4390751e4319b2563, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4405,6 +4585,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -184.979
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4471,6 +4655,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.858
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4532,6 +4720,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -79.177
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4545,9 +4737,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 606496299123058751, guid: dea088d7da44ff643a18f1bb82a595e1, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1399011291665664490, guid: dea088d7da44ff643a18f1bb82a595e1, type: 3}
       propertyPath: m_Name
       value: Arch_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399011291665664490, guid: dea088d7da44ff643a18f1bb82a595e1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1738840217794532176, guid: dea088d7da44ff643a18f1bb82a595e1, type: 3}
       propertyPath: m_LocalScale.x
@@ -4695,6 +4895,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -21.622986
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4768,6 +4972,14 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4849,6 +5061,10 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4945,6 +5161,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3
@@ -4979,6 +5199,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1902208489702198912, guid: 045c16558435b494f81055cde4492e21, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5360309478588584223, guid: 045c16558435b494f81055cde4492e21, type: 3}
       propertyPath: m_Name
       value: StalagmiteBig_5
@@ -5107,6 +5331,10 @@ PrefabInstance:
     - target: {fileID: 3330515565251048610, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5308,6 +5536,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2720266619111726645, guid: 77c42c52f0f20124bbd07c95313621f5, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5578428623356331531, guid: 77c42c52f0f20124bbd07c95313621f5, type: 3}
       propertyPath: m_Name
       value: StalagmiteSingle_8
@@ -5337,6 +5569,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1902208489702198912, guid: 045c16558435b494f81055cde4492e21, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5360309478588584223, guid: 045c16558435b494f81055cde4492e21, type: 3}
       propertyPath: m_Name
       value: StalagmiteBig_5 (2)
@@ -5470,9 +5706,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 192.467
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5554,6 +5798,10 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5649,6 +5897,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 22.634
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -5841,6 +6093,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -164.221
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (23)
@@ -5957,6 +6213,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7635288919685286652, guid: 9662368661170cf4390751e4319b2563, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6056,6 +6316,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.207
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -6178,6 +6442,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6285,6 +6553,10 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6416,6 +6688,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.926
       objectReference: {fileID: 0}
+    - target: {fileID: 4442675365043233264, guid: 82b1b217b8d41164887bb0d0e868682e, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6507,6 +6783,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -157.874
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6547,6 +6827,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 2030841906155387302, guid: ecdee47c52389e34c9932b2bb2244c08, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2820023249322392871, guid: ecdee47c52389e34c9932b2bb2244c08, type: 3}
       propertyPath: m_Name
       value: StalactitesW_3
@@ -6703,6 +6987,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6805,6 +7093,10 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6956,6 +7248,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -43.366
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6974,6 +7270,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1692596176700048021, guid: 8cbd8b601761b594ab0a8515bd4b9d8f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5776012556514814526, guid: 8cbd8b601761b594ab0a8515bd4b9d8f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2746748
@@ -7077,6 +7377,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 457989543678793305, guid: 411ac03ecf294b8449d4bad23e072f1b, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2487866027212197976, guid: 411ac03ecf294b8449d4bad23e072f1b, type: 3}
       propertyPath: m_Name
       value: StalagmiteBig_1
@@ -7245,6 +7549,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7635288919685286652, guid: 9662368661170cf4390751e4319b2563, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7339,6 +7647,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -716.299
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -7455,6 +7767,10 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7594,6 +7910,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6412261974648103715, guid: 13559c19028aa6c4bba05b5051d03628, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7615,6 +7935,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 457989543678793305, guid: 411ac03ecf294b8449d4bad23e072f1b, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2487866027212197976, guid: 411ac03ecf294b8449d4bad23e072f1b, type: 3}
       propertyPath: m_Name
       value: StalagmiteBig_1 (1)
@@ -7753,6 +8077,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 92.62
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3
@@ -7861,6 +8189,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.207
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (13)
@@ -7922,6 +8254,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 6680346893078762607, guid: 8b73d2df4e820e24f9909eec8ac849f8, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7373055204361989613, guid: 8b73d2df4e820e24f9909eec8ac849f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5922
@@ -8073,6 +8409,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -34.914
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8129,6 +8469,10 @@ PrefabInstance:
     - target: {fileID: 3330515565251048610, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -166.858
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8229,6 +8573,10 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8422,6 +8770,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StalagmiteWall_4 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8566,6 +8922,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 6.678
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (16)
@@ -8676,6 +9036,10 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9002,6 +9366,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7992382764096447438, guid: 5932789165892a541ae8eddcc0035eb2, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9092,6 +9460,10 @@ PrefabInstance:
     - target: {fileID: 3330515565251048610, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 71.439
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9291,6 +9663,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9334,6 +9710,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1902208489702198912, guid: 045c16558435b494f81055cde4492e21, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5360309478588584223, guid: 045c16558435b494f81055cde4492e21, type: 3}
       propertyPath: m_Name
       value: StalagmiteBig_5 (1)
@@ -9558,6 +9938,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8617108741154158476, guid: 4f58f036eb429ca42b2de0fe7a11fec6, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9658,6 +10042,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 323.529
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (24)
@@ -9746,6 +10134,10 @@ PrefabInstance:
     - target: {fileID: 6166172069533342233, guid: 4f58f036eb429ca42b2de0fe7a11fec6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617108741154158476, guid: 4f58f036eb429ca42b2de0fe7a11fec6, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10013,6 +10405,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4442675365043233264, guid: 82b1b217b8d41164887bb0d0e868682e, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10180,6 +10576,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10223,6 +10623,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1601556727930852457, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3906092469638939169, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.5467997
@@ -10406,6 +10810,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10486,6 +10894,10 @@ PrefabInstance:
     - target: {fileID: 5433722654774312327, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.064
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10581,6 +10993,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -10693,6 +11109,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10775,6 +11195,10 @@ PrefabInstance:
     - target: {fileID: 1376539956730043097, guid: 77c42c52f0f20124bbd07c95313621f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720266619111726645, guid: 77c42c52f0f20124bbd07c95313621f5, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5578428623356331531, guid: 77c42c52f0f20124bbd07c95313621f5, type: 3}
       propertyPath: m_Name
@@ -10913,6 +11337,10 @@ PrefabInstance:
     - target: {fileID: 5433722654774312327, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11169,6 +11597,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 144.169
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (4)
@@ -11224,10 +11656,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BetterGrubEggs
       objectReference: {fileID: 0}
-    - target: {fileID: 2698657756105338392, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3330515565251048610, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.720001
@@ -11267,6 +11695,10 @@ PrefabInstance:
     - target: {fileID: 3330515565251048610, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 149.822
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11367,6 +11799,10 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11471,6 +11907,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8590475717549364563, guid: 6e083c7fe70d1164d9354c57f2196cd4, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11572,6 +12012,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -153.65201
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11636,6 +12080,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -534.604
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -11727,6 +12175,10 @@ PrefabInstance:
     - target: {fileID: 1815516610300438316, guid: e366b903d2ce6bf438910981a08a5ff6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126475147697483784, guid: e366b903d2ce6bf438910981a08a5ff6, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4650599161205167662, guid: e366b903d2ce6bf438910981a08a5ff6, type: 3}
       propertyPath: m_Name
@@ -11839,6 +12291,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11933,6 +12389,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 178.626
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -12045,6 +12505,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12148,6 +12612,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12242,6 +12710,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -600.094
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -12338,6 +12810,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -25.416
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12402,6 +12878,10 @@ PrefabInstance:
     - target: {fileID: 2200494714190331206, guid: d8e9c104968891940b2b490a80eaffad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536981786670883066, guid: d8e9c104968891940b2b490a80eaffad, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8866840139801975965, guid: d8e9c104968891940b2b490a80eaffad, type: 3}
       propertyPath: m_Name
@@ -12481,6 +12961,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1601556727930852457, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3906092469638939169, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.7300005
@@ -12636,6 +13120,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.12
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (17)
@@ -12739,9 +13227,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 188.754
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12837,6 +13333,10 @@ PrefabInstance:
     - target: {fileID: 2200494714190331206, guid: d8e9c104968891940b2b490a80eaffad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 20.529
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536981786670883066, guid: d8e9c104968891940b2b490a80eaffad, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8866840139801975965, guid: d8e9c104968891940b2b490a80eaffad, type: 3}
       propertyPath: m_Name
@@ -12936,6 +13436,10 @@ PrefabInstance:
     - target: {fileID: 3330515565251048610, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -124.907
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13103,6 +13607,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7635288919685286652, guid: 9662368661170cf4390751e4319b2563, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13197,6 +13705,10 @@ PrefabInstance:
     - target: {fileID: 2200494714190331206, guid: d8e9c104968891940b2b490a80eaffad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536981786670883066, guid: d8e9c104968891940b2b490a80eaffad, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8866840139801975965, guid: d8e9c104968891940b2b490a80eaffad, type: 3}
       propertyPath: m_Name
@@ -13309,6 +13821,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13352,6 +13868,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933245443}
     m_Modifications:
+    - target: {fileID: 1601556727930852457, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3906092469638939169, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
       propertyPath: m_LocalScale.x
       value: 6.6390758
@@ -13506,6 +14026,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -8.055
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -13729,6 +14253,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -595.149
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (18)
@@ -13867,6 +14395,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -182.473
       objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13961,6 +14493,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -631.719
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -14079,6 +14615,10 @@ PrefabInstance:
     - target: {fileID: 1815516610300438316, guid: e366b903d2ce6bf438910981a08a5ff6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126475147697483784, guid: e366b903d2ce6bf438910981a08a5ff6, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4650599161205167662, guid: e366b903d2ce6bf438910981a08a5ff6, type: 3}
       propertyPath: m_Name
@@ -14218,6 +14758,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14336,6 +14880,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 68.117
       objectReference: {fileID: 0}
+    - target: {fileID: 5554577353226652926, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14427,6 +14975,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -162.342
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -14613,6 +15165,10 @@ PrefabInstance:
     - target: {fileID: 7904672358059201602, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14982,6 +15538,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2107900504912646597, guid: 385b757f8610ac8408d2966087385dc1, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3912748527566979841, guid: 385b757f8610ac8408d2966087385dc1, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.2343347
@@ -15136,6 +15696,10 @@ PrefabInstance:
     - target: {fileID: 5433722654774312327, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215791066542953666, guid: 39f40733df05ea84993f461052fdf3eb, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15370,6 +15934,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 15.2859955
       objectReference: {fileID: 0}
+    - target: {fileID: 2536981786670883066, guid: d8e9c104968891940b2b490a80eaffad, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8866840139801975965, guid: d8e9c104968891940b2b490a80eaffad, type: 3}
       propertyPath: m_Name
       value: StalagmiteFloor_3 (1)
@@ -15499,6 +16067,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -534.604
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -15665,6 +16237,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8934264243824920678, guid: 7289b8e5984eb17468256a877ad61718, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15759,6 +16335,10 @@ PrefabInstance:
     - target: {fileID: 1960585065928708726, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -57.569
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
@@ -15863,9 +16443,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 169.298
       objectReference: {fileID: 0}
+    - target: {fileID: 7739949234953465376, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
       propertyPath: m_Name
       value: StalagmiteWall_3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845347320960782058, guid: 05084d12d88ddd04aba754d6bd67bfc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

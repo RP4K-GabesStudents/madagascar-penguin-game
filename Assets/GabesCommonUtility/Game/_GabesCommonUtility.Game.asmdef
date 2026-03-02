@@ -1,7 +1,7 @@
 {
     "name": "GabesCommonUtility.Game",
     "rootNamespace": "GabesCommonUtility",
-    "references": [],
+    "references": ["Unity.Splines", "Unity.Mathematics"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

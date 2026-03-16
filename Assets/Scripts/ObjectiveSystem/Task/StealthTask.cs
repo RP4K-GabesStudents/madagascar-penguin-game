@@ -19,5 +19,10 @@ namespace ObjectiveSystem.Task
         {
             throw new NotImplementedException();
         }
+
+        public void Dispose()
+        {
+            // TODO release managed resources here
+        }
     }
 }

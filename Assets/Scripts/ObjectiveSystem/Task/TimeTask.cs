@@ -18,5 +18,10 @@ namespace ObjectiveSystem.Task
         {
             throw new NotImplementedException();
         }
+
+        public void Dispose()
+        {
+            
+        }
     }
 }

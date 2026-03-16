@@ -1,17 +1,26 @@
-using System;
-
 namespace  ObjectiveSystem.Core 
 {
-    public interface ITaskObservable 
+    public enum EActionType
     {
-        public event Action<EActionType> OnComplete;
-        
-        public enum EActionType
-        {
-            KillEvent,
-            ActionEvent,
-            SpottedEvent,
-            InteractEvent
-        }
+        Kill,
+        Spotted,
+        Interact
+    }
+
+    public interface ITaskObservable { }
+
+    public interface IKillTaskObservable : ITaskObservable
+    {
+        public EActionType ActionType =>  EActionType.Kill;
+    }
+
+    public interface IInteractObservable : ITaskObservable
+    {
+        public EActionType ActionType =>  EActionType.Spotted;
+    }
+
+    public interface ISpottedObservable : ITaskObservable
+    {
+        public EActionType ActionType =>  EActionType.Interact;
     }
 }

@@ -50,5 +50,10 @@ namespace ObjectiveSystem.Task
         {
             return Tasks;
         }
+
+        public void Dispose()
+        {
+            
+        }
     }
 }

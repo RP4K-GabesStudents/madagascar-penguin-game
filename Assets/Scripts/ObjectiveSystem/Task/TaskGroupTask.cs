@@ -16,16 +16,16 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public event Action OnComplete;
         public string TaskName { get; }
-        private readonly HashSet<ITask> Tasks = new();
+        private readonly HashSet<ITask> _tasks = new();
 
         public bool IsComplete()
         {
-            return (!Optional && Tasks.All(task => task.IsComplete())) || Optional;
+            return (!Optional && _tasks.All(task => task.IsComplete())) || Optional;
         }
 
         public bool AddTask(ITask task)
         {
-            if (!Tasks.Add(task)) return false;
+            if (!_tasks.Add(task)) return false;
 
             task.OnComplete += CheckComplete;
             return true;
@@ -41,14 +41,14 @@ namespace ObjectiveSystem.Task
 
         public bool RemoveTask(ITask task)
         {
-            if (Tasks.Remove(task)) return false;
+            if (_tasks.Remove(task)) return false;
             task.OnComplete -= CheckComplete;
             return true;
         }
 
         public HashSet<ITask> GetTaskList()
         {
-            return Tasks;
+            return _tasks;
         }
 
         public void Dispose()

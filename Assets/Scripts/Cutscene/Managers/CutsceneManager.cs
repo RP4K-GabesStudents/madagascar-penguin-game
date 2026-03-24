@@ -1,11 +1,12 @@
 using UnityEngine;
+using Cutscene.Core;
 
-namespace Cutscene
+namespace Cutscene.Managers
 {
     public class CutsceneManager : MonoBehaviour
     {
         public CutsceneManager Instance { get; private set; }
-        private Cutscenes.Cutscene _currentCutscene;
+        private ICutscenes _currentCutscene;
         
 
         private void Awake()
@@ -19,12 +20,12 @@ namespace Cutscene
             DontDestroyOnLoad(gameObject);
         }
 
-        public void PlayCutscene(Cutscenes.Cutscene cutscene)
+        public void PlayCutscene(ICutscenes cutscene)
         {
             _currentCutscene = cutscene;
         }
 
-        public Cutscenes.Cutscene GetCurCutscene()
+        public ICutscenes GetCurCutscene()
         {
             return _currentCutscene;
         }

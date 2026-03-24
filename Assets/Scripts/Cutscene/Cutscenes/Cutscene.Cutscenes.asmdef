@@ -1,3 +1,4 @@
 {
-	"name": "Cutscene.Cutscenes"
+	"name": "Cutscene.Cutscenes",
+	"references": ["Cutscene.Core","Cutscene.Managers", "Unity.Netcode.Runtime"]
 }

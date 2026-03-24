@@ -1,16 +1,8 @@
 using UnityEngine;
 
-public class ICutscenes : MonoBehaviour
+namespace Cutscene.Core
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public interface ICutscenes
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

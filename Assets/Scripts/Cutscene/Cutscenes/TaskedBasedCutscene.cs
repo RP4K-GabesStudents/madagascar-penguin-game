@@ -1,15 +1,9 @@
 using UnityEngine;
+using Cutscene.Core;
 
-public class TaskedBasedCutscene : MonoBehaviour
+namespace Cutscene.Cutscenes
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    public class TaskedBasedCutscene : MonoBehaviour, ICutscenes
     {
         
     }

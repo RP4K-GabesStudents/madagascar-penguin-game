@@ -1,16 +1,37 @@
+using System;
+using Cutscene.Core;
+using Cutscene.Managers;
+using Unity.Netcode;
 using UnityEngine;
 
-public class InstantCutscene : MonoBehaviour
+namespace Cutscene.Cutscenes
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class InstantCutscene : NetworkBehaviour, ICutscenes
     {
+        [SerializeField] private CutsceneManager cutsceneManager;
+        private int _loadedPlayers;
         
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+        private void LoadPlayers_ServerRPC()
+        {
+            _loadedPlayers++;
+            if (_loadedPlayers == NetworkManager.Singleton.ConnectedClients.Count)
+            {
+                PlayCutscene_ClientRpc();
+            }
+        }
         
+        public override void OnNetworkSpawn()
+        {
+            LoadPlayers_ServerRPC();
+        }
+        
+        
+        [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Server)]
+        private void PlayCutscene_ClientRpc()
+        {
+            cutsceneManager.Instance.PlayCutscene(this);
+        }
     }
 }

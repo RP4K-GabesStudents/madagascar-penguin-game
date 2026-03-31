@@ -27,9 +27,9 @@ namespace Cutscene.Cutscenes
         {
             _playerCount.Value++;
             bool playersLoaded = _loadedPlayers == NetworkManager.Singleton.ConnectedClients.Count;
+            bool canPlayCutscene = playersLoaded && (!requireAllPlayers || _playerCount.Value == _loadedPlayers);
             
-            
-            if (playersLoaded || !requireAllPlayers)
+            if (canPlayCutscene)
             {
                 PlayCutscene_ClientRpc();
             }

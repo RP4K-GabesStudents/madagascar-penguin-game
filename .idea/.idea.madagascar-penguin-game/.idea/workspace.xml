@@ -5,9 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbdf07ff-7e02-4436-91c3-f19a84f260b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/IReward.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/IReward.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/Task.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/Task.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Manager/TaskManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Manager/TaskManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Rewards.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Rewards/AchievementReward.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Rewards/AchievementReward.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Rewards/ObjectiveSystem.Rewards.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Rewards/ObjectiveSystem.Rewards.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Rewards/StateReward.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Rewards/StateReward.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneCinematic/CutsceneInfiltrate.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneCinematic/CutsceneInfiltrate.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneCinematic/IntroCutscene.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneCinematic/IntroCutscene.playable" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/ITask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/ITaskConditional.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/ITask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/ITaskConditional.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/DestinationTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/DestinationTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/InteractionTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/InteractionTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/KillTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/KillTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/StealthTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/StealthTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/TaskGroupTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/TaskGroupTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/TimeTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/TimeTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestingTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TestingTask.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +50,24 @@
     <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/SpawnNetworkObjectSequence.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/QuickLoad/SpawnDesiredCharacter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AudioSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Core/Cutscene.Core.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Core/ICutscenes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Cutscenes/Cutscene.Cutscenes.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Cutscenes/InstantCutscene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Cutscenes/TaskedBasedCutscene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Cutscenes/TimerBasedCutscene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Cutscenes/TriggerBasedCutscene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Managers/Cutscene.Managers.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Managers/CutsceneManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Characters/World/Penguin.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ISettingsMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/IReward.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/ITaskConditional.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/Task.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Manager/TaskManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Rewards/StateReward.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Task/DestinationTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestingDummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Transition/PenguinSelectorStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Editor/ReverseAnimationContent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -50,22 +86,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="N:\Unity\6000.3.8f1\Editor\Unity.exe" />
@@ -166,6 +203,7 @@
       <workItem from="1773701227681" duration="4822000" />
       <workItem from="1774312058706" duration="4487000" />
       <workItem from="1774912375375" duration="1379000" />
+      <workItem from="1776730200554" duration="5010000" />
     </task>
     <servers />
   </component>

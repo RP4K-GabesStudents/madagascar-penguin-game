@@ -5,11 +5,11 @@ using ObjectiveSystem.Core;
 
 namespace ObjectiveSystem.Task
 {
-    public class TaskGroupTask : ITask
+    public class TaskConditionalGroupTaskConditional : ITaskConditional
     {
-        public TaskGroupTask(string taskName, bool optional)
+        public TaskConditionalGroupTaskConditional( bool optional)
         {
-            TaskName = taskName;
+            
             Optional = optional;
         }
 
@@ -17,8 +17,8 @@ namespace ObjectiveSystem.Task
         public event Action OnComplete;
         public string TaskName { get; }
 
-        ETaskState ITask.currentState { get; set; } = ETaskState.Active;
-        private readonly HashSet<ITask> _tasks = new();
+        ETaskState ITaskConditional.currentState { get; set; } = ETaskState.Active;
+        private readonly HashSet<ITaskConditional> _tasks = new();
         private ETaskState _currentState;
         private ETaskState _currentState1;
 
@@ -27,11 +27,11 @@ namespace ObjectiveSystem.Task
         //     return (!Optional && _tasks.All(task => task.IsComplete())) || Optional;
         // }
 
-        public bool AddTask(ITask task)
+        public bool AddTask(ITaskConditional taskConditional)
         {
-            if (!_tasks.Add(task)) return false;
+            if (!_tasks.Add(taskConditional)) return false;
 
-            task.OnComplete += CheckComplete;
+            taskConditional.OnComplete += CheckComplete;
             return true;
         }
 
@@ -43,14 +43,14 @@ namespace ObjectiveSystem.Task
             // }
         }
 
-        public bool RemoveTask(ITask task)
+        public bool RemoveTask(ITaskConditional taskConditional)
         {
-            if (_tasks.Remove(task)) return false;
-            task.OnComplete -= CheckComplete;
+            if (_tasks.Remove(taskConditional)) return false;
+            taskConditional.OnComplete -= CheckComplete;
             return true;
         }
 
-        public HashSet<ITask> GetTaskList()
+        public HashSet<ITaskConditional> GetTaskList()
         {
             return _tasks;
         }

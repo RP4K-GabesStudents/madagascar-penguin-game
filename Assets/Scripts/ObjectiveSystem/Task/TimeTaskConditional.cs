@@ -3,9 +3,9 @@ using ObjectiveSystem.Core;
 
 namespace ObjectiveSystem.Task
 {
-    public class TimeTask : ITask
+    public class TimeTaskConditional : ITaskConditional
     {
-        public TimeTask(bool optional, string taskName)
+        public TimeTaskConditional(bool optional, string taskName)
         {
             Optional = optional;
             TaskName = taskName;
@@ -14,7 +14,7 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public event Action OnComplete;
         public string TaskName { get; }
-        ETaskState ITask.currentState { get; set; } = ETaskState.Active;
+        ETaskState ITaskConditional.currentState { get; set; } = ETaskState.Active;
 
         public void Dispose()
         {

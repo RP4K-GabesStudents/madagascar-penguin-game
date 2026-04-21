@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace ObjectiveSystem.Task
 {
-    public class KillTask<T> : ITask where T : ITaskObservable
+    public class KillTaskConditional<T> : ITaskConditional where T : ITaskObservable
     {
-        public KillTask(bool optional, string taskName, int amount)
+        public KillTaskConditional(bool optional, string taskName, int amount)
         {
             Optional = optional;
             TaskName = taskName;
@@ -39,7 +39,7 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public event Action OnComplete;
         public string TaskName { get; }
-        ETaskState ITask.currentState { get; set; } = ETaskState.Active;
+        ETaskState ITaskConditional.currentState { get; set; } = ETaskState.Active;
 
 
         public bool IsComplete() => _killCount >= _requiredAmount;

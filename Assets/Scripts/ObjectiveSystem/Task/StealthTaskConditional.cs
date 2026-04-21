@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace ObjectiveSystem.Task
 {
-    public class StealthTask : ITask
+    public class StealthTaskConditional : ITaskConditional
     {
-        public StealthTask(bool optional, string taskName)
+        public StealthTaskConditional(bool optional, string taskName)
         {
             Optional = optional;
             TaskName = taskName;
@@ -15,7 +15,7 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public event Action OnComplete;
         public string TaskName { get; }
-        ETaskState ITask.currentState { get; set; } = ETaskState.Active;
+        ETaskState ITaskConditional.currentState { get; set; } = ETaskState.Active;
 
 
         public bool IsComplete()

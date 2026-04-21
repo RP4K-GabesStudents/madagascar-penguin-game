@@ -2,7 +2,7 @@ using System;
 
 namespace ObjectiveSystem.Core
 {
-    public interface ITask : IDisposable
+    public interface ITaskConditional : IDisposable
     {
         public bool Optional { get; }
         public event Action OnComplete;

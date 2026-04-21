@@ -7,9 +7,17 @@ namespace ObjectiveSystem.Core
         public bool Optional { get; }
         public event Action OnComplete;
         public string TaskName { get; }
-        
-        
-        public bool IsComplete();
-        
+
+        // public bool DidFail();
+        // public bool IsComplete();
+        protected internal ETaskState currentState { get;  set; }
+        public ETaskState CurrentState => currentState;
+    }
+
+    public enum ETaskState
+    {
+        Active,
+        Failed,
+        Successful
     }
 }

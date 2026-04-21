@@ -14,10 +14,7 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public event Action OnComplete;
         public string TaskName { get; }
-        public bool IsComplete()
-        {
-            throw new NotImplementedException();
-        }
+        ETaskState ITask.currentState { get; set; } = ETaskState.Active;
 
         public void Dispose()
         {

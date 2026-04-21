@@ -39,6 +39,8 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public event Action OnComplete;
         public string TaskName { get; }
+        ETaskState ITask.currentState { get; set; } = ETaskState.Active;
+
 
         public bool IsComplete() => _killCount >= _requiredAmount;
 

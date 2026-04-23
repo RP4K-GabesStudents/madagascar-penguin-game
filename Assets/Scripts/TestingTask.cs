@@ -8,14 +8,13 @@ namespace Utilities.Utilities.Common.Settings
     {
         private ITaskConditional _test1;
         private ITaskConditional _test2;
-        TaskConditionalGroupTaskConditional _taskConditionalGroup;
         [SerializeField] private int testingAmount1 = 5;
         [SerializeField] private int testingAmount2 = 5;
         private void Awake()
         {
             
-            _test1 = new KillTaskConditional<TestingDummy>(false, "test 1", testingAmount1);
-            _test2 = new KillTaskConditional<TestingDummy2>(false, "test 2", testingAmount2);
+            _test1 = new KillConditional<TestingDummy>(false, "test 1", testingAmount1);
+            _test2 = new KillConditional<TestingDummy2>(false, "test 2", testingAmount2);
             
             /*
             _taskConditionalGroup = new TaskConditionalGroupTaskConditional("Testing Group", false);
@@ -25,7 +24,6 @@ namespace Utilities.Utilities.Common.Settings
             
             _test1.OnComplete += () => Display(_test1);
             _test2.OnComplete += () => Display(_test2);
-            _taskConditionalGroup.OnComplete += () => Display(_taskConditionalGroup);
         }
 
         private void Display(ITaskConditional t)

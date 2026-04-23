@@ -1,0 +1,20 @@
+{
+    "name": "ObjectiveSystem.Editor",
+    "rootNamespace": " ",
+    "references": [
+        "ObjectiveSystem.Core",
+        "ObjectiveSystem.Task",
+        "ObjectiveSystem.ScriptableObjects"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

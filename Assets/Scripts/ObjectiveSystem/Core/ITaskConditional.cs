@@ -10,8 +10,7 @@ namespace ObjectiveSystem.Core
 
         // public bool DidFail();
         // public bool IsComplete();
-        protected internal ETaskState currentState { get;  set; }
-        public ETaskState CurrentState => currentState;
+        public ETaskState GetCurrentState();
 
         public string GetDescription();
     }

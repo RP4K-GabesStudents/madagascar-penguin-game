@@ -20,7 +20,6 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public string TaskName { get; }
         ETaskState currentState { get; set; } = ETaskState.Active;
-        public event Action OnComplete;
 
         /// <summary>
         /// Call this from your trigger zone when the player enters.
@@ -29,7 +28,6 @@ namespace ObjectiveSystem.Task
         public void OnPlayerArrived()
         {
             currentState = ETaskState.Successful;
-            OnComplete?.Invoke();
         }
 
         public ETaskState GetCurrentState()
@@ -41,6 +39,8 @@ namespace ObjectiveSystem.Task
             string.IsNullOrEmpty(WaypointLabel)
                 ? $"Reach destination ({DestinationTag})"
                 : $"Go to {WaypointLabel}";
+
+        public OnUpdateDelegate OnUpdate { get; set; }
 
         public void Dispose() { }
     }

@@ -21,7 +21,7 @@ namespace ObjectiveSystem.ScriptableObjects
         public readonly List<IReward> Rewards = new();
 
         public string Name => name;
-        public event Action TaskUpdated;
+        public event Action OnUpdate;
 
         /// <summary>
         /// Instantiate all conditionals from their serialized data.
@@ -33,10 +33,25 @@ namespace ObjectiveSystem.ScriptableObjects
             FailedTasks.Clear();
 
             foreach (var data in CompletionConditions)
-                if (data != null) CompletionTasks.Add(data.BuildConditional());
-
+            {
+                if (data != null)
+                {
+                    var task = data.BuildConditional();
+                    task.OnUpdate = OnUpdate!.Invoke;
+                    CompletionTasks.Add(task);
+                }
+            }
+            
             foreach (var data in FailureConditions)
-                if (data != null) FailedTasks.Add(data.BuildConditional());
+            {
+                if (data != null)
+                {
+                    var task = data.BuildConditional();
+                    task.OnUpdate = OnUpdate!.Invoke;
+                    FailedTasks.Add(task);
+                }
+            }
+            
         }
 
         public void RebuildText()
@@ -101,6 +116,15 @@ namespace ObjectiveSystem.ScriptableObjects
                     RebuildText();
                 return _curText;
             }
+        }
+
+        public void Update()
+        {
+            float deltaTime = Time.deltaTime;
+            foreach(ITaskConditional conditions in CompletionTasks)
+                conditions.Update(deltaTime);
+            foreach(ITaskConditional conditions in FailedTasks)
+                conditions.Update(deltaTime);
         }
     }
 }

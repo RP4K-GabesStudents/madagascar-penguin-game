@@ -27,7 +27,6 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public string TaskName { get; }
         ETaskState currentState { get; set; } = ETaskState.Active;
-        public event Action OnComplete;
 
         private void OnAction(EActionType actionType)
         {
@@ -39,7 +38,6 @@ namespace ObjectiveSystem.Task
             if (_count >= _required)
             {
                 currentState = ETaskState.Successful;
-                OnComplete?.Invoke();
             }
         }
 
@@ -49,6 +47,7 @@ namespace ObjectiveSystem.Task
         }
 
         public string GetDescription() => $"Interact {_count}/{_required}";
+        public OnUpdateDelegate OnUpdate { get; set; }
 
         public void Dispose() =>
             TaskObservableEventBus<IInteractObservable>.OnActionSubmitted -= OnAction;

@@ -21,7 +21,6 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public string TaskName { get; }
         ETaskState currentState { get; set; } = ETaskState.Active;
-        public event Action OnComplete;
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
@@ -31,7 +30,6 @@ namespace ObjectiveSystem.Task
             if (!matches) return;
 
             currentState = ETaskState.Successful;
-            OnComplete?.Invoke();
             Dispose();
         }
         
@@ -44,6 +42,8 @@ namespace ObjectiveSystem.Task
             string.IsNullOrEmpty(_targetSceneName)
                 ? "Enter any new scene"
                 : $"Enter scene '{_targetSceneName}'";
+
+        public OnUpdateDelegate OnUpdate { get; set; }
 
         public void Dispose() =>
             SceneManager.sceneLoaded -= OnSceneLoaded;

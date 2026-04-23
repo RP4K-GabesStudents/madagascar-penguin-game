@@ -21,7 +21,6 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public string TaskName { get; }
         ETaskState currentState { get; set; } = ETaskState.Active;
-        public event Action OnComplete;
 
         public void UpdateRequiredAmount(int newAmount)
         {
@@ -38,6 +37,8 @@ namespace ObjectiveSystem.Task
         public string GetDescription() =>
             $"Kill {_killCount}/{_requiredAmount} {typeof(T).Name}";
 
+        public OnUpdateDelegate OnUpdate { get; set; }
+
         private void OnAction(EActionType actionType)
         {
             if (actionType != EActionType.Kill) return;
@@ -52,7 +53,6 @@ namespace ObjectiveSystem.Task
         private void Complete()
         {
             currentState = ETaskState.Successful;
-            OnComplete?.Invoke();
         }
 
         public void Dispose() =>

@@ -42,11 +42,6 @@ namespace GabesCommonUtility.Multiplayer.GameObjects.Sequencing
             // CurrentPlayer.ReadOnly returns true for virtual players
             var arguments = Environment.GetCommandLineArgs();
             int nameIndex = Array.IndexOf(arguments, "-name");
-
-            foreach (string  s in arguments)
-            {
-                Debug.Log(s);
-            }
         
             if(nameIndex >= 0 && nameIndex + 1 < arguments.Length)
             {

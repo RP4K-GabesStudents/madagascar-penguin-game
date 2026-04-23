@@ -24,7 +24,6 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public string TaskName { get; }
         ETaskState currentState { get; set; } = ETaskState.Active;
-        public event Action OnComplete;
 
         private void OnAction(EActionType actionType)
         {
@@ -37,11 +36,12 @@ namespace ObjectiveSystem.Task
             if (!shouldFail) return;
 
             currentState = ETaskState.Failed;
-            OnComplete?.Invoke(); // Callers should check CurrentState to determine fail vs. success
         }
 
         public string GetDescription() =>
             _failOnFirstSpot ? "Not spotted" : $"Spotted ≤ {_allowedSpotCount}x ({_spotCount} so far)";
+
+        public OnUpdateDelegate OnUpdate { get; set; }
 
         public void Dispose() =>
             TaskObservableEventBus<ISpottedObservable>.OnActionSubmitted -= OnAction;

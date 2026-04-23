@@ -29,17 +29,18 @@ namespace ObjectiveSystem.Task
         public bool Optional { get; }
         public string TaskName { get; }
         ETaskState currentState { get; set; } = ETaskState.Active;
-        public event Action OnComplete;
 
         public float Progress => Mathf.Clamp01(_elapsed / _duration);
         public float Remaining => Mathf.Max(0f, _duration - _elapsed);
 
         /// <summary>Advance the timer. Call from TaskManager or a MonoBehaviour Update.</summary>
-        public void Tick(float deltaTime)
+        public void Update(float deltaTime)
         {
             if (_finished) return;
 
             _elapsed += deltaTime;
+            
+            OnUpdate!.Invoke();
 
             if (_elapsed < _duration) return;
 
@@ -55,7 +56,6 @@ namespace ObjectiveSystem.Task
                 currentState = ETaskState.Failed;
             }
 
-            OnComplete?.Invoke();
         }
 
         /// <summary>
@@ -66,13 +66,14 @@ namespace ObjectiveSystem.Task
             if (_finished) return;
             _finished = true;
             currentState = ETaskState.Successful;
-            OnComplete?.Invoke();
         }
 
         public string GetDescription() =>
             _surviveMode
                 ? $"Survive {_duration}s ({Remaining:F1}s left)"
                 : $"Complete within {_duration}s ({Remaining:F1}s left)";
+
+        public OnUpdateDelegate OnUpdate { get; set; }
 
         public ETaskState GetCurrentState()
         {

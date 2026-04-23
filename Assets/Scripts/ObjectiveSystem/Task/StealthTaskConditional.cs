@@ -16,6 +16,10 @@ namespace ObjectiveSystem.Task
         public event Action OnComplete;
         public string TaskName { get; }
         ETaskState ITaskConditional.currentState { get; set; } = ETaskState.Active;
+        public string GetDescription()
+        {
+            return "StealthTaskConditional";
+        }
 
 
         public bool IsComplete()

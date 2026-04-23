@@ -31,8 +31,7 @@ namespace ObjectiveSystem.Core
                     i++;
                     if (i >= preText.Length) return;
                     List<ITaskConditional> curList;
-                    int id = 0;
-                    
+
                     switch ((byte)preText[i] | 32)
                     {
                         case 'c':
@@ -50,9 +49,9 @@ namespace ObjectiveSystem.Core
                     while (++i <= preText.Length && preText[i] != '}')
                         num.Append(preText[i]);
 
-                    id = int.Parse(num.ToString());
+                    int id = int.Parse(num.ToString());
                     
-                    sb.Append(CompletionTasks[id].CurrentText);
+                    sb.Append(curList[id].GetDescription());
                 }
                 else sb.Append(t);
             }
@@ -61,7 +60,7 @@ namespace ObjectiveSystem.Core
         private void OnValidate() => RebuiltText();
 
         [SerializeField, TextArea] private string preText;
-        [SerializeField, ReadOnly]private string _curText;
+        [SerializeField, ReadOnly] private string _curText;
 
         public string CurrentText
         {

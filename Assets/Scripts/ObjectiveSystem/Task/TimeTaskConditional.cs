@@ -20,5 +20,10 @@ namespace ObjectiveSystem.Task
         {
             
         }
+        
+        public string GetDescription()
+        {
+            return "TimeTaskConditional";
+        }
     }
 }

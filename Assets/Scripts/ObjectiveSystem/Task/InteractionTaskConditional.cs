@@ -17,7 +17,10 @@ namespace ObjectiveSystem.Task
         public string TaskName { get; }
         ETaskState ITaskConditional.currentState { get; set; } = ETaskState.Active;
 
-
+        public string GetDescription()
+        {
+            return "InteractionTaskConditional";
+        }
         public bool IsComplete()
         {
             throw new NotImplementedException();

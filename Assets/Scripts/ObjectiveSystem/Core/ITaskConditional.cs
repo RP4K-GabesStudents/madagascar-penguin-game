@@ -12,6 +12,8 @@ namespace ObjectiveSystem.Core
         // public bool IsComplete();
         protected internal ETaskState currentState { get;  set; }
         public ETaskState CurrentState => currentState;
+
+        public string GetDescription();
     }
 
     public enum ETaskState

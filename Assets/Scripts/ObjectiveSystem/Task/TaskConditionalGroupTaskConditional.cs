@@ -42,6 +42,11 @@ namespace ObjectiveSystem.Task
             //     OnComplete?.Invoke();
             // }
         }
+        
+        public string GetDescription()
+        {
+            return "TaskConditionalGroupTaskConditional";
+        }
 
         public bool RemoveTask(ITaskConditional taskConditional)
         {

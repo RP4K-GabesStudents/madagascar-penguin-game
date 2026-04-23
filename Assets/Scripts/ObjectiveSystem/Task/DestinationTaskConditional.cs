@@ -20,5 +20,10 @@ namespace ObjectiveSystem.Task
         {
             // TODO release managed resources here
         }
+        
+        public string GetDescription()
+        {
+            return "DestinationTaskConditional";
+        }
     }
 }

@@ -24,6 +24,11 @@ namespace ObjectiveSystem.Task
             if (_killCount >= _requiredAmount)
                 OnComplete?.Invoke();
         }
+        
+        public string GetDescription()
+        {
+            return "KillTaskConditional";
+        }
 
         private void CheckEnemyDeath(EActionType actionType)
         {

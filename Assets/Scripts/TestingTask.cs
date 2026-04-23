@@ -16,9 +16,12 @@ namespace Utilities.Utilities.Common.Settings
             
             _test1 = new KillTaskConditional<TestingDummy>(false, "test 1", testingAmount1);
             _test2 = new KillTaskConditional<TestingDummy2>(false, "test 2", testingAmount2);
+            
+            /*
             _taskConditionalGroup = new TaskConditionalGroupTaskConditional("Testing Group", false);
             _taskConditionalGroup.AddTask(_test1);
             _taskConditionalGroup.AddTask(_test2);
+            */
             
             _test1.OnComplete += () => Display(_test1);
             _test2.OnComplete += () => Display(_test2);

@@ -24,11 +24,10 @@ namespace ObjectiveSystem.Task
         private readonly bool _surviveMode;
         private readonly float _duration;
         private float _elapsed;
-        private bool _finished;
 
         public bool Optional { get; }
         public string TaskName { get; }
-        ETaskState currentState { get; set; } = ETaskState.Active;
+        ETaskState currentState = ETaskState.Active;
 
         public float Progress => Mathf.Clamp01(_elapsed / _duration);
         public float Remaining => Mathf.Max(0f, _duration - _elapsed);
@@ -36,37 +35,19 @@ namespace ObjectiveSystem.Task
         /// <summary>Advance the timer. Call from TaskManager or a MonoBehaviour Update.</summary>
         public void Update(float deltaTime)
         {
-            if (_finished) return;
+            if (currentState != ETaskState.Active) return;
 
             _elapsed += deltaTime;
             
             OnUpdate!.Invoke();
-
+            
             if (_elapsed < _duration) return;
 
-            _finished = true;
-
-            if (_surviveMode)
-            {
-                currentState = ETaskState.Successful;
-            }
-            else
-            {
-                // CompleteWithin mode: time ran out → fail
-                currentState = ETaskState.Failed;
-            }
-
-        }
-
-        /// <summary>
-        /// Call this from a CompleteWithin context when the player finishes in time.
-        /// </summary>
-        public void MarkSucceeded()
-        {
-            if (_finished) return;
-            _finished = true;
             currentState = ETaskState.Successful;
+            
+            OnUpdate!.Invoke();
         }
+
 
         public string GetDescription() =>
             _surviveMode

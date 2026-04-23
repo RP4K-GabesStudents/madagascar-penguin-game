@@ -30,8 +30,13 @@ namespace Utilities.Utilities.Common.Settings
 
         private void UpdateTask(Objective objective)
         {
+            if (objective.CurrentStatus != Objective.EObjectiveStatus.Active)
+            {
+                Debug.Log(objective.CurrentStatus);
+                return;
+            }
             
-            objective.RebuildText();
+            objective.RebuildTextGame();
             Debug.Log(objective.CurrentText);
         }
     }

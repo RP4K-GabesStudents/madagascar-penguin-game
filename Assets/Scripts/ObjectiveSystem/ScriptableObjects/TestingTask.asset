@@ -32,6 +32,6 @@ MonoBehaviour:
       type: {class: TimeConditionalData, ns: ObjectiveSystem.Task, asm: ObjectiveSystem.Task}
       data:
         taskName: Task B
-        optional: 0
+        optional: 1
         mode: 0
         seconds: 10

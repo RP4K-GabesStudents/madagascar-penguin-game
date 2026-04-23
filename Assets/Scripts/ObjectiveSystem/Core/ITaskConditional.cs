@@ -6,7 +6,6 @@ namespace ObjectiveSystem.Core
     {
         public bool Optional { get; }
         public event Action OnComplete;
-        public string TaskName { get; }
 
         // public bool DidFail();
         // public bool IsComplete();

@@ -7,7 +7,7 @@ using UnityEngine;
 namespace ObjectiveSystem.ScriptableObjects
 {
     [CreateAssetMenu(menuName = "ObjectiveSystem/Task", fileName = "New Task")]
-    public class Task : ScriptableObject
+    public class Objective : ScriptableObject
     {
         // Serialized via [SerializeReference] so Unity stores polymorphic subtype data inline.
         // At runtime, call BuildConditionals() to get live ITaskConditional instances.

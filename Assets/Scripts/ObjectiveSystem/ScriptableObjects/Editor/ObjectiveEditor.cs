@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace ObjectiveSystem.ScriptableObjects.Editor
 {
-    [CustomEditor(typeof(Task))]
+    [CustomEditor(typeof(Objective))]
     public class TaskEditor : UnityEditor.Editor
     {
         // All concrete TaskConditionalData subtypes found via reflection
@@ -57,7 +57,7 @@ namespace ObjectiveSystem.ScriptableObjects.Editor
 
         private void DrawTaskHeader()
         {
-            var task = (Task)target;
+            var task = (Objective)target;
             EditorGUILayout.LabelField(task.name, EditorStyles.boldLabel);
         }
 
@@ -74,7 +74,7 @@ namespace ObjectiveSystem.ScriptableObjects.Editor
             if (GUILayout.Button("Rebuild Text", GUILayout.Height(22)))
             {
                 serializedObject.ApplyModifiedProperties();
-                ((Task)target).RebuildText();
+                ((Objective)target).RebuildText();
                 serializedObject.Update();
             }
         }

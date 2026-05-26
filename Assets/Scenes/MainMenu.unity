@@ -816,11 +816,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 90361258}
-  - component: {fileID: 90361257}
+  - component: {fileID: 90361259}
   - component: {fileID: 90361256}
   - component: {fileID: 90361255}
-  - component: {fileID: 90361260}
-  - component: {fileID: 90361259}
   m_Layer: 0
   m_Name: create lobby
   m_TagString: Untagged
@@ -840,8 +838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922dbd87fec14977b2e5a9c81a5cd7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.Multiplayer.GameObjects.Sequencing::GabesCommonUtility.GabesCommonUtility.Multiplayer.GameObjects.Sequencing.CreateLobbySequence
-  success: {fileID: 90361259}
-  failure: {fileID: 90361260}
+  success: {fileID: 0}
+  failure: {fileID: 0}
   maxLobbySize: 4
   lobbyCode: {fileID: 219537173}
 --- !u!114 &90361256
@@ -858,22 +856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: GabesCommonUtility.Multiplayer.GameObjects.Sequencing::GabesCommonUtility.Multiplayer.GameObjects.Sequencing.NetcodeSigninSequence
   signInMode: 1
   next: {fileID: 90361255}
-  failure: {fileID: 90361260}
---- !u!114 &90361257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90361254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 140429a505f56c54fad9084934691136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Utilities.Vivox.SequenceStartPoint
-  start: {fileID: 90361256}
-  activateOnStart: 0
-  persist: 0
+  failure: {fileID: 0}
 --- !u!4 &90361258
 Transform:
   m_ObjectHideFlags: 0
@@ -898,21 +881,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 90361254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6cfa998939cde49b2a1fb5ede06c09, type: 3}
+  m_Script: {fileID: 11500000, guid: 50d49439e5b5f794d95a0242b1da8cb1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Network.Sequences.Create.CreateLobbySuccessSequence
---- !u!114 &90361260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90361254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7faff67eb8435245a7078ee00116d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Network.Sequences.Create.CreateLobbyFailSequence
+  m_EditorClassIdentifier: GabesCommonUtility.Sequence::GabesCommonUtility.Sequence.SequenceEntryPoint
+  start: {fileID: 90361256}
+  activateOnStart: 1
+  persist: 0
+  startDelay: 0
 --- !u!1 &99236186
 GameObject:
   m_ObjectHideFlags: 0
@@ -7123,8 +7098,6 @@ GameObject:
   - component: {fileID: 1446528822}
   - component: {fileID: 1446528821}
   - component: {fileID: 1446528820}
-  - component: {fileID: 1446528825}
-  - component: {fileID: 1446528824}
   m_Layer: 0
   m_Name: join lobby
   m_TagString: Untagged
@@ -7145,8 +7118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.Multiplayer.GameObjects.Sequencing::GabesCommonUtility.Multiplayer.GameObjects.Sequencing.NetcodeSigninSequence
   signInMode: 1
-  next: {fileID: 1446528824}
-  failure: {fileID: 1446528825}
+  next: {fileID: 0}
+  failure: {fileID: 0}
 --- !u!114 &1446528821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7160,7 +7133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.Multiplayer.GameObjects.Sequencing::GabesCommonUtility.Multiplayer.GameObjects.Sequencing.JoinLobbySequence
   success: {fileID: 1446528820}
-  failure: {fileID: 1446528825}
+  failure: {fileID: 0}
   lobbyIdTMP: {fileID: 1678966647}
 --- !u!114 &1446528822
 MonoBehaviour:
@@ -7192,30 +7165,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1446528824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446528819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3449b7a9422336a489f53e79ad91ca89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Network.Sequences.Join.JoinLobbySuccessSequence
---- !u!114 &1446528825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446528819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4effaf49d1db774fa2ade852ffa8f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Network.Sequences.Join.JoinLobbyFailSequence
 --- !u!1 &1477427179
 GameObject:
   m_ObjectHideFlags: 0
@@ -11229,7 +11178,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 90361257}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Utilities.Vivox.SequenceStartPoint, Assembly-CSharp
         m_MethodName: ActivateAndForget
         m_Mode: 1

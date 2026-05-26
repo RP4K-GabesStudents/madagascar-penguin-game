@@ -1,16 +1,20 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using GabesCommonUtility.Multiplayer.GameObjects;
 using GabesCommonUtility.Sequence;
+using TMPro;
 using Unity.Services.Lobbies;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-namespace GabesCommonUtility.Multiplayer.GameObjects.Sequencing
+namespace GabesCommonUtility.GabesCommonUtility.Multiplayer.GameObjects.Sequencing
 {
     public class CreateLobbySequence : MonoBehaviour, IEntrySequence
     {
         [SerializeField] private Behaviour success; 
         [SerializeField] private Behaviour failure;
         [SerializeField] private int maxLobbySize = 8;
+        [SerializeField] private TextMeshProUGUI lobbyCode;
         
         public event Action<string> DisplayMessage;
         public async UniTask<IEntrySequence> ExecuteSequence()
@@ -28,6 +32,10 @@ namespace GabesCommonUtility.Multiplayer.GameObjects.Sequencing
                 
                 Debug.Log("We successfully created the lobby");
 
+                lobbyCode.text = LobbySystem.Instance.LobbyCode();
+                
+                Debug.Log("Lobby Code: " + LobbySystem.Instance.LobbyCode());
+                
                 return Default;
             }
             catch (LobbyServiceException e2)
@@ -37,6 +45,7 @@ namespace GabesCommonUtility.Multiplayer.GameObjects.Sequencing
                 return failure as  IEntrySequence;
             }
         }
+        
 
         public IEntrySequence Default => success as  IEntrySequence;
         public bool IsCompleted => LobbySystem.Instance.CurrentLobby != null;

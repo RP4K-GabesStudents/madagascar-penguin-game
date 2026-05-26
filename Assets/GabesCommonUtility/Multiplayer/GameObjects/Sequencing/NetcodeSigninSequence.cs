@@ -8,7 +8,7 @@ using UnityEngine;
 using ParrelSync;
 #endif
 
-namespace GabesCommonUtility.Multiplayer.GameObjects.Sequencing
+namespace GabesCommonUtility.GabesCommonUtility.Multiplayer.GameObjects.Sequencing
 {
     public class NetcodeSigninSequence : MonoBehaviour, IEntrySequence
     {

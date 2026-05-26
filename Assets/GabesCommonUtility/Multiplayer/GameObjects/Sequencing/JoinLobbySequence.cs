@@ -1,11 +1,12 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using GabesCommonUtility.Multiplayer.GameObjects;
 using GabesCommonUtility.Sequence;
 using TMPro;
 using Unity.Services.Lobbies;
 using UnityEngine;
 
-namespace GabesCommonUtility.Multiplayer.GameObjects.Sequencing
+namespace GabesCommonUtility.GabesCommonUtility.Multiplayer.GameObjects.Sequencing
 {
     public class JoinLobbySequence : MonoBehaviour, IEntrySequence
     {

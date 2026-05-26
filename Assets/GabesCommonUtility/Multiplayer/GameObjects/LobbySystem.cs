@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using GabesCommonUtility.Multiplayer.GameObjects;
 using Unity.Services.Authentication;
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
-using Random = System.Random;
 
-namespace GabesCommonUtility.Multiplayer.GameObjects
+namespace GabesCommonUtility.GabesCommonUtility.Multiplayer.GameObjects
 {
     [DefaultExecutionOrder(-1000)]
     public class LobbySystem : MonoBehaviour
@@ -19,6 +19,7 @@ namespace GabesCommonUtility.Multiplayer.GameObjects
         private static LobbySystem _instance;
         private Lobby _lobbyActual;
         private Player _localPlayer;
+        
         
         private readonly Dictionary<string, DataObject> _lobbyData = new();
         

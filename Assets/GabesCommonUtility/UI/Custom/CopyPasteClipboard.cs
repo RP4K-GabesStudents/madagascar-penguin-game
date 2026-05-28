@@ -42,5 +42,3 @@ public class CopyPasteClipboard : MonoBehaviour
     
     public string GetText() => _text;
 }
-
-  

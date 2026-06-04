@@ -75,7 +75,7 @@ namespace GabesCommonUtility.Sequence
                 _currentLength = 0;
                 _next = start as IEntrySequence;
 
-                Debug.Log("Starting Loading Sequence...");
+                Debug.Log("Starting Loading Sequence...", gameObject);
 
                 while (_next != null && !token.IsCancellationRequested)
                 {

@@ -9,7 +9,6 @@ public class Potion : Item, IDamageable
     [SerializeField] private HoverInfoStats hoverInfo;
     [SerializeField] private float breakForce = -9; // This number should be squared manually so 10 --> 100.
     
-    private Rigidbody _rb;
     private float _previousSpeed;
     
     

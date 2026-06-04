@@ -18,7 +18,7 @@ namespace Game.InventorySystem
         protected Highlight _highlight;
         private static int _excludedLayer;
 
-        private Rigidbody _rb;
+        protected Rigidbody _rb;
 
         protected virtual void Awake()
         {

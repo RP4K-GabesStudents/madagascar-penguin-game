@@ -770,6 +770,70 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c58ec50df91b047a5f54cadf642e22, type: 3}
+--- !u!1 &113261220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 113261222}
+  - component: {fileID: 113261221}
+  m_Layer: 0
+  m_Name: Navmeshflyingthing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &113261221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113261220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
+  m_SerializedVersion: 0
+  m_AgentTypeID: -334000983
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 25.333334
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 8ad16fd53aa90e6408bcc5af2f3cc7d6, type: 2}
+  m_BuildHeightMesh: 0
+--- !u!4 &113261222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113261220}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.55, y: 0.7594, z: -32.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &116155621 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5998654981718034368, guid: 7a94bb5dc2d8d744b97197e4f855e28f, type: 3}
@@ -3581,22 +3645,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: AI.Movement.MovementTypes::AI.Movement.MovementTypes.FlyingMovementType
   <GetAIMovementStats>k__BackingField: {fileID: 11400000, guid: 54050a44d9ceedb4781e71b5f98f8e4e, type: 2}
-  radius: 3.5
+  radius: 5
   hitedLayerMask:
     serializedVersion: 2
     m_Bits: 1
   repulsionPercent: 0.551
   orbitDistance: 5
   orbitPush: 3
+  pathRefreshInterval: 0.5
+  waypointReachedRadius: 1
   debugLog: 1
-  probeLength: 5
-  probeSideAngle: 45
-  probeVerticalAngle: 35
-  wallLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  wanderStrength: 1
-  wanderChangeInterval: 1.2
 --- !u!54 &562289683
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3619,7 +3677,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -3633,7 +3691,7 @@ Transform:
   m_GameObject: {fileID: 562289680}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.71729, y: 0.53307, z: -32.72381}
+  m_LocalPosition: {x: 8.7, y: 1.718, z: -32.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16981,3 +17039,4 @@ SceneRoots:
   - {fileID: 1845628665}
   - {fileID: 562289684}
   - {fileID: 1985201357}
+  - {fileID: 113261222}

@@ -34,6 +34,9 @@ namespace Managers
         
         private readonly LobbyEventCallbacks _events = new();
         public bool IsHost() => CurrentLobby != null && CurrentLobby.HostId == AuthenticationService.Instance.PlayerId;
+        
+        public bool IsConnected() => CurrentLobby != null; 
+        
         private void OnEnable()
         {
             if (Instance && Instance != this)
@@ -391,5 +394,7 @@ namespace Managers
                 Debug.LogError("update player has stopped working" + e.Reason);
             }
         }
+
+        
     }
 }

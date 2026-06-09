@@ -10,11 +10,12 @@ namespace GabesCommonUtility.Multiplayer.GameObjects.Sequencing
 {
     public class CharacterSpawnSequence : NetworkBehaviour, IEntrySequence
     {
-        [SerializeField] private Behaviour next;
         
         //[SerializeField] private PlayerOrderSOAP _playerOrderSOAP;
         [SerializeField] private Transform[] spawnPoints;
         private int _numPlayers = 0;
+
+        [SerializeField] private Behaviour next;
 
         public IEntrySequence Default => next as IEntrySequence;
         public bool IsCompleted => false;

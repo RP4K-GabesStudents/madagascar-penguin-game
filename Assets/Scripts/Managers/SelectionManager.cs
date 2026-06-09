@@ -18,6 +18,7 @@ namespace Managers
         
         private void Awake()
         {
+            
             if (Instance && Instance != this)
             {
                Destroy(gameObject);
@@ -49,6 +50,8 @@ namespace Managers
             
             penguinSelectors[_curIndex].Select();
         }
+        
+
         private void OnDestroy()
         { 
             _controls.UI.Disable();

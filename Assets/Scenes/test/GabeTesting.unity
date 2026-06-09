@@ -841,37 +841,6 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2969672972934020421, guid: a7fd403e3e5063b448f70c0c689c38c5, type: 3}
   m_PrefabInstance: {fileID: 299269763}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1347075376
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1347075383}
-  m_Layer: 0
-  m_Name: Entry Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1347075383
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347075376}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.08459, y: -0, z: 0.46362}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1374764533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1495,4 +1464,3 @@ SceneRoots:
   - {fileID: 2133609348}
   - {fileID: 299269763}
   - {fileID: 1963382727}
-  - {fileID: 1347075383}

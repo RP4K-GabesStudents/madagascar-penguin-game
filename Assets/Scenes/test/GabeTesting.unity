@@ -822,11 +822,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectCharacterSequence
   ShowTopMostFoldoutHeaderGroup: 1
-  _isSelectionDone:
+  _selectionTime:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
-    m_InternalValue: 0
+    m_InternalValue: 30
   spawnPoints:
   - {fileID: 1066725633}
   - {fileID: 1266018412}
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abe3b6f55dcffb48bec20720bc35bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.Multiplayer.GameObjects.Sequencing::GabesCommonUtility.Multiplayer.GameObjects.Sequencing.LoadSceneSequence
-  next: {fileID: 613428620}
+  next: {fileID: 613428621}
   loadMode: 1
   scenesToLoad:
   - isLocal: 1

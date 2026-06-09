@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.AI;
 using AI.Movement.Core;
 
 namespace AI.Movement.MovementTypes
@@ -12,6 +11,12 @@ namespace AI.Movement.MovementTypes
         public Vector3 TargetPosition { get; set; }
         public Quaternion TargetRotation { get; set; }
         public event Action DestinationReached;
+        
+        [Header("Movement Settings")]
+        [SerializeField] private float movementSpeed;
+
+        [Header("Target")]
+        [SerializeField] private Transform target;
 
         [Header("Obstacle Avoidance")]
         [SerializeField] private float radius;
@@ -19,18 +24,9 @@ namespace AI.Movement.MovementTypes
         [SerializeField, Range(0, 1)] private float repulsionPercent = 0.5f;
         [SerializeField] private float orbitDistance;
         [SerializeField] private float orbitPush;
-
-        [Header("Pathfinding")]
-        [SerializeField] private float pathRefreshInterval = 0.5f;   // how often to recalculate
-        [SerializeField] private float waypointReachedRadius = 1f;   // how close to advance waypoint
-        [SerializeField] private bool debugLog;
+        [SerializeField] private float repulsionForce = 5f;
 
         private readonly Collider[] hitColliders = new Collider[10];
-        private NavMeshPath _navPath;
-        private Vector3[] _waypoints = Array.Empty<Vector3>();
-        private int _currentWaypoint;
-        private float _pathRefreshTimer;
-        private Vector3 _lastTargetPosition;
 
         public void StartMoving() => enabled = true;
         public void StopMoving() => enabled = false;
@@ -38,32 +34,29 @@ namespace AI.Movement.MovementTypes
         private void Awake()
         {
             Rigidbody = GetComponent<Rigidbody>();
-            _navPath = new NavMeshPath();
         }
 
         private void FixedUpdate()
         {
-            RefreshPathIfNeeded();
-
-            Vector3 steerTarget = GetCurrentSteerTarget();
-            Vector3 toSteerTarget = steerTarget - transform.position;
-            float distToSteerTarget = toSteerTarget.magnitude;
-            
-            if (distToSteerTarget <= waypointReachedRadius && _currentWaypoint < _waypoints.Length - 1)
+            if (target != null)
             {
-                _currentWaypoint++;
-                steerTarget = _waypoints[_currentWaypoint];
-                toSteerTarget = steerTarget - transform.position;
-                distToSteerTarget = toSteerTarget.magnitude;
+                TargetPosition = target.position;
+                Vector3 toTarget = (TargetPosition - transform.position);
+                float distanceToTarget = toTarget.magnitude;
+                if (distanceToTarget <= 0.1f)
+                {
+                    DestinationReached?.Invoke();
+                }
+                else
+                {
+                    Rigidbody.AddForce(toTarget.normalized * movementSpeed, ForceMode.Acceleration);
+                }
+                transform.LookAt(TargetPosition);
             }
-
-            Vector3 targetDirection = distToSteerTarget > 0.001f ? toSteerTarget / distToSteerTarget : transform.forward;
-
             
             int hits = Physics.OverlapSphereNonAlloc(transform.position, radius, hitColliders, hitedLayerMask);
-
             Vector3 repulsion = Vector3.zero;
-            float strongestRepulsionFraction = 0f;
+            float strongestRepulsionFraction = 0.5f;
 
             for (int i = 0; i < hits; i++)
             {
@@ -72,132 +65,31 @@ namespace AI.Movement.MovementTypes
                 float proximityFraction = 1f - Mathf.Clamp01(away.magnitude / radius);
                 repulsion += away.normalized * proximityFraction;
                 strongestRepulsionFraction = Mathf.Max(strongestRepulsionFraction, proximityFraction);
+                if (hitColliders[i].attachedRigidbody != null)
+                    hitColliders[i].attachedRigidbody.AddForce(-away.normalized * repulsionForce * proximityFraction, ForceMode.Impulse);
+                
+                Debug.DrawLine(transform.position, closestPoint, Color.red);
             }
 
-            
-            Vector3 steerDirection;
-            if (hits > 0)
-            {
-                float repulsionWeight = repulsionPercent * strongestRepulsionFraction;
-                steerDirection = Vector3.Lerp(targetDirection, repulsion.normalized, repulsionWeight).normalized;
-            }
-            else
-            {
-                steerDirection = targetDirection;
-            }
-            
-            float distToFinalTarget = (TargetPosition - transform.position).magnitude;
-            if (distToFinalTarget <= orbitDistance) 
-                steerDirection = Vector3.Lerp(steerDirection, -targetDirection, 0.6f).normalized;
-
-            
-            Rigidbody.AddForce(steerDirection * GetAIMovementStats.Speed, ForceMode.Impulse);
-            Rigidbody.linearVelocity = GetAIMovementStats.GetAdjustedSpeed(Rigidbody.linearVelocity, out _);
-            transform.LookAt(steerTarget);
-
-            //Debug
-            
-            if (debugLog)
-            {
-                Debug.Log($"[FlyingMovement] {gameObject.name} | " +
-                          $"waypoint: {_currentWaypoint}/{_waypoints.Length - 1} | " +
-                          $"distToTarget: {distToFinalTarget:F2} | " +
-                          $"speed: {Rigidbody.linearVelocity.magnitude:F2} | hits: {hits}", gameObject);
-            }
-        }
-
-        
-
-        private void RefreshPathIfNeeded()
-        {
-            _pathRefreshTimer -= Time.fixedDeltaTime;
-            bool targetMoved = Vector3.Distance(TargetPosition, _lastTargetPosition) > 0.5f;
-
-            if (_pathRefreshTimer > 0f && !targetMoved) return;
-
-            _pathRefreshTimer = pathRefreshInterval;
-            _lastTargetPosition = TargetPosition;
-            RecalculatePath();
-        }
-
-        private void RecalculatePath()
-        {
-            if (!NavMesh.SamplePosition(transform.position, out NavMeshHit startHit, 5f, NavMesh.AllAreas) || !NavMesh.SamplePosition(TargetPosition, out NavMeshHit endHit, 5f, NavMesh.AllAreas))
-            {
-                if (debugLog) Debug.LogWarning($"[FlyingMovement] {gameObject.name} could not sample NavMesh positions.");
-                _waypoints = new[] { TargetPosition }; 
-                _currentWaypoint = 0;
-                return;
-            }
-
-            NavMesh.CalculatePath(startHit.position, endHit.position, NavMesh.AllAreas, _navPath);
-
-            if (_navPath.status == NavMeshPathStatus.PathComplete || _navPath.status == NavMeshPathStatus.PathPartial)
-            {
-                _waypoints = _navPath.corners;
-                _currentWaypoint = _waypoints.Length > 1 ? 1 : 0; 
-            }
-            else
-            {
-                if (debugLog) Debug.LogWarning($"[FlyingMovement] {gameObject.name} no NavMesh path found, flying direct.");
-                _waypoints = new[] { TargetPosition };
-                _currentWaypoint = 0;
-            }
-        }
-
-        private Vector3 GetCurrentSteerTarget()
-        {
-            if (_waypoints.Length == 0) return TargetPosition;
-            return _waypoints[_currentWaypoint];
+            if (repulsion != Vector3.zero)
+                Rigidbody.AddForce(repulsion.normalized * repulsionForce * strongestRepulsionFraction, ForceMode.Impulse);
         }
 
         // --- Gizmos ---
-
         private void OnDrawGizmos()
         {
+            if (!Application.isPlaying) return;
             Vector3 position = transform.position;
 
-            // Avoidance sphere
             Gizmos.color = new Color(1f, 0.2f, 0.2f, 0.15f);
             Gizmos.DrawSphere(position, radius);
             Gizmos.color = new Color(1f, 0.2f, 0.2f, 0.8f);
             Gizmos.DrawWireSphere(position, radius);
 
-            // Orbit zone
             Gizmos.color = new Color(0f, 0.85f, 1f, 0.08f);
             Gizmos.DrawSphere(TargetPosition, orbitDistance);
             Gizmos.color = new Color(0f, 0.85f, 1f, 0.7f);
             Gizmos.DrawWireSphere(TargetPosition, orbitDistance);
-
-            if (!Application.isPlaying) return;
-
-            // Draw nav path
-            if (_waypoints.Length > 1)
-            {
-                for (int i = 0; i < _waypoints.Length - 1; i++)
-                {
-                    // Travelled = grey, upcoming = yellow
-                    Gizmos.color = i < _currentWaypoint ? Color.grey : Color.yellow;
-                    Gizmos.DrawLine(_waypoints[i], _waypoints[i + 1]);
-
-                    Gizmos.color = i == _currentWaypoint ? Color.green : Color.yellow;
-                    Gizmos.DrawSphere(_waypoints[i + 1], 0.2f);
-                }
-            }
-
-            // Line to current waypoint
-            if (_waypoints.Length > 0)
-            {
-                Gizmos.color = Color.green;
-                Gizmos.DrawLine(position, GetCurrentSteerTarget());
-            }
-
-            // Velocity
-            if (Rigidbody != null)
-            {
-                Gizmos.color = new Color(0.4f, 0.2f, 0.9f);
-                Gizmos.DrawLine(position, position + Rigidbody.linearVelocity);
-            }
         }
     }
 }

@@ -1,24 +1,46 @@
-using System;
 using AI.Movement.Core;
 using AI.Movement.MovementTypes;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace AI.Characters
 {
     public class GroosterAI : GenericEnemy
     {
         [SerializeField] private Transform target;
-        private IMovementModule movementModule;
+        private FlyingMovementType flyingMovement;
 
         private void Awake()
         {
-            movementModule = GetComponent<IMovementModule>();
+            flyingMovement = GetComponent<FlyingMovementType>();
+        }
+
+        private void OnEnable()
+        {
+            if (flyingMovement != null)
+            {
+                flyingMovement.DestinationReached += OnDestinationReached;
+                flyingMovement.StartMoving();
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (flyingMovement != null)
+            {
+                flyingMovement.DestinationReached -= OnDestinationReached;
+                flyingMovement.StopMoving();
+            }
         }
 
         private void FixedUpdate()
         {
-             movementModule.MoveTo(target.position);
+            if (flyingMovement != null && target != null)
+                flyingMovement.TargetPosition = target.position;
+        }
+
+        private void OnDestinationReached()
+        {
+            Debug.Log($"{name} reached target.");
         }
     }
 }

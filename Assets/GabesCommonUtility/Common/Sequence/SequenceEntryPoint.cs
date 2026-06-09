@@ -3,9 +3,10 @@ using System;
 using System.Collections;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using GabesCommonUtility.Sequence;
 using UnityEngine;
 
-namespace GabesCommonUtility.Sequence
+namespace GabesCommonUtility.GabesCommonUtility.Common.Sequence
 {
     /*
      * The SequenceStartPoint is responsible for running a chain of IEntrySequence steps in order.

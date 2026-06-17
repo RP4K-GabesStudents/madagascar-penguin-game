@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MainPenguinTransition
   m_EditorClassIdentifier: 
   lightActiveSound: {fileID: 8300000, guid: c0cfb2facca00624280c55f3b0858495, type: 3}
-  frontLightTime: 1
+  frontLightTime: 0.4
   frontLights:
     serializedVersion: 2
     m_Curve:
@@ -47,7 +47,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  backLightsTime: 1
+  backLightsTime: 0.2
   backLights:
     serializedVersion: 2
     m_Curve:

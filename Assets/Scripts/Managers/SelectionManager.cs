@@ -51,7 +51,7 @@ namespace Managers
             _controls.UI.Navigate.performed += OnNavigate;
             _controls.UI.Submit.performed += OnSubmit;
 
-            penguinSelectors[0].SelectInstant();
+            Navigate(0);
         }
 
         private void OnNavigate(UnityEngine.InputSystem.InputAction.CallbackContext ctx)

@@ -24,9 +24,6 @@ namespace UI
 
         [SerializeField] private CinemachineCamera cinemachineCamera;
 
-        // How fast _IsOccupied eases toward its target (units per second).
-        [SerializeField] private float occupiedLerpSpeed = 6f;
-
         private static readonly int IntensityID = Shader.PropertyToID("_Intensity");
         private static readonly int IsOccupiedID = Shader.PropertyToID("_IsOccupied");
 
@@ -38,10 +35,11 @@ namespace UI
         private string _baseName;
         private bool _subscribed;
 
-        // Eased occupied state. _occupiedTarget is the authoritative 0/1 from the
-        // store; _occupied chases it so the material transitions smoothly like
-        // _Intensity does, instead of snapping.
-        private float _occupied;
+        // Occupied ramp. _occupiedT advances/retreats at the same rate _t does in the
+        // fade coroutines and is fed through the same MaterialIntensity curve over
+        // MaxLightTime, so _IsOccupied animates at the exact speed _Intensity does.
+        // _occupiedTarget is the authoritative 0/1 from the store.
+        private float _occupiedT;
         private float _occupiedTarget;
 
         /// <summary>True if any player currently holds this character (from the store).</summary>
@@ -63,7 +61,7 @@ namespace UI
             var netObj = target.GetComponent<NetworkObject>();
             _prefabId = netObj ? netObj.PrefabIdHash : 0;
 
-            _occupied = 0f;
+            _occupiedT = 0f;
             _occupiedTarget = 0f;
             SetMaterialFloat(IsOccupiedID, 0);
             TrySubscribe();
@@ -85,12 +83,18 @@ namespace UI
         {
             if (!_subscribed) TrySubscribe();
 
-            // Ease _IsOccupied toward its target, mirroring how _Intensity ramps.
-            if (!Mathf.Approximately(_occupied, _occupiedTarget))
+            // Advance/retreat the occupied timer at the same per-frame rate _t uses in
+            // the fade coroutines, then evaluate the SAME curve over MaxLightTime, so
+            // _IsOccupied ramps at the identical speed _Intensity does in EvaluateLights.
+            float dir = _occupiedTarget > 0.5f ? 1f : -1f;
+            float max = selectorStats.MaxLightTime;
+            float clamped = Mathf.Clamp(_occupiedT + dir * Time.deltaTime, 0f, max);
+
+            if (!Mathf.Approximately(clamped, _occupiedT))
             {
-                _occupied = Mathf.MoveTowards(_occupied, _occupiedTarget,
-                                              occupiedLerpSpeed * Time.deltaTime);
-                SetMaterialFloat(IsOccupiedID, _occupied);
+                _occupiedT = clamped;
+                float percent = max > 0f ? _occupiedT / max : (_occupiedTarget > 0.5f ? 1f : 0f);
+                SetMaterialFloat(IsOccupiedID, selectorStats.MaterialIntensity.Evaluate(percent));
             }
         }
 
@@ -124,7 +128,7 @@ namespace UI
                 if (taken.PrefabId == _prefabId)
                 {
                     IsTaken = true;
-                    textObject.text = $"{_baseName}\n<size=50%>Selected by {taken.PlayerName}</size>";
+                    textObject.text = $"{_baseName}\n<size=25%>Selected by {taken.PlayerName}</size>";
                     _occupiedTarget = 1f; // Update() lerps the material toward this.
                     return;
                 }
@@ -184,7 +188,7 @@ namespace UI
         private IEnumerator FadeIn()
         {
             EvaluateLights(0, 0);
-            yield return new WaitForSeconds(_main.DefaultBlend.BlendTime);
+            yield return new WaitForSeconds(_main.DefaultBlend.BlendTime / 2);
 
             audioSource.PlayOneShot(selectorStats.LightActiveSound);
             textObject.gameObject.SetActive(true);
@@ -217,6 +221,7 @@ namespace UI
         private void SetMaterialFloat(int id, float value)
         {
             if (!targetRenderer) return;
+            _mpb ??= new MaterialPropertyBlock(); // Update's lerp can run before Start/OnEnable build it
             targetRenderer.GetPropertyBlock(_mpb);
             _mpb.SetFloat(id, value);
             targetRenderer.SetPropertyBlock(_mpb);

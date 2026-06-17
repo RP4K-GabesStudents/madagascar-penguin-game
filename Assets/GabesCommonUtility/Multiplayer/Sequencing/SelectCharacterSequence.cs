@@ -5,9 +5,8 @@ using Multiplayer.GameObjects;
 using Sequencing.Core;
 using Unity.Netcode;
 using UnityEngine;
-#if UNITY_SERVICES
 using Unity.Services.Authentication;
-#endif
+using Unity.Services.Core;
 
 namespace Multiplayer.Sequencing
 {
@@ -160,25 +159,41 @@ namespace Multiplayer.Sequencing
 
         // ---- Auto-assign (server) ----
 
+        // Builds the full pool from the registered network prefabs (the authoritative
+        // source SpawnCharacterSequence also uses), subtracts what's already taken,
+        // and gives every non-picker a free character: their hover if it's still free,
+        // otherwise the next free one. Pure prefab-id logic, so it never depends on the
+        // client-id bookkeeping being perfectly in sync. With N characters and <= N
+        // players this always fills.
         private void AutoAssignMissing()
         {
             var store = CharacterSelectionStore.Instance;
 
+            // What's already claimed (prefab-ids).
             var taken = new HashSet<ulong>();
             foreach (var t in store.TakenList) taken.Add(t.PrefabId);
 
-            var picked = new HashSet<ulong>();
-            foreach (var kvp in store.ActiveSelections()) picked.Add(kvp.Key);
+            // Full set of selectable character prefab-ids, from the network prefab list.
+            var allCharacters = AllCharacterPrefabIds();
+
+            // Which connected clients already hold a pick (prefab-id, not client-id,
+            // so a stale mapping can't make us double-assign a taken character).
+            var pickedClients = new HashSet<ulong>();
+            foreach (var kvp in store.ActiveSelections()) pickedClients.Add(kvp.Key);
 
             foreach (var clientId in NetworkManager.ConnectedClientsIds)
             {
-                if (picked.Contains(clientId)) continue;
+                if (pickedClients.Contains(clientId)) continue;
 
                 if (!store.TryGetPlayerId(clientId, out string playerId))
                     playerId = clientId.ToString();
 
-                // Prefer the character the player was last looking at, if it is free.
+                // Resolve the auto-assigned player's real name from the lobby roster.
+                string resolvedName = PlayerNameDirectory.ResolveOr(playerId, "Player");
+
                 ulong chosen = 0;
+
+                // Prefer the hovered character if it's still free.
                 if (_hovers.TryGetValue(clientId, out ulong hover)
                     && hover != 0 && !taken.Contains(hover))
                 {
@@ -186,22 +201,26 @@ namespace Multiplayer.Sequencing
                 }
                 else
                 {
-                    // Otherwise a random free one.
-                    var free = new List<ulong>();
-                    foreach (var id in selectablePrefabIds)
-                        if (!taken.Contains(id)) free.Add(id);
-
-                    if (free.Count == 0)
-                    {
-                        Debug.LogError($"[SelectCharacterSequence] No free character to auto-assign to client {clientId}.");
-                        continue;
-                    }
-                    chosen = free[UnityEngine.Random.Range(0, free.Count)];
+                    // First free character from the authoritative pool.
+                    foreach (var id in allCharacters)
+                        if (!taken.Contains(id)) { chosen = id; break; }
                 }
 
-                if (store.TrySelect(clientId, playerId, "Player", chosen))
+                if (chosen == 0)
                 {
-                    taken.Add(chosen); // keep the local view in sync so the next loop won't reuse it
+                    // Only reachable if there are genuinely more players than
+                    // characters. Logged loud so the lobby-size/character-count
+                    // mismatch is obvious rather than a silent no-spawn.
+                    Debug.LogError($"[SelectCharacterSequence] No free character for client {clientId}: " +
+                                   $"{allCharacters.Count} characters, all taken. Check lobby size vs character count.");
+                    continue;
+                }
+
+                if (store.TrySelect(clientId, playerId, resolvedName, chosen))
+                {
+                    // resolvedName comes from the lobby roster; "Player" only if the
+                    // directory has no name for this id.
+                    taken.Add(chosen);
                     Debug.Log($"[SelectCharacterSequence] Auto-assigned {chosen} to client {clientId}.");
                 }
                 else
@@ -209,6 +228,22 @@ namespace Multiplayer.Sequencing
                     Debug.LogError($"[SelectCharacterSequence] Auto-assign of {chosen} to client {clientId} was rejected.");
                 }
             }
+        }
+
+        // Authoritative list of every selectable character's prefab-id hash, read from
+        // the same network prefab list SpawnCharacterSequence spawns from. If you have
+        // non-character network prefabs registered, set selectablePrefabIds in the
+        // inspector and they take precedence as an explicit allow-list.
+        private List<ulong> AllCharacterPrefabIds()
+        {
+            if (selectablePrefabIds != null && selectablePrefabIds.Length > 0)
+                return new List<ulong>(selectablePrefabIds);
+
+            var ids = new List<ulong>();
+            var prefabList = NetworkManager.NetworkConfig.Prefabs.NetworkPrefabsLists[0].PrefabList;
+            foreach (var prefab in prefabList)
+                ids.Add(prefab.SourcePrefabGlobalObjectIdHash);
+            return ids;
         }
 
         // ---- Picking ----
@@ -223,8 +258,13 @@ namespace Multiplayer.Sequencing
         private void SelectCharacter_ServerRpc(ulong prefabId, string playerId, string playerName,
                                                RpcParams p = default)
         {
+            // Resolve the display name server-side from the lobby roster by playerId;
+            // fall back to whatever the client sent, then to "Player".
+            string resolved = PlayerNameDirectory.ResolveOr(playerId,
+                string.IsNullOrEmpty(playerName) ? "Player" : playerName);
+
             bool ok = CharacterSelectionStore.Instance.TrySelect(
-                p.Receive.SenderClientId, playerId, playerName, prefabId);
+                p.Receive.SenderClientId, playerId, resolved, prefabId);
 
             if (!ok)
                 RejectSelection_ClientRpc(prefabId,
@@ -246,12 +286,16 @@ namespace Multiplayer.Sequencing
             CharacterSelector.Active?.SelectionFinished();
         }
 
+        private static bool IsAuthReady()
+            => UnityServices.State == ServicesInitializationState.Initialized
+               && AuthenticationService.Instance != null
+               && AuthenticationService.Instance.IsAuthorized;
+
         private static string LocalPlayerId()
         {
-#if UNITY_SERVICES
-            if (AuthenticationService.Instance != null && AuthenticationService.Instance.IsSignedIn)
+            if (IsAuthReady() && AuthenticationService.Instance.IsSignedIn)
                 return AuthenticationService.Instance.PlayerId;
-#endif
+
             return NetworkManager.Singleton != null
                 ? NetworkManager.Singleton.LocalClientId.ToString()
                 : string.Empty;
@@ -259,13 +303,11 @@ namespace Multiplayer.Sequencing
 
         private static string LocalPlayerName()
         {
-#if UNITY_SERVICES
-            if (AuthenticationService.Instance != null)
+            if (IsAuthReady())
             {
                 string n = AuthenticationService.Instance.PlayerName;
                 if (!string.IsNullOrEmpty(n)) return n;
             }
-#endif
             return "Player";
         }
 

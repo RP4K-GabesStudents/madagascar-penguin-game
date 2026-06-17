@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using GabesCommonUtility.Multiplayer.GameObjects;
+using Multiplayer.GameObjects;
 using Unity.Netcode;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
@@ -17,7 +18,7 @@ namespace Managers
 {
     // Runs early so LobbyUI.OnEnable can safely read Instance.
     [DefaultExecutionOrder(-1000)]
-    public class LobbySystemManager : MonoBehaviour
+    public class LobbySystemManager : MonoBehaviour, IPlayerNameProvider
     {
         private const string Tag = "[Lobby]";
 
@@ -46,6 +47,32 @@ namespace Managers
         public bool IsHost() => CurrentLobby != null && CurrentLobby.HostId == AuthenticationService.Instance.PlayerId;
         public bool IsConnected() => CurrentLobby != null;
 
+        /// <summary>
+        /// IPlayerNameProvider: resolve a player's display name from the lobby roster
+        /// by their stable UGS playerId (lobby Player.Id). The host retains CurrentLobby
+        /// into the game, so this works server-side for every player, including those
+        /// the selection sequence auto-assigns. Returns false if not found.
+        /// </summary>
+        public bool TryGetPlayerName(string playerId, out string playerName)
+        {
+            playerName = null;
+            if (string.IsNullOrEmpty(playerId) || CurrentLobby?.Players == null)
+                return false;
+
+            foreach (var player in CurrentLobby.Players)
+            {
+                if (player.Id != playerId) continue;
+                if (player.Data != null && player.Data.TryGetValue("Name", out var nameData)
+                    && !string.IsNullOrEmpty(nameData.Value))
+                {
+                    playerName = nameData.Value;
+                    return true;
+                }
+                return false; // matched the player but no usable name
+            }
+            return false;
+        }
+
         #region Unity lifecycle
 
         private void Awake()
@@ -59,6 +86,10 @@ namespace Managers
 
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            // Let the selection sequence resolve player names from the lobby roster
+            // without the multiplayer package depending on this assembly.
+            PlayerNameDirectory.Active = this;
 
             // Subscribe ONCE here (not in OnEnable, which can fire repeatedly and
             // double-subscribe). These callbacks fire for whichever lobby we are
@@ -83,6 +114,8 @@ namespace Managers
         private void OnDestroy()
         {
             if (Instance != this) return; // a destroyed duplicate must not detach the real one
+            if (PlayerNameDirectory.Active == (IPlayerNameProvider)this)
+                PlayerNameDirectory.Active = null;
             Application.quitting -= LeaveLobby;
         }
 

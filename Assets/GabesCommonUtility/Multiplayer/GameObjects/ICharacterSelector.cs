@@ -49,4 +49,35 @@ namespace Multiplayer.GameObjects
     {
         public static ICharacterSelector Active { get; set; }
     }
+
+    /// <summary>
+    /// Optional server-side name resolver. Your lobby/game layer (which lives in a
+    /// higher assembly that can reference this one) registers an implementation, and
+    /// the selection sequence reads display names through it by stable playerId.
+    /// This keeps the multiplayer package from depending on your Managers assembly
+    /// (which would be a circular reference, since that assembly references this one).
+    ///
+    /// Returns false if no name is known for the id; the caller falls back to a
+    /// default. Only meaningful on the host/server, which holds the full roster.
+    /// </summary>
+    public interface IPlayerNameProvider
+    {
+        bool TryGetPlayerName(string playerId, out string playerName);
+    }
+
+    /// <summary>Static hand-off point for the name provider, mirroring CharacterSelector.</summary>
+    public static class PlayerNameDirectory
+    {
+        public static IPlayerNameProvider Active { get; set; }
+
+        /// <summary>Resolve a name by playerId, or return the given fallback.</summary>
+        public static string ResolveOr(string playerId, string fallback)
+        {
+            if (Active != null && !string.IsNullOrEmpty(playerId)
+                && Active.TryGetPlayerName(playerId, out var name)
+                && !string.IsNullOrEmpty(name))
+                return name;
+            return fallback;
+        }
+    }
 }

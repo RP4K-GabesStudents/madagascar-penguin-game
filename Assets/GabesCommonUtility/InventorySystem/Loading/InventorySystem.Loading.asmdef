@@ -1,0 +1,10 @@
+{
+	"name": "InventorySystem.Loading",
+	"references": ["InventorySystem.Core", "Sequencing.Core", "UniTask", "InventorySystem"],
+	"versionDefines": [
+		{ 
+			"name": "com.cysharp.unitask", "expression": "", "define": "UNITASK"
+		}
+	],
+	"defineConstraints": ["UNITASK"]
+}

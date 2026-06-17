@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GabesCommonUtility.UI.Sliders
+namespace UI.Sliders
 {
     [DefaultExecutionOrder(1000)]
     public class SliderText : MonoBehaviour

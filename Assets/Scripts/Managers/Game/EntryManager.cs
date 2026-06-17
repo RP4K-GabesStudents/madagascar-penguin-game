@@ -6,7 +6,6 @@ using Game.Characters;
 using Game.Characters.World;
 using TMPro;
 using Unity.Netcode;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,7 +19,6 @@ namespace Managers.Game
         private static readonly int OnExploded = Animator.StringToHash("OnExploded");
         private static readonly int IsOpen = Animator.StringToHash("isOpen");
         [SerializeField] private TextMeshProUGUI text;
-        [SerializeField] private SceneAsset scene;
         [SerializeField] private float textSpeed;
         [SerializeField] private float textDuration;
         [SerializeField] private List<Transform> spawnPoints;
@@ -70,7 +68,7 @@ namespace Managers.Game
                 _selectionTime.Value -= Time.deltaTime;
                 yield return null;
             }
-            ForceChoosePenguin_ClientRpc();
+            ForceChoosePenguin_Rpc();
            
         }
         private IEnumerator HandleDoorTimer()
@@ -82,8 +80,8 @@ namespace Managers.Game
             }
         }
 
-        [ClientRpc]
-        private void ForceChoosePenguin_ClientRpc()
+        [Rpc(SendTo.ClientsAndHost)]
+        private void ForceChoosePenguin_Rpc()
         {
             SelectionManager.Instance.SelectCurPenguin();
         }
@@ -110,21 +108,21 @@ namespace Managers.Game
         private void RequestSpawnCharacter(GenericCharacter obj)
         {
             //Doing just .NetworkObject doesn't work until it's spawned in.
-            ChoosePenguin_ServerRpc(obj.GetComponent<NetworkObject>().PrefabIdHash);
+            ChoosePenguin_Rpc(obj.GetComponent<NetworkObject>().PrefabIdHash);
         }
 
-        [ServerRpc(RequireOwnership = false)]
-        private void ChoosePenguin_ServerRpc(ulong myPenguin, ServerRpcParams serverRpcParams = default)
+        [Rpc(SendTo.Server, RequireOwnership = false)]
+        private void ChoosePenguin_Rpc(ulong myPenguin, RpcParams rpcParams = default)
         {
-            if (!_playerPrefabs.TryAdd(serverRpcParams.Receive.SenderClientId, myPenguin))
+            if (!_playerPrefabs.TryAdd(rpcParams.Receive.SenderClientId, myPenguin))
             {
-                _playerPrefabs[serverRpcParams.Receive.SenderClientId] = myPenguin;
+                _playerPrefabs[rpcParams.Receive.SenderClientId] = myPenguin;
             }
             if (NetworkManager.ConnectedClients.Count == _playerPrefabs.Count)
             {
                 StopAllCoroutines();
                 SpawnPenguins();
-                OnGameStarting_ClientRpc();
+                OnGameStarting_Rpc();
                 StartCoroutine(HandleDoorTimer());
             }
         }
@@ -172,7 +170,7 @@ namespace Managers.Game
         private IEnumerator StartText()
         {
             text.enabled = true;
-            string missionText = "Level: " + scene.name + "\nTime: " + DateTime.Now.ToString("HH:mm:ss") + "\nMission: Defeat Horses";
+            string missionText = "Level: " + SceneManager.GetActiveScene().name + "\nTime: " + DateTime.Now.ToString("HH:mm:ss") + "\nMission: Defeat Horses";
             foreach (char c in missionText)
             {
                 text.text += c;
@@ -183,8 +181,8 @@ namespace Managers.Game
         }
 
         
-        [ClientRpc]
-        private void OnGameStarting_ClientRpc()
+        [Rpc(SendTo.ClientsAndHost)]
+        private void OnGameStarting_Rpc()
         {
             explosion.enabled = false;
             timerText.gameObject.SetActive(false);

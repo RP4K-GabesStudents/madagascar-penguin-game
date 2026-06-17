@@ -1,0 +1,14 @@
+{
+  "name": "UI.Sliders.Editor",
+  "includePlatforms": [
+    "Editor"
+  ],
+  "versionDefines": [
+    {
+      "name": "com.unity.netcode.gameobjects",
+      "expression": "",
+      "define": "UNITY_NETCODE_GAMEOBJECTS"
+    }
+  ],
+  "references":[ "UI.Sliders" ]
+}

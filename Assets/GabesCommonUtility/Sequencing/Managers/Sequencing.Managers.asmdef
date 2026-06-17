@@ -1,0 +1,11 @@
+{
+  "name": "Sequencing.Managers",
+  "references": ["Sequencing.Core", "UniTask", "Common.Extensions", "Common.Loading"],
+  "versionDefines": [
+    {
+      "name": "com.cysharp.unitask",
+      "expression": "",
+      "define": "UNITASK"
+    }
+  ]
+}

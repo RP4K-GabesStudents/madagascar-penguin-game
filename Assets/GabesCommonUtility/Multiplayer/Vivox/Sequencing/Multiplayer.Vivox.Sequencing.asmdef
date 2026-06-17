@@ -1,0 +1,31 @@
+{
+  "name": "Multiplayer.Vivox.Sequencing",
+  "references": [
+    "Unity.Services.Vivox",
+    "Unity.Services.Authentication",
+    "UniTask",
+    "Sequencing.Core"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [
+    "VIVOX_EXISTS"
+  ],
+  "versionDefines": [
+    {
+      "name": "com.unity.services.vivox",
+      "expression": "",
+      "define": "VIVOX_EXISTS"
+    },
+    {
+      "name": "com.cysharp.unitask",
+      "expression": "",
+      "define": "UNITASK_EXISTS"
+    }
+  ],
+  "noEngineReferences": false
+}

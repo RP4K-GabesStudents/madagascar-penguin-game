@@ -1,0 +1,44 @@
+{
+    "name": "Multiplayer.Sequencing",
+    "references": [
+        "Sequencing.Core",
+        "Sequencing.Managers",
+        "Multiplayer.GameObjects",
+        "Unity.Netcode.Runtime",
+        "Unity.Collections",
+        "UniTask",
+        "Unity.Services.Core",
+        "Unity.Services.Authentication",
+        "ParrelSync"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "defineConstraints": ["UNITY_NETCODE_GAMEOBJECTS"],
+    "autoReferenced": true,
+    "versionDefines": [
+        {
+            "name": "com.unity.netcode.gameobjects",
+            "expression": "",
+            "define": "UNITY_NETCODE_GAMEOBJECTS"
+        },
+        {
+            "name": "com.cysharp.unitask",
+            "expression": "",
+            "define": "UNITASK"
+        },
+        {
+            "name": "com.unity.services.core",
+            "expression": "",
+            "define": "UNITY_SERVICES"
+        },
+        {
+            "name": "com.veriorpies.parrelsync",
+            "expression": "",
+            "define": "PARREL_SYNC"
+        }
+    ],
+    "noEngineReferences": false
+}

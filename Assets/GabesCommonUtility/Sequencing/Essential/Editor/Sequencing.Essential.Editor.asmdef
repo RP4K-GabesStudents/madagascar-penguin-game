@@ -1,0 +1,18 @@
+{
+  "name": "Sequencing.Essential.Editor",
+  "references": ["Sequencing.Essential", "Unity.Netcode.Runtime"],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "versionDefines": [
+    {
+      "name": "com.unity.netcode.gameobjects",
+      "expression": "",
+      "define": "UNITY_NETCODE_GAMEOBJECTS"
+    }
+  ]
+}

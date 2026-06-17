@@ -1,11 +1,11 @@
 using System;
 using Eflatun.SceneReference;
-using GabesCommonUtility.GabesCommonUtility.Multiplayer.GameObjects.Sequencing;
 using Managers;
 using TMPro;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.Events;
+using Multiplayer.Sequencing;
 using UnityEngine.UI;
 
 namespace UI

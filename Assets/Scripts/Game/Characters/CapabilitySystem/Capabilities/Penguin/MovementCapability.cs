@@ -10,7 +10,9 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
         private MovementCapabilityStats _stats;
         private Rigidbody _rigidbody;
         private Animator _animator;
-        
+
+        private InventoryCapability _inventory; // for equipped-weapon modifiers
+
         private bool _isGrounded;
         private Vector3 _groundCheckPosition;
 
@@ -29,6 +31,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 
             _rigidbody = _owner.rigidbody;
             _animator = _owner.GetComponent<Animator>();
+            _inventory = GetComponent<InventoryCapability>();
         }
 
         public void BindControls(GameControls controls)
@@ -39,7 +42,7 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
         {
             _curMoveDir = new Vector3(moveDirection.x, 0, moveDirection.y);
         }
-        
+
         private void FixedUpdate()
         {
             HandleMoving();
@@ -48,76 +51,69 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
 
         private void HandleMoving()
         {
-            _rigidbody.AddForce(transform.rotation * _curMoveDir * _stats.Speed);
+            // Equipped weapon (if any) scales speed and top speed.
+            float speedMul = 1f, maxSpeedMul = 1f;
+            var weapon = _inventory ? _inventory.EquippedWeapon : null;
+            if (weapon && weapon.Stats)
+            {
+                speedMul = weapon.Stats.MoveSpeedMultiplier;
+                maxSpeedMul = weapon.Stats.MaxSpeedMultiplier;
+            }
+
+            _rigidbody.AddForce(transform.rotation * _curMoveDir * (_stats.Speed * speedMul));
             Vector3 currentVelocity = _rigidbody.linearVelocity;
             Vector2 xz = new Vector2(currentVelocity.x, currentVelocity.z);
             float magnitudeXZ = xz.magnitude;
 
-            if (magnitudeXZ > _stats.MaxSpeed)
+            float maxSpeed = _stats.MaxSpeed * maxSpeedMul;
+            if (magnitudeXZ > maxSpeed)
             {
                 Vector2 dir = xz / magnitudeXZ;
-                magnitudeXZ = _stats.MaxSpeed;
+                dir *= maxSpeed;
                 _rigidbody.linearVelocity = new Vector3(dir.x, currentVelocity.y, dir.y);
+                magnitudeXZ = maxSpeed;
             }
-            
+
             _owner.SetDataDictionaryValue(CapabilityKeys.CurrentVelocityXZ, magnitudeXZ.FloatAsInt());
             _owner.SetDataDictionaryValue(CapabilityKeys.CurrentVelocityY, currentVelocity.y.FloatAsInt());
-            
+
             _animator.SetFloat(StaticUtilities.ForwardAnimID, magnitudeXZ);
         }
 
         private void HandleGrounding()
         {
-            // Calculate the ground check position
             _groundCheckPosition = transform.position + _stats.GroundCheckOffset;
-            
-            // Perform the ground check using SphereCast
+
             bool wasGrounded = _isGrounded;
             _isGrounded = Physics.SphereCast(
-                _groundCheckPosition, 
-                _stats.GroundCheckRadius, 
-                Vector3.down, 
+                _groundCheckPosition,
+                _stats.GroundCheckRadius,
+                Vector3.down,
                 out RaycastHit hit,
-                _stats.GroundCheckDistance, 
+                _stats.GroundCheckDistance,
                 StaticUtilities.GroundLayers
             );
-            
-            // Update the data dictionary with grounded state
-            _owner.SetDataDictionaryValue(CapabilityKeys.IsGrounded, _isGrounded.BoolAsInt());
-            
-            /*
-            // Optional: Log grounding state changes for debugging
-            if (wasGrounded != _isGrounded)
-            {
-                Debug.Log($"Grounding state changed: {_isGrounded} on object: {hit.collider?.name ?? "None"}");
-            }
-            */
-        }
 
+            _owner.SetDataDictionaryValue(CapabilityKeys.IsGrounded, _isGrounded.BoolAsInt());
+        }
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             if (_stats == null) return;
 
-            // Calculate gizmo position
             Vector3 gizmoPos = transform.position + _stats.GroundCheckOffset;
-            
-            // Set gizmo color based on grounded state
+
             Gizmos.color = _isGrounded ? Color.green : Color.red;
-            
-            // Draw the sphere at the starting position
             Gizmos.DrawWireSphere(gizmoPos, _stats.GroundCheckRadius);
-            
-            // Draw the raycast line
+
             Vector3 endPos = gizmoPos + Vector3.down * _stats.GroundCheckDistance;
             Gizmos.DrawLine(gizmoPos, endPos);
-            
-            // Draw the sphere at the end position to show the full detection area
+
             Gizmos.color = _isGrounded ? Color.green * 0.5f : Color.red * 0.5f;
             Gizmos.DrawWireSphere(endPos, _stats.GroundCheckRadius);
-            
-            // Add a label for debugging
+
             UnityEditor.Handles.Label(gizmoPos + Vector3.up * 0.5f, $"Grounded: {_isGrounded}");
         }
-        
+#endif
     }
 }

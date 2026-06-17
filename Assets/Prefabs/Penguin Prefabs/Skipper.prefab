@@ -346,9 +346,9 @@ MonoBehaviour:
   SceneMigrationSynchronization: 1
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
-  AutoObjectParentSync: 0
-  SyncOwnerTransformWhenParented: 0
-  AllowOwnerToParent: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 1
 --- !u!114 &-5143739219388793016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +362,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  NetworkAnimatorExpanded: 0
+  AuthorityMode: 0
+  m_Animator: {fileID: 982189211677679919}
   TransitionStateInfoList:
   - IsCrossFadeExit: 0
     Layer: 0
@@ -398,7 +401,37 @@ MonoBehaviour:
     TransitionDuration: 0.25
     TriggerNameHash: 1137391654
     TransitionIndex: 0
-  m_Animator: {fileID: 982189211677679919}
+  AnimatorParameterEntries:
+    ParameterEntries:
+    - name: Forward
+      NameHash: 673977882
+      Synchronize: 1
+      ParameterType: 1
+    - name: IdleState
+      NameHash: 1892072745
+      Synchronize: 1
+      ParameterType: 1
+    - name: Interact
+      NameHash: -662453572
+      Synchronize: 1
+      ParameterType: 9
+    - name: Jumping
+      NameHash: 1137391654
+      Synchronize: 1
+      ParameterType: 9
+    - name: Attack
+      NameHash: 1080829965
+      Synchronize: 1
+      ParameterType: 4
+    - name: Crouched
+      NameHash: 1280700803
+      Synchronize: 1
+      ParameterType: 4
+    - name: Sliding
+      NameHash: -1078995872
+      Synchronize: 1
+      ParameterType: 4
+  AnimatorParametersExpanded: 0
 --- !u!114 &4789550851462934335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,6 +592,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GabesCommonUtility.Multiplayer.Vivox.VivoxPlayerController
   channelName: proximity
+  loudnessSmoothing: 12
+  speakingThreshold: 0.02
 --- !u!114 &-570479029237923672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,12 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee47aca0e8114e11925e400f6456f05d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.InventorySystem.Inventory
-  items:
-  - item: {fileID: 0}
-  - item: {fileID: 0}
-  - item: {fileID: 0}
-  - item: {fileID: 0}
-  - item: {fileID: 0}
+  capacity: 10
 --- !u!114 &1618607270581653939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,37 +652,6 @@ MonoBehaviour:
   enableOnRagdoll: []
   disableOnRagdoll:
   - {fileID: 982189211677679919}
---- !u!1 &1619603673811056745
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3259556065164601320}
-  m_Layer: 12
-  m_Name: PotionSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3259556065164601320
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619603673811056745}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1234}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9107652766263297373}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1765813642330727150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,12 +1063,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2892686630762413778}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0023002625, y: -0.024699956, z: 0.10310014}
+  m_LocalRotation: {x: 0.000000014901161, y: -4.696993e-13, z: 1.2554206e-11, w: 1}
+  m_LocalPosition: {x: 0.0023022885, y: 0.028707251, z: 0.09821903}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4088070910844665642}
+  m_Father: {fileID: 9107652766263297373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3154424762358495127
 GameObject:
@@ -1362,7 +1361,7 @@ Transform:
   - {fileID: 7543708175406240376}
   - {fileID: 4170586420422566287}
   - {fileID: 3531464742144992228}
-  - {fileID: 3259556065164601320}
+  - {fileID: 1111454249827601835}
   m_Father: {fileID: 4096520161332624731}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5011749838381449742
@@ -1545,8 +1544,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   genericStats: {fileID: 11400000, guid: 3bea371a6175a7b49998a820dce5d8a8, type: 2}
-  interactOrigin: {fileID: 8960545574107318711}
-  interactionCamera: {fileID: 0}
   showDebugRays: 1
 --- !u!114 &1311329519067989199
 MonoBehaviour:
@@ -1663,8 +1660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eee9396d6834efb92456b9dd64dfee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Characters.CapabilitySystem.Capabilities.InventoryCapability
+  ShowTopMostFoldoutHeaderGroup: 1
   parent: {fileID: 1111454249827601835}
   hotBarPrefab: {fileID: 8816533995647191451, guid: 4f97b0418f4fdcc43b6ff1d5e0ab18d0, type: 3}
+  dropImpulse: {x: 0, y: 1.5, z: 3}
 --- !u!1 &4510296497966958280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,6 +2169,7 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -2433,7 +2433,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8960545574107318711}
-  - {fileID: 1111454249827601835}
   m_Father: {fileID: 2232203612947774989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6635249459493102608

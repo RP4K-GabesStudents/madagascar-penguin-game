@@ -15,10 +15,10 @@ namespace Game.Objects
 
         private GameObject _oner;
         private int _targetLayers;
-        
+
         private Coroutine _lifeTime;
         private Coroutine _destroyLaser;
-        
+
         public void Init(int targetLayers)
         {
             _targetLayers = targetLayers;
@@ -36,9 +36,13 @@ namespace Game.Objects
             {
                 if ((1 << hitInfoRigidbody.gameObject.layer & _targetLayers) == 0) return;
 
-                if (hitInfoRigidbody.TryGetComponent(out IDamageable damageable))
+                // Damage via the networked path. Gated to the laser's owner so a
+                // collision simulated on multiple peers only sends the hit once
+                // (trust-the-attacker, same model as melee contact damage).
+                // Zero force: lasers deal no knockback (only contact damage does).
+                if (IsOwner && hitInfoRigidbody.TryGetComponent(out IDamageable damageable))
                 {
-                    damageable.TakeDamage(laserStats.Damage, Vector3.zero);
+                    damageable.ApplyNetworkedDamage(laserStats.Damage, Vector3.zero);
                 }
             }
             _destroyLaser ??= StartCoroutine(DestroyLaser());
@@ -67,9 +71,10 @@ namespace Game.Objects
                 Quaternion.LookRotation(Vector3.Reflect(-normal, normal))
             );
 
-            if (hitTransform != null)
+            // Follow the surface while staying at root (timer never freezes, scale-correct).
+            if (hitTransform != null && spark is CommonPoolable poolable)
             {
-                spark.transform.SetParent(hitTransform, true);
+                poolable.Follow(hitTransform);
             }
         }
 
@@ -82,12 +87,17 @@ namespace Game.Objects
 
         private IEnumerator DestroyLaser()
         {
-            if(_lifeTime != null) StopCoroutine(_lifeTime);
+            if (_lifeTime != null) StopCoroutine(_lifeTime);
 
             trailRenderer.emitting = false;
             rigidbody.isKinematic = true;
             yield return new WaitForSeconds(trailRenderer.time);
-            NetworkObject.Despawn(false);
+
+            // Only the server may despawn. Clients run the visual shutdown above
+            // locally; the server's despawn replicates the pool return to everyone.
+            if (IsServer && NetworkObject.IsSpawned)
+                NetworkObject.Despawn(false);
+
             _destroyLaser = null;
         }
 
@@ -96,18 +106,19 @@ namespace Game.Objects
             StopAllCoroutines();
             _destroyLaser = null;
             _lifeTime = null;
-            
+
             NetworkObject.SpawnWithOwnership(spawnID);
             Init(StaticUtilities.EnemyAttackLayers);
         }
 
         public void ForceDespawn()
         {
-            if (NetworkObject.IsSpawned)
+            if (IsServer && NetworkObject.IsSpawned)
             {
                 NetworkObject.Despawn(false);
             }
         }
+
         public override void OnNetworkDespawn()
         {
             gameObject.SetActive(false);

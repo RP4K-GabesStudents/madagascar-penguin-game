@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-namespace GabesCommonUtility.UI.Sliders
+namespace UI.Sliders
 {
     public class ProgressionFillImage : Image
     {
@@ -95,7 +95,7 @@ namespace GabesCommonUtility.UI.Sliders
             _displayFillAmount = _targetFillAmount;
             fillAmount = _displayFillAmount;
         }
-
+#if UNITY_EDITOR
         protected override void OnValidate()
         {
             base.OnValidate();
@@ -104,6 +104,7 @@ namespace GabesCommonUtility.UI.Sliders
                 type = Type.Filled;
             }
         }
+#endif
 
         public float GetActualValue => _targetFillAmount;
 

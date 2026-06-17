@@ -312,10 +312,8 @@ GameObject:
   - component: {fileID: 21903984}
   - component: {fileID: 21903983}
   - component: {fileID: 21903982}
-  - component: {fileID: 21903981}
-  - component: {fileID: 21903980}
-  - component: {fileID: 21903986}
   - component: {fileID: 21903985}
+  - component: {fileID: 21903986}
   m_Layer: 0
   m_Name: Button (5)
   m_TagString: Untagged
@@ -342,49 +340,6 @@ RectTransform:
   m_AnchoredPosition: {x: 930, y: -50}
   m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &21903980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21903978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e821892d9fd95b489c06f0bb0740773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationData: {fileID: 0}
---- !u!114 &21903981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21903978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4d958e3caa8a24d8da37509f80ecd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHover:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 606398180}
-        m_TargetAssemblyTypeName: Utilities.SoundEscalator, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &21903982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,27 +443,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 21903978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
+  m_Script: {fileID: 11500000, guid: d392807d61b32e442bdf6995a8f24aa8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UIEffectPlayer
+  effects:
+  - rid: 7816889189557076165
+  - rid: 7816889189557076173
+  references:
+    version: 2
+    RefIds:
+    - rid: 7816889189557076165
+      type: {class: UIScaleEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        target: {fileID: 21903979}
+        animationData: {fileID: 11400000, guid: e32cb7310edc2b94ebe3294e9bf710fe, type: 2}
+    - rid: 7816889189557076173
+      type: {class: UIActionEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        onActivate:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 606398180}
+              m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
+              m_MethodName: Play
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 5
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onDeactivate:
+          m_PersistentCalls:
+            m_Calls: []
 --- !u!114 &21903986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,10 +487,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 21903978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b27917bf52252944982605f16519044, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UISelectEffects
+  player: {fileID: 21903985}
 --- !u!1 &26317106
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,24 +607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &26317110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,7 +619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &29798903
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,10 +706,8 @@ GameObject:
   - component: {fileID: 83403670}
   - component: {fileID: 83403669}
   - component: {fileID: 83403668}
-  - component: {fileID: 83403667}
-  - component: {fileID: 83403666}
-  - component: {fileID: 83403672}
   - component: {fileID: 83403671}
+  - component: {fileID: 83403672}
   m_Layer: 0
   m_Name: Button (6)
   m_TagString: Untagged
@@ -786,49 +734,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1100, y: -50}
   m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &83403666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83403664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e821892d9fd95b489c06f0bb0740773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationData: {fileID: 0}
---- !u!114 &83403667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83403664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4d958e3caa8a24d8da37509f80ecd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHover:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 606398180}
-        m_TargetAssemblyTypeName: Utilities.SoundEscalator, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &83403668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,27 +837,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 83403664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
+  m_Script: {fileID: 11500000, guid: d392807d61b32e442bdf6995a8f24aa8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UIEffectPlayer
+  effects:
+  - rid: 7816889189557076166
+  - rid: 7816889189557076174
+  references:
+    version: 2
+    RefIds:
+    - rid: 7816889189557076166
+      type: {class: UIScaleEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        target: {fileID: 83403665}
+        animationData: {fileID: 11400000, guid: e32cb7310edc2b94ebe3294e9bf710fe, type: 2}
+    - rid: 7816889189557076174
+      type: {class: UIActionEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        onActivate:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 606398180}
+              m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
+              m_MethodName: Play
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 6
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onDeactivate:
+          m_PersistentCalls:
+            m_Calls: []
 --- !u!114 &83403672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,10 +881,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 83403664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b27917bf52252944982605f16519044, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UISelectEffects
+  player: {fileID: 83403671}
 --- !u!1 &86395921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1071,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingSelectable: {fileID: 0}
+--- !u!1001 &101706765
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.8747
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01745
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.26052
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828811401674802295, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
+      propertyPath: m_Name
+      value: PoolingManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
 --- !u!4 &117993262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 242142670469391886, guid: 1635495ff86484a4280d3eb3be6d8b0c, type: 3}
@@ -1328,24 +1304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &121476540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1358,7 +1316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &128655503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,27 +1484,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 128655503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b27917bf52252944982605f16519044, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846087}
-        m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UISelectEffects
+  player: {fileID: 128655509}
 --- !u!114 &128655509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1557,10 +1497,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 128655503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
+  m_Script: {fileID: 11500000, guid: d392807d61b32e442bdf6995a8f24aa8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UIEffectPlayer
+  effects:
+  - rid: 7816889189557076188
+  - rid: 7816889189557076191
+  references:
+    version: 2
+    RefIds:
+    - rid: 7816889189557076188
+      type: {class: UIScaleEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        target: {fileID: 128655507}
+        animationData: {fileID: 11400000, guid: 859954f923e488f42851ddefb241a047, type: 2}
+    - rid: 7816889189557076191
+      type: {class: UIActionEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        onActivate:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1417846087}
+              m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
+              m_MethodName: Play
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 1
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onDeactivate:
+          m_PersistentCalls:
+            m_Calls: []
 --- !u!1 &140392062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,10 +1544,8 @@ GameObject:
   - component: {fileID: 140392068}
   - component: {fileID: 140392067}
   - component: {fileID: 140392066}
-  - component: {fileID: 140392065}
-  - component: {fileID: 140392064}
-  - component: {fileID: 140392070}
   - component: {fileID: 140392069}
+  - component: {fileID: 140392070}
   m_Layer: 0
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1603,49 +1572,6 @@ RectTransform:
   m_AnchoredPosition: {x: 420, y: -50}
   m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &140392064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140392062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e821892d9fd95b489c06f0bb0740773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationData: {fileID: 0}
---- !u!114 &140392065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140392062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4d958e3caa8a24d8da37509f80ecd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHover:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 606398180}
-        m_TargetAssemblyTypeName: Utilities.SoundEscalator, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &140392066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1749,27 +1675,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 140392062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
+  m_Script: {fileID: 11500000, guid: d392807d61b32e442bdf6995a8f24aa8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UIEffectPlayer
+  effects:
+  - rid: 7816889189557076167
+  - rid: 7816889189557076175
+  references:
+    version: 2
+    RefIds:
+    - rid: 7816889189557076167
+      type: {class: UIScaleEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        target: {fileID: 140392063}
+        animationData: {fileID: 11400000, guid: e32cb7310edc2b94ebe3294e9bf710fe, type: 2}
+    - rid: 7816889189557076175
+      type: {class: UIActionEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        onActivate:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 606398180}
+              m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
+              m_MethodName: Play
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 2
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onDeactivate:
+          m_PersistentCalls:
+            m_Calls: []
 --- !u!114 &140392070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1779,10 +1719,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 140392062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b27917bf52252944982605f16519044, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UISelectEffects
+  player: {fileID: 140392069}
 --- !u!1 &154460634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,24 +2305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &219425219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2395,7 +2317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &219537172
 GameObject:
   m_ObjectHideFlags: 0
@@ -2617,24 +2538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &219537178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2647,7 +2550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!114 &219537179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3179,8 +3081,6 @@ GameObject:
   - component: {fileID: 317636371}
   - component: {fileID: 317636370}
   - component: {fileID: 317636369}
-  - component: {fileID: 317636373}
-  - component: {fileID: 317636372}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -3302,49 +3202,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317636367}
   m_CullTransparentMesh: 1
---- !u!114 &317636372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317636367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &317636373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317636367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &331206520
 GameObject:
   m_ObjectHideFlags: 0
@@ -4296,6 +4153,10 @@ PrefabInstance:
     - target: {fileID: 845276370019915095, guid: 62312cca6533bb04bb81a6d43caaa4f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6468820922368892057, guid: 62312cca6533bb04bb81a6d43caaa4f3, type: 3}
+      propertyPath: NetworkConfig.PlayerPrefab
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6528507579785989455, guid: 62312cca6533bb04bb81a6d43caaa4f3, type: 3}
       propertyPath: m_Name
@@ -5587,10 +5448,8 @@ GameObject:
   - component: {fileID: 822570240}
   - component: {fileID: 822570239}
   - component: {fileID: 822570238}
-  - component: {fileID: 822570237}
-  - component: {fileID: 822570236}
-  - component: {fileID: 822570242}
   - component: {fileID: 822570241}
+  - component: {fileID: 822570242}
   m_Layer: 0
   m_Name: Button (7)
   m_TagString: Untagged
@@ -5617,49 +5476,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1270, y: -50}
   m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &822570236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822570234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e821892d9fd95b489c06f0bb0740773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationData: {fileID: 0}
---- !u!114 &822570237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822570234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4d958e3caa8a24d8da37509f80ecd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHover:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 606398180}
-        m_TargetAssemblyTypeName: Utilities.SoundEscalator, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &822570238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5763,27 +5579,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 822570234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
+  m_Script: {fileID: 11500000, guid: d392807d61b32e442bdf6995a8f24aa8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UIEffectPlayer
+  effects:
+  - rid: 7816889189557076168
+  - rid: 7816889189557076176
+  references:
+    version: 2
+    RefIds:
+    - rid: 7816889189557076168
+      type: {class: UIScaleEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        target: {fileID: 822570235}
+        animationData: {fileID: 11400000, guid: e32cb7310edc2b94ebe3294e9bf710fe, type: 2}
+    - rid: 7816889189557076176
+      type: {class: UIActionEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        onActivate:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 606398180}
+              m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
+              m_MethodName: Play
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 7
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onDeactivate:
+          m_PersistentCalls:
+            m_Calls: []
 --- !u!114 &822570242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5793,10 +5623,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 822570234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b27917bf52252944982605f16519044, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UISelectEffects
+  player: {fileID: 822570241}
 --- !u!1 &848208937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5809,10 +5639,8 @@ GameObject:
   - component: {fileID: 848208943}
   - component: {fileID: 848208942}
   - component: {fileID: 848208941}
-  - component: {fileID: 848208940}
-  - component: {fileID: 848208939}
-  - component: {fileID: 848208945}
   - component: {fileID: 848208944}
+  - component: {fileID: 848208945}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -5839,49 +5667,6 @@ RectTransform:
   m_AnchoredPosition: {x: 80, y: -50}
   m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &848208939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848208937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e821892d9fd95b489c06f0bb0740773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationData: {fileID: 0}
---- !u!114 &848208940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848208937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4d958e3caa8a24d8da37509f80ecd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHover:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 606398180}
-        m_TargetAssemblyTypeName: Utilities.SoundEscalator, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &848208941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5985,27 +5770,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 848208937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
+  m_Script: {fileID: 11500000, guid: d392807d61b32e442bdf6995a8f24aa8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UIEffectPlayer
+  effects:
+  - rid: 7816889189557076169
+  - rid: 7816889189557076177
+  references:
+    version: 2
+    RefIds:
+    - rid: 7816889189557076169
+      type: {class: UIScaleEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        target: {fileID: 848208938}
+        animationData: {fileID: 11400000, guid: e32cb7310edc2b94ebe3294e9bf710fe, type: 2}
+    - rid: 7816889189557076177
+      type: {class: UIActionEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        onActivate:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 606398180}
+              m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
+              m_MethodName: Play
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onDeactivate:
+          m_PersistentCalls:
+            m_Calls: []
 --- !u!114 &848208945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6015,10 +5814,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 848208937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b27917bf52252944982605f16519044, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UISelectEffects
+  player: {fileID: 848208944}
 --- !u!1 &852780223
 GameObject:
   m_ObjectHideFlags: 0
@@ -6123,24 +5922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &852780227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6153,7 +5934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &856212244
 GameObject:
   m_ObjectHideFlags: 0
@@ -6606,24 +6386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &897781055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6636,7 +6398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &920083784
 GameObject:
   m_ObjectHideFlags: 0
@@ -6830,24 +6591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1088014972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6860,7 +6603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &1108616299 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4133643292672422330, guid: 4fdd88fc195767a4480509eec7e02d4c, type: 3}
@@ -6903,10 +6645,8 @@ GameObject:
   - component: {fileID: 1125203164}
   - component: {fileID: 1125203163}
   - component: {fileID: 1125203162}
-  - component: {fileID: 1125203161}
-  - component: {fileID: 1125203160}
-  - component: {fileID: 1125203166}
   - component: {fileID: 1125203165}
+  - component: {fileID: 1125203166}
   m_Layer: 0
   m_Name: Button (4)
   m_TagString: Untagged
@@ -6933,49 +6673,6 @@ RectTransform:
   m_AnchoredPosition: {x: 760, y: -50}
   m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1125203160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125203158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e821892d9fd95b489c06f0bb0740773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationData: {fileID: 0}
---- !u!114 &1125203161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125203158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4d958e3caa8a24d8da37509f80ecd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHover:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 606398180}
-        m_TargetAssemblyTypeName: Utilities.SoundEscalator, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1125203162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7079,27 +6776,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 1125203158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
+  m_Script: {fileID: 11500000, guid: d392807d61b32e442bdf6995a8f24aa8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UIEffectPlayer
+  effects:
+  - rid: 7816889189557076170
+  - rid: 7816889189557076178
+  references:
+    version: 2
+    RefIds:
+    - rid: 7816889189557076170
+      type: {class: UIScaleEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        target: {fileID: 1125203159}
+        animationData: {fileID: 11400000, guid: e32cb7310edc2b94ebe3294e9bf710fe, type: 2}
+    - rid: 7816889189557076178
+      type: {class: UIActionEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        onActivate:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 606398180}
+              m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
+              m_MethodName: Play
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 4
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onDeactivate:
+          m_PersistentCalls:
+            m_Calls: []
 --- !u!114 &1125203166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7109,10 +6820,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1125203158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b27917bf52252944982605f16519044, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UISelectEffects
+  player: {fileID: 1125203165}
 --- !u!1 &1126836185
 GameObject:
   m_ObjectHideFlags: 0
@@ -7557,10 +7268,8 @@ GameObject:
   - component: {fileID: 1241250040}
   - component: {fileID: 1241250039}
   - component: {fileID: 1241250038}
-  - component: {fileID: 1241250037}
-  - component: {fileID: 1241250036}
-  - component: {fileID: 1241250042}
   - component: {fileID: 1241250041}
+  - component: {fileID: 1241250042}
   m_Layer: 0
   m_Name: Button (3)
   m_TagString: Untagged
@@ -7587,49 +7296,6 @@ RectTransform:
   m_AnchoredPosition: {x: 590, y: -50}
   m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1241250036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241250034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e821892d9fd95b489c06f0bb0740773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationData: {fileID: 0}
---- !u!114 &1241250037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241250034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4d958e3caa8a24d8da37509f80ecd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHover:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 606398180}
-        m_TargetAssemblyTypeName: Utilities.SoundEscalator, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1241250038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7733,27 +7399,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 1241250034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
+  m_Script: {fileID: 11500000, guid: d392807d61b32e442bdf6995a8f24aa8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UIEffectPlayer
+  effects:
+  - rid: 7816889189557076171
+  - rid: 7816889189557076179
+  references:
+    version: 2
+    RefIds:
+    - rid: 7816889189557076171
+      type: {class: UIScaleEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        target: {fileID: 1241250035}
+        animationData: {fileID: 11400000, guid: e32cb7310edc2b94ebe3294e9bf710fe, type: 2}
+    - rid: 7816889189557076179
+      type: {class: UIActionEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        onActivate:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 606398180}
+              m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
+              m_MethodName: Play
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 3
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onDeactivate:
+          m_PersistentCalls:
+            m_Calls: []
 --- !u!114 &1241250042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7763,10 +7443,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1241250034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b27917bf52252944982605f16519044, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UISelectEffects
+  player: {fileID: 1241250041}
 --- !u!1001 &1243776335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8034,9 +7714,9 @@ GameObject:
   - component: {fileID: 1317950798}
   - component: {fileID: 1317950797}
   - component: {fileID: 1317950796}
-  - component: {fileID: 1317950800}
-  - component: {fileID: 1317950799}
   - component: {fileID: 1317950801}
+  - component: {fileID: 1317950803}
+  - component: {fileID: 1317950802}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -8182,49 +7862,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317950793}
   m_CullTransparentMesh: 1
---- !u!114 &1317950799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317950793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846087}
-        m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1317950800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317950793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!114 &1317950801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8240,6 +7877,63 @@ MonoBehaviour:
   signInMode: 1
   next: {fileID: 0}
   failure: {fileID: 0}
+--- !u!114 &1317950802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317950793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b27917bf52252944982605f16519044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UISelectEffects
+  player: {fileID: 1317950803}
+--- !u!114 &1317950803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317950793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d392807d61b32e442bdf6995a8f24aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UIEffectPlayer
+  effects:
+  - rid: 7816889189557076189
+  - rid: 7816889189557076192
+  references:
+    version: 2
+    RefIds:
+    - rid: 7816889189557076189
+      type: {class: UIScaleEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        target: {fileID: 1317950794}
+        animationData: {fileID: 11400000, guid: 859954f923e488f42851ddefb241a047, type: 2}
+    - rid: 7816889189557076192
+      type: {class: UIActionEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        onActivate:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1417846087}
+              m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
+              m_MethodName: Play
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onDeactivate:
+          m_PersistentCalls:
+            m_Calls: []
 --- !u!1 &1324193616
 GameObject:
   m_ObjectHideFlags: 0
@@ -9410,63 +9104,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6113447471756242031, guid: ba80545fabd9b1a44be3ea226d7b0d2f, type: 3}
   m_PrefabInstance: {fileID: 866386674}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1528683839
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.83849293
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.5060234
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -13.559962
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212765093704200931, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5828811401674802295, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
-      propertyPath: m_Name
-      value: PoolingManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0b2513c2921f96f4e8e154abad4cdf36, type: 3}
 --- !u!1 &1530949007
 GameObject:
   m_ObjectHideFlags: 0
@@ -9638,24 +9275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1530949013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9668,7 +9287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &1542563778
 GameObject:
   m_ObjectHideFlags: 0
@@ -9840,24 +9458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1542563784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9870,7 +9470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &1565730586
 GameObject:
   m_ObjectHideFlags: 0
@@ -10040,27 +9639,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1565730586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b27917bf52252944982605f16519044, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846087}
-        m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UISelectEffects
+  player: {fileID: 1565730593}
 --- !u!114 &1565730593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10070,10 +9652,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 1565730586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
+  m_Script: {fileID: 11500000, guid: d392807d61b32e442bdf6995a8f24aa8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UIEffectPlayer
+  effects:
+  - rid: 7816889189557076190
+  - rid: 7816889189557076193
+  references:
+    version: 2
+    RefIds:
+    - rid: 7816889189557076190
+      type: {class: UIScaleEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        target: {fileID: 1565730587}
+        animationData: {fileID: 11400000, guid: 859954f923e488f42851ddefb241a047, type: 2}
+    - rid: 7816889189557076193
+      type: {class: UIActionEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        onActivate:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1417846087}
+              m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
+              m_MethodName: Play
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 2
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onDeactivate:
+          m_PersistentCalls:
+            m_Calls: []
 --- !u!1 &1617875037
 GameObject:
   m_ObjectHideFlags: 0
@@ -10335,24 +9948,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1636383491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10365,7 +9960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &1646776160
 GameObject:
   m_ObjectHideFlags: 0
@@ -10663,24 +10257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1678966652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10693,7 +10269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &1693748305
 GameObject:
   m_ObjectHideFlags: 0
@@ -11147,24 +10722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1716854833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11177,7 +10734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &1723571641
 GameObject:
   m_ObjectHideFlags: 0
@@ -11250,7 +10806,7 @@ PrefabInstance:
     - target: {fileID: 1618607270581653939, guid: bbf1f601264e8d840bde55d4c5a21084, type: 3}
       propertyPath: 'mainCollider.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1895841306}
     - target: {fileID: 2232203612947774989, guid: bbf1f601264e8d840bde55d4c5a21084, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -12193,24 +11749,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1874618770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12223,7 +11761,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!1 &1880222274
 GameObject:
   m_ObjectHideFlags: 0
@@ -12462,6 +11999,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Utilities.Tether
   maxDistance: 50
   readTransform: {fileID: 1825330358}
+--- !u!136 &1895841306 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 6199748157331173068, guid: bbf1f601264e8d840bde55d4c5a21084, type: 3}
+  m_PrefabInstance: {fileID: 1727642497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1913791463
 GameObject:
   m_ObjectHideFlags: 0
@@ -13203,10 +12745,8 @@ GameObject:
   - component: {fileID: 2016657531}
   - component: {fileID: 2016657530}
   - component: {fileID: 2016657529}
-  - component: {fileID: 2016657528}
-  - component: {fileID: 2016657527}
-  - component: {fileID: 2016657533}
   - component: {fileID: 2016657532}
+  - component: {fileID: 2016657533}
   m_Layer: 0
   m_Name: Button (1)
   m_TagString: Untagged
@@ -13233,49 +12773,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250, y: -50}
   m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2016657527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016657525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e821892d9fd95b489c06f0bb0740773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationData: {fileID: 0}
---- !u!114 &2016657528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016657525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4d958e3caa8a24d8da37509f80ecd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHover:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 606398180}
-        m_TargetAssemblyTypeName: Utilities.SoundEscalator, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2016657529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13379,27 +12876,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 2016657525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
+  m_Script: {fileID: 11500000, guid: d392807d61b32e442bdf6995a8f24aa8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UIEffectPlayer
+  effects:
+  - rid: 7816889189557076172
+  - rid: 7816889189557076180
+  references:
+    version: 2
+    RefIds:
+    - rid: 7816889189557076172
+      type: {class: UIScaleEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        target: {fileID: 2016657526}
+        animationData: {fileID: 11400000, guid: e32cb7310edc2b94ebe3294e9bf710fe, type: 2}
+    - rid: 7816889189557076180
+      type: {class: UIActionEffect, ns: UI.Effects, asm: UI.Effects}
+      data:
+        onActivate:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 606398180}
+              m_TargetAssemblyTypeName: GabesCommonUtility.Game.SoundEscalator, GabesCommonUtility.Game
+              m_MethodName: Play
+              m_Mode: 3
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 1
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        onDeactivate:
+          m_PersistentCalls:
+            m_Calls: []
 --- !u!114 &2016657533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13409,10 +12920,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2016657525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b27917bf52252944982605f16519044, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
+  m_EditorClassIdentifier: UI.Effects::UI.Effects.UISelectEffects
+  player: {fileID: 2016657532}
 --- !u!1 &2036062496
 GameObject:
   m_ObjectHideFlags: 0
@@ -14130,7 +13641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e28e4322d18918499c51b68f89991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableScale
-  animationData: {fileID: 11400000, guid: 249641dff697f654ba547f0303257977, type: 2}
 --- !u!114 &2106853584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14143,24 +13653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0adcddec7f36d4fb10082031bd8b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GabesCommonUtility.UI.Select::GabesCommonUtility.UI.Select.SelectableAction
-  onSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417846086}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeselect:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &2114428889
 GameObject:
   m_ObjectHideFlags: 0
@@ -19471,6 +18963,71 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.0049984, z: 0.00274382}
     m_Extent: {x: 0.00092532905, y: 0.001552878, z: 0.0014487801}
   m_DirtyAABB: 0
+--- !u!1001 &5095379184905502783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3481938956010900613, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.23466
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481938956010900613, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481938956010900613, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.75146
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481938956010900613, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481938956010900613, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481938956010900613, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481938956010900613, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481938956010900613, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481938956010900613, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481938956010900613, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4252034982323883389, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: m_Name
+      value: SelectionHelper
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182914387893266297, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3276852285
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182914387893266297, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 847899372
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e9a495c188757c4b957e619b0d6f22f, type: 3}
 --- !u!54 &5098624105373156713
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24155,6 +23712,7 @@ SceneRoots:
   - {fileID: 4681636693559891431}
   - {fileID: 13402070}
   - {fileID: 596029464}
-  - {fileID: 1528683839}
   - {fileID: 1666980350}
   - {fileID: 383872123}
+  - {fileID: 101706765}
+  - {fileID: 5095379184905502783}

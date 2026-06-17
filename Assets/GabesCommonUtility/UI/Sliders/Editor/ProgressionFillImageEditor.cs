@@ -1,11 +1,11 @@
 #if UNITY_EDITOR
-using GabesCommonUtility.UI.Sliders;
+using UI.Sliders;
 using UnityEditor;
 using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GabesCommonUtility.UI.Editor
+namespace UI.Sliders.Editor
 {
     [CustomEditor(typeof(ProgressionFillImage), true)]
     [CanEditMultipleObjects]

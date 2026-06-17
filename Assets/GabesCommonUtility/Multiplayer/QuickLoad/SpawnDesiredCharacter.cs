@@ -4,7 +4,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GameCommonUtility.Multiplayer.QuickLoad
+namespace Multiplayer.QuickLoad
 {
     public class SpawnDesiredCharacter : NetworkBehaviour
     {

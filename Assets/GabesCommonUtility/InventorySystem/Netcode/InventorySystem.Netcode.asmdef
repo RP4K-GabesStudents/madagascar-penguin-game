@@ -1,0 +1,14 @@
+{
+	"name": "InventorySystem.Netcode",
+	"references": [
+		"Unity.Netcode.Runtime", "InventorySystem.Core", "InventorySystem.Model"
+	],
+	"versionDefines": [
+		{
+		"name": "com.unity.netcode.gameobjects",
+		"expression": "",
+		"define": "NETCODE"
+	}
+	],
+	"defineConstraints": ["NETCODE"]
+}

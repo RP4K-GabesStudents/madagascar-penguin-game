@@ -1,0 +1,34 @@
+{
+  "name": "Sequencing.Essential",
+  "references": [
+    "Eflatun.SceneReference",
+    "Sequencing.Core",
+    "UniTask",
+    "Unity.Netcode.Runtime"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [
+    {
+      "name": "com.cysharp.unitask",
+      "expression": "",
+      "define": "UNITASK"
+    },
+    {
+      "name": "com.eflatun.scenereference",
+      "expression": "",
+      "define": "SCENE_REFERENCE"
+    },
+    {
+      "name": "com.unity.netcode.gameobjects",
+      "expression": "",
+      "define": "UNITY_NETCODE_GAMEOBJECTS"
+    }
+  ],
+  "noEngineReferences": false
+}

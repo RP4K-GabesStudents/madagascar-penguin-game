@@ -8,9 +8,398 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbdf07ff-7e02-4436-91c3-f19a84f260b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/Editor/Common.Extensions.Editor.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/Editor/Common.Extensions.Editor.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/Editor/RequireInterfaceDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/Editor/RequireInterfaceDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/RequireInterfaceAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/RequireInterfaceAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Loading.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Loading/Common.Loading.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Loading/Common.Loading.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Core/EItemRarity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Core/EItemRarity.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Core/IHeldItemAnchor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Core/InventorySystem.Core.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Core/InventorySystem.Core.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Core/ItemRegistry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Core/ItemRegistry.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Loading/ItemRegistryLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Loading/ItemRegistryLoader.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Model/AnchorConstraint.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Model/AnchorFollower.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Model/InventoryOps.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Model/InventoryOps.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Model/InventorySystem.Model.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Model/InventorySystem.Model.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Model/InventoryTransfer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Model/InventoryTransfer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Netcode/HeldItemAnchorFollower.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/UI/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/UI/Editor/GridInventoryEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/UI/Editor/InventorySystem.UI.Editor.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/UI/Editor/InventorySystem.UI.Editor.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/UI/GridInventory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/UI/InventorySystem.UI.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/UI/InventorySystem.UI.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Editor/Multiplayer.Editor.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Editor/Multiplayer.Editor.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Local/Multiplayer.Local.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Local/Multiplayer.Local.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetcodeSyncSequence.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetcodeSyncSequence.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetworkSequenceEntryPoint.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/Multiplayer.Vivox.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/Multiplayer.Vivox.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/Sequencing.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/Sequencing/Multiplayer.Vivox.Sequencing.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/Sequencing/Multiplayer.Vivox.Sequencing.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Core.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Core/IChainSignatureProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Core/IEntrySequence.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Core/Sequencing.Core.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Core/Sequencing.Core.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential/Editor/Sequencing.Essential.Editor.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential/Editor/Sequencing.Essential.Editor.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential/Sequencing.Essential.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential/Sequencing.Essential.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Managers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Managers/Sequencing.Managers.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Managers/Sequencing.Managers.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/GabesCommonUtility.UI.Custom.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/GabesCommonUtility.UI.Custom.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/InfiniteScrollView/Editor/GabesCommonUtility.UI.Custom.InfiniteScrollView.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/InfiniteScrollView/Editor/GabesCommonUtility.UI.Custom.InfiniteScrollView.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/AnimationEffectDefaults.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/AnimationEffectDefaults.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/Editor/UI.Effects.Editor.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/Editor/UIEffectPlayerEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/MoveAnimationDataSo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/MoveAnimationDataSo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/Resources/CustomUIEffects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/RotateAnimationDataSo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/RotateAnimationDataSo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/ScaleAnimationDataSo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/ScaleAnimationDataSo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UI.Effects.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UI.Effects.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UIActionEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UIColorEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UIEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UIEffectPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UIHoverEffects.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UIMoveEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UIOscillation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UIRotateEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UIScaleEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UISelectEffects.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Images.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Images/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Images/Editor/GradientFillImageEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Images/Editor/UI.Images.Editor.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Images/GradientFillImage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Images/GradientFillImage.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Images/UI.Images.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Images/UI.Images.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/Editor/ToggleSliderEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/Editor/UI.Sliders.Editor.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/Editor/UI.Sliders.Editor.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Items.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Items/IHeldItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Items/WorldItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.madagascar-penguin-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/CharacterSpawnSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/CharacterSpawnSequence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DefaultNetworkPrefabs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DefaultNetworkPrefabs.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Sequence.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Sequence/IEntrySequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Sequence/IEntrySequence.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Core/IEntrySequence.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Sequence/SequenceEntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Managers/SequenceEntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Sequence/SequenceEntryPoint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Managers/SequenceEntryPoint.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Sequence/UnityEventSequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Sequence/UnityEventSequence.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Sequence/_GabesCommonUtility.Sequence.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Sequence/_GabesCommonUtility.Sequence.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Editor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Editor/NetworkObjectFixer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Editor/NetworkObjectFixer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Editor/NetworkObjectFixer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Editor/NetworkObjectFixer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Editor/RequiredPackageInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/RequiredPackageInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Editor/RequiredPackageInstaller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/RequiredPackageInstaller.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Editor/SceneSnapshotEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/SceneSnapshotEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Editor/SceneSnapshotEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/SceneSnapshotEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Editor/SpaceChildrenEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/SpaceChildrenEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Editor/SpaceChildrenEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/SpaceChildrenEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Editor/_GabesCommonUtility.Editor.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/Common.Editor.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Editor/_GabesCommonUtility.Editor.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/Common.Editor.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Extensions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Extensions/ArrayExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/ArrayExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Extensions/ArrayExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/ArrayExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Extensions/MathExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/MathExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Extensions/MathExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/MathExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Extensions/UniClipboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/UniClipboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Extensions/UniClipboard.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/UniClipboard.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Extensions/UnityExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/UnityExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Extensions/UnityExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/UnityExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Extensions/_GabesCommonUtility.Extensions.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/Common.Extensions.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Extensions/_GabesCommonUtility.Extensions.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/Common.Extensions.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Game/LoadingScreen.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Game/LoadingScreen.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/LoadingCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Loading/LoadingCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/LoadingCanvas.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Loading/LoadingCanvas.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/CoreMultiplayerSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/CoreMultiplayerSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/DisplayUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/DisplayUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/PlayerSpawnSequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/PlayerSpawnSequence.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/CharacterSpawnSequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/CharacterSpawnSequence.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/Editor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential/Editor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/Editor/LoadSceneSequenceEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential/Editor/LoadSceneSequenceEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/Editor/LoadSceneSequenceEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential/Editor/LoadSceneSequenceEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/LoadSceneSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential/LoadSceneSequence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/LoadSceneSequence.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential/LoadSceneSequence.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/NetcodeAutoHostSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetcodeAutoHostSequence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/NetcodeAutoHostSequence.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetcodeAutoHostSequence.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/NetcodeSigninSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetcodeSigninSequence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/NetcodeSigninSequence.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetcodeSigninSequence.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/NetworkSequenceEntryPoint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/NetworkSequenceEntryPoint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetworkSequenceEntryPoint.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/SpawnNetworkObjectSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/SpawnNetworkObjectSequence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/SpawnNetworkObjectSequence.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/SpawnNetworkObjectSequence.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/_GabesCommonUtility.Multiplayer.GameObjects.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/Multiplayer.Sequencing.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/_GabesCommonUtility.Multiplayer.GameObjects.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/Multiplayer.Sequencing.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/_GabesCommonUtility.Multiplayer.GameObjects.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Multiplayer.GameObjects.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/_GabesCommonUtility.Multiplayer.GameObjects.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Multiplayer.GameObjects.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Local/SplitscreenManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Local/SplitscreenManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/QuickLoad/SpawnDesiredCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/QuickLoad/SpawnDesiredCharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/QuickLoad/_GabesCommonUtility.Multiplayer.QuickLoad.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/QuickLoad/Multiplayer.QuickLoad.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/QuickLoad/_GabesCommonUtility.Multiplayer.QuickLoad.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/QuickLoad/Multiplayer.QuickLoad.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/_GabesCommonUtility.Multiplayer.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/_GabesCommonUtility.Multiplayer.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/CopyPasteClipboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/CopyPasteClipboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/InfiniteScrollView/Editor/CustomScrollViewEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/InfiniteScrollView/Editor/CustomScrollViewEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/InfiniteScrollView/_GabesCommonUtility.UI.Custom.InfiniteScrollView.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/InfiniteScrollView/GabesCommonUtility.UI.Custom.InfiniteScrollView.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/InfiniteScrollView/_GabesCommonUtility.UI.Custom.InfiniteScrollView.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/InfiniteScrollView/GabesCommonUtility.UI.Custom.InfiniteScrollView.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/Popup/_GabesCommonUtility.UI.Custom.Popup.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/Popup/GabesCommonUtility.UI.Custom.Popup.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/Popup/_GabesCommonUtility.UI.Custom.Popup.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/Popup/GabesCommonUtility.UI.Custom.Popup.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoldReleaseButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Button/UIHoldReleaseButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoldReleaseButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Button/UIHoldReleaseButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoverAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoverAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoverColor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoverColor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoverMove.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoverMove.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoverScale.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoverScale.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoverSelect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/General/UIHoverSelect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/UIHoverSelect.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/General/UIHoverSelect.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/_GabesCommonUtility.UI.Hover.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Hover/_GabesCommonUtility.UI.Hover.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/AnimationData.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/Resources.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/AnimationData/DefaultAnimationData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/AnimationData/DefaultAnimationData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/AnimationData/DefaultColorAnimationData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/Resources/CustomUIEffects/DefaultColorAnimationData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/AnimationData/DefaultColorAnimationData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/Resources/CustomUIEffects/DefaultColorAnimationData.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/AnimationData/NegativeX.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/AnimationData/NegativeX.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/AnimationData/StretchX.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/AnimationData/StretchX.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/AnimationDataSo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/AnimationDataSo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/AnimationDataSo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/AnimationDataSo.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/ColorAnimationData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/ColorAnimationData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/ColorAnimationData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/ColorAnimationData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/_GabesCommonUtility.UI.ScriptableObjects.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/UI.Effects.ScriptableObjects.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/ScriptableObjects/_GabesCommonUtility.UI.ScriptableObjects.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/UI.Effects.ScriptableObjects.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Select.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Select/EnableSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/General/SelectOnEnable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Select/EnableSelector.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/General/SelectOnEnable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Select/SelectableAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Select/SelectableAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Select/SelectableColor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Select/SelectableColor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Select/SelectableScale.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Select/SelectableScale.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Select/_GabesCommonUtility.UI.Select.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Select/_GabesCommonUtility.UI.Select.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/Editor/ProgressionFillImageEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/Editor/ProgressionFillImageEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/Editor/ToggleSlider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/Editor/ToggleSlider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/Editor/ToggleSliderEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/ProgressionFillImage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/ProgressionFillImage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/SliderText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/SliderText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/ToggleSlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/ToggleSlider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/_GabesCommonUtility.UI.Sliders.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/UI.Sliders.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/_GabesCommonUtility.UI.Sliders.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/UI.Sliders.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Text/EnableBubbleText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Text/EnableBubbleText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Text/EnableColorChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Text/EnableColorChange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Text/_GabesCommonUtility.UI.Text.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Text/GabesCommonUtility.UI.Text.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Text/_GabesCommonUtility.UI.Text.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Text/GabesCommonUtility.UI.Text.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Horse Foler/Horse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Horse Foler/Horse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/MainMenuBG.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/MainMenuBG.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/MainMenuBackground.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/MainMenuBackground.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/Penguin/KowalskiMenu.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/Penguin/KowalskiMenu.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/Penguin/PrivateMenu.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/Penguin/PrivateMenu.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/Penguin/RicoMenu.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/Penguin/RicoMenu.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/Penguin/SkipperMenu.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Masterials and Shaders/Shaders/Penguin/SkipperMenu.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Penguins/Kowalski@Illegal Headbutt.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Penguins/Kowalski@Illegal Headbutt.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Penguins/Private.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Penguins/Private.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Penguins/Rico.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Penguins/Rico.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Penguins/Skipper.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Penguins/Skipper.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/Weapons/Axe Bronze.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/Weapons/Axe Bronze.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Laser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Laser.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Main Menu/CharacterSelection.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Main Menu/CharacterSelection.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Penguin Prefabs/Skipper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Penguin Prefabs/Skipper.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Inventory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/ItemSlot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/ItemSlot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SelectionScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SelectionScreen.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/test/GabeTesting.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/test/GabeTesting.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/LaserStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/LaserStats.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion A 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion A 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion A.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion A.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion B 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion B 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion B.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion B.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion C 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion C 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion C.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Potions/Potion C.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeAxeAbilityStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeAxeAbilityStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeAxeItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeAxeItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeDaggerAbilityStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeDaggerAbilityStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeDaggerItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeDaggerItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeSpearAbilityStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeSpearAbilityStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeSpearItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeSpearItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeSwordAbilitySTats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeSwordAbilitySTats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeSwordItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/BronzeSwordItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltAxeAbilityStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltAxeAbilityStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltAxeItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltAxeItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltHiltDaggerAbilityStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltHiltDaggerAbilityStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltHiltDaggerItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltHiltDaggerItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltSpearAbilitySTats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltSpearAbilitySTats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltSpearItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltSpearItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltSwordAbilitySTats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltSwordAbilitySTats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltSwordItemSTats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/CobaltSwordItemSTats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldAxeAbilityStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldAxeAbilityStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldAxeItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldAxeItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldDaggerAbilityStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldDaggerAbilityStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldDaggerItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldDaggerItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldSpearAbilitySTats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldSpearAbilitySTats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldSpearItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldSpearItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldSwordAbilitySTats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldSwordAbilitySTats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldSwordItemSTats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/GoldSwordItemSTats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/KunaiAbilityStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/KunaiAbilityStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/KunaiItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Wepons/KunaiItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Characters/GenericEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Characters/GenericEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/AbilitySystem/Explosion/Explosion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/AbilitySystem/Explosion/Explosion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/AbilitySystem/WeaponStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/AbilitySystem/WeaponStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/InventoryCapability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/InventoryCapability.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/Penguin/InteractionCapability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/Penguin/InteractionCapability.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/Penguin/JumpCapability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/Penguin/JumpCapability.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/Penguin/LaserEyesCapability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/Penguin/LaserEyesCapability.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/Penguin/MovementCapability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/Capabilities/Penguin/MovementCapability.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/CapabilityStats/Penguin/LaserEyeCapabilityStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/CapabilitySystem/CapabilityStats/Penguin/LaserEyeCapabilityStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/World/GenericCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Characters/World/GenericCharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Entities/Kroog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Entities/Kroog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/DefaultItemStats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/DefaultItemStats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/HotBar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/HotBar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/Inventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/Inventory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/Item.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/Item.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/ItemContainer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/ItemContainer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/ItemSlot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/ItemSlot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/ItemStats.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/ItemStats.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Items/Potion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Items/Potion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Items/Weapons/GenericWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Items/Weapons/GenericWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Objects/CollisionDamager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Objects/CollisionDamager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Objects/IDamageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Objects/IDamageable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Objects/Laser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Objects/Laser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Objects/LootBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Objects/LootBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game/EntryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Game/EntryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game/Game Entry.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game/Game Entry/SelectCharacterSequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game/Game Entry/SelectCharacterSequence.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game/GameControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Game/GameControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game/GameControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Game/GameControls.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game/LoadingManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Game/LoadingManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Pooling System/CommonPoolable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Pooling System/CommonPoolable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/Pooling System/PoolingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Pooling System/PoolingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/SelectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/SelectionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Sequences.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Sequences/Create.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Sequences/Create/CreateLobbyFailSequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Sequences/Create/CreateLobbyFailSequence.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Sequences/Create/CreateLobbySuccessSequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Sequences/Create/CreateLobbySuccessSequence.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Sequences/Join.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Sequences/Join/JoinLobbyFailSequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Sequences/Join/JoinLobbyFailSequence.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Sequences/Join/JoinLobbySuccessSequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Network/Sequences/Join/JoinLobbySuccessSequence.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LobbyUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LobbyUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PenguinSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PenguinSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Editor/ReverseAnimationContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/ReverseAnimationContent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Editor/ReverseAnimationContent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/ReverseAnimationContent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/IEntrySequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/IEntrySequence.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/LoadSceneSequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/LoadSceneSequence.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/SequenceStartPoint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/SequenceStartPoint.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/VivoxPlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/VivoxPlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/VivoxPlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/VivoxPlayerController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/VivoxSignInSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/Sequencing/VivoxSignInSequence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/VivoxSignInSequence.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/Sequencing/VivoxSignInSequence.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/VivoxSignOutSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/Sequencing/VivoxSignOutSequence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Vivox/VivoxSignOutSequence.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/Sequencing/VivoxSignOutSequence.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +407,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="83" />
+    <option name="cachedIndexableFilesCount" value="1" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -26,14 +415,49 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/5e/cf8ae6f0/Action.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Sequence/SequenceEntryPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AssetStore/BOXOPHOBIC/Utils/Settings/HD Volume Low.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/RequiredPackageInstaller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/SceneSnapshotEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Editor/SpaceChildrenEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/ArrayExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/MathExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/RequireInterfaceAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/UniClipboard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Extensions/UnityExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Loading/Common.Loading.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Common/Loading/LoadingCanvas.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Game/CircleRotationPlacement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Game/Common/IControllable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Game/_GabesCommonUtility.Game.asmdef" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/NetcodeAutoHostSequence.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Sequencing/SpawnNetworkObjectSequence.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/InventorySystem/Core/IHeldItemAnchor.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Editor/NetworkObjectFixer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/GameObjects/Multiplayer.GameObjects.asmdef.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Local/Multiplayer.Local.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/QuickLoad/Buttonprefab.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/QuickLoad/SpawnDesiredCharacter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/QuickLoad/UnknownCharacterSpawner.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetcodeAutoHostSequence.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetcodeSigninSequence.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetcodeSyncSequence.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/NetworkSequenceEntryPoint.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Sequencing/SpawnNetworkObjectSequence.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/Multiplayer.Vivox.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Multiplayer/Vivox/Sequencing/Multiplayer.Vivox.Sequencing.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Core/Sequencing.Core.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential/Editor/LoadSceneSequenceEditor.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Essential/Sequencing.Essential.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/Sequencing/Managers/Sequencing.Managers.asmdef" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/CopyPasteClipboard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Custom/GabesCommonUtility.UI.Custom.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/Editor/UIEffectPlayerEditor.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/MoveAnimationDataSo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/ScriptableObjects/RotateAnimationDataSo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Effects/UIMoveEffect.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Images/Editor/GradientFillImageEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/GradientSlider.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GabesCommonUtility/UI/Sliders/ToggleSlider.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Horse Foler/animaton/HorseAttackNew_Reversed.anim" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/New Terrain 3.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AudioSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Core/Cutscene.Core.asmdef" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Core/ICutscenes.cs" root0="FORCE_HIGHLIGHTING" />
@@ -45,7 +469,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Managers/Cutscene.Managers.asmdef" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cutscene/Managers/CutsceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Characters/World/Penguin.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/InventorySystem/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Items/IHeldItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Objects/CollisionDamagerStats.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ISettingsMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/IReward.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Core/ITaskConditional.cs" root0="FORCE_HIGHLIGHTING" />
@@ -54,7 +479,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectiveSystem/Rewards/StateReward.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestingDummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Transition/PenguinSelectorStats.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Editor/ReverseAnimationContent.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -198,6 +622,14 @@
       <workItem from="1779927634438" duration="5656000" />
       <workItem from="1780353895748" duration="1574000" />
       <workItem from="1780956766236" duration="3875000" />
+      <workItem from="1781108920203" duration="15240000" />
+      <workItem from="1781221588946" duration="4587000" />
+      <workItem from="1781289377724" duration="5191000" />
+      <workItem from="1781391187662" duration="6138000" />
+      <workItem from="1781419348075" duration="4433000" />
+      <workItem from="1781453230558" duration="2927000" />
+      <workItem from="1781549172953" duration="18202000" />
+      <workItem from="1781721578690" duration="8880000" />
     </task>
     <servers />
   </component>

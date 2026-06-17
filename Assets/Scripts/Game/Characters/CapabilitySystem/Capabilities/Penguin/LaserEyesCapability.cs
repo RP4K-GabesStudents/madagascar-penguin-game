@@ -1,7 +1,5 @@
-using System;
+using Game.Characters.CapabilitySystem.Capabilities;
 using Game.Characters.CapabilitySystem.CapabilityStats.Penguin;
-using Game.InventorySystem;
-using Game.Items.Weapons;
 using Managers.Pooling_System;
 using Unity.Netcode;
 using UnityEngine;
@@ -16,70 +14,72 @@ namespace Game.Characters.CapabilitySystem.Capabilities.Penguin
         private LaserEyeCapabilityStats _stats;
         private InventoryCapability _inventory;
         private const float TargetDistance = 50;
-        
+
+        private float _laserCooldownEnd; // owner-side cooldown gate
+
         protected override void OnBound()
         {
             base.OnBound();
-            _inventory = GetComponent<InventoryCapability>();                               
+            _inventory = GetComponent<InventoryCapability>();
             _stats = genericStats as LaserEyeCapabilityStats;
             if (_stats == null) { Debug.LogAssertion($"Wrong stats assigned to object {name},expected {typeof(LaserEyeCapabilityStats)}, but retrieved {genericStats.GetType()}.", gameObject); }
         }
 
         public override bool CanExecute()
         {
-            Debug.LogWarning("We (LASER EYES) want to be animation driven right? Do we want a cooldown as well? ", gameObject);
-            return true;
+            // Lasers always fire on attack (with or without a weapon equipped),
+            // gated only by the laser cooldown. The equipped weapon modifies
+            // that cooldown but never gates firing.
+            return Time.time >= _laserCooldownEnd;
         }
 
         protected override void Execute()
         {
-            Debug.LogWarning("Optimize with Object Pool");
-            SpawnLaser_ServerRpc(cam.forward * TargetDistance + cam.position);
+            // Resolve modifiers OWNER-side (trust-the-attacker), then bake the
+            // resulting projectile count into the RPC so the server doesn't
+            // have to re-read this client's selection.
+            int projectiles = _stats.NumProjectiles;
+            float cooldownMul = 1f;
+
+            var weapon = _inventory ? _inventory.EquippedWeapon : null;
+            if (weapon && weapon.Stats)
+            {
+                projectiles += weapon.Stats.AdditionalLasers;
+                cooldownMul = weapon.Stats.LaserCooldownMultiplier;
+            }
+
+            _laserCooldownEnd = Time.time + (_stats.Cooldown * cooldownMul);
+
+            SpawnLaser_Rpc(cam.forward * TargetDistance + cam.position, projectiles);
         }
 
-        [ServerRpc]
-        private void SpawnLaser_ServerRpc(Vector3 target, ServerRpcParams info = default)
+        [Rpc(SendTo.Server)]
+        private void SpawnLaser_Rpc(Vector3 target, int projectiles, RpcParams info = default)
         {
-            Vector3[] locations = new Vector3[_stats.NumProjectiles];
-            Quaternion[] rotations = new Quaternion[_stats.NumProjectiles];
-            int numprojectiles = _stats.NumProjectiles;
-            if (_inventory != null)
-            {
-                if (_inventory.CurrentSelectedItem is GenericWeapon weapon)
-                {
-                    numprojectiles += weapon.additionalProjectiles;    
-                }
-            }
             for (var index = 0; index < eyes.Length; index++)
             {
                 var trans = eyes[index];
                 Vector3 pos = trans.position;
-                Quaternion rot = trans.rotation;
-                locations[index] = pos;
-                rotations[index] = rot;
-                
+
                 Vector3 laserDir = (target - pos).normalized;
                 Quaternion laserRot = Quaternion.LookRotation(laserDir, laserDir);
-                for (int i = 0; i < numprojectiles; ++i)
+                for (int i = 0; i < projectiles; ++i)
                 {
                     float ang = _stats.Inaccuracy;
                     float pitch = Random.Range(-ang, ang);
                     float yaw = Random.Range(-ang, ang);
                     var x = PoolingManager.SpawnObject(_stats.Projectile.name);
-                    
+
                     x.transform.SetPositionAndRotation(pos, laserRot * Quaternion.Euler(pitch, yaw, 0));
-                    //Laser l1 = Instantiate(_stats.Projectile, pos, laserRot * Quaternion.Euler(pitch, yaw, 0));
                     ((IPoolable)x).Spawn(info.Receive.SenderClientId);
                 }
             }
 
-            PlayParticle_ClientRpc();
-            // PlayParticle_ClientRpc(locations, rotations);
+            PlayParticle_Rpc();
         }
-        
-    
-        [ClientRpc]
-        private void PlayParticle_ClientRpc()
+
+        [Rpc(SendTo.ClientsAndHost)]
+        private void PlayParticle_Rpc()
         {
             for (int i = 0; i < eyes.Length; ++i)
             {

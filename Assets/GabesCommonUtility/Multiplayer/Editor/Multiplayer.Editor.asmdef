@@ -1,0 +1,15 @@
+{
+  "name": "Multiplayer.Editor",
+  "includePlatforms": [
+    "Editor"
+  ],
+  "versionDefines": [
+    {
+      "name": "com.unity.netcode.gameobjects",
+      "expression": "",
+      "define": "UNITY_NETCODE_GAMEOBJECTS"
+    }
+  ],
+  "defineConstraints": ["UNITY_NETCODE_GAMEOBJECTS"],
+  "references": ["Unity.Netcode.Runtime"]
+}

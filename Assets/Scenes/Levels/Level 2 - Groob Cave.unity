@@ -3609,6 +3609,7 @@ GameObject:
   - component: {fileID: 562289684}
   - component: {fileID: 562289683}
   - component: {fileID: 562289682}
+  - component: {fileID: 562289685}
   - component: {fileID: 562289681}
   m_Layer: 0
   m_Name: Grooster
@@ -3629,6 +3630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76f40c40f3977e4b8b264b8874125d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AI.Characters.GroosterAI
+  ShowTopMostFoldoutHeaderGroup: 1
   <Health>k__BackingField: 50
   <DamageRes>k__BackingField: 50
   target: {fileID: 1985201357}
@@ -3691,13 +3693,38 @@ Transform:
   m_GameObject: {fileID: 562289680}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.7, y: 1.718, z: -32.54}
+  m_LocalPosition: {x: 8.7, y: 4.11, z: -32.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1334907511}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &562289685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562289680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 1145839583
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &564444410
 GameObject:
   m_ObjectHideFlags: 0
@@ -13855,9 +13882,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140429a505f56c54fad9084934691136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Utilities.Vivox.SequenceStartPoint
-  start: {fileID: 1794925187}
-  activateOnStart: 1
-  persist: 0
 --- !u!4 &1794925189
 Transform:
   m_ObjectHideFlags: 0
@@ -16200,6 +16224,8 @@ MonoBehaviour:
   activateOnStart: 1
   persist: 0
   startDelay: 0
+  loadingDisplay: 0
+  loadingScreen: {fileID: 0}
 --- !u!4 &2065151261
 Transform:
   m_ObjectHideFlags: 0

@@ -60,7 +60,7 @@ namespace Common.Editor
         [MenuItem("Assets/Create Reversed Clip", true)]
         static bool ReverseClipValidation()
         {
-            return Selection.activeObject.GetType() == typeof(AnimationClip);
+            return Selection.activeObject is AnimationClip;
         }
 
         public static AnimationClip GetSelectedClip()
